@@ -37,6 +37,22 @@ module.exports = function (grunt) {
           '<%= path.theme %>/javascript/scripts.min.js': ['<%= path.src %>/js/jquery.js', '<%= path.src %>/js/bootstrap.js']
         }
       }
+    },
+
+    // grunt-bump
+    // https://github.com/vojtajina/grunt-bump
+    bump: {
+      options: {
+        files: ['package.json', 'bower.json'],
+        commit: true,
+        commitMessage: 'v%VERSION%',
+        commitFiles: ['package.json', 'bower.json'],
+        createTag: true,
+        tagName: 'v%VERSION%',
+        tagMessage: '',
+        push: false,
+        gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
+      }
     }
 
   };

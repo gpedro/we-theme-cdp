@@ -15,7 +15,8 @@
     "grunt-cli": "^0.1.13",
     "load-grunt-tasks": "^0.6.0",
     "grunt-sass": "^0.14.0",
-    "grunt-contrib-uglify": "^0.5.0"
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-bump": "0.0.14"
   },
   "optionalDependencies": {},
   "engines": {
