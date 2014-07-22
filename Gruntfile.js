@@ -13,6 +13,20 @@ module.exports = function (grunt) {
       templates: 'theme/templates',
       theme: 'theme',
       src: 'src'
+    },
+
+    // grunt-sass
+    // https://github.com/sindresorhus/grunt-sass
+    sass: {
+      options: {
+        includePaths: ['<%= path.src %>/sass'],
+        outputStyle: 'compressed'
+      },
+      stylesheet: {
+        files: {
+          '<%= path.theme %>/stylesheet/styles.min.css' : '<%= path.src %>/sass/bootstrap.scss'
+        }
+      }
     }
 
   };
@@ -20,7 +34,10 @@ module.exports = function (grunt) {
   // grunt config
   grunt.initConfig(config);
 
+  // load all grunt tasks matching the `grunt-*` pattern
+  require('load-grunt-tasks')(grunt);
+
   // task: default
-  grunt.registerTask('default', []);
+  grunt.registerTask('default', ['sass']);
 
 };
