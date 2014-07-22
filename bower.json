@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "homepage": "https://wejs.github.io/we-theme-default",
   "description": "We.js theme default",
-  "main": "index.js",
   "keywords": [
     "wejs",
     "theme",
