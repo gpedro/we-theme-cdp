@@ -10,3 +10,4 @@
 
 ### What's included
 - [Bootstrap SASS](http://getbootstrap.com/css/#sass): HTML, CSS, and JS framework for developing projects on the web.
+- [jQuery](http://jquery.com/): A fast, small, and feature-rich JavaScript library.
