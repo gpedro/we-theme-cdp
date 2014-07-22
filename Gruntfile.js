@@ -53,6 +53,13 @@ module.exports = function (grunt) {
     // grunt-contrib-watch
     // https://github.com/gruntjs/grunt-contrib-watch
     watch: {
+      template: {
+        files: '<%= path.templates %>/**/*.ejs',
+        tasks: ['template'],
+        options: {
+          livereload: true
+        }
+      },
       stylesheet: {
         files: '<%= path.src %>/sass/**/*.scss',
         tasks: ['sass'],
