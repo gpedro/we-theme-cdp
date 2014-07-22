@@ -39,6 +39,25 @@ module.exports = function (grunt) {
       }
     },
 
+    // grunt-contrib-watch
+    // https://github.com/gruntjs/grunt-contrib-watch
+    watch: {
+      stylesheet: {
+        files: '<%= path.src %>/sass/**/*.scss',
+        tasks: ['sass'],
+        options: {
+          livereload: true
+        }
+      },
+      javascript: {
+        files: '<%= path.src %>/js/**/*.js',
+        tasks: ['uglify'],
+        options: {
+          livereload: true
+        }
+      }
+    },
+
     // grunt-bump
     // https://github.com/vojtajina/grunt-bump
     bump: {
@@ -64,6 +83,6 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   // task: default
-  grunt.registerTask('default', ['sass', 'uglify']);
+  grunt.registerTask('default', ['watch']);
 
 };
