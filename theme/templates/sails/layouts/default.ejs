@@ -14,11 +14,19 @@
 
     <!-- :: CSS Links
             HelpersService.getlinkCssTags() -->
+    <link rel="stylesheet" href="<%= stylesheet_url %>">
 
   </head>
   <body>
 
-    <!-- body -->
+    <div class="jumbotron">
+      <h1>Hello, We!</h1>
+      <p>This is a <span class="label label-success">default</span> theme</p>
+      <p><a href="https://github.com/wejs/we-theme-default" class="btn btn-info" role="button" target="_blank">Star on GitHub</a></p>
+    </div>
+
+    <!-- javascript at the bottom for fast load page -->
+    <script async src="<%= javascript_url %>"></script>
 
   </body>
 </html>
