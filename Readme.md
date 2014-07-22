@@ -9,4 +9,4 @@
 ```npm install we-theme-default ```
 
 ### What's included
-- [Bootstrap SASS](http://getbootstrap.com/css/#sass): A modern, HTML5-ready alternative to CSS resets.
+- [Bootstrap SASS](http://getbootstrap.com/css/#sass): HTML, CSS, and JS framework for developing projects on the web.
