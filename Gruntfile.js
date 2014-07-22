@@ -27,6 +27,16 @@ module.exports = function (grunt) {
           '<%= path.theme %>/stylesheet/styles.min.css' : '<%= path.src %>/sass/bootstrap.scss'
         }
       }
+    },
+
+    // grunt-contrib-uglify
+    // https://github.com/gruntjs/grunt-contrib-uglify
+    uglify: {
+      dist: {
+        files: {
+          '<%= path.theme %>/javascript/scripts.min.js': ['<%= path.src %>/js/jquery.js', '<%= path.src %>/js/bootstrap.js']
+        }
+      }
     }
 
   };
@@ -38,6 +48,6 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   // task: default
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['sass', 'uglify']);
 
 };
