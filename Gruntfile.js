@@ -15,6 +15,17 @@ module.exports = function (grunt) {
       src: 'src'
     },
 
+    // grunt-templater
+    // https://github.com/rockwood/grunt-templater
+    data: grunt.file.readJSON('demo/data.json'),
+    template: {
+      default: {
+        src: ['<%= path.templates %>/sails/layouts/default.ejs'],
+        dest: 'demo/index.html',
+        variables: '<%= data.variables %>'
+      }
+    },
+
     // grunt-sass
     // https://github.com/sindresorhus/grunt-sass
     sass: {
