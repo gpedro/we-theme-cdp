@@ -1,4 +1,12 @@
 #form-login {
   position: relative;
-  top: 7.5em;
+  top: 0.6em;
+  left: 1.25em;
+  .checkbox {
+    font-size: 0.85em;
+    line-height: 1.75em;
+    label {
+      width: 150%;
+    }
+  }
 }

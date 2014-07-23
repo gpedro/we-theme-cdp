@@ -27,7 +27,21 @@
         <li><a href="#contact">Other</a></li>
       </ul>
       <!-- /Menu main -->
+
+      <!-- Menu User #menu-user-dropdown
+           only on login -->
+      <ul class="nav navbar-nav pull-right">
+        <li id="menu-user-dropdown" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
+          <ul class="dropdown-menu pull-right" role="menu">
+            <% include ../includes/form/login.ejs %>
+          </ul>
+        </li>
+      </ul>
+      <!-- /Menu User -->
     </div>
+
+
 
   </div><!-- end container -->
 </nav><!-- end navigation #navbarmain -->
