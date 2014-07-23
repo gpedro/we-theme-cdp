@@ -1,0 +1,29 @@
+
+html {
+  /* keep footer on bottom helper:
+  position: relative;
+  min-height: 100%; */
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* keep footer on bottom helper
+  margin-bottom: 60px; = footer height */
+  margin-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+  .container .text-muted {
+    margin: 20px 0;
+  }
+}
