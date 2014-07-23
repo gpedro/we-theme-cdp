@@ -1,7 +1,7 @@
 # we-theme-default
 > we.js theme default
 
-### [Demo](https://wejs.github.io/we-theme-default) &nbsp; [Docs](http://docs.wejs.org/theme/default)
+### [Demo](https://wejs.github.io/we-theme-default/demo/) &nbsp; [Docs](http://docs.wejs.org/theme/default)
 
 ### How to use
 
