@@ -6,6 +6,10 @@
 module.exports = function (grunt) {
   'use strict';
 
+  // time-grunt
+  // https://github.com/sindresorhus/time-grunt
+  require('time-grunt')(grunt);
+
   var config = {
     // config: paths
     path: {
