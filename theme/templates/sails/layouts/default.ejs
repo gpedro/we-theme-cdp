@@ -17,16 +17,27 @@
     <link rel="stylesheet" href="<%= stylesheet_url %>">
 
   </head>
-  <body>
+  <body class="logged-out">
 
-    <div class="jumbotron">
-      <h1>Hello, We!</h1>
-      <p>This is a <span class="label label-success">default</span> theme</p>
-      <p><a href="https://github.com/wejs/we-theme-default" class="btn btn-info" role="button" target="_blank">Star on GitHub</a></p>
-    </div>
+    <!-- header -->
+    <% include ../includes/header.ejs %>
+    <!-- /header -->
+
+    <!-- section -->
+    <% include ../includes/section/splash-global.ejs %>
+    <!-- /section -->
+
+    <!-- footer -->
+    <% include ../includes/footer.ejs %>
+    <!-- /footer -->
 
     <!-- javascript at the bottom for fast load page -->
     <script async src="<%= javascript_url %>"></script>
+
+    <!-- If Development
+        script for fast development *use only in dev mode -->
+    <script src="//localhost:35729/livereload.js"></script>
+    <!-- end -->
 
   </body>
 </html>
