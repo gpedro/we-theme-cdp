@@ -82,8 +82,14 @@ module.exports = function (grunt) {
       options: {
         files: ['package.json', 'bower.json'],
         commit: true,
-        commitMessage: 'v%VERSION%',
-        commitFiles: ['package.json', 'bower.json', '<%= path.templates %>', 'demo/'],
+        commitMessage: 'Release v%VERSION%',
+        commitFiles: [
+          'package.json',
+          'bower.json',
+          '<%= path.theme %>/stylesheet/',
+          '<%= path.theme %>/javascript/',
+          'demo/'
+        ],
         createTag: true,
         tagName: 'v%VERSION%',
         tagMessage: '',
