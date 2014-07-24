@@ -1,12 +1,12 @@
 {
-  "name": "we-theme-default",
-  "version": "0.0.2",
-  "homepage": "https://wejs.github.io/we-theme-default",
-  "description": "We.js theme default",
+  "name": "we-theme-cdp",
+  "version": "0.0.22",
+  "homepage": "http://abs-org.github.io/we-theme-cdp/",
+  "description": "Tema do We.js para a Comunidade de Práticas",
   "keywords": [
     "wejs",
     "theme",
-    "default"
+    "cdp"
   ],
   "ignore": [
     "node_modules",

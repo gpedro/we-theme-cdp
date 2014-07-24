@@ -1,11 +1,11 @@
 {
-  "name": "we-theme-default",
-  "version": "0.0.2",
-  "description": "We.js theme default",
-  "homepage": "https://wejs.github.io/we-theme-default",
+  "name": "we-theme-cdp",
+  "version": "0.0.22",
+  "description": "Tema do We.js para a Comunidade de Práticas",
+  "homepage": "http://abs-org.github.io/we-theme-cdp/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/wejs/we-theme-default.git"
+    "url": "git://github.com/abs-org/we-theme-cdp.git"
   },
   "main": "theme/index.js",
   "dependencies": {},

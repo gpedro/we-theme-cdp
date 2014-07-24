@@ -20,7 +20,7 @@
   <body class="logged-out">
 
     <!-- header -->
-    <nav id="navbar-main" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav id="navbar-main" role="navigation">
   <div class="container">
 
     <div class="navbar-header">
@@ -35,58 +35,55 @@
       <!-- /Toggle button -->
 
       <!-- Logo -->
-      <a class="navbar-brand" href="/">We: default</a>
+      <a class="navbar-brand" href="/demo/">CdP: logo</a>
       <!-- /Logo -->
     </div>
 
-    <div class="navbar-collapse collapse">
-      <!-- Menu main -->
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="people.html">People</a></li>
-        <li><a href="#about">Feed</a></li>
-        <li><a href="groups.html">Groups</a></li>
-        <li><a href="#contact">Courses</a></li>
-        <li><a href="#contact">Other</a></li>
-      </ul>
-      <!-- /Menu main -->
+    <!-- Menu main -->
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="people.html">Pessoas</a></li>
+      <li><a href="#about">Mensagem</a></li>
+      <li><a href="groups.html">Comunidades</a></li>
+      <li><a href="#contact">Cursos</a></li>
+      <li><a href="#contact">Notificações</a></li>
+    </ul>
+    <!-- /Menu main -->
 
-      <!-- Menu User #menu-user-dropdown
-           only on login -->
-      <ul class="nav navbar-nav pull-right">
-        <li id="menu-user-dropdown" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
-          <ul class="dropdown-menu pull-right" role="menu">
-            <form id="form-login" class="form-horizontal col-xs-20" role="form">
+    <!-- Menu User #menu-user-dropdown
+         only on login -->
+    <ul class="nav navbar-nav pull-right">
+      <li id="menu-user-dropdown" class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entrar <span class="caret"></span></a>
+        <ul class="dropdown-menu pull-right" role="menu">
+          <form id="form-login" class="form-horizontal col-xs-20" role="form">
   <div class="form-group">
     <div class="input-group col-xs-24">
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email / Username">
+      <input type="email" class="form-control" id="inputEmail" placeholder="E-mail / Usuário">
     </div>
   </div>
   <div class="form-group">
     <div class="input-group col-xs-24">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
     </div>
   </div>
   <div class="form-group">
     <div class="checkbox col-xs-16 row">
       <label>
-        <input type="checkbox"> Remember me
+        <input type="checkbox"> Lembrar-me
       </label>
     </div>
     <div class="col-xs-12 pull-right row">
-      <button type="submit" class="col-xs-24 btn btn-sm btn-success">Sign in</button>
+      <button type="submit" class="col-xs-24 btn btn-sm btn-success">Entrar</button>
     </div>
   </div>
 </form>
 
-          </ul>
-        </li>
-      </ul>
-      <!-- /Menu User -->
-    </div>
+        </ul>
+      </li>
+    </ul>
+    <!-- /Menu User -->
 
-
-
+    <div class="bar-colored"></div>
   </div><!-- end container -->
 </nav><!-- end navigation #navbarmain -->
 
@@ -99,39 +96,46 @@
   <div class="container">
 
     <div class="pull-left col-xs-14 row">
-      <h1>Hello, We!</h1>
-      <p>This is a <span class="label label-success">default</span> theme. It's included with the kit that adapts to fit the device your user is viewing it on. This helps an experience that looks good.</p>
-      <p><a href="https://github.com/wejs/we-theme-default" class="btn btn-info" role="button" target="_blank">Star on GitHub</a></p>
+      <h2>Bem vindo(a) a Comunidade de Práticas!</h2>
+      <p>Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+      <p><button data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-primary" role="button" target="_blank">Cadastre-se</button></p>
     </div>
 
-    <div class="pull-right col-xs-8">
-      <!-- login form -->
-      <form id="form-signin" class="form-horizontal" role="form">
-  <div class="page-header col-md-24 row">
-    <h3 class="form-title row">Create account</h3>
-  </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h2 id="myModalLabel">Cadastre-se</h2>
+          </div>
+
+          <div class="modal-body clearfix">
+            <div class="pull-right col-xs-24">
+              <!-- login form -->
+              <form id="form-signin" class="form-horizontal" role="form">
   <div class="form-group">
     <div class="input-group col-xs-24">
-      <input type="email" class="form-control input-lg" id="inputUsername" placeholder="Username">
+      <input type="email" class="form-control input-lg" id="inputUsername" placeholder="Usuário">
     </div>
   </div>
   <div class="form-group">
     <div class="input-group col-xs-24">
-      <input type="email" class="form-control input-lg" id="inputEmail" placeholder="Email">
+      <input type="email" class="form-control input-lg" id="inputEmail" placeholder="E-mail">
     </div>
   </div>
   <div class="form-group">
     <div class="input-group col-xs-12 pull-left">
-      <input type="password" class="form-control input-lg" id="inputPassword" placeholder="Password">
+      <input type="password" class="form-control input-lg" id="inputPassword" placeholder="Senha">
     </div>
     <div class="input-group col-xs-10 pull-right">
-      <input type="password" class="form-control input-lg" id="inputPasswordConfirm" placeholder="Confirm">
+      <input type="password" class="form-control input-lg" id="inputPasswordConfirm" placeholder="Confirmar senha">
     </div>
   </div>
   <div class="form-group">
     <div class="col-xs-8 row" style="position: relative;">
       <select class="form-control">
-        <option>Month</option>
+        <option>Mês</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
@@ -140,7 +144,7 @@
     </div>
     <div class="col-xs-8 row" style="position: relative; left: 1em;">
       <select class="form-control">
-        <option>Day</option>
+        <option>Dia</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
@@ -149,7 +153,7 @@
     </div>
     <div class="col-xs-8 row" style="position: relative; left: 2em;">
       <select class="form-control">
-        <option>Year</option>
+        <option>Ano</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
@@ -161,26 +165,45 @@
     <div class="radio col-xs-8 row">
       <label>
         <input type="radio" name="optionsRadios" id="optionsRadios1" value="male">
-        Male
+        Masculino
       </label>
     </div>
     <div class="radio col-xs-12">
       <label>
         <input type="radio" name="optionsRadios" id="optionsRadios1" value="female">
-        Female
+        Feminino
       </label>
     </div>
   </div>
   <div class="form-group">
     <div class="col-xs-16 row">
-      <button type="submit" class="col-xs-24 btn btn-success">Sign up</button>
+      <button type="submit" class="col-xs-24 btn btn-success">Cadastrar</button>
     </div>
   </div>
 </form>
 
-      <!-- /login form -->
+              <!-- /login form -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="form-group row" style="font-size: 11px;">
+              <div class="radio col-xs-24 row" style="text-align: left">
+                <label>
+                  <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="male" checked>
+                  Li e aceito as regras de convivência da Comunidade de Práticas.*
+                </label>
+              </div>
+              <div class="radio col-xs-24 row" style="text-align: left">
+                <label>
+                  <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="female" checked>
+                  Li e aceito os termos de uso*
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
   </div><!-- end container -->
 </section><!-- end splash global -->
 
@@ -190,8 +213,8 @@
     <footer class="footer">
   <div class="container">
 
-    <p class="text-muted">© Wejs.org</p>
-    
+    <p class="text-muted">© Comunidade de Práticas</p>
+
   </div>
 </footer>
 
