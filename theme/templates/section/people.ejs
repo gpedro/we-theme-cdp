@@ -34,6 +34,16 @@
     <!-- javascript at the bottom for fast load page -->
     <script async src="<%= javascript_url %>"></script>
 
+    <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+
+    <script type="text/javascript">
+      $(function() {
+        $( "#draggable-widgets" ).sortable({opacity: 0.6, cursor: 'move'});
+        $( "#draggable-widgets" ).disableSelection();
+      });
+    </script>
+
     <!-- If Development
         script for fast development *use only in dev mode -->
     <script src="//localhost:35729/livereload.js"></script>
