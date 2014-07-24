@@ -1,4 +1,4 @@
-<nav id="navbar-main" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav id="navbar-main" role="navigation">
   <div class="container">
 
     <div class="navbar-header">
@@ -13,35 +13,32 @@
       <!-- /Toggle button -->
 
       <!-- Logo -->
-      <a class="navbar-brand" href="/">We: default</a>
+      <a class="navbar-brand" href="/demo/">CdP: logo</a>
       <!-- /Logo -->
     </div>
 
-    <div class="navbar-collapse collapse">
-      <!-- Menu main -->
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="people.html">People</a></li>
-        <li><a href="#about">Feed</a></li>
-        <li><a href="groups.html">Groups</a></li>
-        <li><a href="#contact">Courses</a></li>
-        <li><a href="#contact">Other</a></li>
-      </ul>
-      <!-- /Menu main -->
+    <!-- Menu main -->
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="people.html">Pessoas</a></li>
+      <li><a href="#about">Mensagem</a></li>
+      <li><a href="groups.html">Comunidades</a></li>
+      <li><a href="#contact">Cursos</a></li>
+      <li><a href="#contact">Notificações</a></li>
+    </ul>
+    <!-- /Menu main -->
 
-      <!-- Menu User #menu-user-dropdown
-           only on login -->
-      <ul class="nav navbar-nav pull-right">
-        <li id="menu-user-dropdown" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
-          <ul class="dropdown-menu pull-right" role="menu">
-            <% include ../includes/form/login.ejs %>
-          </ul>
-        </li>
-      </ul>
-      <!-- /Menu User -->
-    </div>
+    <!-- Menu User #menu-user-dropdown
+         only on login -->
+    <ul class="nav navbar-nav pull-right">
+      <li id="menu-user-dropdown" class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entrar <span class="caret"></span></a>
+        <ul class="dropdown-menu pull-right" role="menu">
+          <% include ../includes/form/login.ejs %>
+        </ul>
+      </li>
+    </ul>
+    <!-- /Menu User -->
 
-
-
+    <div class="bar-colored"></div>
   </div><!-- end container -->
 </nav><!-- end navigation #navbarmain -->
