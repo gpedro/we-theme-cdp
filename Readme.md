@@ -1,13 +1,13 @@
-# we-theme-default
-> we.js theme default
+# we-theme-cdp
+> Tema do We.js para a Comunidade de Práticas
 
-### [Demo](https://wejs.github.io/we-theme-default/demo/) &nbsp; [Docs](http://docs.wejs.org/theme/default)
+### [Demonstração](https://abs-org.github.io/we-theme-cdp/demo/) &nbsp; [Documentação](http://abs-org.github.io/we-theme-cdp/docs/)
 
-### How to use
+### Como usar
 
-- Install with **npm**:
-```npm install we-theme-default ```
+- Instalar via **npm**:
+```npm install we-theme-cdp ```
 
-### What's included
-- [Bootstrap SASS](http://getbootstrap.com/css/#sass): HTML, CSS, and JS framework for developing projects on the web.
-- [jQuery](http://jquery.com/): A fast, small, and feature-rich JavaScript library.
+### O que está incluído?
+- [Bootstrap SASS](http://getbootstrap.com/css/#sass): HTML, CSS, e JS framework para desenvolver projetos na web.
+- [jQuery](http://jquery.com/): Biblioteca javascript rápida, pequena e rica em recursos.
