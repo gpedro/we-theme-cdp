@@ -42,14 +42,50 @@
     <div class="navbar-collapse collapse">
       <!-- Menu main -->
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">People</a></li>
+        <li class="active"><a href="people.html">People</a></li>
         <li><a href="#about">Feed</a></li>
         <li><a href="#contact">Groups</a></li>
         <li><a href="#contact">Courses</a></li>
         <li><a href="#contact">Other</a></li>
       </ul>
       <!-- /Menu main -->
+
+      <!-- Menu User #menu-user-dropdown
+           only on login -->
+      <ul class="nav navbar-nav pull-right">
+        <li id="menu-user-dropdown" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
+          <ul class="dropdown-menu pull-right" role="menu">
+            <form id="form-login" class="form-horizontal col-xs-20" role="form">
+  <div class="form-group">
+    <div class="input-group col-xs-24">
+      <input type="email" class="form-control" id="inputEmail" placeholder="Email / Username">
     </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group col-xs-24">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="checkbox col-xs-16 row">
+      <label>
+        <input type="checkbox"> Remember me
+      </label>
+    </div>
+    <div class="col-xs-12 pull-right row">
+      <button type="submit" class="col-xs-24 btn btn-sm btn-success">Sign in</button>
+    </div>
+  </div>
+</form>
+
+          </ul>
+        </li>
+      </ul>
+      <!-- /Menu User -->
+    </div>
+
+
 
   </div><!-- end container -->
 </nav><!-- end navigation #navbarmain -->
@@ -62,38 +98,82 @@
 <section id="splash-global" class="jumbotron">
   <div class="container">
 
-    <div class="pull-left col-xs-7 row">
+    <div class="pull-left col-xs-14 row">
       <h1>Hello, We!</h1>
-      <p>This is a <span class="label label-success">default</span> theme</p>
-      <p>Responsive layout is included with the kit that adapts to fit the device your user is viewing it on. This helps you hit the with an experience that looks good.</p>
+      <p>This is a <span class="label label-success">default</span> theme. It's included with the kit that adapts to fit the device your user is viewing it on. This helps an experience that looks good.</p>
       <p><a href="https://github.com/wejs/we-theme-default" class="btn btn-info" role="button" target="_blank">Star on GitHub</a></p>
     </div>
 
-    <div class="pull-right col-xs-4">
+    <div class="pull-right col-xs-8">
       <!-- login form -->
-      <form id="form-login" class="form-horizontal" role="form">
+      <form id="form-signin" class="form-horizontal" role="form">
+  <div class="page-header col-md-24 row">
+    <h3 class="form-title row">Create account</h3>
+  </div>
   <div class="form-group">
-    <div class="input-group col-xs-12">
-      <div class="input-group-addon">@</div>
+    <div class="input-group col-xs-24">
+      <input type="email" class="form-control input-lg" id="inputUsername" placeholder="Username">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group col-xs-24">
       <input type="email" class="form-control input-lg" id="inputEmail" placeholder="Email">
     </div>
   </div>
   <div class="form-group">
-    <div class="input-group col-xs-12">
-      <div class="input-group-addon">@</div>
+    <div class="input-group col-xs-12 pull-left">
       <input type="password" class="form-control input-lg" id="inputPassword" placeholder="Password">
+    </div>
+    <div class="input-group col-xs-10 pull-right">
+      <input type="password" class="form-control input-lg" id="inputPasswordConfirm" placeholder="Confirm">
     </div>
   </div>
   <div class="form-group">
-    <div class="col-xs-6 row">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
-        </label>
-      </div>
+    <div class="col-xs-8 row" style="position: relative;">
+      <select class="form-control">
+        <option>Month</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
     </div>
-    <div class="col-xs-6 pull-right row">
-      <button type="submit" class="col-xs-12 btn btn-success">Sign in</button>
+    <div class="col-xs-8 row" style="position: relative; left: 1em;">
+      <select class="form-control">
+        <option>Day</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="col-xs-8 row" style="position: relative; left: 2em;">
+      <select class="form-control">
+        <option>Year</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="radio col-xs-8 row">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="male">
+        Male
+      </label>
+    </div>
+    <div class="radio col-xs-12">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="female">
+        Female
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-xs-16 row">
+      <button type="submit" class="col-xs-24 btn btn-success">Sign up</button>
     </div>
   </div>
 </form>
@@ -110,9 +190,7 @@
     <footer class="footer">
   <div class="container">
 
-    <div class="col-xs-2">
-      <p class="text-muted">© Wejs.org</p>
-    </div>
+    <p class="text-muted">© Wejs.org</p>
     
   </div>
 </footer>
