@@ -154,7 +154,7 @@
 
     </div><!-- end container -->
 
-    <div class="pull-left col-xs-6">
+    <div id="draggable-widgets" class="pull-left col-xs-6">
       <!-- widgets -->
       <aside id="feed-widget" class="panel panel-default row">
   <div class="panel-heading">
@@ -183,11 +183,11 @@
   </div>
 </aside>
 
-      <!-- /widget -->
+      <!-- /widgets -->
     </div>
 
   </div><!-- end container -->
-</section><!-- end splash global -->
+</section><!-- end -->
 
     <!-- /section -->
 
@@ -204,6 +204,16 @@
 
     <!-- javascript at the bottom for fast load page -->
     <script async src="../theme/javascript/scripts.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+
+    <script type="text/javascript">
+      $(function() {
+        $( "#draggable-widgets" ).sortable({opacity: 0.6, cursor: 'move'});
+        $( "#draggable-widgets" ).disableSelection();
+      });
+    </script>
 
     <!-- If Development
         script for fast development *use only in dev mode -->
