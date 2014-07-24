@@ -4,16 +4,45 @@
   <div class="container">
 
     <div class="pull-left col-xs-14 row">
-      <h1>Hello, We!</h1>
-      <p>This is a <span class="label label-success">default</span> theme. It's included with the kit that adapts to fit the device your user is viewing it on. This helps an experience that looks good.</p>
-      <p><a href="https://github.com/wejs/we-theme-default" class="btn btn-info" role="button" target="_blank">Star on GitHub</a></p>
+      <h2>Bem vindo(a) a Comunidade de Práticas!</h2>
+      <p>Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+      <p><button data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-primary" role="button" target="_blank">Cadastre-se</button></p>
     </div>
 
-    <div class="pull-right col-xs-8">
-      <!-- login form -->
-      <% include ../form/signin.ejs %>
-      <!-- /login form -->
-    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h2 id="myModalLabel">Cadastre-se</h2>
+          </div>
 
+          <div class="modal-body clearfix">
+            <div class="pull-right col-xs-24">
+              <!-- login form -->
+              <% include ../form/signin.ejs %>
+              <!-- /login form -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="form-group row" style="font-size: 11px;">
+              <div class="radio col-xs-24 row" style="text-align: left">
+                <label>
+                  <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="male" checked>
+                  Li e aceito as regras de convivência da Comunidade de Práticas.*
+                </label>
+              </div>
+              <div class="radio col-xs-24 row" style="text-align: left">
+                <label>
+                  <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="female" checked>
+                  Li e aceito os termos de uso*
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div><!-- end container -->
 </section><!-- end splash global -->
