@@ -1,3 +1,14 @@
+#navbar-main {
+  border-bottom: 4px solid #e1e1e1;
+  .bar-colored {
+    background-image: url('../../src/img/bar-colored.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 4px;
+    position: relative;
+    bottom: -50px;
+  }
+}
 #menu-user-dropdown {
   .dropdown-menu {
     width: 240px;
