@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title %></title>
+
+    <!-- :: Require.js conf
+            HelpersService.getRequirejsPreloadConfig()
+            HelpersService.getRequireJsScriptTag() -->
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <meta name="csrf-token" content="<%= _csrf %>" />
+
+    <!-- :: CSS Links
+            HelpersService.getlinkCssTags() -->
+    <link rel="stylesheet" href="<%= stylesheet_url %>">
+
+  </head>
+  <body class="logged-out">
+
+    <!-- header -->
+    <% include ../sails/includes/header.ejs %>
+    <!-- /header -->
+
+    <!-- section -->
+    <% include ../sails/includes/section/user-list.ejs %>
+    <!-- /section -->
+
+    <!-- footer -->
+    <% include ../sails/includes/footer.ejs %>
+    <!-- /footer -->
+
+    <!-- javascript at the bottom for fast load page -->
+    <script async src="<%= javascript_url %>"></script>
+
+    <!-- If Development
+        script for fast development *use only in dev mode -->
+    <script src="//localhost:35729/livereload.js"></script>
+    <!-- end -->
+
+  </body>
+</html>
