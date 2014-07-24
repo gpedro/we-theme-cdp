@@ -27,6 +27,11 @@ module.exports = function (grunt) {
         src: ['<%= path.templates %>/sails/layouts/default.ejs'],
         dest: 'demo/index.html',
         variables: '<%= data.variables %>'
+      },
+      SecUsers: {
+        src: ['<%= path.templates %>/section/people.ejs'],
+        dest: 'demo/people.html',
+        variables: '<%= data.variables %>'
       }
     },
 
