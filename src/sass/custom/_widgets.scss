@@ -4,4 +4,13 @@
   .list-group-item-text {
     font-size: 1em!important;
   }
+  .panel-heading {
+    padding: 0; // reset for using w/ button
+  }
+}
+
+.widget-trigger-collapse {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
 }
