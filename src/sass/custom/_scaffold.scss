@@ -10,9 +10,13 @@ body {
   /* keep footer on bottom helper
   margin-bottom: 60px; = footer height */
   margin-bottom: 60px;
-  background-image: url('../../src/img/bg-pattern.png');
+  background: lighten($gray-lighter, 5%);
 }
 
+#splash-global {
+  background-image: url('../../src/img/bg-pattern.png');
+  min-height: 41.8em;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 .footer {
