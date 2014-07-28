@@ -47,6 +47,11 @@ module.exports = function (grunt) {
         src: ['<%= path.templates %>/section/feed.ejs'],
         dest: 'demo/feed.html',
         variables: '<%= data.variables %>'
+      },
+      SecNotifications: {
+        src: ['<%= path.templates %>/section/notifications.ejs'],
+        dest: 'demo/notifications.html',
+        variables: '<%= data.variables %>'
       }
     },
 

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>We.js theme default</title>
+
+    <!-- :: Require.js conf
+            HelpersService.getRequirejsPreloadConfig()
+            HelpersService.getRequireJsScriptTag() -->
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <meta name="csrf-token" content="_csrf" />
+
+    <!-- :: CSS Links
+            HelpersService.getlinkCssTags() -->
+    <link rel="stylesheet" href="../theme/stylesheet/styles.min.css">
+
+    <script type="text/javascript" src="../theme/javascript/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../theme/javascript/jquery-ui-1.11.0.min.js"></script>
+
+  </head>
+  <body class="logged-out">
+
+    <!-- header -->
+    <nav id="navbar-main" class="navbar-default" role="navigation">
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- Toggle button
+          for mobile devices -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- /Toggle button -->
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="../src/img/cdp-logo.png" alt="Comunidade de Práticas"/>
+      </a>
+      <!-- /Logo -->
+    </div>
+
+    <!-- Menu main -->
+    <ul class="nav navbar-nav">
+      <li>
+        <a class="navbar-menu-item" href="people.html" style="text-align: center;">
+          <div class="icon icon-people" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
+          Pessoas
+        </a>
+      </li>
+      <li>
+        <a class="navbar-menu-item" href="feed.html" style="text-align: center;">
+          <div class="icon icon-message" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
+          Mensagem
+        </a>
+      </li>
+      <li>
+        <a class="navbar-menu-item" href="groups.html" style="text-align: center;">
+          <div class="icon icon-cdp-logo" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
+          Comunidades
+        </a>
+      </li>
+      <li>
+        <a class="navbar-menu-item" href="courses.html" style="text-align: center;">
+          <div class="icon icon-badge" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
+          Cursos
+        </a>
+      </li>
+      <li>
+        <a class="navbar-menu-item" href="notifications.html" style="text-align: center;">
+          <div class="icon icon-bell" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
+          Notificações
+        </a>
+      </li>
+    </ul>
+    <!-- /Menu main -->
+
+    <!-- Menu User #menu-user-dropdown
+         only on login -->
+    <ul class="nav navbar-nav pull-right">
+      <li id="menu-user-dropdown" class="dropdown">
+        <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Entrar <span class="caret"></span></button>
+        <ul class="dropdown-menu pull-right" role="menu" style="margin-top: 1.5em">
+          <form id="form-login" class="form-horizontal col-xs-20" role="form">
+  <div class="form-group">
+    <div class="input-group col-xs-24">
+      <input type="email" class="form-control" id="inputEmail" placeholder="E-mail / Usuário">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group col-xs-24">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="checkbox col-xs-16 row">
+      <label>
+        <input type="checkbox"> Lembrar-me
+      </label>
+      <a href="#recovery-password">Recuperar senha</a>
+    </div>
+    <div class="col-xs-12 pull-right row">
+      <button type="submit" class="col-xs-24 btn btn-sm btn-success">Entrar</button>
+    </div>
+
+    <div class="container-button-signin col-xs-24">
+      <div class="row">
+        <li class="divider"></li>
+        <button type="submit" class="col-xs-24 btn btn-sm btn-primary">Criar nova conta</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+        </ul>
+      </li>
+    </ul>
+    <!-- /Menu User -->
+
+    <div class="bar-colored"></div>
+  </div><!-- end container -->
+</nav><!-- end navigation #navbarmain -->
+
+<div class="container" style="position: relative; top: 1.2em;">
+  <div class="col-xs-21 row pull-right">
+  <!-- breadcrumb -->
+  <ol class="breadcrumb">
+  <div class="icon icon-question pull-left" style="font-size: 1.2em; color: #999; position: relative; left: -0.35em"></div>
+  <li><a href="#">Início</a></li>
+  <li><a href="#">Seção Intermediária</a></li>
+  <li class="active">Seção Atual</li>
+</ol>
+
+  <!-- /breadcrumb -->
+  </div>
+</div>
+
+    <!-- /header -->
+
+    <!-- section -->
+    <!--  -->
+<section class="jumbotron">
+  <div class="container">
+
+    <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
+      <h3>Notificações <small><br>Visualize suas notificações</small></h3>
+
+      <div id="notifications-list" class="row">
+        <button class="btn btn-sm btn-primary" style="float: right; margin: -4em 1.3em 2em 0;">Marcar todas como lido</button>
+        <div class="col-xs-24">
+          <table class="table table-striped table-hover" style="background: #fff">
+            <tbody>
+        <tr>
+          <td><div class="icon icon-bell"></div></td>
+          <td><a href="">Santos Souza</a> solicitou participar da comunidade <a href="">Academia da Saúde</a> em 01/07/2014 09:55:50
+Clique aqui para aprovar a solicitação</td>
+          <td>
+            <button class="btn btn-sm btn-success">Marcar como lida</button>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="icon icon-bell"></div></td>
+          <td><a href="">Santos Souza</a> solicitou participar da comunidade <a href="">Academia da Saúde</a> em 01/07/2014 09:55:50
+Clique aqui para aprovar a solicitação</td>
+          <td><button class="btn btn-sm btn-success">Marcar como lida</button></td>
+        </tr>
+        <tr>
+          <td><div class="icon icon-bell"></div></td>
+          <td><a href="">Santos Souza</a> solicitou participar da comunidade <a href="">Academia da Saúde</a> em 01/07/2014 09:55:50
+Clique aqui para aprovar a solicitação</td>
+          <td><button class="btn btn-sm btn-success">Marcar como lida</button></td>
+        </tr>
+        <tr>
+          <td><div class="icon icon-bell"></div></td>
+          <td><a href="">Santos Souza</a> solicitou participar da comunidade <a href="">Academia da Saúde</a> em 01/07/2014 09:55:50
+Clique aqui para aprovar a solicitação</td>
+          <td><button class="btn btn-sm btn-success">Marcar como lida</button></td>
+        </tr>
+        <tr>
+          <td><div class="icon icon-bell"></div></td>
+          <td><a href="">Santos Souza</a> solicitou participar da comunidade <a href="">Academia da Saúde</a> em 01/07/2014 09:55:50
+Clique aqui para aprovar a solicitação</td>
+          <td><button class="btn btn-sm btn-success">Marcar como lida</button></td>
+        </tr>
+      </tbody>
+        </table>
+        </div>
+
+      </div>
+    </div><!-- end container -->
+
+    <div id="draggable-widgets" class="pull-left col-xs-6">
+      <!-- widgets -->
+      <aside id="groups-widget" class="panel panel-default row">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+        <div class="icon icon-cdp-logo pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+        Comunidades
+      </a>
+    </h3>
+  </div>
+  <div id="collapseOne" class="panel-collapse collapse list-group">
+    <a href="#" class="list-group-item active">
+      <h5 class="list-group-item-heading">Comunidade Saúde e Bem-estar</h5>
+      <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h5 class="list-group-item-heading">Comunidade Saúde e Bem-estar</h5>
+      <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h5 class="list-group-item-heading">Comunidade Saúde e Bem-estar</h5>
+      <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+    </a>
+  </div>
+</aside>
+
+      <aside id="courses-widget" class="panel panel-default row">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+        <div class="icon icon-badge pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+        Cursos
+      </a>
+    </h3>
+  </div>
+  <div id="collapseTwo" class="panel-collapse collapse list-group">
+    <a href="#" class="list-group-item active">
+      <h4 class="list-group-item-heading">Cursos de Saúde</h4>
+      <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Cursos de Saúde</h4>
+      <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Cursos de Saúde</h4>
+      <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+    </a>
+  </div>
+</aside>
+
+      <aside id="feed-widget" class="panel panel-default row">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+        <div class="icon icon-time pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+        O que está acontecendo?
+      </a>
+    </h3>
+  </div>
+  <div id="collapseThree" class="panel-collapse collapse in list-group">
+    <a href="#" class="list-group-item active">
+      <h5 class="list-group-item-heading">Semana da Saúde</h5>
+      <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h5 class="list-group-item-heading">Semana da Saúde</h5>
+      <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h5 class="list-group-item-heading">Semana da Saúde</h5>
+      <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
+    </a>
+  </div>
+</aside>
+
+      <!-- /widgets -->
+    </div>
+
+  </div><!-- end container -->
+</section><!-- end -->
+
+    <!-- /section -->
+
+    <!-- footer -->
+    <footer class="footer">
+  <div class="container">
+
+    <p class="text-muted">© Comunidade de Práticas</p>
+
+  </div>
+</footer>
+
+    <!-- /footer -->
+
+    <!-- javascript at the bottom for fast load page -->
+    <script async src="../theme/javascript/scripts.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $( "#draggable-widgets" ).sortable({opacity: 0.6, cursor: 'move'});
+        $( "#draggable-widgets" ).disableSelection();
+      });
+    </script>
+
+    <!-- If Development
+        script for fast development *use only in dev mode -->
+    <script src="//localhost:35729/livereload.js"></script>
+    <!-- end -->
+
+  </body>
+</html>
