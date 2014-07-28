@@ -38,17 +38,19 @@
       <!-- /Toggle button -->
 
       <!-- Logo -->
-      <a class="navbar-brand" href="/demo">CdP: logo</a>
+      <a class="navbar-brand" href="index.html">
+        <img src="../src/img/cdp-logo.png" alt="Comunidade de Práticas"/>
+      </a>
       <!-- /Logo -->
     </div>
 
     <!-- Menu main -->
     <ul class="nav navbar-nav">
-      <li><a href="people.html">Pessoas</a></li>
-      <li><a href="feed.html">Mensagem</a></li>
-      <li><a href="groups.html">Comunidades</a></li>
-      <li><a href="courses.html">Cursos</a></li>
-      <li class="active"><a href="notifications.html">Notificações</a></li>
+      <li><a class="navbar-menu-item" href="people.html">Pessoas</a></li>
+      <li><a class="navbar-menu-item" href="feed.html">Mensagem</a></li>
+      <li><a class="navbar-menu-item" href="groups.html">Comunidades</a></li>
+      <li><a class="navbar-menu-item" href="courses.html">Cursos</a></li>
+      <li><a class="navbar-menu-item" href="notifications.html">Notificações</a></li>
     </ul>
     <!-- /Menu main -->
 
@@ -56,8 +58,8 @@
          only on login -->
     <ul class="nav navbar-nav pull-right">
       <li id="menu-user-dropdown" class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entrar <span class="caret"></span></a>
-        <ul class="dropdown-menu pull-right" role="menu">
+        <a href="#" class="navbar-menu-item dropdown-toggle" data-toggle="dropdown">Entrar <span class="caret"></span></a>
+        <ul class="dropdown-menu pull-right" role="menu" style="margin-top: 0.3em">
           <form id="form-login" class="form-horizontal col-xs-20" role="form">
   <div class="form-group">
     <div class="input-group col-xs-24">
@@ -79,6 +81,13 @@
     <div class="col-xs-12 pull-right row">
       <button type="submit" class="col-xs-24 btn btn-sm btn-success">Entrar</button>
     </div>
+
+    <div class="container-button-signin col-xs-24">
+      <div class="row">
+        <li class="divider"></li>
+        <button type="submit" class="col-xs-24 btn btn-sm btn-primary">Criar nova conta</button>
+      </div>
+    </div>
   </div>
 </form>
 
@@ -91,6 +100,19 @@
   </div><!-- end container -->
 </nav><!-- end navigation #navbarmain -->
 
+<div class="container" style="position: relative; top: 1.2em;">
+  <div class="col-xs-21 row pull-right">
+  <!-- breadcrumb -->
+  <ol class="breadcrumb">
+  <li><a href="#">Início</a></li>
+  <li><a href="#">Seção Intermediária</a></li>
+  <li class="active">Seção Atual</li>
+</ol>
+
+  <!-- /breadcrumb -->
+  </div>
+</div>
+
     <!-- /header -->
 
     <!-- section -->
@@ -98,23 +120,14 @@
 <section class="jumbotron">
   <div class="container">
 
-    <div class="pull-right col-xs-18 row" style="position: relative; top: -2.5em;">
-      <!-- breadcrumb -->
-      <ol class="breadcrumb">
-  <li><a href="#">Início</a></li>
-  <li><a href="#">Seção Intermediária</a></li>
-  <li class="active">Seção Atual</li>
-</ol>
-
-      <!-- /breadcrumb -->
-
+    <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
       <h3>Pessoas <small><br>Aqui você encontra as pessoas</small></h3>
 
       <div id="user-list" class="row">
 
         <div class="col-xs-8">
           <div class="user-list-widget thumbnail">
-  <img class="user-list-img" data-src="holder.js/100%x200" alt="100%x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDIiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEyMSIgeT0iMTAwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjE1cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjQyeDIwMDwvdGV4dD48L3N2Zz4=" style="height: 200px; width: 100%; display: block;">
+  <img class="user-list-img img-circle" src="img/img-groups.jpg">
   <div class="caption">
     <h4 class="user-list-name">João Ubaldo</h4>
     <p class="user-list-desc">Escritor, jornalista, roteirista e professor brasileiro, formado em direito e membro da Academia Brasileira de Letras.</p>
@@ -130,7 +143,7 @@
 
         <div class="col-xs-8">
           <div class="user-list-widget thumbnail">
-  <img class="user-list-img" data-src="holder.js/100%x200" alt="100%x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDIiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEyMSIgeT0iMTAwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjE1cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjQyeDIwMDwvdGV4dD48L3N2Zz4=" style="height: 200px; width: 100%; display: block;">
+  <img class="user-list-img img-circle" src="img/img-groups.jpg">
   <div class="caption">
     <h4 class="user-list-name">João Ubaldo</h4>
     <p class="user-list-desc">Escritor, jornalista, roteirista e professor brasileiro, formado em direito e membro da Academia Brasileira de Letras.</p>
@@ -146,7 +159,7 @@
 
         <div class="col-xs-8">
           <div class="user-list-widget thumbnail">
-  <img class="user-list-img" data-src="holder.js/100%x200" alt="100%x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDIiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEyMSIgeT0iMTAwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjE1cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjQyeDIwMDwvdGV4dD48L3N2Zz4=" style="height: 200px; width: 100%; display: block;">
+  <img class="user-list-img img-circle" src="img/img-groups.jpg">
   <div class="caption">
     <h4 class="user-list-name">João Ubaldo</h4>
     <p class="user-list-desc">Escritor, jornalista, roteirista e professor brasileiro, formado em direito e membro da Academia Brasileira de Letras.</p>
