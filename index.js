@@ -10,9 +10,9 @@ module.exports = {
   configs: {
     // sails views
     views: {
-      path: 'templates/sails',
-      layout: 'templates/sails/layouts/default.ejs',
-      filesToInjectCssJs: 'templates/sails/**/*.ejs',
+      path: 'theme/templates/sails',
+      layout: 'theme/templates/sails/layouts/default.ejs',
+      filesToInjectCssJs: 'theme/templates/sails/**/*.ejs',
     },
 
     // email views
@@ -30,7 +30,7 @@ module.exports = {
     // stylesheet assets
     stylesheet: {
       files: [
-        'stylesheet/styles.min.css'
+        'theme/stylesheet/styles.min.css'
       ]
     }
 
