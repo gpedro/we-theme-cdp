@@ -6,7 +6,16 @@
     background-position: right;
     height: 4px;
     position: relative;
-    bottom: -50px;
+    bottom: -70px;
+  }
+  .navbar-brand {
+    padding: 0;
+  }
+  .navbar-nav {
+    .navbar-menu-item {
+      height: 70px;
+      line-height: 40px;
+    }
   }
 }
 #menu-user-dropdown {

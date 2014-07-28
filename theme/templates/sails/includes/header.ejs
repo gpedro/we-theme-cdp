@@ -13,17 +13,19 @@
       <!-- /Toggle button -->
 
       <!-- Logo -->
-      <a class="navbar-brand" href="index.html">CdP: logo</a>
+      <a class="navbar-brand" href="index.html">
+        <img src="../src/img/cdp-logo.png" alt="Comunidade de Práticas"/>
+      </a>
       <!-- /Logo -->
     </div>
 
     <!-- Menu main -->
     <ul class="nav navbar-nav">
-      <li><a href="people.html">Pessoas</a></li>
-      <li><a href="feed.html">Mensagem</a></li>
-      <li><a href="groups.html">Comunidades</a></li>
-      <li><a href="courses.html">Cursos</a></li>
-      <li class="active"><a href="notifications.html">Notificações</a></li>
+      <li><a class="navbar-menu-item" href="people.html">Pessoas</a></li>
+      <li><a class="navbar-menu-item" href="feed.html">Mensagem</a></li>
+      <li><a class="navbar-menu-item" href="groups.html">Comunidades</a></li>
+      <li><a class="navbar-menu-item" href="courses.html">Cursos</a></li>
+      <li><a class="navbar-menu-item" href="notifications.html">Notificações</a></li>
     </ul>
     <!-- /Menu main -->
 
@@ -31,7 +33,7 @@
          only on login -->
     <ul class="nav navbar-nav pull-right">
       <li id="menu-user-dropdown" class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entrar <span class="caret"></span></a>
+        <a href="#" class="navbar-menu-item dropdown-toggle" data-toggle="dropdown">Entrar <span class="caret"></span></a>
         <ul class="dropdown-menu pull-right" role="menu">
           <% include ../includes/form/login.ejs %>
         </ul>
