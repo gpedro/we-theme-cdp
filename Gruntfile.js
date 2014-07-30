@@ -23,11 +23,11 @@ module.exports = function (grunt) {
     sass: {
       options: {
         includePaths: ['<%= path.src %>/sass'],
-        outputStyle: 'compressed'
+        outputStyle: 'nested'
       },
       stylesheet: {
         files: {
-          '<%= path.theme %>/stylesheet/styles.min.css' : '<%= path.src %>/sass/bootstrap.scss'
+          '<%= path.dist %>/css/styles.css' : '<%= path.src %>/sass/bootstrap.scss'
         }
       }
     },
