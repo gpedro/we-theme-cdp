@@ -1,8 +1,0 @@
-{
-  "variables": {
-    "title": "We.js theme default",
-    "_csrf": "_csrf",
-    "stylesheet_url": "../theme/stylesheet/styles.min.css",
-    "javascript_url": "../theme/javascript/scripts.min.js"
-  }
-}
