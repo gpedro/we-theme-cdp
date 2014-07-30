@@ -14,45 +14,7 @@ module.exports = function (grunt) {
     // config: paths
     path: {
       bower: 'bower_components',
-      templates: 'theme/templates',
-      theme: 'theme',
       src: 'src'
-    },
-
-    // grunt-templater
-    // https://github.com/rockwood/grunt-templater
-    data: grunt.file.readJSON('demo/data.json'),
-    template: {
-      default: {
-        src: ['<%= path.templates %>/sails/layouts/default.ejs'],
-        dest: 'demo/index.html',
-        variables: '<%= data.variables %>'
-      },
-      SecUsers: {
-        src: ['<%= path.templates %>/section/people.ejs'],
-        dest: 'demo/people.html',
-        variables: '<%= data.variables %>'
-      },
-      SecGroups: {
-        src: ['<%= path.templates %>/section/groups.ejs'],
-        dest: 'demo/groups.html',
-        variables: '<%= data.variables %>'
-      },
-      SecCourses: {
-        src: ['<%= path.templates %>/section/courses.ejs'],
-        dest: 'demo/courses.html',
-        variables: '<%= data.variables %>'
-      },
-      SecFeed: {
-        src: ['<%= path.templates %>/section/feed.ejs'],
-        dest: 'demo/feed.html',
-        variables: '<%= data.variables %>'
-      },
-      SecNotifications: {
-        src: ['<%= path.templates %>/section/notifications.ejs'],
-        dest: 'demo/notifications.html',
-        variables: '<%= data.variables %>'
-      }
     },
 
     // grunt-sass
