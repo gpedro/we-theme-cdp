@@ -58,6 +58,17 @@ module.exports = function (grunt) {
       }
     },
 
+    // grunt-contrib-copy
+    // https://github.com/gruntjs/grunt-contrib-copy
+    copy: {
+      icons: {
+        expand: true,
+        cwd: '<%= path.src %>/icons/',
+        src: '**',
+        dest: '<%= path.dist %>/icons/'
+      },
+    },
+
     // grunt-contrib-watch
     // https://github.com/gruntjs/grunt-contrib-watch
     watch: {
