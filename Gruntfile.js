@@ -14,7 +14,8 @@ module.exports = function (grunt) {
     // config: paths
     path: {
       bower: 'bower_components',
-      src: 'src'
+      src: 'assets/src',
+      dist: 'assets/dist'
     },
 
     // grunt-sass
@@ -38,6 +39,22 @@ module.exports = function (grunt) {
         files: {
           '<%= path.theme %>/javascript/scripts.min.js': ['<%= path.src %>/js/jquery.js', '<%= path.src %>/js/bootstrap.js']
         }
+      }
+    },
+
+    // grunt-contrib-imagemin
+    // https://github.com/gruntjs/grunt-contrib-imagemin
+    imagemin: {
+      static: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= path.src %>/images/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: '<%= path.dist %>/img/'
+        }]
       }
     },
 
