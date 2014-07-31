@@ -58,26 +58,28 @@
     <!-- Menu User #menu-user-dropdown
          only on login -->
     <ul class="nav navbar-nav pull-right">
-      <li style="font-size: 0.9em; text-align: left;">
-        <p style="margin: 15px 0 -15px -10px;">Não tem uma conta?</p>
-        <a data-toggle="modal" data-target="#myModal" style="cursor: pointer; font-weight: bold; margin: 0 0 0 -20px;">Crie aqui.</a>
-      </li>
       {{#if isAuthenticated}}
         {{we-connection-status}}
+
+        {{else}}
+        <li style="font-size: 0.9em; text-align: left;">
+          <p style="margin: 15px 0 -15px -10px;">Não tem uma conta?</p>
+          <a data-toggle="modal" data-target="#myModal" style="cursor: pointer; font-weight: bold; margin: 0 0 0 -20px;">Crie aqui.</a>
+        </li>
+
+        <li id="menu-user-dropdown" class="dropdown">
+          <button class="btn btn-primary navbar-login-buttom navbar-btn dropdown-toggle" data-toggle="dropdown">
+            {{t Entrar}}<span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" style="margin-top: 1.5em">
+            <!-- FORM LOGIN -->
+            {{we-auth-modal-login}}
+            <!-- /FORM LOGIN -->
+          </ul>
+        </li>
       {{/if}}
 
       {{render 'user/usermenu' App.currentUser controller='UserMenu'}}
-
-      <li id="menu-user-dropdown" class="dropdown">
-        <button class="btn btn-primary navbar-login-buttom navbar-btn dropdown-toggle" data-toggle="dropdown">
-          {{t Entrar}}<span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu pull-right" role="menu" style="margin-top: 1.5em">
-          <!-- FORM LOGIN -->
-          {{we-auth-modal-login}}
-          <!-- /FORM LOGIN -->
-        </ul>
-      </li>
     </ul>
     <!-- /Menu User -->
 
