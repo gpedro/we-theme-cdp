@@ -10,29 +10,25 @@ module.exports = {
   configs: {
     // sails views
     views: {
-      path: 'theme/templates/sails',
-      layout: 'theme/templates/sails/layouts/default.ejs',
-      filesToInjectCssJs: 'theme/templates/sails/**/*.ejs',
+      path: 'templates/sails',
+      layout: 'templates/sails/layouts/default.ejs',
+      filesToInjectCssJs: 'templates/sails/**/*.ejs',
     },
 
-    // email views
+    emberTemplates: {
+      path: 'templates/ember',
+    },
+
+    email views
     emailTemplates: {
       path: 'templates/email',
     },
 
-    // javascript assets
-    javascript: {
-      files: [
-        'javascript/scripts.min.js'
-      ]
-    },
+    assetsFolderToCopy: 'assets/dist/**/*',
 
-    // stylesheet assets
-    stylesheet: {
-      files: [
-        'theme/stylesheet/styles.min.css'
-      ]
-    }
+    javascript: 'assets/dist/js/scripts.js',
+
+    stylesheet: 'assets/dist/css/styles.css'
 
   }
 };
