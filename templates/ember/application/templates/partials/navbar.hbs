@@ -13,19 +13,20 @@
       <!-- /Toggle button -->
 
       <!-- Logo -->
-      <a class="navbar-brand" href="index.html">
-        <img src="../src/img/cdp-logo.png" alt="Comunidade de Práticas"/>
-      </a>
+      {{#link-to 'home' classNames="app-main-logo navbar-brand"}}
+        <img src="theme/assets/dist/img/cdp-logo.png" alt="Comunidade de Práticas"/>
+      {{/link-to}}
+
       <!-- /Logo -->
     </div>
 
     <!-- Menu main -->
     <ul class="nav navbar-nav">
       <li>
-        <a class="navbar-menu-item" href="people.html" style="text-align: center;">
+        {{#link-to 'users' classNames="navbar-menu-item"}}
           <div class="icon icon-people" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
-          Pessoas
-        </a>
+          {{t 'Pessoas'}}
+        {{/link-to}}
       </li>
       <li>
         <a class="navbar-menu-item" href="feed.html" style="text-align: center;">
@@ -34,10 +35,10 @@
         </a>
       </li>
       <li>
-        <a class="navbar-menu-item" href="groups.html" style="text-align: center;">
+        {{#link-to 'groups' classNames="navbar-menu-item"}}
           <div class="icon icon-cdp-logo" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
-          Comunidades
-        </a>
+          {{t 'Comunidades'}}
+        {{/link-to}}
       </li>
       <li>
         <a class="navbar-menu-item" href="courses.html" style="text-align: center;">
@@ -46,10 +47,10 @@
         </a>
       </li>
       <li>
-        <a class="navbar-menu-item" href="notifications.html" style="text-align: center;">
+        {{#link-to 'notifications' classNames="navbar-menu-item"}}
           <div class="icon icon-bell" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
-          Notificações
-        </a>
+          {{t 'Notificações'}}
+        {{/link-to}}
       </li>
     </ul>
     <!-- /Menu main -->
@@ -57,10 +58,24 @@
     <!-- Menu User #menu-user-dropdown
          only on login -->
     <ul class="nav navbar-nav pull-right">
+      <li style="font-size: 0.9em; text-align: left;">
+        <p style="margin: 15px 0 -15px -10px;">Não tem uma conta?</p>
+        <a {{action showModal}} style="font-weight: bold; margin: 0 0 0 -20px;">Crie aqui.</a>
+      </li>
+      {{#if isAuthenticated}}
+        {{we-connection-status}}
+      {{/if}}
+
+      {{render 'user/usermenu' App.currentUser controller='UserMenu'}}
+
       <li id="menu-user-dropdown" class="dropdown">
-        <button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Entrar <span class="caret"></span></button>
+        <button class="btn btn-primary navbar-login-buttom navbar-btn dropdown-toggle" data-toggle="dropdown">
+          {{t Entrar}}<span class="caret"></span>
+        </button>
         <ul class="dropdown-menu pull-right" role="menu" style="margin-top: 1.5em">
-          <% include ../includes/form/login.ejs %>
+          <!-- FORM LOGIN -->
+          {{we-auth-modal-login}}
+          <!-- /FORM LOGIN -->
         </ul>
       </li>
     </ul>
@@ -72,8 +87,13 @@
 
 <div class="container" style="position: relative; top: 1.2em;">
   <div class="col-xs-21 row pull-right">
-  <!-- breadcrumb -->
-  <% include breadcrumb.ejs %>
-  <!-- /breadcrumb -->
+  <!-- BREADCRUMB -->
+  <ol class="breadcrumb">
+    <div class="icon icon-question pull-left" style="font-size: 1.2em; color: #999; position: relative; left: -0.35em"></div>
+    <li><a href="#">Início</a></li>
+    <li><a href="#">Seção Intermediária</a></li>
+    <li class="active">Seção Atual</li>
+  </ol>
+  <!-- /BREADCRUMB -->
   </div>
 </div>
