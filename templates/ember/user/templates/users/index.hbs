@@ -1,0 +1,12 @@
+<section class="jumbotron">
+  <div class="container">
+
+    <div id="dynamic-grid-container" class="users row">
+      <div class="col-md-12"><h2>{{t 'Usuários'}}</h2></div>
+      {{#each controller}}
+        {{render 'user/teaser' this}}
+      {{/each}}
+    </div>
+
+  </div>
+</section>

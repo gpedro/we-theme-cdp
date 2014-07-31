@@ -1,0 +1,29 @@
+{{#if isVisible}}
+  <li>
+    <button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown" style="margin-top: -12px; border: none;">
+      <span class="avatar-small">{{we-avatar userId=App.currentUser.id}}</span>
+      <span class="user-name " >{{App.currentUser.username}}</span><b class="caret"></b>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right" style="margin-top: 20px;">
+      <li>
+        <a href="#ChangeAvatarModal" {{action "showAvatarChangeModal"}} >
+          {{t 'Mudar Imagem'}}
+        </a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        {{#link-to 'user' App.currentUser.id}}
+          {{t 'Ver / Editar Perfil'}}
+        {{/link-to}}
+      </li>
+      <li class="divider"></li>
+      <li>
+        {{#link-to 'authChangePassword'}}
+          {{t 'Mudar senha'}}
+        {{/link-to}}
+      </li>
+      <li class="divider"></li>
+      <li><a href="/auth/logout" style="margin-left: 8px; color: white;" class="col-xs-22 btn btn-sm btn-danger">{{t 'Sair'}}</a></li>
+    </ul>
+  </li>
+{{/if}}

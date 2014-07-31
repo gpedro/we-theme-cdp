@@ -1,0 +1,15 @@
+<section class="jumbotron">
+  <div class="container">
+
+    <div class="activities">
+      <div class="activities-left col-md-5">
+          {{t 'Últimas atividades deste usuário'}}
+      </div>
+      <div class="activities-right col-md-7">
+        <h3>{{t 'Atividades'}}</h3>
+       {{render 'post/list' posts controller='Posts'}}
+      </div>
+    </div>
+
+  </div>
+</section>
