@@ -5053,7 +5053,7 @@ body {
   border-bottom: 4px solid #e1e1e1;
   background: #fff; }
   #navbar-main .bar-colored {
-    background-image: url('../../src/img/bar-colored.png');
+    background-image: url('../img/bar-colored.png');
     background-repeat: no-repeat;
     background-position: right;
     height: 4px;
