@@ -60,7 +60,7 @@
     <ul class="nav navbar-nav pull-right">
       <li style="font-size: 0.9em; text-align: left;">
         <p style="margin: 15px 0 -15px -10px;">Não tem uma conta?</p>
-        <a {{action showModal}} style="font-weight: bold; margin: 0 0 0 -20px;">Crie aqui.</a>
+        <a data-toggle="modal" data-target="#myModal" style="cursor: pointer; font-weight: bold; margin: 0 0 0 -20px;">Crie aqui.</a>
       </li>
       {{#if isAuthenticated}}
         {{we-connection-status}}
