@@ -32,16 +32,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // grunt-contrib-uglify
-    // https://github.com/gruntjs/grunt-contrib-uglify
-    uglify: {
-      dist: {
-        files: {
-          '<%= path.theme %>/javascript/scripts.min.js': ['<%= path.src %>/js/jquery.js', '<%= path.src %>/js/bootstrap.js']
-        }
-      }
-    },
-
     // grunt-contrib-imagemin
     // https://github.com/gruntjs/grunt-contrib-imagemin
     imagemin: {
@@ -69,6 +59,16 @@ module.exports = function (grunt) {
       },
     },
 
+    // grunt-contrib-concat
+    // https://github.com/gruntjs/grunt-contrib-concat
+    concat: {
+      dist: {
+        src: ['<%= path.src %>/javascript/jquery.js',
+              '<%= path.src %>/javascript/bootstrap.js'],
+        dest: '<%= path.dist %>/js/scripts.js',
+      },
+    },
+
     // grunt-contrib-watch
     // https://github.com/gruntjs/grunt-contrib-watch
     watch: {
@@ -81,7 +81,7 @@ module.exports = function (grunt) {
       },
       javascript: {
         files: '<%= path.src %>/javascript/**/*.js',
-        tasks: ['uglify'],
+        tasks: ['concat'],
         options: {
           livereload: true
         }
