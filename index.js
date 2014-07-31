@@ -19,7 +19,6 @@ module.exports = {
       path: 'templates/ember',
     },
 
-    email views
     emailTemplates: {
       path: 'templates/email',
     },
