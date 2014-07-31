@@ -1,0 +1,26 @@
+<!-- Splash Global
+    Use for welcome to user -->
+<section id="splash-global" style="padding-top: 3em;" class="">
+  <div class="container">
+
+    <div class="pull-left col-xs-20 row">
+      {{partial 'partials/home-about-site'}}
+
+      <button data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-primary" role="button" target="_blank">
+        Cadastre-se
+      </button>
+    </div>
+
+    {{#if isAuthenticated}}
+      <div class="sharebox-area masonry-brick  content-block">
+        {{render 'post/sharebox' postNew}}
+      </div>
+      {{render 'posts/list' posts controller='Posts'}}
+    {{else}}
+      <div class="highlighted">
+        {{render 'auth/RegisterForm' this controller='AuthRegister'}}
+      </div>
+    {{/if}}
+
+  </div><!-- end container -->
+</section><!-- end splash global -->
