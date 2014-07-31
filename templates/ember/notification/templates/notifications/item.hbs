@@ -1,0 +1,11 @@
+<tr {{bind-attr class='itemClass'}}>
+  <td>
+    <div class="icon icon-bell"></div> {{id}}
+  </td>
+  <td>
+    {{{text}}}
+  </td>
+  <td>
+    <button {{action 'changeNotificedStatus'}} {{bind-attr class=itemClass}} class="btn btn-sm btn-success">{{linkStatusText}}</button>
+  </td>
+</tr>
