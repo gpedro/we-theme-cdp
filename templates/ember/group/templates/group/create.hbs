@@ -1,0 +1,30 @@
+<section class="jumbotron">
+  <div class="container">
+
+    <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
+      <h3>{{t 'Criar Comunidade'}} <small><br>{{t 'Crie aqui uma comunidade'}}</small></h3>
+
+      <div id="group-list" class="row">
+
+        <div style="position: relative; top: 15px; left: 15px">
+          <form role="form" {{action "submit" on="submit"}}>
+            <div class="form-group">
+              <div class="input-group row">
+                <div class="col-xs-20">
+                  {{input id="name" name="name" value=group.name type="text" placeholder="Enter group name" required="true" classNames="form-control"}}
+                </div>
+                <div class="col-xs-20">
+                  {{view Ember.Select name="Privacity" value=group.privacity optionValuePath="content.value" optionLabelPath="content.label" content=privacityList classNames="form-control"}}
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary col-xs-6">{{t 'Criar'}}</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div><!-- end container -->
+
+  </div>
+</section>
