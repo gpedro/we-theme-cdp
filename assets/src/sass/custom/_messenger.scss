@@ -1,0 +1,137 @@
+
+
+
+
+.messenger-area-wrapper {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0px;
+  visibility: hidden;
+  width: 100%;
+  z-index: 3;
+}
+.messenger-area-wrapper .messenger-column {
+  height: 500px;
+  width: 250px;
+  margin: 0px 5px;
+  float: right;
+}
+.messenger-area-wrapper .messenger-column div {
+  visibility: visible;
+}
+.messenger-area-wrapper avatar img {
+  width: 30px;
+  height: 30px;
+}
+.messenger-area-wrapper .createdAt {
+  color: #999999;
+  font-size: 0.75em;
+  margin: 2px;
+  text-align: left;
+}
+div.messenger-area {
+  bottom: 0px;
+  position: absolute;
+}
+div.messenger-area .action-bar {
+  padding: 3px;
+  color: #999;
+  background-color: #fff;
+  border-bottom: 1px solid #999;
+}
+div.messenger-area .messenger {
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+.contact-chat {
+  width: 250px;
+}
+.contact-chat .header {
+  background-color: #3B5999;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px;
+}
+.contact-chat .actions {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+.contact-chat .messages {
+  height: 200px;
+  padding: 5px;
+  overflow-y: scroll;
+  background-color: #ccc;
+}
+.contact-chat .messages .message {
+  margin: 4px 2px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 3px;
+}
+.contact-chat .messages .message.sending {
+  background-color: #FFFFAC;
+}
+.contact-chat .messages .message.send {
+  background-color: #97EA90;
+}
+.contact-chat .messages .message.error {
+  background-color: #FF6630;
+}
+.contact-chat .footer {
+  padding: 5px;
+}
+.contact-chat .footer input {
+  max-width: 185px;
+}
+.messenger .contact avatar img {
+  width: 40px;
+  height: 40px;
+}
+.messenger .contact-list .contact a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.messenger .contact-list .contact a:hover {
+  text-decoration: none;
+  background-color: #eee;
+}
+.messenger .rooms-list {
+  cursor: pointer;
+}
+.messenger .header {
+  background-color: #3B5999;
+  color: #fff;
+  width: 240px;
+  padding: 5px;
+  cursor: pointer;
+}
+div.messenger-area .messenger .friendlist {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+div.messenger-area .messenger .search-area {
+  margin: 5px 0px 0px 15px;
+}
+div.messenger-off {
+  border: 1px solid #ccc;
+  background-color: #3B5999;
+  color: #fff;
+  width: 240px;
+  padding: 5px;
+  cursor: pointer;
+}
+div.messenger-off .ui-icon-person {
+  float: left;
+  vertical-align: middle;
+}
+div.messenger-off .text {
+  margin-left: 10px;
+}
+.contact-chat {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+}

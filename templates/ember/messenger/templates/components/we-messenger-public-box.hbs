@@ -1,0 +1,37 @@
+<div class="public-room-container">
+<div class="messenger-column">
+  <div class="messenger-chat-area">
+    <div class="contact-chat">
+      <div {{action 'toggleList'}} class="header">
+        <span class="contact-name">{{t "Público"}}</span>
+      </div>
+      <div class="actions">
+        <button {{action 'closeList'}} type="button" class="remove btn btn-danger btn-xs pull-right">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+
+      {{#if isListOpen}}
+
+      <div scrollTo="bottom" id="messengerBox-public" class="messages">
+        {{#each messages}}
+          {{render 'messenger/message' this}}
+        {{/each}}
+
+        <div id='messenger-after-contacts'></div>
+      </div>
+
+      <div class="footer">
+        <form {{action "sendMessage" on="submit"}} >
+          <div class="input-group">
+            {{input name="messageNew" value=messageNew type="text" placeholder=messagePlaceholder classNames="form-control input-xs"}}
+            <button style="margin: 2px 0 0 6px;" {{action "sendMessage"}} class="btn btn-sm btn-success" type="submit">{{t "Ok"}}</button>
+          </div>
+        </form>
+      </div>
+
+      {{/if}}
+    </div>
+  </div>
+</div>
+</div>
