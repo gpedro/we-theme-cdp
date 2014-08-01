@@ -1,12 +1,23 @@
 <section class="jumbotron">
   <div class="container">
 
-    <div id="dynamic-grid-container" class="users row">
-      <div class="col-md-12"><h2>{{t 'Usuários'}}</h2></div>
-      {{#each controller}}
-        {{render 'user/teaser' this}}
-      {{/each}}
+    <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
+      <h3>{{t 'Pessoas'}} <small><br>{{t 'Aqui você encontra as pessoas'}}</small></h3>
+
+      <div id="user-list" class="row">
+        <div class="col-xs-9">
+          {{#each controller}}
+            {{render 'user/teaser' this}}
+          {{/each}}
+        </div>
+      </div>
     </div>
 
-  </div>
+    <div id="draggable-widgets" class="pull-left col-xs-6">
+      <!-- widgets -->
+      :: sidebar -> widgets
+      <!-- /widgets -->
+    </div>
+
+  </div><!-- end container -->
 </section>

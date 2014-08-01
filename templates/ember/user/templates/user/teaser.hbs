@@ -1,19 +1,19 @@
-<div class="col-md-3">
-<div class="user user-teaser teaser panel panel-default text-center">
-  <div class="header panel-heading">
-    <h3>
-    {{#link-to 'user' id}}
-      {{substr username max=15}}
-    {{/link-to}}
-    </h3>
+<div class="user-list-widget thumbnail">
+  {{#link-to 'user' id}}
+    {{we-avatar userId=id size="medium"}}
+  {{/link-to}}
+  <!--<img class="user-list-img img-circle" src="img/img-groups.jpg">-->
+  <div class="caption">
+    <h4 class="user-list-name">
+      {{#link-to 'user' id}}
+        {{substr username max=15}}
+      {{/link-to}}
+    </h4>
+    <p class="user-list-desc">Escritor, jornalista, roteirista e professor brasileiro, formado em direito e membro da Academia Brasileira de Letras.</p>
+    <nav class="user-list-nav">
+      <a href="#" class="btn btn-xs btn-warning" role="button">Mensagem</a>
+      <a href="#" class="btn btn-xs btn-success" role="button">Seguir</a>
+      <a href="#" class="btn btn-xs btn-primary" role="button">Adicionar</a>
+    </nav>
   </div>
-  <div class="content panel-body">
-    {{#link-to 'user' id}}
-      <span class="avatar-large">{{we-avatar userId=id size="medium"}}</span>
-    {{/link-to}}
-  </div>
-  <div class="footer panel-footer">
-
-  </div>
-</div>
 </div>
