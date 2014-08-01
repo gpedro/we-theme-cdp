@@ -4,32 +4,23 @@
     <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
       <h3>{{t 'Comunidades'}} <small><br>{{t 'Participe das comunidades'}}</small></h3>
 
-      {{#each controller}}
-        {{render 'group/teaser' this}}
-      {{else}}
-        <p>{{t 'Não existe nenhuma comunidade no momento.'}}</p>
-      {{/each}}
-
-      {{#if App.currentUser.id}}
-        {{#link-to 'groups.create' classNames="btn btn-primary"}}
-          {{t 'Criar Comunidade'}}
-        {{/link-to}}
-        <hr>
-      {{/if}}
-
       <div id="group-list" class="row">
 
-        <div class="col-xs-24">
-          <!--<% include ../widget/groups-list-widget.ejs %>-->
+        <div style="position: relative; top: -45px; left:-20px">
+        {{#if App.currentUser.id}}
+          {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
+            {{t 'Criar Comunidade'}}
+          {{/link-to}}
+        {{/if}}
         </div>
 
-        <div class="col-xs-24">
-          <!--<% include ../widget/groups-list-widget.ejs %>-->
-        </div>
-
-        <div class="col-xs-24">
-          <!--<% include ../widget/groups-list-widget.ejs %>-->
-        </div>
+        {{#each controller}}
+          <div class="col-xs-24">
+            {{render 'group/teaser' this}}
+          </div>
+        {{else}}
+          <p>{{t 'Não existe nenhuma comunidade no momento.'}}</p>
+        {{/each}}
 
       </div>
 
