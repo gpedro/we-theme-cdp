@@ -1204,7 +1204,7 @@ pre {
       width: 970px; } }
   @media (min-width: 1200px) {
     .container {
-      width: 1050px; } }
+      width: 1110px; } }
 
 .container-fluid {
   margin-right: auto;
@@ -5119,6 +5119,205 @@ body {
 
 #group-list .group-list-widget .group-list-img {
   padding: 8px; }
+
+.messenger-area-wrapper {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0px;
+  visibility: hidden;
+  width: 100%;
+  z-index: 3; }
+
+.messenger-area-wrapper .messenger-column {
+  height: 500px;
+  width: 250px;
+  margin: 0px 5px;
+  float: right; }
+
+.messenger-area-wrapper .messenger-column div {
+  visibility: visible; }
+
+.messenger-area-wrapper avatar img {
+  width: 30px;
+  height: 30px; }
+
+.messenger-area-wrapper .createdAt {
+  color: #999999;
+  font-size: 0.75em;
+  margin: 2px;
+  text-align: left; }
+
+div.messenger-area {
+  bottom: 0px;
+  position: absolute; }
+
+div.messenger-area .action-bar {
+  padding: 3px;
+  color: #999;
+  background-color: #fff;
+  border-bottom: 1px solid #999; }
+
+div.messenger-area .messenger {
+  border: 1px solid #ccc;
+  background-color: #fff; }
+
+.contact-chat {
+  width: 250px; }
+
+.contact-chat .header {
+  background-color: #3B5999;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px; }
+
+.contact-chat .actions {
+  position: absolute;
+  right: 4px;
+  top: 4px; }
+
+.contact-chat .messages {
+  height: 200px;
+  padding: 5px;
+  overflow-y: scroll;
+  background-color: #ccc; }
+
+.contact-chat .messages .message {
+  margin: 4px 2px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 3px; }
+
+.contact-chat .messages .message.sending {
+  background-color: #FFFFAC; }
+
+.contact-chat .messages .message.send {
+  background-color: #97EA90; }
+
+.contact-chat .messages .message.error {
+  background-color: #FF6630; }
+
+.contact-chat .footer {
+  padding: 5px; }
+
+.contact-chat .footer input {
+  max-width: 185px; }
+
+.messenger .contact avatar img {
+  width: 40px;
+  height: 40px; }
+
+.messenger .contact-list .contact a {
+  position: relative;
+  display: block;
+  padding: 10px 15px; }
+
+.messenger .contact-list .contact a:hover {
+  text-decoration: none;
+  background-color: #eee; }
+
+.messenger .rooms-list {
+  cursor: pointer; }
+
+.messenger .header {
+  background-color: #3B5999;
+  color: #fff;
+  width: 240px;
+  padding: 5px;
+  cursor: pointer; }
+
+div.messenger-area .messenger .friendlist {
+  cursor: pointer;
+  margin-bottom: 15px; }
+
+div.messenger-area .messenger .search-area {
+  margin: 5px 0px 0px 15px; }
+
+div.messenger-off {
+  border: 1px solid #ccc;
+  background-color: #3B5999;
+  color: #fff;
+  width: 240px;
+  padding: 5px;
+  cursor: pointer; }
+
+div.messenger-off .ui-icon-person {
+  float: left;
+  vertical-align: middle; }
+
+div.messenger-off .text {
+  margin-left: 10px; }
+
+.contact-chat {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0; }
+
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none; }
+
+#nprogress .bar {
+  background: chartreuse;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; }
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px); }
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 202px; }
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: solid 2px transparent;
+  border-top-color: greenyellow;
+  border-left-color: #fff;
+  border-radius: 50%;
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite; }
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative; }
+
+.nprogress-custom-parent #nprogress .spinner, .nprogress-custom-parent #nprogress .bar {
+  position: absolute; }
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(360deg); } }
 
 @font-face {
   font-family: "icons-cdp";
