@@ -2,7 +2,11 @@
   <div class="container">
 
     <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
-      <h3>{{t 'Notificações'}} <br><small>{{t 'Visualize suas notificações'}}</small></h3>
+      <h3 class="title-icon">
+        <span class="icon icon-bell icon-circle icon-circle-red"></span>
+        <span class="title">{{t 'Notificações'}}</span>
+        <small class="subtitle">{{t 'Visualize suas notificações'}}</small>
+      </h3>
 
       <button {{action 'markAllAsRead'}} class="btn btn-sm btn-primary" style="float: right; margin: -4em 1.3em 2em 0;">Marcar todas como lido</button>
 

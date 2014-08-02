@@ -1,7 +1,11 @@
 <section class="container row">
 
     <div class="pull-right row col-xs-18" style="position: relative; top: -1.5em;">
-      <h3>{{t 'Pessoas'}} <small><br>{{t 'Aqui você encontra as pessoas'}}</small></h3>
+      <h3 class="title-icon">
+        <span class="icon icon-people icon-circle icon-circle-yellow"></span>
+        <span class="title">{{t 'Pessoas'}}</span>
+        <small class="subtitle">{{t 'Aqui você encontra as pessoas'}}</small>
+      </h3>
 
       <div id="user-list" class="row">
         {{#each controller}}
