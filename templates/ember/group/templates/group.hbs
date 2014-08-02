@@ -1,37 +1,45 @@
 <section class="section">
   <div class="container">
 
-    <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
-      <h3 class="title-icon">
-        <span class="icon icon-cdp-logo icon-circle icon-circle-blue"></span>
-        <span class="title">{{t 'Comunidades'}}</span>
-        <small class="subtitle">{{t 'Participe das comunidades'}}</small>
-      </h3>
-
-      <div id="group-list" class="row">
-
-        <div style="position: relative; top: -45px; left:-20px">
-        {{#if App.currentUser.id}}
-          {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
-            {{t 'Criar Comunidade'}}
-          {{/link-to}}
-        {{/if}}
-        </div>
-
-        {{#each controller}}
-          <div class="col-xs-24">
-            {{render 'group/teaser' this}}
-          </div>
-        {{else}}
-          <p>{{t 'Não existe nenhuma comunidade no momento.'}}</p>
-        {{/each}}
-
-      </div>
-
-    </div><!-- end container -->
-
     <div id="draggable-widgets" class="pull-left col-xs-6">
       <!-- widgets -->
+      <aside id="four-widget" class="panel panel-default row">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+              <div class="icon icon-logo-cdp pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+              {{#link-to 'group' id}}
+                {{name}}
+              {{/link-to}}
+            </a>
+          </h3>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse in list-group">
+
+          <div class="list-group-item">
+
+
+
+            <div class="search-in-group">
+              <form {{action 'search' on="submit"}}>
+                <div class="input-group">
+                  <div class="input-group-btn">
+                  <button class="btn btn-default"><i class="icon icon-search"></i></button>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Buscar">
+                </div>
+              </form>
+            </div>
+
+            {{#link-to 'group' id}}
+              <img width="100%" src="/imgs/logos/group2.jpg">
+            {{/link-to}}
+
+            {{partial 'group/groupActionsBlock'}}
+          </div>
+        </div>
+      </aside>
+
       <aside id="feed-widget" class="panel panel-default row">
         <div class="panel-heading">
           <h3 class="panel-title">
@@ -41,7 +49,7 @@
             </a>
           </h3>
         </div>
-        <div id="collapseThree" class="panel-collapse collapse in list-group">
+        <div id="collapseThree" class="panel-collapse collapse">
           <a href="#" class="list-group-item active">
             <h5 class="list-group-item-heading">Semana da Saúde</h5>
             <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
@@ -109,5 +117,14 @@
       <!-- /widgets -->
     </div>
 
-  </div><!-- end container -->
-</section><!-- end -->
+    <div class="col-xs-6 row pull-left">
+
+
+    </div>
+
+    <div class="col-xs-18 pull-right">
+      {{outlet}}
+    </div>
+
+  </div><!-- /container -->
+</section>
