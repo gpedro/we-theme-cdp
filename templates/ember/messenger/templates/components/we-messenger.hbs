@@ -6,7 +6,7 @@
           <div class="header" {{action 'closeList'}}>
             {{t 'Messenger'}}
           <button type="button" class="remove btn btn-default btn-xs pull-right">
-            <span class="glyphicon glyphicon-wrench"></span>
+            <div class="icon icon-star-full"></div>
           </button>
           </div>
           <ul class="nav nav-list friendlist contact-list">
@@ -22,7 +22,7 @@
             </li>
           </ul>
           <div class="search-area">
-            <input type="search" class="form-control" style="margin: 0 0 10px -7px;" placeholder="Buscar">
+            <input type="search" class="form-control" placeholder="Buscar" style="margin: 0 0 10px -7px; background: #f2f2f2; border-color: #f2f2f2;">
           </div>
         </div>
       {{else}}
@@ -30,7 +30,7 @@
           <span class="ui-icon ui-icon-person"></span>
           <span class="text">{{t 'Messenger'}}</span>
           <button type="button" class="remove btn btn-default btn-xs pull-right">
-            <span class="glyphicon glyphicon-wrench"></span>
+            <div class="icon icon-star-open"></div>
           </button>
         </div>
       {{/if}}
