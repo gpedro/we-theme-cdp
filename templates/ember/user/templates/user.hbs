@@ -1,83 +1,189 @@
+<section class="container row">
 
-{{#can editUser model.user}}
-  <div class="user-admin-actions-area well">
-    <div class="actions">
-      <span class="actions-title">{{t 'Actions'}}: </span>
 
-      <button {{action 'save'}} type="button" class="btn btn-xs btn-success">
-        <span class="glyphicon glyphicon-saved"></span> {{t 'Save'}}
-      </button>
+    <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
+      <h3 class="title-icon">
+        <span class="icon icon-user icon-circle icon-circle-yellow"></span>
+        <span class="title">{{t 'Atividades'}}</span>
+        <small class="subtitle">{{t 'Veja suas atividades'}}</small>
+      </h3>
 
-      <button {{action 'cancel'}} type="button" class="btn btn-xs btn-default">
-        <span class="glyphicon glyphicon-unchecked"></span> {{t 'Cancel'}}
-      </button>
+      <div id="group-list">
+        <div class="user-profile-menu-area text-center">
+          <ul class="user-profile-menu nav nav-pills pull-right" style="position: relative; top: -5em;">
+            <li>
+            {{#link-to 'user' user.id classNames='btn btn-primary'}}
+              {{t 'Activity'}}
+            {{/link-to}}
+            </li>
+            <li>
+            {{#link-to 'user.contacts' user.id classNames='btn btn-primary'}}
+              {{t 'Contacts'}}
+            {{/link-to}}
+            </li>
+            <li>
+            {{#link-to 'user.images' user.id classNames='btn btn-primary'}}
+              {{t 'Images'}}
+            {{/link-to}}
+            </li>
+          </ul>
+        </div>
 
-      <button {{action 'edit'}} type="button" class="btn btn-xs btn-primary">
-        <span class="glyphicon glyphicon-edit"></span> {{t 'Edit'}}
-      </button>
-
-    </div>
-  </div>
-{{/can}}
-
-<div class="col-xs-6">
-<div class="user-list-widget thumbnail">
-  {{we-avatar userId=user.id size="responsive"}}
-
-  {{#if isEditing}}
-    <div class="form-group">
-      {{view Ember.Select name="language" value=user.language content=defaultlanguages classNames="form-control input-md"}}
-    </div>
-  {{else}}
-    <div class="language-area text-center">{{user.language}}</div>
-  {{/if}}
-
-  <div class="caption">
-    <h4 class="user-list-name">
-      {{we-editable-text tagName='h1' name='username' value=user.username isEditing=isEditing}}
-    </h4>
-    <p class="user-list-desc">
-      {{we-editable-html name='biography' value=user.biography isEditing=isEditing}}
-    </p>
-    <nav class="user-list-nav">
-      <a href="#" class="btn btn-xs btn-warning" role="button">Mensagem</a>
-      <button {{action follow}} class="btn btn-xs btn-success" role="button">{{t 'Seguir'}}</button>
-      <a href="#" class="btn btn-xs btn-primary" role="button">Adicionar</a>
-
-      <div class="actions">
-        {{#if showSocialActions}}
-          <span class="social">
-            {{view App.ContactButtomView contact=contact}}
-          </span>
-        {{/if}}
+        <div class="row" style="background: #fff;">
+          {{outlet}}
+        </div>
       </div>
+    </div>
 
-    </nav>
-  </div>
-</div>
+    <div id="draggable-widgets" class="pull-left row col-xs-6">
+      <!-- widgets -->
+      <aside id="user-view-widget" class="panel panel-default row">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+              <div class="icon icon-user pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+              {{t 'Olá'}}, {{we-editable-text name='username' value=user.username isEditing=isEditing}}
+            </a>
+          </h3>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse in list-group">
+          <div href="#" class="list-group-item">
+            <span class="avatar-large">{{we-avatar userId=user.id size="responsive"}}</span>
 
-</div>
+            {{#if isEditing}}
+              <div class="form-group">
+                {{view Ember.Select name="language" value=user.language content=defaultlanguages classNames="form-control input-md"}}
+              </div>
+            {{else}}
+              <div class="language-area text-center">{{user.language}}</div>
+            {{/if}}
 
-  <div class="user-profile-menu-area text-center">
-    <ul class="user-profile-menu nav nav-pills">
-      <li>
-      {{#link-to 'user' user.id}}
-        {{t 'Activity'}}
-      {{/link-to}}
-      </li>
-      <li>
-      {{#link-to 'user.contacts' user.id}}
-        {{t 'Contacts'}}
-      {{/link-to}}
-      </li>
-      <li>
-      {{#link-to 'user.images' user.id}}
-        {{t 'Images'}}
-      {{/link-to}}
-      </li>
-    </ul>
-  </div>
+            {{#can editUser model.user}}
+              <div class="user-admin-actions-area">
+                <div class="actions">
 
-  {{outlet}}
+                  <button {{action 'save'}} type="button" class="btn btn-xs btn-success">
+                    <span class="glyphicon glyphicon-saved"></span> {{t 'Save'}}
+                  </button>
 
-</div>
+                  <button {{action 'cancel'}} type="button" class="btn btn-xs btn-warning">
+                    <span class="glyphicon glyphicon-unchecked"></span> {{t 'Cancel'}}
+                  </button>
+
+                  <button {{action 'edit'}} type="button" class="btn btn-xs btn-primary">
+                    <span class="glyphicon glyphicon-edit"></span> {{t 'Edit'}}
+                  </button>
+
+                </div>
+              </div>
+            {{/can}}
+
+            <div class="user-full">
+                  <div class="user-area-data row">
+                    <div class="user-area-data-left col-md-2" >
+
+
+
+
+                    </div>
+                    <div class="user-area-data-rigth col-md-10">
+
+                      <div class="actions">
+                        {{#if showSocialActions}}
+                          <span class="social">
+
+                            {{view App.ContactButtomView contact=contact}}
+
+                            <button {{action follow}} type="button" class="btn btn-xs btn-default">
+                                  <span class="glyphicon glyphicon-plus"></span> {{t 'Follow'}}
+                            </button>
+                          </span>
+                        {{/if}}
+                      </div>
+
+                    </div>
+                  </div>
+
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <aside id="feed-widget" class="panel panel-default row">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              <div class="icon icon-time pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+              O que está acontecendo?
+            </a>
+          </h3>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse list-group">
+          <a href="#" class="list-group-item active">
+            <h5 class="list-group-item-heading">Semana da Saúde</h5>
+            <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <h5 class="list-group-item-heading">Semana da Saúde</h5>
+            <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <h5 class="list-group-item-heading">Semana da Saúde</h5>
+            <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
+          </a>
+        </div>
+      </aside>
+
+      <aside id="groups-widget" class="panel panel-default row">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              <div class="icon icon-cdp-logo pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+              Comunidades
+            </a>
+          </h3>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse list-group">
+          <a href="#" class="list-group-item active">
+            <h5 class="list-group-item-heading">Comunidade Saúde e Bem-estar</h5>
+            <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <h5 class="list-group-item-heading">Comunidade Saúde e Bem-estar</h5>
+            <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <h5 class="list-group-item-heading">Comunidade Saúde e Bem-estar</h5>
+            <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+          </a>
+        </div>
+      </aside>
+
+      <aside id="courses-widget" class="panel panel-default row">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              <div class="icon icon-badge pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+              Cursos
+            </a>
+          </h3>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse list-group">
+          <a href="#" class="list-group-item active">
+            <h4 class="list-group-item-heading">Cursos de Saúde</h4>
+            <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Cursos de Saúde</h4>
+            <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Cursos de Saúde</h4>
+            <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+          </a>
+        </div>
+      </aside>
+      <!-- /widgets -->
+    </div>
+
+</section><!-- end -->
