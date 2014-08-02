@@ -14,57 +14,31 @@ module.exports = function (grunt) {
     // config: paths
     path: {
       bower: 'bower_components',
-      src: 'assets/src',
-      dist: 'assets/dist'
+      assets: 'assets'
     },
 
     // grunt-sass
     // https://github.com/sindresorhus/grunt-sass
     sass: {
       options: {
-        includePaths: ['<%= path.src %>/sass'],
+        includePaths: ['<%= path.assets %>/sass'],
         outputStyle: 'nested'
       },
       stylesheet: {
         files: {
-          '<%= path.dist %>/css/styles.css' : '<%= path.src %>/sass/bootstrap.scss'
+          '<%= path.assets %>/css/styles.css' : '<%= path.assets %>/sass/bootstrap.scss'
         }
       }
-    },
-
-    // grunt-contrib-imagemin
-    // https://github.com/gruntjs/grunt-contrib-imagemin
-    imagemin: {
-      static: {
-        options: {
-          optimizationLevel: 3
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= path.src %>/images/',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: '<%= path.dist %>/img/'
-        }]
-      }
-    },
-
-    // grunt-contrib-copy
-    // https://github.com/gruntjs/grunt-contrib-copy
-    copy: {
-      icons: {
-        expand: true,
-        cwd: '<%= path.src %>/icons/',
-        src: '**',
-        dest: '<%= path.dist %>/icons/'
-      },
     },
 
     // grunt-contrib-concat
     // https://github.com/gruntjs/grunt-contrib-concat
     concat: {
       dist: {
-        src: ['<%= path.src %>/javascript/bootstrap.js'],
-        dest: '<%= path.dist %>/js/scripts.js',
+        src: ['<%= path.bower %>/bootstrap/dist/js/bootstrap.js',
+              '<%= path.assets %>/js/jquery-1.10.2.min.js',
+              '<%= path.assets %>/js/jquery-ui-1.11.0.min.js'],
+        dest: '<%= path.assets %>/js/scripts.js',
       },
     },
 
@@ -72,18 +46,12 @@ module.exports = function (grunt) {
     // https://github.com/gruntjs/grunt-contrib-watch
     watch: {
       stylesheet: {
-        files: '<%= path.src %>/sass/**/*.scss',
-        tasks: ['sass'],
-        options: {
-          livereload: true
-        }
+        files: '<%= path.assets %>/sass/**/*.scss',
+        tasks: ['sass']
       },
       javascript: {
-        files: '<%= path.src %>/javascript/**/*.js',
-        tasks: ['concat'],
-        options: {
-          livereload: true
-        }
+        files: '<%= path.assets %>/js/**/*.js',
+        tasks: ['concat']
       }
     },
 
@@ -97,7 +65,8 @@ module.exports = function (grunt) {
         commitFiles: [
           'package.json',
           'bower.json',
-          '<%= path.dist %>'
+          '<%= path.assets %>/css/styles.css',
+          '<%= path.assets %>/js/scripts.js'
         ],
         createTag: true,
         tagName: 'v%VERSION%',

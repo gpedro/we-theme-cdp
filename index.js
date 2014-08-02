@@ -23,11 +23,11 @@ module.exports = {
       path: 'templates/email',
     },
 
-    assetsFolderToCopy: 'assets/dist/**/*',
+    assetsFolderToCopy: 'assets/**/*',
 
-    javascript: 'assets/dist/js/scripts.js',
+    javascript: 'assets/js/scripts.js',
 
-    stylesheet: 'assets/dist/css/styles.css'
+    stylesheet: 'assets/css/styles.css'
 
   }
 };
