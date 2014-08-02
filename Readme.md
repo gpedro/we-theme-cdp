@@ -1,6 +1,8 @@
 # we-theme-cdp
 > Tema do We.js para a Comunidade de Práticas
 
+[![Code Climate](https://codeclimate.com/github/ABS-org/we-theme-cdp/badges/gpa.svg)](https://codeclimate.com/github/ABS-org/we-theme-cdp)
+
 ### [Demonstração](https://abs-org.github.io/we-theme-cdp/demo/) &nbsp; [Documentação](http://abs-org.github.io/we-theme-cdp/docs/)
 
 ### Como usar
