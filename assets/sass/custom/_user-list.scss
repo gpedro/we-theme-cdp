@@ -1,11 +1,10 @@
 #user-list {
   .user-list-widget {
-    background: none;
     height: 300px;
     margin-right: 20px;
     padding: 10px;
     &:hover {
-      background: #fff;
+      background: lighten($gray-lighter, 3%);
     }
     .user-list-img {}
     .user-list-name {
