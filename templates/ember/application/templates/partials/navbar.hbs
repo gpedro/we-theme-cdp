@@ -22,7 +22,7 @@
 
     <!-- Menu main -->
     <ul class="nav navbar-nav">
-      <li>
+      <li style="text-align: center">
         {{#link-to 'users' classNames="navbar-menu-item"}}
           <div class="icon icon-people" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
           {{t 'Pessoas'}}
@@ -34,7 +34,7 @@
           Mensagem
         </a>
       </li>
-      <li>
+      <li style="text-align: center">
         {{#link-to 'groups' classNames="navbar-menu-item"}}
           <div class="icon icon-cdp-logo" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
           {{t 'Comunidades'}}
@@ -46,11 +46,20 @@
           Cursos
         </a>
       </li>
-      <li>
+      <li style="text-align: center">
         {{#link-to 'notifications' classNames="navbar-menu-item"}}
           <div class="icon icon-bell" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
           {{t 'Notificações'}}
         {{/link-to}}
+      </li>
+      <li class="search" style="position: relative; top: 1.2em; left: 2em;">
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <input type="search" class="form-control" placeholder="Buscar">
+          </div>
+          <button type="submit" class="btn btn-success">Ok</button>
+        </form>
+
       </li>
     </ul>
     <!-- /Menu main -->
