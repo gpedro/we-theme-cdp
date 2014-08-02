@@ -10,11 +10,10 @@ body {
   /* keep footer on bottom helper
   margin-bottom: 60px; = footer height */
   margin-bottom: 60px;
-  background: lighten($gray-lighter, 5%);
+  background: url('../img/bg-pattern.png') fixed;
 }
 
 #splash-global {
-  background-image: url('../img/bg-pattern.png');
   min-height: 41.8em;
 }
 /* Sticky footer styles
