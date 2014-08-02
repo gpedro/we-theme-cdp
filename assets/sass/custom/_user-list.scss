@@ -1,16 +1,19 @@
 #user-list {
   .user-list-widget {
-    height: 400px;
-    .user-list-img {
+    background: none;
+    height: 300px;
+    margin-right: 20px;
+    padding: 10px;
+    &:hover {
+      background: #fff;
     }
+    .user-list-img {}
     .user-list-name {
-      text-align: center;
+      text-align: left;
     }
     .user-list-desc {
       font-size: 0.9em;
-      text-align: center;
     }
-    .user-list-nav {
-    }
+    .user-list-nav {}
   }
 }

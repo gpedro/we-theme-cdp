@@ -4,11 +4,9 @@
       <h3>{{t 'Pessoas'}} <small><br>{{t 'Aqui você encontra as pessoas'}}</small></h3>
 
       <div id="user-list" class="row">
-        <div class="col-xs-8">
-          {{#each controller}}
-            {{render 'user/teaser' this}}
-          {{/each}}
-        </div>
+        {{#each controller}}
+          {{render 'user/teaser' this}}
+        {{/each}}
       </div>
     </div>
 
