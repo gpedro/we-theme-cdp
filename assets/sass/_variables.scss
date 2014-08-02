@@ -475,6 +475,17 @@ $jumbotron-heading-color:        inherit !default;
 $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
 
 
+//== Section
+//
+//##
+
+$section-padding:              30px !default;
+$section-color:                inherit !default;
+$section-bg:                   transparent;
+$section-heading-color:        inherit !default;
+$section-font-size:            ceil(($font-size-base * 1.5)) !default;
+
+
 //== Form states and alerts
 //
 //## Define colors for form feedback states and, by default, alerts.
