@@ -3,7 +3,7 @@
     <div class="messenger-area">
       {{#if isListOpen}}
         <div class="messenger">
-          <div class="header" {{action 'closeList'}}>
+          <div class="header" {{action 'closeList'}} style="background: #69bd44">
             {{t 'Messenger'}}
           <button type="button" class="remove btn btn-default btn-xs pull-right">
             <div class="icon icon-star-full"></div>
@@ -26,7 +26,7 @@
           </div>
         </div>
       {{else}}
-        <div class="messenger-off" {{action 'openList'}}>
+        <div class="messenger-off" {{action 'openList'}} style="background: #69bd44">
           <span class="ui-icon ui-icon-person"></span>
           <span class="text">{{t 'Messenger'}}</span>
           <button type="button" class="remove btn btn-default btn-xs pull-right">

@@ -2,7 +2,7 @@
 <div class="messenger-column">
   <div class="messenger-chat-area">
     <div class="contact-chat">
-      <div {{action 'toggleList'}} class="header">
+      <div {{action 'toggleList'}} class="header" style="background: #69bd44">
         <span class="contact-name">{{t "Público"}}</span>
       </div>
       <div class="actions">
@@ -25,7 +25,7 @@
         <form {{action "sendMessage" on="submit"}} >
           <div class="input-group">
             {{input name="messageNew" value=messageNew type="text" placeholder=messagePlaceholder classNames="form-control input-xs"}}
-            <button style="margin: 2px 0 0 6px;" {{action "sendMessage"}} class="btn btn-sm btn-success" type="submit">{{t "Ok"}}</button>
+            <button style="margin: 2px 0 0 6px;" {{action "sendMessage"}} class="btn btn-sm btn-primary" type="submit">{{t "Ok"}}</button>
           </div>
         </form>
       </div>
