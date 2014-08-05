@@ -1,9 +1,12 @@
 /* Sticky footer styles
 -------------------------------------------------- */
+
+$footer-fixed-height: 280px;
+
 body {
   /* keep footer on bottom helper
   margin-bottom: 60px; = footer height */
-  margin-bottom: 60px;
+  margin-bottom: $footer-fixed-height;
 }
 
 .footer-main {
@@ -11,9 +14,17 @@ body {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
+  height: $footer-fixed-height;
   background-color: $gray-lighter;
   .container .text-muted {
-    margin: 20px 0;
+    margin: 15px 0;
+  }
+  .copyright {
+    border-top: 1px solid #ccc;
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    line-height: 10px;
+    font-size: 0.85em;
   }
 }
