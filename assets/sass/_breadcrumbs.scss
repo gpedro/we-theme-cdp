@@ -7,8 +7,11 @@
   padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
   margin-bottom: $line-height-computed;
   list-style: none;
-  background-color: $breadcrumb-bg;
-  border-radius: $border-radius-base;
+  background-color: $body-bg;
+  border-bottom: 1px solid lighten($gray-light, 35%);
+  opacity: 0.75;
+
+  &:hover { opacity: 1; }
 
   > li {
     display: inline-block;
