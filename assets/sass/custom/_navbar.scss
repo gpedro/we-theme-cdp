@@ -97,6 +97,48 @@
   }
 }
 
+#search-main {
+  position: relative; top: 1.2em; left: 2em;
+
+  .search-input {
+    background: darken($gray-lighter, 4%);
+    border-color: darken($gray-lighter, 4%);
+    font-size: 0.9em;
+    &::-webkit-input-placeholder { /* WebKit browsers */
+      color: lighten($gray, 30%);
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: lighten($gray, 30%);
+        opacity:  1;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: lighten($gray, 30%);
+        opacity:  1;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: lighten($gray, 30%);
+    }
+    &:hover {
+      background: lighten($gray-lighter, 1.5%);
+      border-color: lighten($gray-lighter, 1.5%);
+      &::-webkit-input-placeholder { /* WebKit browsers */
+        color: $gray;
+      }
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+          color: $gray;
+          opacity:  1;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color: $gray;
+          opacity:  1;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+          color: $gray;
+      }
+    }
+  }
+}
+
 #menu-user-dropdown {
   .dropdown-menu {
     width: 240px;
