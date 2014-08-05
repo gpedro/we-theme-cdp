@@ -1,6 +1,6 @@
 #navbar-main {
   border-bottom: 4px solid #e1e1e1;
-  background: #fff;
+  background: $gray-lighter;
   .bar-colored {
     background-image: url('../img/bar-colored.png');
     background-repeat: no-repeat;
@@ -25,6 +25,7 @@
       display: block;
     }
     &.item-people {
+
       .icon-people {
         font-size: 2.5em;
         margin: -0.1em 0 -0.75em 0;
@@ -35,6 +36,7 @@
       &:hover {
         border-top: 3px solid $color-people;
         color: $color-people;
+        transition: all .15s ease-in-out;
       }
     }
     &.item-feed {
@@ -48,6 +50,7 @@
       &:hover {
         border-top: 3px solid $color-feed;
         color: $color-feed;
+        transition: all .15s ease-in-out;
       }
     }
     &.item-group {
@@ -62,6 +65,7 @@
       &:hover {
         border-top: 3px solid $color-group;
         color: $color-group;
+        transition: all .15s ease-in-out;
       }
     }
     &.item-course {
@@ -74,6 +78,7 @@
       &:hover {
         border-top: 3px solid $color-course;
         color: $color-course;
+        transition: all .15s ease-in-out;
       }
     }
     &.item-notifications {
@@ -84,8 +89,9 @@
         margin-top: -1.5em;
       }
       &:hover {
-        border-top: 3px solid $brand-danger;
+        border-top: 4px solid $brand-danger;
         color: $brand-danger;
+        transition: all .15s ease-in-out;
       }
     }
   }
