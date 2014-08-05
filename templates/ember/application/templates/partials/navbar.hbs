@@ -21,35 +21,35 @@
     </div>
 
     <!-- Menu main -->
-    <ul class="nav navbar-nav">
-      <li style="text-align: center">
-        {{#link-to 'users' classNames="navbar-menu-item"}}
-          <div class="icon icon-people" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
-          {{t 'Pessoas'}}
+    <ul id="menu-main" class="nav navbar-nav">
+      <li>
+        {{#link-to 'users' classNames="navbar-menu-item item-people"}}
+          <div class="icon icon-people"></div>
+          <span class="text-menu">{{t 'Pessoas'}}</span>
         {{/link-to}}
       </li>
       <li>
-        <a class="navbar-menu-item" href="#" style="color: #eee; text-align: center;">
-          <div class="icon icon-message" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
-          Mensagem
+        <a class="navbar-menu-item item-feed" href="#">
+          <div class="icon icon-message"></div>
+          <span class="text-menu">{{t 'Mensagem'}}</span>
         </a>
       </li>
-      <li style="text-align: center">
-        {{#link-to 'groups' classNames="navbar-menu-item"}}
-          <div class="icon icon-cdp-logo" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
-          {{t 'Comunidades'}}
+      <li>
+        {{#link-to 'groups' classNames="navbar-menu-item item-group"}}
+          <div class="icon icon-cdp-logo"></div>
+          <span class="text-menu">{{t 'Comunidades'}}</span>
         {{/link-to}}
       </li>
       <li>
-        <a class="navbar-menu-item" href="#" style="color: #eee; text-align: center;">
-          <div class="icon icon-badge" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
-          Cursos
+        <a class="navbar-menu-item item-course" href="#">
+          <div class="icon icon-badge"></div>
+          <span class="text-menu">{{t 'Cursos'}}</span>
         </a>
       </li>
-      <li style="text-align: center">
-        {{#link-to 'notifications' classNames="navbar-menu-item"}}
-          <div class="icon icon-bell" style="font-size: 2em; margin: -0.2em 0 -0.75em 0;"></div>
-          {{t 'Notificações'}}
+      <li>
+        {{#link-to 'notifications' classNames="navbar-menu-item item-notifications"}}
+          <div class="icon icon-bell"></div>
+          <span class="text-menu">{{t 'Notificações'}}</span>
         {{/link-to}}
       </li>
       <li class="search" style="position: relative; top: 1.2em; left: 2em;">
