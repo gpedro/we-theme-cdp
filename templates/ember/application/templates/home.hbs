@@ -97,13 +97,9 @@
       <div class="pull-left col-xs-20 row">
         {{partial 'partials/home-about-site'}}
 
-        <button data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-primary" role="button" target="_blank">
+        <a href="/auth/register" class="btn btn-lg btn-primary" role="button">
           {{t 'Cadastre-se'}}
-        </button>
-      </div>
-
-      <div class="highlighted">
-        {{render 'auth/RegisterForm' this controller='AuthRegister'}}
+        </a>
       </div>
     {{/if}}
 
