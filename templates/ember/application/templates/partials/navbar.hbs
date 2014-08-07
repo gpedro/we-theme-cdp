@@ -154,18 +154,6 @@
     <!-- Menu main -->
     <ul id="menu-main" class="nav navbar-nav">
       <li>
-        {{#link-to 'users' classNames="navbar-menu-item item-people"}}
-          <div class="icon icon-people"></div>
-          <span class="text-menu">{{t 'Pessoas'}}</span>
-        {{/link-to}}
-      </li>
-      <li>
-        <a class="navbar-menu-item item-feed" href="#">
-          <div class="icon icon-message"></div>
-          <span class="text-menu">{{t 'Mensagem'}}</span>
-        </a>
-      </li>
-      <li>
         {{#link-to 'groups' classNames="navbar-menu-item item-group"}}
           <div class="icon icon-cdp-logo"></div>
           <span class="text-menu">{{t 'Comunidades'}}</span>
@@ -175,6 +163,12 @@
         <a class="navbar-menu-item item-course" href="#">
           <div class="icon icon-badge"></div>
           <span class="text-menu">{{t 'Cursos'}}</span>
+        </a>
+      </li>
+      <li>
+        <a class="navbar-menu-item item-feed" href="#">
+          <div class="icon icon-message"></div>
+          <span class="text-menu">{{t 'Mensagem'}}</span>
         </a>
       </li>
       <li>
