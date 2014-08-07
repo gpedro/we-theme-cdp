@@ -1,7 +1,7 @@
 /* Sticky footer styles
 -------------------------------------------------- */
 
-$footer-fixed-height: 280px;
+$footer-fixed-height: 345px;
 
 body {
   /* keep footer on bottom helper
@@ -9,7 +9,7 @@ body {
   margin-bottom: $footer-fixed-height;
 }
 
-.footer-main {
+#footer-main {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -19,6 +19,55 @@ body {
   .container .text-muted {
     margin: 15px 0;
   }
+  .title-footer {
+    font-size: 1em;
+    color: $brand-primary;
+    text-transform: uppercase;
+  }
+  .small-footer {
+    color: $gray-light;
+    font-size: 0.75em;
+  }
+  .date {
+    font-size: 0.7em;
+    color: $gray-light;
+  }
+  .blog-section {
+    margin-bottom: 3em;
+  }
+  .about-section {
+    .title-footer {
+
+    }
+  }
+  .sponsor-section,
+  .partner-section {
+    .sponsor-title,
+    .partner-title {
+      color: $gray-light;
+      font-size: 1em;
+    }
+  }
+  .sponsor-list,
+  .partner-list {
+    .sponsor-list--item,
+    .partner-list--item {
+      float: left;
+      list-style: none;
+      margin-right: 3.1em;
+      margin-left: -3em;
+    }
+  }
+  .links-section {
+    .links-section--subtitle {
+      font-size: 0.9em;
+      color: $gray-light;
+    }
+    li {
+      list-style: none;
+      float: left;
+    }
+  }
   .copyright {
     border-top: 1px solid #ccc;
     height: 30px;
@@ -26,5 +75,11 @@ body {
     text-align: center;
     line-height: 10px;
     font-size: 0.85em;
+  }
+  #logo-cdp-footer {
+    width: 12em;
+    position: relative;
+    left: -2.1em;
+    top: -2px;
   }
 }
