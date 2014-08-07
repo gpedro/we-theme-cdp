@@ -16,6 +16,7 @@ body {
   /* Set the fixed height of the footer here */
   height: $footer-fixed-height;
   background-color: $gray-lighter;
+  border-top: 2px solid lighten($gray-light, 45%);
   .container .text-muted {
     margin: 15px 0;
   }
@@ -69,7 +70,7 @@ body {
     }
   }
   .copyright {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid lighten($gray-light, 45%);
     height: 30px;
     padding: 0;
     text-align: center;
