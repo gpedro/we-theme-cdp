@@ -143,8 +143,8 @@
         			</g>
         		</g>
           	</g>
-          </g>
-        </svg>
+            </g>
+          </svg>
         <!-- Fallback for IE8 <img src="/theme/assets/img/cdp-logo.png" alt="Comunidade de Práticas"/> -->
       {{/link-to}}
 
@@ -205,10 +205,10 @@
 
         {{else}}
         <li id="menu-user-dropdown" class="dropdown">
-          <button class="btn btn-primary navbar-login-buttom navbar-btn dropdown-toggle" data-toggle="dropdown">
-            {{t Entrar}}<span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-right" role="menu" style="margin-top: 1.5em">
+          <a class="navbar-login-button navbar-btn dropdown-toggle" data-toggle="dropdown">
+            {{t Entrar}}<div style="margin-left: 0.5em;" class="caret"></div>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" style="margin-top: 2em">
             <!-- FORM LOGIN -->
             {{we-auth-modal-login}}
             <!-- /FORM LOGIN -->
