@@ -66,7 +66,8 @@
       }
     }
     &.item-people {
-      &:hover {
+      &:hover,
+      &.active {
         border-top: 3px solid $color-people;
         color: $color-people;
         transition: all .25s ease-in-out;
@@ -76,28 +77,32 @@
       }
     }
     &.item-feed {
-      &:hover {
+      &:hover,
+      &.active {
         border-top: 3px solid $color-feed;
         color: $color-feed;
         transition: all .25s ease-in-out;
       }
     }
     &.item-group {
-      &:hover {
+      &:hover,
+      &.active {
         border-top: 3px solid $color-group;
         color: $color-group;
         transition: all .25s ease-in-out;
       }
     }
     &.item-course {
-      &:hover {
+      &:hover,
+      &.active {
         border-top: 3px solid $color-course;
         color: $color-course;
         transition: all .25s ease-in-out;
       }
     }
     &.item-notifications {
-      &:hover {
+      &:hover,
+      &.active {
         border-top: 3px solid $brand-danger;
         color: $brand-danger;
         transition: all .25s ease-in-out;
