@@ -1,5 +1,3 @@
-<li id="weConnectionStatusArea" {{bind-attr class=status}} style="position: relative; left: 10px; top: 32px; z-index: 9;">
-  <a href="#" {{action "toggleConnection"}} data-toggle="tooltip" data-placement="bottom" {{bind-attr title=statusLegend}}>
-    <img style="width: 14px; height: 14px;" {{bind-attr src=statusImageUrl}}>
-  </a>
-</li>
+<span class="weConnectionStatusArea" {{bind-attr class=status}}>
+  <img {{bind-attr src=statusImageUrl}}>
+</span>

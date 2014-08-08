@@ -165,6 +165,7 @@
           <span class="text-menu">{{t 'Cursos'}}</span>
         </a>
       </li>
+
       <li>
         <a class="navbar-menu-item item-feed" href="#">
           <div class="icon icon-message"></div>
@@ -177,6 +178,7 @@
           <span class="text-menu">{{t 'Notificações'}}</span>
         {{/link-to}}
       </li>
+
       <li id="search-main" class="search">
         <form class="form-inline" role="form">
           <div class="form-group">
@@ -193,11 +195,7 @@
     <!-- Menu User #menu-user-dropdown
          only on login -->
     <ul class="nav navbar-nav pull-right">
-      {{#if isAuthenticated}}
-
-        {{we-connection-status}}
-
-        {{else}}
+      {{#unless isAuthenticated}}
         <li id="menu-user-dropdown" class="dropdown">
           <a class="navbar-login-button navbar-btn dropdown-toggle" data-toggle="dropdown">
             {{t Entrar}}<div style="margin-left: 0.5em;" class="caret"></div>
@@ -208,7 +206,8 @@
             <!-- /FORM LOGIN -->
           </ul>
         </li>
-      {{/if}}
+
+      {{/unless}}
 
       {{render 'user/usermenu' App.currentUser controller='UserMenu'}}
     </ul>
