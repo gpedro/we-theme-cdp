@@ -488,7 +488,7 @@ $jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
 
 $section-padding:              30px !default;
 $section-color:                inherit !default;
-$section-bg:                   transparent;
+$section-bg:                   lighten($gray-lighter, 2.5%);
 $section-heading-color:        inherit !default;
 $section-font-size:            ceil(($font-size-base * 1.5)) !default;
 
