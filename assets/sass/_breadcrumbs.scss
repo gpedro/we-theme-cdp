@@ -4,6 +4,8 @@
 
 
 .breadcrumb {
+  font-size: 1.2em;
+  color: $gray-light;
   padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
   margin-bottom: $line-height-computed;
   list-style: none;
