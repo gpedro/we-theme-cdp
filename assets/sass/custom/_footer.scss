@@ -33,16 +33,32 @@ body {
     font-size: 0.7em;
     color: $gray-light;
   }
+
   .blog-section {
     margin-bottom: 3em;
+    height: 120px;
+    padding: 15px;
+  }
+  .facebook-section {
+    height: 120px;
+    padding: 15px;
   }
   .about-section {
-    .title-footer {
-
+    height: 140px;
+    padding: 15px;
+    .about-section--title {
+      margin-top: 14px;
+      font-size: 0.9em;
+    }
+    .btn {
+      position: relative;
+      left: 5em;
     }
   }
   .sponsor-section,
   .partner-section {
+    height: 140px;
+    padding: 15px;
     .sponsor-title,
     .partner-title {
       color: $gray-light;
@@ -60,13 +76,24 @@ body {
     }
   }
   .links-section {
+    height: 120px;
+    padding: 15px;
+    .links-section--title {
+    }
+    .links-section--icon {
+      font-size: 2em;
+    }
     .links-section--subtitle {
       font-size: 0.9em;
       color: $gray-light;
     }
-    li {
-      list-style: none;
-      float: left;
+    .links-section--list {
+      line-height: 1em;
+      .links-section--list-item {
+        list-style: none;
+        float: left;
+        padding: 0 1em 0 0;
+      }
     }
   }
   .copyright {
