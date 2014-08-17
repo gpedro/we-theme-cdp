@@ -154,6 +154,12 @@
     <!-- Menu main -->
     <ul id="menu-main" class="nav navbar-nav">
       <li>
+        {{#link-to 'users' classNames="navbar-menu-item item-people"}}
+          <div class="icon icon-people"></div>
+          <span class="text-menu">{{t 'Pessoas'}}</span>
+        {{/link-to}}
+      </li>
+      <li>
         {{#link-to 'groups' classNames="navbar-menu-item item-group"}}
           <div class="icon icon-cdp-logo"></div>
           <span class="text-menu">{{t 'Comunidades'}}</span>
