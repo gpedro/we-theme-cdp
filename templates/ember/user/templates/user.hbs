@@ -1,7 +1,7 @@
 <section class="container row">
 
 
-    <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
+    <div class="pull-right col-xs-18 row">
       <h3 class="title-icon">
         <span class="icon icon-user icon-circle icon-circle-yellow"></span>
         <span class="title">{{t 'Atividades'}}</span>
@@ -10,7 +10,7 @@
 
       <div id="group-list">
         <div class="user-profile-menu-area text-center">
-          <ul class="user-profile-menu nav nav-pills pull-right" style="position: relative; top: -5em;">
+          <ul class="user-profile-menu nav nav-pills pull-right">
             <li>
             {{#link-to 'user' user.id classNames='btn btn-primary'}}
               {{t 'Activity'}}
@@ -29,7 +29,7 @@
           </ul>
         </div>
 
-        <div class="row" style="background: #fff;">
+        <div class="row">
           {{outlet}}
         </div>
       </div>
@@ -41,7 +41,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">
             <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-              <div class="icon icon-user pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+              <div class="icon icon-user pull-left"></div>
               {{t 'Olá'}}, {{we-editable-text name='username' value=user.username isEditing=isEditing}}
             </a>
           </h3>
@@ -113,7 +113,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">
             <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-              <div class="icon icon-time pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+              <div class="icon icon-time pull-left"></div>
               O que está acontecendo?
             </a>
           </h3>
@@ -138,7 +138,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">
             <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-              <div class="icon icon-cdp-logo pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+              <div class="icon icon-cdp-logo pull-left"></div>
               Comunidades
             </a>
           </h3>
@@ -163,7 +163,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">
             <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-              <div class="icon icon-badge pull-left" style="font-size: 1.5em; position: relative; left: -0.3em;"></div>
+              <div class="icon icon-badge pull-left"></div>
               Cursos
             </a>
           </h3>
