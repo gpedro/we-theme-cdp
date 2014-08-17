@@ -35,9 +35,7 @@ module.exports = function (grunt) {
     // https://github.com/gruntjs/grunt-contrib-concat
     concat: {
       dist: {
-        src: ['<%= path.bower %>/bootstrap/dist/js/bootstrap.js',
-              '<%= path.assets %>/js/jquery-1.10.2.min.js',
-              '<%= path.assets %>/js/jquery-ui-1.11.0.min.js'],
+        src: ['<%= path.bower %>/bootstrap/dist/js/bootstrap.js'],
         dest: '<%= path.assets %>/js/scripts.js',
       },
     },
