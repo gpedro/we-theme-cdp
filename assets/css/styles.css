@@ -5047,22 +5047,51 @@ body {
   #footer-main .date {
     font-size: 0.7em;
     color: #777777; }
+  #footer-main .blog-section:hover, #footer-main .facebook-section:hover, #footer-main .about-section:hover {
+    background: white; }
   #footer-main .blog-section {
-    margin-bottom: 3em; }
-  #footer-main .sponsor-section .sponsor-title, #footer-main .sponsor-section .partner-title, #footer-main .partner-section .sponsor-title, #footer-main .partner-section .partner-title {
-    color: #777777;
-    font-size: 1em; }
+    margin-bottom: 3em;
+    height: 120px;
+    padding: 15px; }
+  #footer-main .facebook-section {
+    height: 120px;
+    padding: 15px; }
+  #footer-main .about-section {
+    height: 140px;
+    padding: 15px; }
+    #footer-main .about-section .about-section--title {
+      margin-top: 14px;
+      font-size: 0.9em; }
+    #footer-main .about-section .btn {
+      position: relative;
+      left: 5em; }
+  #footer-main .sponsor-section, #footer-main .partner-section {
+    height: 140px;
+    padding: 15px; }
+    #footer-main .sponsor-section .sponsor-title, #footer-main .sponsor-section .partner-title, #footer-main .partner-section .sponsor-title, #footer-main .partner-section .partner-title {
+      color: #777777;
+      font-size: 1em; }
   #footer-main .sponsor-list .sponsor-list--item, #footer-main .sponsor-list .partner-list--item, #footer-main .partner-list .sponsor-list--item, #footer-main .partner-list .partner-list--item {
     float: left;
     list-style: none;
     margin-right: 3.1em;
     margin-left: -3em; }
-  #footer-main .links-section .links-section--subtitle {
-    font-size: 0.9em;
-    color: #777777; }
-  #footer-main .links-section li {
-    list-style: none;
-    float: left; }
+  #footer-main .links-section {
+    height: 120px;
+    padding: 15px; }
+    #footer-main .links-section .links-section--icon {
+      font-size: 2em; }
+    #footer-main .links-section .links-section--subtitle {
+      font-size: 0.9em;
+      color: #777777; }
+    #footer-main .links-section .links-section--list {
+      line-height: 1em; }
+      #footer-main .links-section .links-section--list .links-section--list-item {
+        list-style: none;
+        float: left;
+        padding: 0 1em 0 0; }
+        #footer-main .links-section .links-section--list .links-section--list-item:hover {
+          background: white; }
   #footer-main .copyright {
     border-top: 1px solid #eaeaea;
     height: 30px;
