@@ -3,6 +3,7 @@
   overflow: hidden;
   position: fixed;
   bottom: 0px;
+  right: 2%;
   visibility: hidden;
   width: 100%;
   z-index: 3;
@@ -37,6 +38,7 @@ div.messenger-area {
   }
   .messenger {
     background-color: #fff;
+    padding-bottom: 5px;
   }
 }
 
