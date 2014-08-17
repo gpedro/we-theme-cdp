@@ -1,0 +1,127 @@
+//
+// Footers
+// --------------------------------------------------
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+$footer-fixed-height: 345px;
+
+body {
+  /* keep footer on bottom helper
+  margin-bottom: 60px; = footer height */
+  margin-bottom: $footer-fixed-height;
+}
+
+#footer-main {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: $footer-fixed-height;
+  background-color: $gray-lighter;
+  border-top: 2px solid lighten($gray-light, 45%);
+  .container .text-muted {
+    margin: 15px 0;
+  }
+  .title-footer {
+    font-size: 1em;
+    color: $brand-primary;
+    text-transform: uppercase;
+  }
+  .small-footer {
+    color: $gray-light;
+    font-size: 0.75em;
+  }
+  .date {
+    font-size: 0.7em;
+    color: $gray-light;
+  }
+
+  .blog-section,
+  .facebook-section,
+  .about-section, {
+    &:hover {
+      background: lighten($gray-lighter, 10%);
+    }
+  }
+  .blog-section {
+    margin-bottom: 3em;
+    height: 120px;
+    padding: 15px;
+  }
+  .facebook-section {
+    height: 120px;
+    padding: 15px;
+  }
+  .about-section {
+    height: 140px;
+    padding: 15px;
+    .about-section--title {
+      margin-top: 14px;
+      font-size: 0.9em;
+    }
+    .btn {
+      position: relative;
+      left: 5em;
+    }
+  }
+  .sponsor-section,
+  .partner-section {
+    height: 140px;
+    padding: 15px;
+    .sponsor-title,
+    .partner-title {
+      color: $gray-light;
+      font-size: 1em;
+    }
+  }
+  .sponsor-list,
+  .partner-list {
+    .sponsor-list--item,
+    .partner-list--item {
+      float: left;
+      list-style: none;
+      margin-right: 3.1em;
+      margin-left: -3em;
+    }
+  }
+  .links-section {
+    height: 120px;
+    padding: 15px;
+    .links-section--title {
+    }
+    .links-section--icon {
+      font-size: 2em;
+    }
+    .links-section--subtitle {
+      font-size: 0.9em;
+      color: $gray-light;
+    }
+    .links-section--list {
+      line-height: 1em;
+      .links-section--list-item {
+        list-style: none;
+        float: left;
+        padding: 0 1em 0 0;
+        &:hover {
+          background: lighten($gray-lighter, 10%);
+        }
+      }
+    }
+  }
+  .copyright {
+    border-top: 1px solid lighten($gray-light, 45%);
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    line-height: 10px;
+    font-size: 0.85em;
+  }
+  #logo-cdp-footer {
+    width: 12em;
+    position: relative;
+    left: -2.1em;
+    top: -2px;
+  }
+}
