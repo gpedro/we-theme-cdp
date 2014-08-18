@@ -75,3 +75,26 @@
     }
   }
 }
+
+
+// User list
+//
+
+#user-list {
+  .user-list-widget {
+    height: 300px;
+    margin-right: 20px;
+    padding: 10px;
+    &:hover {
+      background: lighten($gray-lighter, 3%);
+    }
+    .user-list-img {}
+    .user-list-name {
+      text-align: left;
+    }
+    .user-list-desc {
+      font-size: 0.9em;
+    }
+    .user-list-nav {}
+  }
+}
