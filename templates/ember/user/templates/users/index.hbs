@@ -1,11 +1,21 @@
 <section class="container row">
 
-    <div class="pull-right row col-xs-18" style="position: relative; top: -1.5em;">
+    <div class="pull-right row col-xs-18">
       <h3 class="title-icon">
         <span class="icon icon-people icon-circle icon-circle-yellow"></span>
         <span class="title">{{t 'Pessoas'}}</span>
         <small class="subtitle">{{t 'Aqui você encontra as pessoas'}}</small>
       </h3>
+      <div>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <input type="search" class="search-input form-control" placeholder="Busque nesta seção">
+          </div>
+          <button type="submit" class="btn btn-success">
+            <div class="icon icon-search"></div>
+          </button>
+        </form>
+      </div>
 
       <div id="user-list" class="row">
         {{#each controller}}
