@@ -28,28 +28,34 @@
       <aside id="help-widget" class="panel panel-default row">
         <div class="panel-heading">
           <h2 class="panel-title">
-            <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+            <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
               O que vc pretende se cadastrando na CdP?
             </a>
           </h2>
         </div>
-        <div id="collapseThree" class="panel-collapse collapse in list-group">
+        <div id="collapseTwo" class="panel-collapse collapse in list-group">
           <a href="#" class="list-group-item">
             <div class="checkbox">
               <label>
                 <input type="checkbox"> Obter conhecimento através de cursos
               </label>
             </div>
+          </a>
+          <a href="#" class="list-group-item">
             <div class="checkbox">
               <label>
                 <input type="checkbox"> Compartilhar Relatos de Experiência
               </label>
             </div>
+          </a>
+          <a href="#" class="list-group-item">
             <div class="checkbox">
               <label>
                 <input type="checkbox"> Interagir com as comunidades
               </label>
             </div>
+          </a>
+          <a href="#" class="list-group-item">
             <div class="checkbox">
               <label>
                 <input type="checkbox"> Outro (citar)
@@ -72,21 +78,21 @@
         <form id="form-signin" class="form-horizontal user-signup-form" role="form" {{action "submit" on="submit"}} name="createAccountForm" method="POST">
           {{we-sys-messages messages=messages}}
 
-          <div class="pull-left col-xs-12">
-          <!-- input: username -->
-          <div class="form-group col-xs-24 pull-left">
-            {{input name="username" value=user.username  type="text" placeholder=usernamePlaceholder required="true" classNames="form-control input-lg"}}
-          </div>
-          <!-- /input: username -->
-
-          <!-- input: email -->
-          <div class="form-group col-xs-24 pull-left">
-            {{input name="email" value=user.email  type="email" placeholder=emailPlaceholder classNames="form-control input-lg" required="true"}}
-            <div class="message">
-              <div class="message.type">{{message.message}}</div>
+          <div class="pull-left col-xs-12 row">
+            <!-- input: username -->
+            <div class="form-group col-xs-24">
+              {{input name="username" value=user.username  type="text" placeholder=usernamePlaceholder required="true" classNames="form-control input-lg"}}
             </div>
-          </div>
-          <!-- /input: email -->
+            <!-- /input: username -->
+
+            <!-- input: email -->
+            <div class="form-group col-xs-24">
+              {{input name="email" value=user.email  type="email" placeholder=emailPlaceholder classNames="form-control input-lg" required="true"}}
+              <div class="message">
+                <div class="message.type">{{message.message}}</div>
+              </div>
+            </div>
+            <!-- /input: email -->
           </div>
 
           <div class="pull-right col-xs-12">
@@ -102,7 +108,7 @@
             <!-- /input: password -->
           </div>
 
-          <div class="form-group col-xs-6 pull-left">
+          <div class="form-group pull-left col-xs-6">
             <div class="input-group">
               <label for="language" class="input-group-addon">
                 {{t 'Idioma'}}
@@ -114,7 +120,7 @@
           {{we-sys-messages messages=messages}}
 
           <div class="form-group">
-            <div class="col-xs-5 row">
+            <div class="col-xs-5">
               <select class="form-control">
                 <option>Mês</option>
                 <option>2</option>
@@ -123,7 +129,7 @@
                 <option>5</option>
               </select>
             </div>
-            <div class="col-xs-5 row">
+            <div class="col-xs-5">
               <select class="form-control">
                 <option>Dia</option>
                 <option>2</option>
@@ -132,7 +138,7 @@
                 <option>5</option>
               </select>
             </div>
-            <div class="col-xs-5 row">
+            <div class="col-xs-5">
               <select class="form-control">
                 <option>Ano</option>
                 <option>2</option>
@@ -143,7 +149,7 @@
             </div>
           </div>
           <div class="form-group">
-            <div class="radio col-xs-8 row">
+            <div class="radio col-xs-8">
               <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios1" value="male">
                 Masculino
@@ -158,7 +164,7 @@
           </div>
 
           <div class="form-group">
-            <div class="col-xs-16 row">
+            <div class="col-xs-16">
               <button type="submit" class="col-xs-12 btn btn-lg btn-success">{{t "Cadastrar"}}</button>
             </div>
           </div>
