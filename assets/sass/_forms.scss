@@ -534,3 +534,25 @@ input[type="checkbox"] {
     }
   }
 }
+
+// Custom forms
+//
+
+#form-login {
+  position: relative;
+  top: 0.65em;
+  left: 1.25em;
+  .checkbox {
+    font-size: 0.8em;
+    line-height: 1.75em;
+    position: relative;
+    top: -1em;
+    label {
+      width: 150%;
+    }
+  }
+  .container-button-signin {
+    position: relative;
+    top: -0.5em;
+  }
+}
