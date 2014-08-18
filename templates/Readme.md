@@ -1,2 +1,2 @@
 ### templates
-> this path contain any template structure
+> esta pasta contém os arquivos de estrutura do template
