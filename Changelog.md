@@ -1,6 +1,8 @@
 ## Changelog
 > O que mudou, melhorou e/ou foi removido ao longo das versões
 
+## [v0.1.0-beta](https://github.com/ABS-org/we-theme-cdp/issues?q=is%3Aissue+milestone%3Av0.1.0-beta+is%3Aclosed)
+
 ## [v0.1.0-alpha](https://github.com/ABS-org/we-theme-cdp/issues?page=2&q=is%3Aissue+milestone%3Av0.1.0-alpha+is%3Aclosed)
 
 ### Novos recursos / Melhorias
