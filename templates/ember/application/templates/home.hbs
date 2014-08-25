@@ -97,9 +97,10 @@
       <div class="pull-left col-xs-20 row">
         {{partial 'partials/home-about-site'}}
 
-        <a href="/auth/register" class="btn btn-lg btn-primary" role="button">
+        {{#link-to 'authRegister' classNames="btn btn-lg btn-primary" role="button"}}
+
           {{t 'Cadastre-se'}}
-        </a>
+        {{/link-to}}
       </div>
     {{/if}}
 
