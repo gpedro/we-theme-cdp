@@ -13,7 +13,9 @@
     "bower_components",
     "test"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "tupi": "~0.1.0-alpha.3"
+  },
   "devDependencies": {
     "bootstrap": "~3.2.0"
   }
