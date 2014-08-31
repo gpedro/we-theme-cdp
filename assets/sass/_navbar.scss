@@ -695,11 +695,10 @@
     height: 70px;
     line-height: 40px;
     position: relative;
-    .icon {
+    .cdp {
       width: 100%;
       height: 34px;
       margin: 0 auto;
-      font-size: 2.5em;
       text-align: center;
       position: absolute;
       left: 0;
@@ -715,9 +714,10 @@
       top: 32px;
       left: 0;
     }
-    &:hover {
+    &:hover,
+    &.active {
       background: lighten($gray-lighter, 1.5%);
-      .icon {
+      .cdp {
         top: 15px;
       }
       .text-menu {
@@ -727,18 +727,13 @@
     &.item-people {
       &:hover,
       &.active {
-        border-top: 3px solid $color-people;
         color: $color-people;
         transition: all .25s ease-in-out;
-        .icon-people {
-          top: 15px;
-        }
       }
     }
     &.item-feed {
       &:hover,
       &.active {
-        border-top: 3px solid $color-feed;
         color: $color-feed;
         transition: all .25s ease-in-out;
       }
@@ -746,7 +741,6 @@
     &.item-group {
       &:hover,
       &.active {
-        border-top: 3px solid $color-group;
         color: $color-group;
         transition: all .25s ease-in-out;
       }
@@ -754,7 +748,6 @@
     &.item-course {
       &:hover,
       &.active {
-        border-top: 3px solid $color-course;
         color: $color-course;
         transition: all .25s ease-in-out;
       }
@@ -762,7 +755,6 @@
     &.item-notifications {
       &:hover,
       &.active {
-        border-top: 3px solid $brand-danger;
         color: $brand-danger;
         transition: all .25s ease-in-out;
       }
