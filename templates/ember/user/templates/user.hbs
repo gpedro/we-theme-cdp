@@ -4,7 +4,10 @@
 
     <div class="pull-right col-xs-18 row">
       <h3 class="title-icon">
-        <span class="icon icon-user icon-circle icon-circle-yellow"></span>
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x pull-left"></i>
+          <i class="fa fa-user cdp-lg cdp-stack-1x cdp-inverse"></i>
+        </span>
         <span class="title">{{t 'Atividades'}}</span>
         <small class="subtitle">{{t 'Veja suas atividades'}}</small>
       </h3>
@@ -13,7 +16,7 @@
         <div class="user-profile-menu-area text-center">
           <ul class="user-profile-menu nav nav-pills pull-right">
             <li>
-            {{#link-to 'user' user.id classNames='btn btn-primary'}}
+            {{#link-to 'user' user.id classNames='btn btn-success'}}
               {{t 'Atividade'}}
             {{/link-to}}
             </li>
@@ -23,7 +26,7 @@
             {{/link-to}}
             </li>
             <li>
-            {{#link-to 'user.images' user.id classNames='btn btn-primary'}}
+            {{#link-to 'user.images' user.id classNames='btn btn-warning'}}
               {{t 'Imagens'}}
             {{/link-to}}
             </li>
@@ -64,15 +67,15 @@
                 <div class="actions">
 
                   <button {{action 'save'}} type="button" class="btn btn-xs btn-success">
-                    <span class="glyphicon glyphicon-saved"></span> {{t 'Save'}}
+                    <i class="fa fa-saved"></i> {{t 'Save'}}
                   </button>
 
                   <button {{action 'cancel'}} type="button" class="btn btn-xs btn-warning">
-                    <span class="glyphicon glyphicon-unchecked"></span> {{t 'Cancel'}}
+                    <i class="fa fa-unchecked"></i> {{t 'Cancel'}}
                   </button>
 
                   <button {{action 'edit'}} type="button" class="btn btn-xs btn-primary">
-                    <span class="glyphicon glyphicon-edit"></span> {{t 'Edit'}}
+                    <i class="fa fa-edit"></i> {{t 'Edit'}}
                   </button>
 
                 </div>
@@ -81,22 +84,16 @@
 
             <div class="user-full">
                   <div class="user-area-data row">
-                    <div class="user-area-data-left col-md-2" >
 
-
-
-
-                    </div>
                     <div class="user-area-data-rigth col-md-10">
 
                       <div class="actions">
                         {{#if showSocialActions}}
                           <span class="social">
-
                             {{view App.ContactButtomView contact=contact}}
 
-                            <button {{action follow}} type="button" class="btn btn-xs btn-default">
-                                  <span class="glyphicon glyphicon-plus"></span> {{t 'Follow'}}
+                            <button {{action follow}} type="button" class="btn btn-xs btn-success">
+                              <i class="fa fa-plus" title="Seguir"></i> {{t 'Seguir'}}
                             </button>
                           </span>
                         {{/if}}

@@ -11,7 +11,7 @@
       {{/link-to}}
     </span>
     <a {{action 'showSharedWith'}} href="#" class="shared-with text-mute">
-      <span class="glyphicon glyphicon-globe"></span>
+      <i class="fa fa-user"></i>
     </a>
     <span class="createdAt post-created-at">{{format-date createdAt}}</span>
   </div>
@@ -36,30 +36,29 @@
       </div>
       <div class="footer">
           <div class="actions">
-              <span class="social">
-                  <button type="button" class="btn btn-xs btn-success" data-ng-click="up($event)">
-                    <span class="icon icon-star-full"></span>
-                  </button>
-                  <button type="button" class="btn btn-xs btn-danger" data-ng-click="down($event)">
-                    <span class="icon icon-star-open"></span>
-                  </button>
-              </span>
+            <button type="button" class="btn btn-xs btn-warning">
+              <i class="fa fa-envelope" title="Mensagem"></i>
+            </button>
 
-              <button type="button" class="btn btn-xs btn-primary">
-                <span class="icon icon-share"></span> {{t 'Compartilhar'}}
+            <button type="button" class="btn btn-xs btn-danger">
+              <i class="fa fa-heart" title="Amar"></i>
+            </button>
+
+            <button type="button" class="btn btn-xs btn-primary">
+              <i class="fa fa-share" title="Compartilhar"></i> {{t 'Compartilhar'}}
+            </button>
+
+            {{#can editPost model}}
+              <button type="button" class="btn btn-xs btn-warning" {{action 'edit'}}>
+                <i class="fa fa-edit-marked"></i> {{t 'Editar'}}
               </button>
+            {{/can}}
 
-              {{#can editPost model}}
-                <button type="button" class="btn btn-xs btn-warning" {{action 'edit'}}>
-                  <span class="icon icon-edit-marked"></span> {{t 'Editar'}}
-                </button>
-              {{/can}}
-
-              {{#can deletePost model}}
-                <button class="btn btn-xs btn-danger" {{action 'deleteItem'}}>
-                  <span class="icon icon-close"></span> {{t 'Deletar'}}
-                </button>
-              {{/can}}
+            {{#can deletePost model}}
+              <button class="btn btn-xs btn-danger" {{action 'deleteItem'}}>
+                <i class="fa fa-close"></i> {{t 'Deletar'}}
+              </button>
+            {{/can}}
           </div>
       </div>
     {{/if}}

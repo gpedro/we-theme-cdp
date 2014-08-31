@@ -4,20 +4,20 @@
 
 {{#if selectingAttachOption}}
 <div class="form-group attach-options">
-  <button {{action 'openShareImage'}} type="button" class="btn btn-xs btn-info">
-    <i class="icon icon-cdp-logo"></i> {{t "Imagem"}}
+  <button {{action 'openShareImage'}} type="button" class="btn btn-info" title="Imagem">
+    <i class="fa fa-image"></i>
   </button>
-  <button {{action 'openShareAudio'}} type="button" class="btn btn-xs btn-warning">
-    <i class="icon icon-cdp-logo"></i> {{t "Áudio"}}
+  <button {{action 'openShareAudio'}} type="button" class="btn btn-warning" title="Áudio">
+    <i class="fa fa-music"></i>
   </button>
-  <button {{action 'openShareVideo'}} type="button" class="btn btn-xs btn-danger">
-    <i class="icon icon-cdp-logo"></i> {{t "Vídeo"}}
+  <button {{action 'openShareVideo'}} type="button" class="btn btn-danger" title="Vídeo">
+    <i class="fa fa-video-camera"></i>
   </button>
-  <button {{action 'openShareDocs'}} type="button" class="btn btn-xs btn-info">
-    <i class="icon icon-cdp-logo"></i> {{t "Docs"}}
+  <button {{action 'openShareDocs'}} type="button" class="btn btn-success" title="Documento">
+    <i class="fa fa-file-text"></i>
   </button>
-  <button {{action 'openShareLinks'}} type="button" class="btn btn-xs btn-primary">
-    <i class="icon icon-cdp-logo"></i> {{t "Links"}}
+  <button {{action 'openShareLinks'}} type="button" class="btn btn-primary" title="Link">
+    <i class="fa fa-link"></i>
   </button>
 </div>
 {{/if}}
@@ -68,8 +68,11 @@
 
   <div class="actions">
     <button type="submit" class="btn btn-info">
-      <span class="icon icon-share"></span> {{t "Compartilhar"}}
+      <span class="fa fa-share"></span> {{t "Compartilhar"}}
     </button>
-    <button type="button" {{action 'cancel'}} class="btn btn-danger cancel"> {{t "Cancelar"}}</button>
+    <button type="button" {{action 'cancel'}} class="btn btn-danger">
+      <i class="fa fa-close"></i>
+      {{t "Cancelar"}}
+    </button>
   </div>
 </div>
