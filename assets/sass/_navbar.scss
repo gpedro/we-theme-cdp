@@ -658,13 +658,13 @@
 //
 
 #navbar-main {
-  outline: 4px solid #e1e1e1;
+  outline: 2px solid #e1e1e1;
   background: $gray-lighter;
   .bar-colored {
     background-image: url('../img/bar-colored.png');
     background-repeat: no-repeat;
     background-position: right;
-    height: 4px;
+    height: 2px;
     position: relative;
     bottom: -70px;
   }
