@@ -20,7 +20,23 @@
 .widget-trigger-collapse {
   display: block;
   width: 100%;
-  padding: 10px 15px;
+  padding: 5px;
+  .cdp {
+    position: relative;
+    &.cdp-time {
+      top: 1px;
+    }
+    &.cdp-cdp-logo {
+      top: -1px;
+    }
+    &.cdp-badge {
+      top: 1px;
+    }
+  }
+  .icon-title {
+    position: relative;
+    top: 2px;
+  }
 }
 
 #groups-widget {
