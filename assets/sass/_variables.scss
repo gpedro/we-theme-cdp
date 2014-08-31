@@ -670,7 +670,7 @@ $progress-bar-info-bg:        $brand-info !default;
 //** Background color on `.list-group-item`
 $list-group-bg:                 #fff !default;
 //** `.list-group-item` border color
-$list-group-border:             #ddd !default;
+$list-group-border:             #f4f4f4 !default;
 //** List group border radius
 $list-group-border-radius:      $border-radius-base !default;
 
@@ -712,7 +712,7 @@ $panel-inner-border:          #ddd !default;
 $panel-footer-bg:             #f5f5f5 !default;
 
 $panel-default-text:          $gray-dark !default;
-$panel-default-border:        #ddd !default;
+$panel-default-border:        #f4f4f4 !default;
 $panel-default-heading-bg:    #f5f5f5 !default;
 
 $panel-primary-text:          #fff !default;

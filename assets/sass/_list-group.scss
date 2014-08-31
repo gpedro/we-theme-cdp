@@ -25,6 +25,7 @@
   // Place the border on the list items and negative margin up for better styling
   margin-bottom: -1px;
   background-color: $list-group-bg;
+  border: 1px solid $list-group-border;
 
   // Round the first and last items
   &:first-child {
@@ -89,6 +90,7 @@ a.list-group-item {
   &.active:focus {
     z-index: 2; // Place active items above their siblings for proper border styling
     color: $list-group-active-color;
+    border-color: $list-group-active-border;
     background-color: $list-group-active-bg;
 
     // Force color to inherit for custom content
