@@ -559,7 +559,7 @@ input[type="checkbox"] {
 
 .arrow_box {
 	position: relative;
-	background: #fff;
+	background: #f5f5f5;
 	border: 1px solid #ccc;
   &:after, &:before {
     bottom: 100%;
@@ -573,7 +573,7 @@ input[type="checkbox"] {
   }
   &:after {
     border-color: rgba(136, 183, 213, 0);
-    border-bottom-color: #fff;
+    border-bottom-color: #f5f5f5;
     border-width: 10px;
     margin-left: 86px;
   }
