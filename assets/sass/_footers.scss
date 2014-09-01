@@ -43,6 +43,7 @@ body {
 
   .blog-section,
   .facebook-section,
+  .links-section,
   .about-section, {
     &:hover {
       background: lighten($gray-lighter, 1%);
@@ -92,12 +93,13 @@ body {
     }
   }
   .links-section {
-    height: 120px;
-    padding: 15px;
+    height: 160px;
+    margin: 15px 0 15px 0;
+    padding: 10px 20px 20px 20px;
     .links-section--title {
     }
     .links-section--icon {
-      font-size: 2em;
+      font-size: 1.4em;
     }
     .links-section--subtitle {
       font-size: 0.9em;
@@ -109,8 +111,35 @@ body {
         list-style: none;
         float: left;
         padding: 0 1em 0 0;
+        &.help-center,
+        &.cdp {
+          margin-right: 2em
+        }
         &:hover {
-          background: lighten($gray-lighter, 10%);
+          &.help-center {
+            .links-section--subtitle,
+            .small-footer {
+              color: $brand-cool;
+            }
+          }
+          &.careers {
+            .links-section--subtitle,
+            .small-footer {
+              color: $color-people;
+            }
+          }
+          &.cdp {
+            .links-section--subtitle,
+            .small-footer {
+              color: $brand-info;
+            }
+          }
+          &.contact {
+            .links-section--subtitle,
+            .small-footer {
+              color: $color-course;
+            }
+          }
         }
       }
     }
