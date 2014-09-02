@@ -31,6 +31,22 @@ module.exports = function (grunt) {
       }
     },
 
+    // grunt-contrib-imagemin
+    // https://github.com/gruntjs/grunt-contrib-imagemin
+    imagemin: {
+      static: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= path.assets %>/images/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: '<%= path.assets %>/img/'
+        }]
+      }
+    },
+
     // grunt-contrib-concat
     // https://github.com/gruntjs/grunt-contrib-concat
     concat: {
