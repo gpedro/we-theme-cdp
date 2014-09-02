@@ -5,7 +5,9 @@
 /* Sticky footer styles
 -------------------------------------------------- */
 
-$footer-fixed-height: 375px;
+$footer-fixed-height: 405px;
+$footer-first-line-height: 180px;
+$footer-second-line-height: 120px;
 
 body {
   /* keep footer on bottom helper
@@ -44,38 +46,52 @@ body {
   .blog-section,
   .facebook-section,
   .links-section,
-  .about-section, {
+  .about-section,
+  .sponsor-section,
+  .partner-section {
     &:hover {
       background: lighten($gray-lighter, 1%);
     }
   }
   .blog-section {
     margin-bottom: 3em;
-    height: 160px;
+    height: $footer-first-line-height;
     margin: 15px 0 15px 0;
     padding: 10px 20px 20px 20px;
   }
   .facebook-section {
-    height: 160px;
+    height: $footer-first-line-height;
     margin: 15px 0 15px 0;
     padding: 10px 20px 20px 20px;
   }
   .about-section {
-    height: 140px;
-    padding: 0 20px 20px 20px;
+    height: $footer-second-line-height;
+    margin: 15px 0 15px 0;
+    padding: 10px 20px 20px 20px;
     .about-section--title {
-      margin-top: 14px;
-      font-size: 0.9em;
-    }
-    .btn {
+      font-size: 1em;
       position: relative;
-      left: 5em;
+      top: -7px;
+      color: $gray-light;
+    }
+    .small-footer {
+      line-height: 1.5em!important;
+      position: relative;
+      top: -10px;
+    }
+    .btn-xs {
+      font-size: 0.8em;
+      background: #00afed;
+      padding: 2px 12px;
+      position: relative;
+      top: -5px;
     }
   }
   .sponsor-section,
   .partner-section {
-    height: 140px;
-    padding: 15px;
+    height: $footer-second-line-height;
+    margin: 15px 0 15px 0;
+    padding: 10px 20px 20px 20px;
     .sponsor-title,
     .partner-title {
       color: $gray-light;
@@ -93,7 +109,7 @@ body {
     }
   }
   .links-section {
-    height: 160px;
+    height: $footer-first-line-height;
     margin: 15px 0 15px 0;
     padding: 10px 20px 20px 20px;
     .links-section--title {
@@ -106,11 +122,19 @@ body {
       color: $gray-light;
     }
     .links-section--list {
+      margin-top: -6px;
       line-height: 1em;
       .links-section--list-item {
         list-style: none;
         float: left;
         padding: 0 1em 0 0;
+
+        .small-footer {
+          font-family: 'Open Sans';
+          font-weight: normal;
+          margin-top: -5px;
+        }
+
         &.help-center,
         &.cdp {
           margin-right: 2em
@@ -153,9 +177,8 @@ body {
     font-size: 0.85em;
   }
   #logo-cdp-footer {
-    width: 12em;
+    width: 10.4em;
     position: relative;
     left: -2.1em;
-    top: -2px;
   }
 }
