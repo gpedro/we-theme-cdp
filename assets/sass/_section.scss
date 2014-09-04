@@ -98,3 +98,23 @@
     .user-list-nav {}
   }
 }
+
+// Home
+//
+// ----------------------------
+
+.timeline-wrapper {
+  @include make-row;
+  @include make-xs-column(36);
+  float: right;
+}
+
+#draggable-widgets {
+  @include make-xs-column(12);
+  float: left;
+}
+
+#user-list {
+  @include make-row;
+  @include make-xs-column(48);
+}

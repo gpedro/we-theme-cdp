@@ -4,97 +4,25 @@
   <div class="container">
 
     {{#if isAuthenticated}}
-      <div class="timeline-wrapper pull-right row col-xs-18">
+      <div class="timeline-wrapper">
         <h3>{{t 'Timeline'}} <small><br>{{t 'Acompanhe o que acontece na rede'}}</small></h3>
-
-        <div id="user-list" class="row">
-          <div class="col-xs-24">
-            {{render 'post/sharebox' postNew}}
-            {{render 'posts/list' posts controller='Posts'}}
-          </div>
+        <div id="user-list">
+          {{render 'post/sharebox' postNew}}
+          {{render 'posts/list' posts controller='Posts'}}
         </div>
       </div>
 
-      <div id="draggable-widgets" class="pull-left col-xs-6">
+      <div id="draggable-widgets">
         <!-- widgets -->
-        <aside id="feed-widget" class="panel panel-default row">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                <div class="icon icon-time pull-left"></div>
-                O que está acontecendo?
-              </a>
-            </h3>
-          </div>
-          <div id="collapseThree" class="panel-collapse collapse in list-group">
-            <a href="#" class="list-group-item active">
-              <h5 class="list-group-item-heading">Semana da Saúde</h5>
-              <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h5 class="list-group-item-heading">Semana da Saúde</h5>
-              <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h5 class="list-group-item-heading">Semana da Saúde</h5>
-              <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências.</p>
-            </a>
-          </div>
-        </aside>
+        {{partial 'partials/feed-widget'}}
 
-        <aside id="groups-widget" class="panel panel-default row">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                <div class="icon icon-cdp-logo pull-left"></div>
-                Comunidades
-              </a>
-            </h3>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse list-group">
-            <a href="#" class="list-group-item active">
-              <h5 class="list-group-item-heading">Comunidade Saúde e Bem-estar</h5>
-              <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h5 class="list-group-item-heading">Comunidade Saúde e Bem-estar</h5>
-              <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h5 class="list-group-item-heading">Comunidade Saúde e Bem-estar</h5>
-              <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
-            </a>
-          </div>
-        </aside>
+        {{partial 'partials/group-widget'}}
 
-        <aside id="courses-widget" class="panel panel-default row">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                <div class="icon icon-badge pull-left"></div>
-                Cursos
-              </a>
-            </h3>
-          </div>
-          <div id="collapseTwo" class="panel-collapse collapse list-group">
-            <a href="#" class="list-group-item active">
-              <h4 class="list-group-item-heading">Cursos de Saúde</h4>
-              <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">Cursos de Saúde</h4>
-              <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <h4 class="list-group-item-heading">Cursos de Saúde</h4>
-              <p class="list-group-item-text">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
-            </a>
-          </div>
-        </aside>
+        {{partial 'partials/course-widget'}}
         <!-- /widgets -->
       </div>
     {{else}}
-      <div class="pull-left col-xs-20 row">
+      <div class="home-logged-out">
         {{partial 'partials/home-about-site'}}
 
         {{#link-to 'authRegister' classNames="btn btn-lg btn-primary" role="button"}}
