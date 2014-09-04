@@ -540,17 +540,20 @@ input[type="checkbox"] {
 
 #form-login {
   position: relative;
-  top: 0.65em;
-  @include make-xs-column(48);
+  top: 8px;
   .input-group {
-    @include make-xs-column(48);
+    width: 80%;
+    position: relative;
+    left: 10%;
   }
   .checkbox {
-    @include make-xs-column(25);
+    width: 55%;
     font-size: 0.8em;
     line-height: 1.75em;
     position: relative;
+    float: left;
     top: -1em;
+    left: 10%;
     label {
       width: 150%;
     }
@@ -560,17 +563,22 @@ input[type="checkbox"] {
     }
   }
   .login-btn {
-    @include make-xs-column(22);
-    float: right !important;
+    width: 35%;
+    right: 11%;
+    position: relative;
+    float: right;
     .btn {
-      @include make-xs-column(48);
+      width: 100%;
     }
   }
   .container-button-signin {
-    @include make-xs-column(48);
+    width: 76%;
+    left: 12%;
+    position: relative;
     .btn {
-      @include make-xs-column(42);
-      @include make-xs-column-offset(3);
+      width: 90%;
+      left: 5%;
+      position: relative;
     }
   }
 }
