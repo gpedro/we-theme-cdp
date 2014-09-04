@@ -1,7 +1,58 @@
 <nav id="navbar-main" class="navbar-default" role="navigation">
   <div class="container">
+    <div class="row">
 
     <div class="navbar-header">
+      <!-- Logo -->
+      {{#link-to 'home' classNames="app-main-logo navbar-brand"}}
+        {{partial 'partials/logo-cdp'}}
+      {{/link-to}}
+      <!-- /Logo -->
+    </div>
+
+    <!-- Menu main -->
+    <ul id="menu-main" class="nav navbar-nav">
+      <li class="navbar-menu-item item-people">
+        {{#link-to 'users' classNames=""}}
+          <i class="cdp cdp-people cdp-2x"></i>
+          <div class="text-menu">{{t 'Pessoas'}}</div>
+        {{/link-to}}
+      </li>
+      <li class="navbar-menu-item item-group">
+        {{#link-to 'groups' classNames=""}}
+          <i class="cdp cdp-cdp-logo cdp-2x"></i>
+          <div class="text-menu">{{t 'Comunidades'}}</div>
+        {{/link-to}}
+      </li>
+      <li class="navbar-menu-item item-course">
+        <a href="#">
+          <i class="cdp cdp-badge cdp-2x"></i>
+          <div class="text-menu">{{t 'Cursos'}}</div>
+        </a>
+      </li>
+
+      <li class="navbar-menu-item item-feed">
+        <a href="#">
+          <i class="cdp cdp-message cdp-2x"></i>
+          <div class="text-menu">{{t 'Mensagem'}}</div>
+        </a>
+      </li>
+      <li class="navbar-menu-item item-notifications">
+        {{#link-to 'notifications' classNames=""}}
+          <i class="cdp cdp-bell cdp-2x cdp-align-justify"></i>
+          <div class="text-menu">{{t 'Notificações'}}</div>
+        {{/link-to}}
+      </li>
+
+      <li id="search-main" class="search">
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <input type="search" class="search-input form-control" placeholder="O que você procura?">
+            <i class="fa fa-search fa-inverse"></i>
+          </div>
+        </form>
+      </li>
+
       <!-- Toggle button
           for mobile devices -->
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -12,68 +63,17 @@
       </button>
       <!-- /Toggle button -->
 
-      <!-- Logo -->
-      {{#link-to 'home' classNames="app-main-logo navbar-brand"}}
-        {{partial 'partials/logo-cdp'}}
-      {{/link-to}}
-      <!-- /Logo -->
-    </div>
-
-    <!-- Menu main -->
-    <ul id="menu-main" class="nav navbar-nav">
-      <li>
-        {{#link-to 'users' classNames="navbar-menu-item item-people"}}
-          <i class="cdp cdp-people cdp-2x"></i>
-          <span class="text-menu">{{t 'Pessoas'}}</span>
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'groups' classNames="navbar-menu-item item-group"}}
-          <i class="cdp cdp-cdp-logo cdp-2x"></i>
-          <span class="text-menu">{{t 'Comunidades'}}</span>
-        {{/link-to}}
-      </li>
-      <li>
-        <a class="navbar-menu-item item-course" href="#">
-          <i class="cdp cdp-badge cdp-2x"></i>
-          <span class="text-menu">{{t 'Cursos'}}</span>
-        </a>
-      </li>
-
-      <li>
-        <a class="navbar-menu-item item-feed" href="#">
-          <i class="cdp cdp-message cdp-2x"></i>
-          <span class="text-menu">{{t 'Mensagem'}}</span>
-        </a>
-      </li>
-      <li>
-        {{#link-to 'notifications' classNames="navbar-menu-item item-notifications"}}
-          <i class="cdp cdp-bell cdp-2x cdp-align-justify"></i>
-          <span class="text-menu">{{t 'Notificações'}}</span>
-        {{/link-to}}
-      </li>
-
-      <li id="search-main" class="search">
-        <form class="form-inline" role="form">
-          <div class="form-group">
-            <input type="search" class="search-input form-control" placeholder="O que você procura?">
-          </div>
-          <button type="submit" class="btn btn-success">
-            <i class="fa fa-search"></i>
-          </button>
-        </form>
-      </li>
     </ul>
     <!-- /Menu main -->
 
     <!-- Menu User #menu-user-dropdown
          only on login -->
-    <ul class="nav navbar-nav pull-right">
+    <ul class="pull-right">
       {{#unless isAuthenticated}}
         <li id="menu-user-dropdown" class="dropdown">
-          <a class="navbar-login-button navbar-btn dropdown-toggle" data-toggle="dropdown">
-            {{t Entrar}}<div style="margin-left: 0.5em;" class="caret"></div>
-          </a>
+          <button class="btn btn-info navbar-login-button navbar-btn dropdown-toggle" data-toggle="dropdown">
+            {{t Entrar}}
+          </button>
           <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
             <!-- FORM LOGIN -->
             {{we-auth-modal-login}}
@@ -88,5 +88,7 @@
     <!-- /Menu User -->
 
     <div class="bar-colored"></div>
+
+    </div><!-- /row -->
   </div><!-- end container -->
 </nav><!-- end navigation #navbarmain -->
