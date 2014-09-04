@@ -541,8 +541,12 @@ input[type="checkbox"] {
 #form-login {
   position: relative;
   top: 0.65em;
-  left: 1.25em;
+  @include make-xs-column(48);
+  .input-group {
+    @include make-xs-column(48);
+  }
   .checkbox {
+    @include make-xs-column(25);
     font-size: 0.8em;
     line-height: 1.75em;
     position: relative;
@@ -550,10 +554,24 @@ input[type="checkbox"] {
     label {
       width: 150%;
     }
+    .link {
+      position: relative;
+      top: -3px;
+    }
+  }
+  .login-btn {
+    @include make-xs-column(22);
+    float: right !important;
+    .btn {
+      @include make-xs-column(48);
+    }
   }
   .container-button-signin {
-    position: relative;
-    top: -0.5em;
+    @include make-xs-column(48);
+    .btn {
+      @include make-xs-column(42);
+      @include make-xs-column-offset(3);
+    }
   }
 }
 
@@ -574,13 +592,13 @@ input[type="checkbox"] {
   &:after {
     border-color: rgba(136, 183, 213, 0);
     border-bottom-color: #f5f5f5;
-    border-width: 10px;
-    margin-left: 86px;
+    border-width: 12px;
+    margin-left: 72px;
   }
   &:before {
     border-color: rgba(194, 225, 245, 0);
     border-bottom-color: #ccc;
-    border-width: 11px;
-    margin-left: 85px;
+    border-width: 13px;
+    margin-left: 71px;
   }
 }

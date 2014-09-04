@@ -1,19 +1,19 @@
 
-<form id="form-login" class="form-horizontal col-xs-20" role="form" name="loginForm" method="post" {{action "login" on="submit"}}>
+<form id="form-login" class="form-horizontal" role="form" name="loginForm" method="post" {{action "login" on="submit"}}>
   {{we-sys-messages messages=messages}}
 
   <div class="form-group">
-    <div class="input-group col-xs-24">
+    <div class="input-group">
       {{input name="email" value=controller.email  type="email" placeholder=controller.emailPlaceholder classNames="form-control"}}
     </div>
   </div>
   <div class="form-group">
-    <div class="input-group col-xs-24">
+    <div class="input-group">
       {{input value=controller.password type="password" placeholder=controller.passwordPlaceholder classNames="form-control"}}
     </div>
   </div>
   <div class="form-group">
-    <div class="checkbox col-xs-16 row">
+    <div class="checkbox">
       <label>
         <input type="checkbox"> Lembrar-me
       </label>
@@ -21,16 +21,16 @@
         {{t "Recuperar senha"}}
       </a>
     </div>
-    <div class="col-xs-12 pull-right row">
-      <button id="loginButton" class="col-xs-24 btn btn-sm btn-info" type="submit">
+    <div class="login-btn">
+      <button id="loginButton" class="btn btn-sm btn-info" type="submit">
         {{t "Entrar"}}
       </button>
     </div>
 
-    <div class="container-button-signin col-xs-24">
+    <div class="container-button-signin">
       <div class="row">
         <li class="divider"></li>
-        <a {{action goToRegisterPage}} href="/auth/register" data-toggle="dropdown" class="col-xs-24 btn btn-sm btn-success">
+        <a {{action goToRegisterPage}} href="/auth/register" data-toggle="dropdown" class="btn btn-sm btn-success">
           {{t "Criar nova conta"}}
         </a>
       </div>
