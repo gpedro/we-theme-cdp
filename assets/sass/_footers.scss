@@ -182,3 +182,30 @@ body {
     left: -2.1em;
   }
 }
+
+
+
+// Media Queries
+//
+// -------------------------------
+
+@media (max-width: $screen-xs-max) {
+  #footer-main {
+    background: #f0f;
+  }
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  #footer-main {
+    background: #0ff;
+  }
+}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  #footer-main {
+    background: #f00;
+  }
+}
+@media (min-width: $screen-lg-min) {
+  #footer-main {
+    background: #ff0;
+  }
+}
