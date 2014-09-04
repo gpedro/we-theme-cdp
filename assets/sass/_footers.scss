@@ -178,8 +178,8 @@ body {
   }
   #logo-cdp-footer {
     width: 10.4em;
+    left: -11px;
     position: relative;
-    left: -2.1em;
   }
 }
 
@@ -189,27 +189,26 @@ body {
 
 .first-line-block {
   @include make-row;
-  .blog-section,
-  .facebook-section { @include make-xs-column(14); }
-  .links-section { @include make-xs-column(20); }
+  .blog-section { @include make-xs-column(4); }
+  .facebook-section { @include make-xs-column(3); }
+  .links-section { @include make-xs-column(5); }
   .links-section--list { @include make-row; padding: 1em; }
-  .links-section--list-item { @include make-xs-column(22); float: left; }
+  .links-section--list-item { width: 46.5%; float: left; }
 }
 
 .second-line-block {
   @include make-row;
   .sponsor-list,
   .partner-list {
-    @include make-row;
     .sponsor-list--item,
-    .partner-list--item { @include make-xs-column(23); }
+    .partner-list--item { margin-left: -10px; }
   }
-  .about-section,
-  .sponsor-section { @include make-xs-column(14); }
-  .partner-section { @include make-xs-column(20); }
+  .about-section { @include make-xs-column(4); }
+  .sponsor-section { @include make-xs-column(3); }
+  .partner-section { @include make-xs-column(5); }
   .about-section {
-    .title-footer { @include make-xs-column(8); }
-    .description-footer { @include make-xs-column(40); }
+    .title-footer { width: 15%; padding: 0; float: left; }
+    .description-footer { width: 80%; float: right; }
   }
 }
 
@@ -232,6 +231,14 @@ body {
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   #footer-main {
     background: #f00;
+    .second-line-block {
+      .sponsor-section {
+        .sponsor-list--item {
+          padding: 0;
+          .sponsor-list--item-img { width: 100% }
+        }
+      }
+    }
   }
 }
 @media (min-width: $screen-lg-min) {
