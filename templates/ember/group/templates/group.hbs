@@ -1,9 +1,11 @@
 <section class="section">
   <div class="container">
 
-    <div id="draggable-widgets" class="pull-left col-xs-6">
+    {{outlet}}
+
+    <div id="draggable-widgets">
       <!-- widgets -->
-      <aside id="four-widget" class="panel panel-default row">
+      <aside id="four-widget" class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
             <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
@@ -31,11 +33,7 @@
 
       {{partial 'partials/course-widget'}}
 
-    </div>
-
-    <div class="col-xs-18 pull-right">
-      {{outlet}}
-    </div>
+    </div><!-- /draggable-widgets -->
 
   </div><!-- /container -->
 </section>

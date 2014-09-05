@@ -3,8 +3,7 @@
 
     {{partial "partials/breadcrumb" }}
 
-    <div class="pull-right col-xs-18 row">
-
+    <div id="group-list">
       <h3 class="title-icon pull-left">
         <span class="fa-stack">
           <i class="fa fa-circle fa-stack-2x pull-left"></i>
@@ -13,41 +12,35 @@
         <span class="title">{{t 'Comunidades'}}</span>
         <small class="subtitle">{{t 'Participe das comunidades'}}</small>
       </h3>
-
-      <div id="group-list" class="row">
-
-        <div class="pull-right">
-          <form class="form-inline" role="form">
-            <div class="form-group">
-              <input type="search" class="search-input form-control" placeholder="Busque nesta seção">
-            </div>
-            <button type="submit" class="btn btn-success">
-              <div class="icon icon-search"></div>
-            </button>
-          </form>
-        </div>
-        <br><br>
-        <div class="pull-right">
-        {{#if App.currentUser.id}}
-          {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
-            {{t 'Criar Comunidade'}}
-          {{/link-to}}
-        {{/if}}
-        </div>
-
-        {{#each controller}}
-          <div class="col-xs-24">
-            {{render 'group/teaser' this}}
+      <div class="pull-right">
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <input type="search" class="search-input form-control" placeholder="Busque nesta seção">
           </div>
-        {{else}}
-          <p>{{t 'Não existe nenhuma comunidade no momento.'}}</p>
-        {{/each}}
-
+          <button type="submit" class="btn btn-success">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
       </div>
 
-    </div><!-- end container -->
+      <div>
+      {{#if App.currentUser.id}}
+        {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
+          {{t 'Criar Comunidade'}}
+        {{/link-to}}
+      {{/if}}
+      </div>
 
-    <div id="draggable-widgets" class="pull-left col-xs-6">
+      {{#each controller}}
+        <div>
+          {{render 'group/teaser' this}}
+        </div>
+      {{else}}
+        <p>{{t 'Não existe nenhuma comunidade no momento.'}}</p>
+      {{/each}}
+    </div><!-- /group-list -->
+
+    <div id="draggable-widgets">
       <!-- widgets -->
       {{partial 'partials/feed-widget'}}
 
@@ -57,5 +50,5 @@
       <!-- /widgets -->
     </div>
 
-  </div><!-- end container -->
+  </div><!-- /container -->
 </section><!-- end -->

@@ -51,12 +51,21 @@
 //
 
 #group-list {
+  @include make-xs-column(9);
+  float: right;
   .group-list-widget {
+    width: 100%;
     height: 230px;
+    clear: both;
     .group-list-img {
       width: 220px;
       height: 220px;
       margin-right: 1em;
+      float: left;
+    }
+    .caption {
+      @include make-xs-column(8);
+      float: right;
     }
     .group-list-name {
       position: relative;

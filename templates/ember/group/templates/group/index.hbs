@@ -1,12 +1,14 @@
 <section class="section">
   <div class="container">
 
-    <h3>{{t 'Atividades'}}</h3>
-    {{render 'post/list' posts controller='Posts'}}
-    
-    <div class="sharebox-area">
-      {{render 'post/sharebox' postNew}}
-    </div>
+    <div id="group-list">
+      <h3>{{t 'Atividades'}}</h3>
+      {{render 'post/list' posts controller='Posts'}}
+
+      <div class="sharebox-area">
+        {{render 'post/sharebox' postNew}}
+      </div>
+    </div><!-- /group-list -->
 
   </div>
 </section>
