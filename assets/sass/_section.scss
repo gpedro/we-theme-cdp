@@ -79,12 +79,14 @@
 
 // User list
 //
+// --------------------------------
 
 #user-list {
+  @include make-xs-column(9);
+  float: right;
   .user-list-widget {
+    @include make-xs-column(4);
     height: 300px;
-    margin-right: 20px;
-    padding: 10px;
     &:hover {
       background: lighten($gray-lighter, 3%);
     }
@@ -98,23 +100,20 @@
     .user-list-nav {}
   }
 }
+.activities {
+  
+}
 
 // Home
 //
 // ----------------------------
 
 .timeline-wrapper {
-  @include make-row;
-  @include make-xs-column(36);
+  @include make-xs-column(10);
   float: right;
 }
 
 #draggable-widgets {
-  @include make-xs-column(12);
+  @include make-xs-column(3);
   float: left;
-}
-
-#user-list {
-  @include make-row;
-  @include make-xs-column(48);
 }

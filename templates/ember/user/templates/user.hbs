@@ -1,8 +1,9 @@
-<section class="container row">
+<section class="section">
+  <div class="container">
 
     {{partial "partials/breadcrumb" }}
 
-    <div class="pull-right col-xs-18 row">
+    <div id="user-list">
       <h3 class="title-icon">
         <span class="fa-stack">
           <i class="fa fa-circle fa-stack-2x pull-left"></i>
@@ -11,37 +12,34 @@
         <span class="title">{{t 'Atividades'}}</span>
         <small class="subtitle">{{t 'Veja suas atividades'}}</small>
       </h3>
+      <div class="user-profile-menu-area text-center">
+        <ul class="user-profile-menu nav nav-pills pull-right">
+          <li>
+          {{#link-to 'user' user.id classNames='btn btn-success'}}
+            {{t 'Atividade'}}
+          {{/link-to}}
+          </li>
+          <li>
+          {{#link-to 'user.contacts' user.id classNames='btn btn-primary'}}
+            {{t 'Contatos'}}
+          {{/link-to}}
+          </li>
+          <li>
+          {{#link-to 'user.images' user.id classNames='btn btn-warning'}}
+            {{t 'Imagens'}}
+          {{/link-to}}
+          </li>
+        </ul>
+      </div>
 
-      <div id="group-list">
-        <div class="user-profile-menu-area text-center">
-          <ul class="user-profile-menu nav nav-pills pull-right">
-            <li>
-            {{#link-to 'user' user.id classNames='btn btn-success'}}
-              {{t 'Atividade'}}
-            {{/link-to}}
-            </li>
-            <li>
-            {{#link-to 'user.contacts' user.id classNames='btn btn-primary'}}
-              {{t 'Contatos'}}
-            {{/link-to}}
-            </li>
-            <li>
-            {{#link-to 'user.images' user.id classNames='btn btn-warning'}}
-              {{t 'Imagens'}}
-            {{/link-to}}
-            </li>
-          </ul>
-        </div>
-
-        <div class="row">
-          {{outlet}}
-        </div>
+      <div class="row">
+        {{outlet}}
       </div>
     </div>
 
-    <div id="draggable-widgets" class="pull-left row col-xs-6">
+    <div id="draggable-widgets">
       <!-- widgets -->
-      <aside id="user-view-widget" class="panel panel-default row">
+      <aside id="user-view-widget" class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
             <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
@@ -115,4 +113,5 @@
       <!-- /widgets -->
     </div>
 
+  </div><!-- /container -->
 </section><!-- end -->

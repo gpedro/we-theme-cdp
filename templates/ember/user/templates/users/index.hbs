@@ -1,8 +1,8 @@
-<section class="container row">
+<section class="container">
 
     {{partial "partials/breadcrumb" }}
 
-    <div class="pull-right row col-xs-18">
+    <div id="user-list">
       <h3 class="title-icon">
         <span class="fa-stack">
           <i class="fa fa-circle fa-stack-2x pull-left icon-circle-yellow"></i>
@@ -22,14 +22,12 @@
         </form>
       </div>
 
-      <div id="user-list" class="row">
-        {{#each controller}}
-          {{render 'user/teaser' this}}
-        {{/each}}
-      </div>
+      {{#each controller}}
+        {{render 'user/teaser' this}}
+      {{/each}}
     </div>
 
-    <div id="draggable-widgets" class="pull-left col-xs-6">
+    <div id="draggable-widgets">
       <!-- widgets -->
       {{partial 'partials/feed-widget'}}
 
