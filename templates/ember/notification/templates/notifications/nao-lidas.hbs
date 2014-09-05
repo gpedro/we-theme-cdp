@@ -3,39 +3,36 @@
 
     {{partial "partials/breadcrumb" }}
 
-    <div class="pull-right col-xs-18 row" style="position: relative; top: -1.5em;">
+    <div id="notifications-list">
       <h3 class="title-icon">
-        <span class="icon icon-bell icon-circle icon-circle-red"></span>
+        <span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x pull-left"></i>
+          <i class="cdp cdp-bell cdp-lg cdp-stack-1x cdp-inverse"></i>
+        </span>
         <span class="title">{{t 'Notificações'}}</span>
         <small class="subtitle">{{t 'Visualize suas notificações'}}</small>
       </h3>
 
-      <button {{action 'markAllAsRead'}} class="btn btn-sm btn-primary" style="float: right; margin: -4em 1.3em 2em 0;">Marcar todas como lido</button>
+      <button {{action 'markAllAsRead'}} class="btn btn-sm btn-primary">Marcar todas como lido</button>
 
-      <div id="notifications-list" class="row">
-        <div class="col-xs-24">
+      <table class="table table-striped table-hover">
+        <tbody>
+          {{#each controller}}
+            {{render 'notifications/item' this}}
+          {{else}}
+          <tr>
+            <td colspan="3">
+              <div class="jumbotron text-center">
+                {{t 'Nenhuma notificação nova'}}
+              </div>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div><!-- /#notifications-list -->
 
-          <table class="table table-striped table-hover" style="background: #fff">
-            <tbody>
-              {{#each controller}}
-                {{render 'notifications/item' this}}
-              {{else}}
-              <tr>
-                <td colspan="3" style="border: none">
-                  <div class="jumbotron text-center">
-                    {{t 'Nenhuma notificação nova'}}
-                  </div>
-                </td>
-              </tr>
-              {{/each}}
-            </tbody>
-          </table>
-
-        </div>
-      </div><!-- /#notifications-list -->
-    </div>
-
-    <div id="draggable-widgets" class="pull-left col-xs-6">
+    <div id="draggable-widgets">
       <!-- widgets -->
       {{partial 'partials/feed-widget'}}
 

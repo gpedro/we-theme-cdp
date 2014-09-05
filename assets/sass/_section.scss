@@ -100,8 +100,15 @@
     .user-list-nav {}
   }
 }
-.activities {
-  
+
+
+// Notification list
+//
+// ----------------------------
+
+#notifications-list {
+  @include make-xs-column(9);
+  float: right;
 }
 
 // Home
