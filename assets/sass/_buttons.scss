@@ -115,6 +115,45 @@
   }
 }
 
+// Search buttons
+// -------------------------
+
+// Make a button look in search input
+.btn-search {
+  color: $btn-search-color;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+  padding: 0;
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: darken($btn-search-color, 20%);
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: darken($btn-search-color, 20%);
+      text-decoration: none;
+    }
+  }
+}
+
 
 // Button Sizes
 // --------------------------------------------------
