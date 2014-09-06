@@ -3,15 +3,9 @@
 
     {{partial "partials/breadcrumb" }}
 
-    <div id="notifications-list">
-      <h3 class="title-icon">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x pull-left"></i>
-          <i class="cdp cdp-bell cdp-lg cdp-stack-1x cdp-inverse"></i>
-        </span>
-        <span class="title">{{t 'Notificações'}}</span>
-        <small class="subtitle">{{t 'Visualize suas notificações'}}</small>
-      </h3>
+    <div id="notification-list">
+
+      {{partial "partials/notification-header-main" }}
 
       <button {{action 'markAllAsRead'}} class="btn btn-sm btn-primary">Marcar todas como lido</button>
 
