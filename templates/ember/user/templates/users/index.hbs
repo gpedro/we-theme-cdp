@@ -2,25 +2,9 @@
 
     {{partial "partials/breadcrumb" }}
 
-    <div id="user-list">
-      <h3 class="title-icon">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x pull-left icon-circle-yellow"></i>
-          <i class="cdp cdp-people cdp-stack-1x cdp-inverse"></i>
-        </span>
-        <span class="title">{{t 'Pessoas'}}</span>
-        <small class="subtitle">{{t 'Aqui você encontra as pessoas'}}</small>
-      </h3>
-      <div>
-        <form class="form-inline" role="form">
-          <div class="form-group">
-            <input type="search" class="search-input form-control" placeholder="Busque nesta seção">
-          </div>
-          <button type="submit" class="btn btn-success">
-            <div class="fa fa-search"></div>
-          </button>
-        </form>
-      </div>
+    <div id="people-list">
+
+      {{partial "partials/people-header-main" }}
 
       {{#each controller}}
         {{render 'user/teaser' this}}
