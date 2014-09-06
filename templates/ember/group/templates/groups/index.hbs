@@ -4,24 +4,8 @@
     {{partial "partials/breadcrumb" }}
 
     <div id="group-list">
-      <h3 class="title-icon pull-left">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x pull-left"></i>
-          <i class="cdp cdp-cdp-logo cdp-lg cdp-stack-1x cdp-inverse"></i>
-        </span>
-        <span class="title">{{t 'Comunidades'}}</span>
-        <small class="subtitle">{{t 'Participe das comunidades'}}</small>
-      </h3>
-      <div class="pull-right">
-        <form class="form-inline" role="form">
-          <div class="form-group">
-            <input type="search" class="search-input form-control" placeholder="Busque nesta seção">
-          </div>
-          <button type="submit" class="btn btn-success">
-            <i class="fa fa-search"></i>
-          </button>
-        </form>
-      </div>
+
+      {{partial "partials/header-section" }}
 
       <div>
       {{#if App.currentUser.id}}

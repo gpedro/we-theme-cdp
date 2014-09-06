@@ -49,10 +49,74 @@
 
 // Group list
 //
+// ---------------------------------
 
 #group-list {
   @include make-xs-column(9);
   float: right;
+
+  #group-list--header {
+    height: 48px;
+    margin-bottom: 10px;
+    .group-list--header-brand {
+      @include make-xs-column(4);
+      padding: 0 10px 0 0;
+      float: left;
+      .group-list--header-brand-icon {
+        width: 20%;
+        color: $color-group;
+        float: left;
+        font-size: 1.6em;
+        // Hack for solve specific icon inconsistence
+        .cdp-cdp-logo {
+          position: relative;
+          top: 1px;
+        }
+      }
+      .group-list--header-brand-text {
+        padding: 0;
+        position: relative;
+        top: -8px;
+        right: 5px;
+        width: 78%;
+        float: right;
+        .group-list--header-brand-text--title {
+          display: block;
+          line-height: 0.4em;
+          padding: 0;
+          width: 100%;
+          color: $gray;
+          position: relative;
+          top: 0;
+          font-size: 1.4em;
+        }
+        .group-list--header-brand-text--small {
+          display: block;
+          line-height: 0.4em;
+          width: 100%;
+          color: $gray;
+        }
+      }
+    }
+    .group-list--header-search {
+      @include make-xs-column(4);
+      padding: 0;
+      float: right;
+      .group-list--header-search-input {
+        padding-right: 30px;
+        background: $gray-lighter;
+        border-color: $gray-lighter;
+      }
+      .btn-default {
+        background: $gray-lighter;
+        color: $gray-light;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $gray-lighter;
+      }
+    }
+  }
+
   .group-list-widget {
     width: 100%;
     height: 230px;
@@ -131,5 +195,6 @@
 
 #draggable-widgets {
   @include make-xs-column(3);
+  padding: 0;
   float: left;
 }
