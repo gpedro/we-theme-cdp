@@ -11,7 +11,7 @@
     </div>
 
     <!-- Menu main -->
-    <ul id="menu-main" class="nav navbar-nav">
+    <ul id="menu-main" class="nav navbar-nav collapse navbar-collapse">
       <li class="navbar-menu-item item-people">
         {{#link-to 'users' classNames=""}}
           <i class="cdp cdp-people cdp-2x"></i>
@@ -53,22 +53,22 @@
         </form>
       </li>
 
-      <!-- Toggle button
-          for mobile devices -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- /Toggle button -->
-
     </ul>
     <!-- /Menu main -->
 
+    <!-- Toggle button
+        for mobile devices -->
+    <button type="button" class="toggle-button navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <!-- /Toggle button -->
+
     <!-- Menu User #menu-user-dropdown
          only on login -->
-    <ul class="pull-right">
+    <ul class="login-menu-dropdown">
       {{#unless isAuthenticated}}
         <li id="menu-user-dropdown" class="dropdown">
           <button class="btn btn-info navbar-login-button navbar-btn dropdown-toggle" data-toggle="dropdown">

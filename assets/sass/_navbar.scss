@@ -666,6 +666,11 @@ $navbar-main-bar-bottom: 3px;
   .navbar-header {
     @include make-xs-column(2);
   }
+  .login-menu-dropdown {
+    position: relative;
+    right: 16px;
+    float: right;
+  }
   .bar-colored {
     background-image: url('../img/bar-colored.png');
     background-repeat: no-repeat;
@@ -673,6 +678,7 @@ $navbar-main-bar-bottom: 3px;
     height: $navbar-main-bar-bottom;
     position: relative;
     bottom: -62px;
+    right: 16px;
   }
   .navbar-brand {
     padding: 0;
@@ -838,6 +844,13 @@ $navbar-main-bar-bottom: 3px;
       }
     }
   }
+}
+
+.toggle-button {
+  position: absolute;
+  top: -1px;
+  right: 80px;
+  float: right;
 }
 
 #menu-user-dropdown {
