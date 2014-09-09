@@ -1,2 +1,54 @@
-<h1>Bem vindo(a) a Comunidade de Práticas!</h1>
-<p style="font-size: 2em; line-height: 1.5em;">Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</p>
+
+<div id="home-carousel" class="carousel slide" data-interval="false" data-ride="carousel">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item">
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="carousel-caption">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="carousel-caption">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="transition-timer-carousel-progress-bar" />
+
+  <ol class="carousel-indicators">
+    <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#home-carousel" data-slide-to="1"></li>
+    <li data-target="#home-carousel" data-slide-to="2"></li>
+  </ol>
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var percent = 0, bar = $('.transition-timer-carousel-progress-bar'), crsl = $('#home-carousel');
+    function progressBarCarousel() {
+      bar.css({width:percent+'%'});
+     percent = percent +0.5;
+      if (percent>100) {
+          percent=0;
+          crsl.carousel('next');
+      }
+    }
+    crsl.carousel({
+        interval: false,
+        pause: false
+    }).on('slid.bs.carousel', function () {});var barInterval = setInterval(progressBarCarousel, 30);
+
+  });
+</script>

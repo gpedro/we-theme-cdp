@@ -237,3 +237,78 @@
     bottom: 20px;
   }
 }
+
+
+// Custom Home carousel
+//
+// ------------------------------
+
+#home-carousel {
+  width: 100%;
+  position: relative;
+  top: 3px;
+  height: 642px !important;
+  .item {
+    background: url('../img/slider-img-example-01.jpg') center;
+    text-align: center;
+    height: 550px !important;
+  }
+  .carousel-inner {
+    .item {
+      opacity: 0;
+      transition-property: opacity;
+      &.active,
+      &.next.left,
+      &.prev.right {
+        opacity: 1;
+        &.left,
+        &.right {
+          left: 0;
+          opacity: 0;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+.control-buttons{
+  text-align:center;
+}
+.transition-timer-carousel-progress-bar {
+  height: 8px;
+  background-color: $brand-success;
+  width: 0%;
+  margin: 0px 0px 0px 0px;
+  border: none;
+  z-index: 11;
+  position: relative;
+}
+.carousel-indicators {
+  width: 100%;
+  background: lighten($brand-info, 30%);
+  height: 80px;
+  position: relative;
+  top: 0;
+  left: 30%;
+}
+.carousel-indicators li {
+  background: #fff;
+}
+.carousel-indicators li,
+.carousel-indicators li.active {
+  display: block;
+  float: left;
+  width: 150px;
+  height: 80px;
+  border-radius: 0!important;
+  border: none;
+}
+.carousel-indicators li.active {
+  background: lighten($brand-success, 10%);
+}
+#carouselButtons {
+  margin-left: 100px;
+  position: absolute;
+  bottom: 0px;
+}
