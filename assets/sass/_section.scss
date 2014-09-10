@@ -324,3 +324,138 @@
   padding: 0;
   float: left;
 }
+
+// Register
+//
+// ---------------------------
+
+#register-section {
+  padding: 2em 0 10em 0;
+}
+#signin-form {
+  @include make-lg-column(12);
+  float: right;
+
+  #signin-list--header {
+    height: 48px;
+    margin-bottom: 10px;
+    .signin-list--header-brand {
+      @include make-xs-column(4);
+      padding: 0 10px 0 0;
+      float: left;
+      .signin-list--header-brand-icon {
+        width: 13%;
+        float: left;
+        font-size: 1.6em;
+        .fa-circle {
+          color: $brand-info;
+        }
+      }
+      .signin-list--header-brand-text {
+        padding: 0;
+        position: relative;
+        top: -8px;
+        right: 6%;
+        width: 78%;
+        float: right;
+        .signin-list--header-brand-text--title {
+          display: block;
+          line-height: 0.4em;
+          padding: 0;
+          width: 100%;
+          color: $gray;
+          position: relative;
+          top: 0;
+          font-size: 1.4em;
+        }
+        .signin-list--header-brand-text--small {
+          display: block;
+          line-height: 0.4em;
+          width: 100%;
+          color: $gray;
+        }
+      }
+    }
+    .signin-list--header-search {
+      @include make-xs-column(4);
+      padding: 0;
+      float: right;
+      .register-list--header-search-input {
+        padding-right: 30px;
+        background: $gray-lighter;
+        border-color: $gray-lighter;
+      }
+      .btn-default {
+        background: $gray-lighter;
+        color: $gray-light;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $gray-lighter;
+      }
+    }
+  }
+
+  .form-signin--input-name,
+  .form-signin--input-password {
+    width: 48.5%;
+    float: left;
+    margin: 10px 0;
+  }
+  .form-signin--input-email,
+  .form-signin--input-password-confirm {
+    width: 48.5%;
+    margin: 10px 0;
+    float: right;
+  }
+  .form-signin--select-language {
+    width: 30%;
+    float: left;
+    margin: 10px 0;
+  }
+  .form-signin--select-birthdate {
+    width: 48.5%;
+    float: right;
+    margin: 10px 0 0 20%;
+    .form-control {
+      float: left;
+      &.month {
+        width: 40%;
+        margin-left: 0;
+      }
+      &.day {
+        width: 28%;
+        margin-left: 3.2%;
+      }
+      &.year {
+        width: 25%;
+        margin-left: 3.2%;
+      }
+    }
+  }
+  .form-signin--radio-gender {
+    width: 25%;
+    margin-top: 15px;
+    float: left;
+    .radio-male {
+      display: block;
+      width: 45%;
+      float: left;
+    }
+    .radio-female {
+      width: 49%;
+      float: right;
+    }
+  }
+  .form-signin--agree-terms {
+    width: 50%;
+    font-size: 0.85em;
+    float: right;
+    text-align: left;
+    margin-top: 10px;
+  }
+  .btn {
+    width: 48%;
+    margin-top: 20px;
+    float: left;
+  }
+}
