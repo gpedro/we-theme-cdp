@@ -9,24 +9,24 @@
           <i class="fa fa-circle fa-stack-2x pull-left"></i>
           <i class="fa fa-user cdp-lg cdp-stack-1x cdp-inverse"></i>
         </span>
-        <span class="title">{{t 'Atividades'}}</span>
-        <small class="subtitle">{{t 'Veja suas atividades'}}</small>
+        <span class="title">{{t 'user.activity.title'}}</span>
+        <small class="subtitle">{{t 'user.activity.subtitle'}}</small>
       </h3>
       <div class="user-profile-menu-area text-center">
         <ul class="user-profile-menu nav nav-pills pull-right">
           <li>
           {{#link-to 'user' user.id classNames='btn btn-success'}}
-            {{t 'Atividade'}}
+            {{t 'user.menu.activity.link'}}
           {{/link-to}}
           </li>
           <li>
           {{#link-to 'user.contacts' user.id classNames='btn btn-primary'}}
-            {{t 'Contatos'}}
+            {{t 'user.menu.contacts.link'}}
           {{/link-to}}
           </li>
           <li>
           {{#link-to 'user.images' user.id classNames='btn btn-warning'}}
-            {{t 'Imagens'}}
+            {{t 'user.menu.imagens.link'}}
           {{/link-to}}
           </li>
         </ul>
@@ -44,7 +44,7 @@
           <h3 class="panel-title">
             <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
               <div class="icon icon-user pull-left"></div>
-              {{t 'Olá'}}, {{we-editable-text name='username' value=user.username isEditing=isEditing}}
+              {{t 'user.sidebar.username' usernameBinding=user.displayName}}
             </a>
           </h3>
         </div>
@@ -91,7 +91,7 @@
                             {{view App.ContactButtomView contact=contact}}
 
                             <button {{action follow}} type="button" class="btn btn-xs btn-success">
-                              <i class="fa fa-plus" title="Seguir"></i> {{t 'Seguir'}}
+                              <i class="fa fa-plus" title="Seguir"></i> {{t 'Follow'}}
                             </button>
                           </span>
                         {{/if}}
