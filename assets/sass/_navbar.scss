@@ -657,7 +657,7 @@
 //
 //
 
-$navbar-main-bar-bottom: 3px;
+$navbar-main-bar-bottom: 4px;
 
 #navbar-main {
   outline: $navbar-main-bar-bottom solid #e1e1e1;
@@ -752,7 +752,7 @@ $navbar-main-bar-bottom: 3px;
         .text-menu {
           color: $color-people!important;
         }
-        box-shadow: inset 0 -3px 0 $color-people;
+        box-shadow: inset 0 -4px 0 $color-people;
         transition: all .25s ease-in-out;
       }
       &.item-feed {
@@ -760,7 +760,7 @@ $navbar-main-bar-bottom: 3px;
         .text-menu {
           color: $color-feed!important;
         }
-        box-shadow: inset 0 -3px 0 $color-feed;
+        box-shadow: inset 0 -4px 0 $color-feed;
         transition: all .25s ease-in-out;
       }
       &.item-group {
@@ -768,7 +768,7 @@ $navbar-main-bar-bottom: 3px;
         .text-menu {
           color: $color-group!important;
         }
-        box-shadow: inset 0 -3px 0 $color-group;
+        box-shadow: inset 0 -4px 0 $color-group;
         transition: all .25s ease-in-out;
       }
       &.item-course {
@@ -776,7 +776,7 @@ $navbar-main-bar-bottom: 3px;
         .text-menu {
           color: $color-course!important;
         }
-        box-shadow: inset 0 -3px 0 $color-course;
+        box-shadow: inset 0 -4px 0 $color-course;
         transition: all .25s ease-in-out;
       }
       &.item-notifications {
@@ -784,7 +784,7 @@ $navbar-main-bar-bottom: 3px;
         .text-menu {
           color: $brand-danger!important;
         }
-        box-shadow: inset 0 -3px 0 $brand-danger;
+        box-shadow: inset 0 -4px 0 $brand-danger;
         transition: all .25s ease-in-out;
       }
     }
