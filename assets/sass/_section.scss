@@ -320,7 +320,7 @@
 }
 
 #draggable-widgets {
-  @include make-xs-column(3);
+  @include make-lg-column(3);
   padding: 0;
   float: left;
 }
