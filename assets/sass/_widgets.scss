@@ -15,6 +15,24 @@
   .panel-heading {
     padding: 0; // reset for using w/ button
   }
+  .description {
+    clear: both;
+    height: 84px;
+  }
+  .list-group-item--img {
+    width: 35%;
+    float: left;
+  }
+  .list-group-item-text {
+    width: 60%;
+    height: 80px;
+    overflow: hidden;
+    float: right;
+    p {
+      font-size: 12px;
+      line-height: 1.4em;
+    }
+  }
 }
 
 .widget-trigger-collapse {
