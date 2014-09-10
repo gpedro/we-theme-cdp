@@ -376,23 +376,6 @@
         }
       }
     }
-    .signin-list--header-search {
-      @include make-xs-column(4);
-      padding: 0;
-      float: right;
-      .register-list--header-search-input {
-        padding-right: 30px;
-        background: $gray-lighter;
-        border-color: $gray-lighter;
-      }
-      .btn-default {
-        background: $gray-lighter;
-        color: $gray-light;
-        border-width: 1px;
-        border-style: solid;
-        border-color: $gray-lighter;
-      }
-    }
   }
 
   .form-signin--input-name,
