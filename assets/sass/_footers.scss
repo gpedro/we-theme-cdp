@@ -189,9 +189,9 @@ body {
 
 .first-line-block {
   @include make-row;
-  .blog-section { @include make-xs-column(4); }
-  .facebook-section { @include make-xs-column(3); }
-  .links-section { @include make-xs-column(5); }
+  .blog-section { @include make-lg-column(4); }
+  .facebook-section { @include make-lg-column(3); }
+  .links-section { @include make-lg-column(5); }
   .links-section--list { @include make-row; padding: 1em; }
   .links-section--list-item { width: 46.5%; float: left; }
 }
@@ -203,9 +203,9 @@ body {
     .sponsor-list--item,
     .partner-list--item { margin-left: -10px; }
   }
-  .about-section { @include make-xs-column(4); }
-  .sponsor-section { @include make-xs-column(3); }
-  .partner-section { @include make-xs-column(5); }
+  .about-section { @include make-lg-column(4); }
+  .sponsor-section { @include make-lg-column(3); }
+  .partner-section { @include make-lg-column(5); }
   .about-section {
     .title-footer { width: 15%; padding: 0; float: left; }
     .description-footer { width: 80%; float: right; }
@@ -219,21 +219,103 @@ body {
 // -------------------------------
 
 @media (max-width: $screen-xs-max) {
+  body {
+    margin-bottom: 920px;
+  }
   #footer-main {
+    height: 920px;
+    .first-line-block {
+      @include make-row;
+      .blog-section { @include make-xs-column(12) }
+      .facebook-section { display: none; }
+      .links-section { @include make-xs-column(12); }
+      .links-section--list { @include make-row; padding: 1em; }
+      .links-section--list-item { width: 45.5%; float: left; }
+    }
+    .second-line-block {
+      @include make-row;
+      .sponsor-list,
+      .partner-list {
+        .sponsor-list--item,
+        .partner-list--item { margin-left: -10px; }
+      }
+      .about-section { @include make-xs-column(12); }
+      .sponsor-section { @include make-xs-column(12); }
+      .partner-section { @include make-xs-column(12); }
+      .about-section {
+        .title-footer { font-size: 1.3em; width: 25%; padding: 0; float: left; }
+        .description-footer { width: 75%; float: right; padding-right: 1em; }
+      }
+    }
   }
 }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   #footer-main {
+    .first-line-block {
+      @include make-row;
+      .blog-section { @include make-sm-column(5) }
+      .facebook-section { display: none; }
+      .links-section { @include make-sm-column(7); }
+      .links-section--list { @include make-row; padding: 1em; }
+      .links-section--list-item { width: 46.5%; float: left; }
+    }
+    .second-line-block {
+      @include make-row;
+      .sponsor-list,
+      .partner-list {
+        .sponsor-list--item,
+        .partner-list--item { margin-left: -10px; }
+      }
+      .about-section { @include make-sm-column(5); }
+      .sponsor-section {
+        @include make-sm-column(3);
+        .sponsor-list--item {
+          width: 55%;
+          .sponsor-list--item-img {
+            width: 100%;
+          }
+        }
+      }
+      .partner-section {
+        @include make-sm-column(4);
+        .sponsor-list--item {
+          width: 35%;
+          .sponsor-list--item-img {
+            width: 100%;
+          }
+        }
+      }
+      .about-section {
+        .title-footer { width: 25%; padding: 0; float: left; }
+        .description-footer { width: 75%; float: right; }
+      }
+    }
   }
 }
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   #footer-main {
+    .first-line-block {
+      @include make-row;
+      .blog-section { @include make-md-column(5) }
+      .facebook-section { display: none; }
+      .links-section { @include make-md-column(7); }
+      .links-section--list { @include make-row; padding: 1em; }
+      .links-section--list-item { width: 46.5%; float: left; }
+    }
     .second-line-block {
-      .sponsor-section {
-        .sponsor-list--item {
-          padding: 0;
-          .sponsor-list--item-img { width: 100% }
-        }
+      @include make-row;
+      .sponsor-list,
+      .partner-list {
+        .sponsor-list--item,
+        .partner-list--item { margin-left: -10px; }
+      }
+      .about-section { @include make-md-column(3); }
+      .sponsor-section { @include make-md-column(4); }
+      .partner-section { @include make-md-column(5); }
+      .about-section {
+        .about-section--title { font-size: 0.9em; }
+        .title-footer { font-size: 0.9em; width: 25%; padding: 0; float: left; }
+        .description-footer { width: 75%; float: right; }
       }
     }
   }
