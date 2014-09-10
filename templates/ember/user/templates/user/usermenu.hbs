@@ -10,23 +10,23 @@
     <ul class="dropdown-menu dropdown-menu-right" style="margin-top: 20px;">
       <li>
         <a href="#ChangeAvatarModal" {{action "showAvatarChangeModal"}} >
-          {{t 'Mudar Imagem'}}
+          {{t "Change Avatar"}}
         </a>
       </li>
       <li class="divider"></li>
       <li>
         {{#link-to 'user' App.currentUser.id}}
-          {{t 'Ver / Editar Perfil'}}
+          {{t "View / edit profile"}}
         {{/link-to}}
       </li>
       <li class="divider"></li>
       <li>
         {{#link-to 'authChangePassword'}}
-          {{t 'Mudar senha'}}
+          {{t "Change password"}}
         {{/link-to}}
       </li>
       <li class="divider"></li>
-      <li><a href="/auth/logout" style="margin-left: 8px; color: white;" class="btn btn-sm btn-danger">{{t 'Sair'}}</a></li>
+      <li><a href="/auth/logout" style="margin-left: 8px; color: white;" class="btn btn-sm btn-danger">{{t 'Exit'}}</a></li>
     </ul>
   </li>
 {{/if}}

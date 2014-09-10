@@ -10,7 +10,7 @@
       <div>
       {{#if App.currentUser.id}}
         {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
-          {{t 'Criar Comunidade'}}
+          {{t "Create group"}}
         {{/link-to}}
       {{/if}}
       </div>
@@ -20,7 +20,7 @@
           {{render 'group/teaser' this}}
         </div>
       {{else}}
-        <p>{{t 'Não existe nenhuma comunidade no momento.'}}</p>
+        <p>{{t "groups.empty"}}</p>
       {{/each}}
     </div><!-- /group-list -->
 
