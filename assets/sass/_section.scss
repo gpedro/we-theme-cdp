@@ -314,6 +314,12 @@
   }
 
 }
+#sidebar-notifications {
+  @include make-xs-column(3);
+  position: relative;
+  top: 60px;
+  padding-left: 0;
+}
 
 // Home
 //

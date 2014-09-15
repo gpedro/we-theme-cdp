@@ -7,8 +7,6 @@
 
       {{partial "partials/notification-header-main" }}
 
-      <button {{action 'markAllAsRead'}} class="btn btn-sm btn-primary">Marcar todas como lido</button>
-
       <table class="table table-striped table-hover">
         <tbody>
           {{#each controller}}
@@ -26,14 +24,10 @@
       </table>
     </div><!-- /#notifications-list -->
 
-    <div id="draggable-widgets">
-      <!-- widgets -->
-      {{partial 'partials/feed-widget'}}
-
-      {{partial 'partials/group-widget'}}
-
-      {{partial 'partials/course-widget'}}
-      <!-- /widgets -->
+    <div id="sidebar-notifications">
+      <aside role="complementary">
+        {{partial 'notifications/sidebar'}}
+      </aside>
     </div>
 
   </div><!-- end container -->
