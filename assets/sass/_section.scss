@@ -5,7 +5,7 @@
 
 .section {
   padding: $section-padding;
-  margin-bottom: $section-padding;
+  /*margin-bottom: $section-padding;*/
   color: $section-color;
   background-color: $section-bg;
 
@@ -54,7 +54,7 @@
 #group-list {
   @include make-xs-column(9);
   float: right;
-
+  padding-right: 0;
   #group-list--header {
     height: 48px;
     margin-bottom: 10px;
@@ -101,6 +101,7 @@
     .group-list--header-search {
       @include make-xs-column(4);
       padding: 0;
+      margin-right: -6px;
       float: right;
       .group-list--header-search-input {
         padding-right: 30px;
@@ -157,7 +158,7 @@
 #people-list {
   @include make-xs-column(9);
   float: right;
-
+  padding-right: 0;
   #people-list--header {
     height: 48px;
     margin-bottom: 10px;
