@@ -14,7 +14,7 @@
     "test"
   ],
   "dependencies": {
-    "tupi": "~0.1.0-alpha.3"
+    "tupi": "~0.1.1"
   },
   "devDependencies": {
     "bootstrap": "~3.2.0"
