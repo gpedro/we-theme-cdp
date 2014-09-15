@@ -667,9 +667,11 @@ $navbar-main-bar-bottom: 4px;
     @include make-xs-column(2);
   }
   .login-menu-dropdown {
-    position: relative;
-    right: 16px;
+    @include make-lg-column(2);
     float: right;
+    .btn {
+      float: right;
+    }
   }
   .bar-colored {
     background-image: url('../img/bar-colored.png');
@@ -714,11 +716,11 @@ $navbar-main-bar-bottom: 4px;
 
 #menu-main {
   @extend .row;
-  @include make-xs-column(9);
+  @include make-lg-column(5);
   text-align: center;
   .navbar-menu-item {
     width: 86px;
-    height: 65px;
+    height: 66px;
     line-height: 40px;
     position: relative;
     display: block;
@@ -792,10 +794,9 @@ $navbar-main-bar-bottom: 4px;
 }
 
 #search-main {
-  width: 286px;
-  position: relative;
-  top: 14px;
-  left: 15px;
+  @include make-lg-column(3);
+  @include make-xs-column(6);
+  margin-top: 13px;
   .form-group {
     width: 100%;
     .fa-search {
@@ -856,7 +857,8 @@ $navbar-main-bar-bottom: 4px;
 #menu-user-dropdown {
   list-style: none;
   position: relative;
-  top: 25px;
+  top: 35px;
+  right: -28px;
   .dropdown-menu {
     width: 240px;
     background: #f8f8f8;
@@ -864,5 +866,35 @@ $navbar-main-bar-bottom: 4px;
 }
 
 #dropdown-login-menu {
-  margin-top: 8px;
+  margin-top: 32px;
 }
+
+
+// Media Queries
+//
+// -------------------------------
+
+@media (max-width: $screen-xs-max) {
+  #search-main {
+    margin-left: 2px;
+    .search-input {}
+  }
+  #menu-user-dropdown {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+  }
+  .toggle-button {
+    position: absolute;
+    right: 78px;
+    float: right;
+  }
+  .navbar-header {
+    width: 80px;
+  }
+  .navbar-collapse.in {
+
+  }
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {}
