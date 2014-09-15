@@ -206,6 +206,7 @@
       @include make-xs-column(4);
       padding: 0;
       float: right;
+      margin-right: -7px;
       .people-list--header-search-input {
         padding-right: 30px;
         background: $gray-lighter;
@@ -246,7 +247,21 @@
 #notification-list {
   @include make-xs-column(9);
   float: right;
-
+  padding: 0 0 50px 0;
+  .btn-primary {
+    position: absolute;
+    right: 0;
+  }
+  .table {
+    position: relative;
+    top: 0px;
+  }
+  .fa-bell-slash {
+    margin-top: 30px;
+    font-size: 4em;
+    display: block;
+    color: darken($gray-lighter, 10%);
+  }
   #notification-list--header {
     height: 48px;
     margin-bottom: 10px;
@@ -290,22 +305,11 @@
         }
       }
     }
-    .notification-list--header-search {
+    .notification-list--header-button {
       @include make-xs-column(4);
       padding: 0;
       float: right;
-      .notification-list--header-search-input {
-        padding-right: 30px;
-        background: $gray-lighter;
-        border-color: $gray-lighter;
-      }
-      .btn-default {
-        background: $gray-lighter;
-        color: $gray-light;
-        border-width: 1px;
-        border-style: solid;
-        border-color: $gray-lighter;
-      }
+      margin: 8px 0 0 0;
     }
   }
 

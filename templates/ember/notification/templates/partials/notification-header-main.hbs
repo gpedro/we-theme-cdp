@@ -17,17 +17,8 @@
     </div>
   </div>
   <!-- notification-list--header-search -->
-  <div class="notification-list--header-search">
-    <form class="form-inline" role="form">
-      <div class="input-group">
-        <input type="search" class="notification-list--header-search-input form-control" placeholder="Busque nesta seção">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <i class="fa fa-search"></i>
-          </button>
-        </span>
-      </div>
-    </form>
+  <div class="notification-list--header-button">
+    <button {{action 'markAllAsRead'}} class="btn btn-sm btn-primary">Marcar todas como lido</button>
   </div>
   <!-- /notification-list--header-search -->
 </header>
