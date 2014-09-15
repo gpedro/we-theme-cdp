@@ -14,24 +14,7 @@ window.BreadCrumbs.BreadCrumbsComponent.reopen({
 /**
  * Home page slideshow
  */
-$(document).ready(function(){
-  var percent = 0,
-    bar = $('.transition-timer-carousel-progress-bar'),
-    crsl = $('#home-carousel');
-
-  function progressBarCarousel() {
-    bar.css({width:percent+'%'});
-    percent = percent +0.5;
-    if (percent>100) {
-        percent=0;
-        crsl.carousel('next');
-    }
-  }
-
-  crsl.carousel({
-    interval: false,
-    pause: false
-  }).on('slid.bs.carousel', function () {});
-
-  var barInterval = setInterval(progressBarCarousel, 30);
-});
+ $('.carousel').carousel({
+   interval: 9000,
+   pause: 'none'
+ })

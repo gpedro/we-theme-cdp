@@ -10,3 +10,11 @@ window.BreadCrumbs.BreadCrumbsComponent.reopen({
   // use application/templates/components/bread-crumbs.hbs template
   layout: null
 });
+
+/**
+ * Home page slideshow
+ */
+ $('.carousel').carousel({
+   interval: 9000,
+   pause: 'none'
+ })

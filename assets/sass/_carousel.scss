@@ -6,6 +6,7 @@
 // Wrapper for the slide container and indicators
 .carousel {
   position: relative;
+  z-index: -9;
 }
 
 .carousel-inner {
@@ -80,13 +81,10 @@
   // animation if you trip this while in the middle of another animation.
 
   // Set gradients for backgrounds
-  &.left {
-    @include gradient-horizontal($start-color: rgba(0,0,0,.5), $end-color: rgba(0,0,0,.0001));
-  }
+  &.left {}
   &.right {
     left: auto;
     right: 0;
-    @include gradient-horizontal($start-color: rgba(0,0,0,.0001), $end-color: rgba(0,0,0,.5));
   }
 
   // Hover/focus state
@@ -244,71 +242,129 @@
 // ------------------------------
 
 #home-carousel {
-  width: 100%;
+  background: #eaeaea;
+  height: 570px;
+  margin-top: 4px;
+  margin-bottom: 0;
   position: relative;
-  top: 3px;
-  height: 642px !important;
-  .item {
-    background: url('../img/slider-img-example-01.jpg') center;
-    text-align: center;
-    height: 550px !important;
+  z-index: 9;
+  .home-carousel--text {
+    @include make-lg-column(5);
+    height: 220px;
+    color: #fff;
+    line-height: 1.5em;
+    position: absolute;
+    top: -400px;
+    bottom: 0;
+    margin: auto;
+    font-size: 1.5em;
+    &.text-left {
+      float: left;
+      text-align: left;
+      left: -12%;
+    }
+    &.text-right {
+      float: right;
+      text-align: right;
+      right: 18%;
+    }
+    .home-carousel--text-title {
+      line-height: 1.4em;
+      font-size: 1.4em;
+    }
+    .home-carousel--text-subtitle {
+      font-size: 1em;
+    }
   }
-  .carousel-inner {
-    .item {
-      opacity: 0;
-      transition-property: opacity;
-      &.active,
-      &.next.left,
-      &.prev.right {
-        opacity: 1;
-        &.left,
-        &.right {
-          left: 0;
-          opacity: 0;
-          z-index: 1;
-        }
+  .transition-timer-carousel-progress-bar {
+    height: 8px;
+    background-color: $brand-success;
+    width: 0%;
+    margin: 0;
+    border: none;
+    z-index: 11;
+    position: relative;
+  }
+  .carousel-indicators {
+    width: 84%;
+    height: 80px;
+    background: #eaeaea;
+    margin: 0 0 10px 8%;
+    padding: 0 0 10px 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .carousel-indicators li {
+    text-indent: 0;
+    color: #fff;
+    &.carousel-indicators--black {
+      background: #133540;
+      font-size: 4em;
+      line-height: 1.6em;
+      &.active {
+        background: darken(#133540, 20%);
+      }
+    }
+    &.carousel-indicators--green {
+      background: #74c125;
+      font-size: 4em;
+      line-height: 1.6em;
+      &.active {
+        background: darken(#74c125, 20%);
+      }
+    }
+    &.carousel-indicators--blue {
+      background: #4f87d2;
+      font-size: 4em;
+      line-height: 1.6em;
+      &.active {
+        background: darken(#4f87d2, 20%);
+      }
+    }
+    &.carousel-indicators--purple {
+      background: #7e4eb0;
+      font-size: 4em;
+      line-height: 1.6em;
+      &.active {
+        background: darken(#7e4eb0, 20%);
+      }
+    }
+    &.carousel-indicators--red {
+      background: #b0452b;
+      font-size: 4em;
+      line-height: 1.6em;
+      &.active {
+        background: darken(#b0452b, 20%);
+      }
+    }
+    &.carousel-indicators--lime {
+      background: #85f6ab;
+      font-size: 4em;
+      line-height: 1.6em;
+      &.active {
+        background: darken(#85f6ab, 20%);
+      }
+    }
+    &.carousel-indicators--yellow {
+      background: #e9b314;
+      font-size: 4em;
+      line-height: 1.6em;
+      &.active {
+        background: darken(#e9b314, 20%);
       }
     }
   }
-}
-
-.control-buttons{
-  text-align:center;
-}
-.transition-timer-carousel-progress-bar {
-  height: 8px;
-  background-color: $brand-success;
-  width: 0%;
-  margin: 0px 0px 0px 0px;
-  border: none;
-  z-index: 11;
-  position: relative;
-}
-.carousel-indicators {
-  width: 100%;
-  background: lighten($brand-info, 30%);
-  height: 80px;
-  position: relative;
-  top: 0;
-  left: 30%;
-}
-.carousel-indicators li {
-  background: #fff;
-}
-.carousel-indicators li,
-.carousel-indicators li.active {
-  display: block;
-  float: left;
-  width: 150px;
-  height: 80px;
-  border-radius: 0!important;
-  border: none;
-}
-.carousel-indicators li.active {
-  background: lighten($brand-success, 10%);
-}
-#carouselButtons {
-  margin-left: 100px;
-  position: absolute;
-  bottom: 0px;
+  .carousel-indicators li,
+  .carousel-indicators li.active {
+    float: left;
+    width: 151px;
+    height: 80px;
+    border-radius: 0!important;
+    border: none;
+    margin: 0;
+  }
+  .carousel-control {
+    margin-top: 16%;
+  }
 }
