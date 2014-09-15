@@ -807,8 +807,16 @@ $navbar-main-bar-bottom: 4px;
       float: right;
     }
   }
+  .btn {
+    background: darken($gray-lighter, 4%);
+    color: $gray-light;
+    border-width: 1px;
+    border-style: solid;
+    border-color: darken($gray-lighter, 4%);
+  }
   .search-input {
     width: 100%;
+    padding-right: 30px;
     background: darken($gray-lighter, 4%);
     border-color: darken($gray-lighter, 4%);
     font-size: 0.9em;
