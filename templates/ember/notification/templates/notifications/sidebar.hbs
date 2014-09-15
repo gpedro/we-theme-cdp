@@ -1,12 +1,14 @@
 <ul class="nav nav-pills nav-stacked">
-  <li>
+  <li class="active">
     {{#link-to 'notifications'}}
-      {{t "notifications.menu.unread.link"}}
+      <span class="badge pull-right">83</span>
+      {{t "Não lidas"}}
     {{/link-to}}
   </li>
   <li>
     {{#link-to 'notifications.lidas'}}
-      {{t "notifications.menu.read.link"}}
+      <span class="badge pull-right">10</span>
+      {{t "Lidas"}}
     {{/link-to}}
   </li>
 </ul>
