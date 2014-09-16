@@ -316,6 +316,12 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 //
 //## Define the maximum width of `.container` for different screen sizes.
 
+// Extra Small screen / tablet
+/* \$container-phone:             ((297px + \$grid-gutter-width)) !default;
+/* For `\$screen-sm-min` and up.
+\$container-xs:                 \$container-phone !default;
+ */
+
 // Small screen / tablet
 $container-tablet:             ((720px + $grid-gutter-width)) !default;
 //** For `$screen-sm-min` and up.
@@ -327,9 +333,29 @@ $container-desktop:            ((940px + $grid-gutter-width)) !default;
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
-$container-large-desktop:      ((1080px + $grid-gutter-width)) !default;
+$container-large-desktop:      ((1155px + $grid-gutter-width)) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px)
+{
+    div[class^="col"]{padding-left:30px; padding-right:30px;}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px)
+{
+    div[class^="col"]{padding-left:10px; padding-right:10px;}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px)
+{
+    /*default so you don't need this*/
+    div[class^="col"]{padding-left:45px; padding-right:45px;}
+}
 
 
 //== Navbar
