@@ -1,60 +1,28 @@
-<nav id="navbar-main" class="navbar-default" role="navigation">
+<header id="header-main" class="navbar-default" role="navigation">
   <div class="container">
     <div class="row">
 
-    <div class="navbar-header" alt="Comunidade de Práticas">
-      <!-- Logo -->
-      {{#link-to 'home' classNames="app-main-logo navbar-brand"}}
-        {{partial 'partials/logo-cdp'}}
-      {{/link-to}}
-      <!-- /Logo -->
-    </div>
-
-    <!-- Menu main -->
-    <ul id="menu-main" class="nav navbar-nav collapse navbar-collapse">
-      <li class="navbar-menu-item item-people">
-        {{#link-to 'users' classNames=""}}
-          <i class="cdp cdp-people cdp-2x"></i>
-          <div class="text-menu">{{t 'Pessoas'}}</div>
+      <div class="navbar-header" alt="Comunidade de Práticas">
+        <!-- Logo -->
+        {{#link-to 'home' classNames="app-main-logo navbar-brand"}}
+          {{partial 'partials/logo-cdp'}}
         {{/link-to}}
-      </li>
-      <li class="navbar-menu-item item-group">
-        {{#link-to 'groups' classNames=""}}
-          <i class="cdp cdp-cdp-logo cdp-2x"></i>
-          <div class="text-menu">{{t 'Comunidades'}}</div>
-        {{/link-to}}
-      </li>
-      <li class="navbar-menu-item item-course">
-        <a href="#">
-          <i class="cdp cdp-badge cdp-2x"></i>
-          <div class="text-menu">{{t 'Cursos'}}</div>
-        </a>
-      </li>
+        <!-- /Logo -->
+      </div>
 
-      <li class="navbar-menu-item item-feed">
-        <a href="#">
-          <i class="cdp cdp-message cdp-2x"></i>
-          <div class="text-menu">{{t 'Mensagens'}}</div>
-        </a>
-      </li>
-      <li class="navbar-menu-item item-notifications">
-        {{#link-to 'notifications' classNames=""}}
-          <i class="cdp cdp-bell cdp-2x cdp-align-justify"></i>
-          <div class="text-menu">{{t 'Notificações'}}</div>
-        {{/link-to}}
-      </li>
-    </ul>
-    <!-- /Menu main -->
+      <!-- Toggle button
+          for mobile devices -->
+      <button class="toggle-button navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- /Toggle button -->
 
-    <!-- Toggle button
-        for mobile devices -->
-    <button type="button" class="toggle-button navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <!-- /Toggle button -->
+
+
+
 
     <div id="search-main" class="search">
       <form class="form-inline" role="form">
@@ -91,7 +59,43 @@
     <!-- /Menu User -->
 
     <div class="bar-colored"></div>
+    
+    <!-- Menu main -->
+    <nav id="menu-main" class="nav navbar-nav navbar-collapse collapse">
+      <li class="navbar-menu-item item-people">
+        {{#link-to 'users' classNames=""}}
+          <i class="cdp cdp-people cdp-2x"></i>
+          <div class="text-menu">{{t 'Pessoas'}}</div>
+        {{/link-to}}
+      </li>
+      <li class="navbar-menu-item item-group">
+        {{#link-to 'groups' classNames=""}}
+          <i class="cdp cdp-cdp-logo cdp-2x"></i>
+          <div class="text-menu">{{t 'Comunidades'}}</div>
+        {{/link-to}}
+      </li>
+      <li class="navbar-menu-item item-course">
+        <a href="#">
+          <i class="cdp cdp-badge cdp-2x"></i>
+          <div class="text-menu">{{t 'Cursos'}}</div>
+        </a>
+      </li>
+
+      <li class="navbar-menu-item item-feed">
+        <a href="#">
+          <i class="cdp cdp-message cdp-2x"></i>
+          <div class="text-menu">{{t 'Mensagens'}}</div>
+        </a>
+      </li>
+      <li class="navbar-menu-item item-notifications">
+        {{#link-to 'notifications' classNames=""}}
+          <i class="cdp cdp-bell cdp-2x cdp-align-justify"></i>
+          <div class="text-menu">{{t 'Notificações'}}</div>
+        {{/link-to}}
+      </li>
+    </nav>
+    <!-- /Menu main -->
 
     </div><!-- /row -->
   </div><!-- end container -->
-</nav><!-- end navigation #navbarmain -->
+</header><!-- end navigation #navbarmain -->
