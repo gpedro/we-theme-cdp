@@ -1,21 +1,26 @@
 
+    <!-- breadcrumb -->
     {{partial "partials/breadcrumb" }}
+    <!-- /breadcrumb -->
 
+    <!-- sidebar-widgets -->
+    <div id="draggable-widgets">
+      {{partial 'partials/feed-sidebar-widget'}}     <!-- feed -->
+      {{partial 'partials/group-sidebar-widget'}}    <!-- group -->
+      {{partial 'partials/course-sidebar-widget'}}   <!-- course -->
+    </div>
+    <!-- /sidebar-widgets -->
+
+    <!-- user-list -->
     <div id="people-list">
-
+      <!-- header-main -->
       {{partial "partials/people-header-main" }}
+      <!-- /header-main -->
 
+      <!-- user-item-widget -->
       {{#each controller}}
         {{render 'user/teaser' this}}
       {{/each}}
+      <!-- /user-item-widget -->
     </div>
-
-    <div id="draggable-widgets">
-      <!-- widgets -->
-      {{partial 'partials/feed-sidebar-widget'}}
-
-      {{partial 'partials/group-sidebar-widget'}}
-
-      {{partial 'partials/course-sidebar-widget'}}
-      <!-- /widgets -->
-    </div>
+    <!-- /user-list -->
