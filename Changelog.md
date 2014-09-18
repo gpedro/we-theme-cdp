@@ -4,10 +4,34 @@
 ## [v0.1.0-beta](https://github.com/ABS-org/we-theme-cdp/issues?q=is%3Aissue+milestone%3Av0.1.0-beta+is%3Aclosed)
 
 ### Novos recursos / Melhorias
+* [Ajustar tela de cadastro](https://github.com/ABS-org/we-theme-cdp/issues/85)
+* [Adicionar Imagens nas listagens dos widgets laterais](https://github.com/ABS-org/we-theme-cdp/issues/83)
+* [Ajustar topo padrão das páginas internas](https://github.com/ABS-org/we-theme-cdp/issues/82)
+* [Usar bordas suaves em alguns elementos](https://github.com/ABS-org/we-theme-cdp/issues/78)
+* [Footer adaptativo](https://github.com/ABS-org/we-theme-cdp/issues/72)
+* [Menu principal adaptativo](https://github.com/ABS-org/we-theme-cdp/issues/71)
+* [Ajustar o design do Footer](https://github.com/ABS-org/we-theme-cdp/issues/69)
+* [Usar ícones/elementos reutilizáveis](https://github.com/ABS-org/we-theme-cdp/issues/55)
+* [Estilos iniciais do 'sharebox'](https://github.com/ABS-org/we-theme-cdp/issues/54)
+* [Setinha no dropdown de login](https://github.com/ABS-org/we-theme-cdp/issues/53)
+* [Slideshow da página inicial](https://github.com/ABS-org/we-theme-cdp/issues/49)
+* [Migalha de pão](https://github.com/ABS-org/we-theme-cdp/issues/10)
 
 ### Correções / Bugs
+* [Usar grid com 12 colunas](https://github.com/ABS-org/we-theme-cdp/issues/81)
+* [Licensa Creative Commons no footer](https://github.com/ABS-org/we-theme-cdp/issues/74)
+* [Usar bower_components dentro de /assets](https://github.com/ABS-org/we-theme-cdp/issues/68)
+* [Ícones do menu principal](https://github.com/ABS-org/we-theme-cdp/issues/67)
+* [Ícone dos widgets laterais](https://github.com/ABS-org/we-theme-cdp/issues/15)
 
 ### Refatoração
+* [Usar *-sidebar-widgets em application](https://github.com/ABS-org/we-theme-cdp/issues/88)
+* [Usar grid semântico](https://github.com/ABS-org/we-theme-cdp/issues/79)
+* [Usar os blocos laterais como partials](https://github.com/ABS-org/we-theme-cdp/issues/77)
+* [Usar logo.svg do footer como partial](https://github.com/ABS-org/we-theme-cdp/issues/76)
+* [Usar facebook like button como partial](https://github.com/ABS-org/we-theme-cdp/issues/75)
+* [Usar logo.svg principal como partial](https://github.com/ABS-org/we-theme-cdp/issues/73)
+* [Separar migalha de pão](https://github.com/ABS-org/we-theme-cdp/issues/52)
 
 ### Documentação
 
