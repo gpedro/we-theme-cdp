@@ -279,7 +279,7 @@ $screen-tablet:              $screen-sm-min !default;
 
 // Medium screen / desktop
 //** Deprecated `$screen-md` as of v3.0.1
-$screen-md:                  992px !default;
+$screen-md:                  1080px !default;
 $screen-md-min:              $screen-md !default;
 //** Deprecated `$screen-desktop` as of v3.0.1
 $screen-desktop:             $screen-md-min !default;
@@ -304,7 +304,12 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 //** Number of columns in the grid.
 $grid-columns:              12 !default;
 //** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         30px !default;
+$grid-xs-gutter-width:      15px !default;
+$grid-sm-gutter-width:      30px !default;
+$grid-md-gutter-width:      35px !default;
+$grid-lg-gutter-width:      45px !default;
+
+
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 $grid-float-breakpoint:     $screen-sm-min !default;
@@ -317,45 +322,25 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 //## Define the maximum width of `.container` for different screen sizes.
 
 // Extra Small screen / tablet
-/* \$container-phone:             ((297px + \$grid-gutter-width)) !default;
-/* For `\$screen-sm-min` and up.
-\$container-xs:                 \$container-phone !default;
- */
+$container-phone:             ((297px + $grid-xs-gutter-width)) !default;
+// For `$screen-sm-min` and up.
+$container-xs:                 $container-phone !default;
+
 
 // Small screen / tablet
-$container-tablet:             ((738px + $grid-gutter-width)) !default;
+$container-tablet:             ((738px + $grid-sm-gutter-width)) !default;
 //** For `$screen-sm-min` and up.
 $container-sm:                 $container-tablet !default;
 
 // Medium screen / desktop
-$container-desktop:            ((940px + $grid-gutter-width)) !default;
+$container-desktop:            ((940px + $grid-md-gutter-width)) !default;
 //** For `$screen-md-min` and up.
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
-$container-large-desktop:      ((1155px + $grid-gutter-width)) !default;
+$container-large-desktop:      ((1155px + $grid-lg-gutter-width)) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
-
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px)
-{
-    div[class^="col"]{padding-left:30px; padding-right:30px;}
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px)
-{
-    div[class^="col"]{padding-left:10px; padding-right:10px;}
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px)
-{
-    /*default so you don't need this*/
-    div[class^="col"]{padding-left:45px; padding-right:45px;}
-}
 
 
 //== Navbar
@@ -366,7 +351,8 @@ $container-lg:                 $container-large-desktop !default;
 $navbar-height:                    62px !default;
 $navbar-margin-bottom:             $line-height-computed !default;
 $navbar-border-radius:             $border-radius-base !default;
-$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-horizontal:        30px;
+//$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 $navbar-collapse-max-height:       340px !default;
 

@@ -506,7 +506,26 @@ input[type="checkbox"] {
   // `position: relative;` on them. Also accounts for the grid gutter padding.
   .has-feedback .form-control-feedback {
     top: 0;
-    right: ($grid-gutter-width / 2);
+  }
+  @media (max-width: $screen-xs-max) {
+    .has-feedback .form-control-feedback {
+      right: ($grid-xs-gutter-width / 2);
+    }
+  }
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .has-feedback .form-control-feedback {
+      right: ($grid-sm-gutter-width / 2);
+    }
+  }
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    .has-feedback .form-control-feedback {
+      right: ($grid-md-gutter-width / 2);
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    .has-feedback .form-control-feedback {
+      right: ($grid-lg-gutter-width / 2);
+    }
   }
 
   // Form group sizes
@@ -531,53 +550,6 @@ input[type="checkbox"] {
     }
     .form-control {
       @extend .input-sm;
-    }
-  }
-}
-
-// Custom forms
-//
-
-#form-login {
-  position: relative;
-  top: 8px;
-  .input-group {
-    width: 80%;
-    position: relative;
-    left: 10%;
-  }
-  .checkbox {
-    width: 55%;
-    font-size: 0.8em;
-    line-height: 1.75em;
-    position: relative;
-    float: left;
-    top: -1em;
-    left: 10%;
-    label {
-      width: 150%;
-    }
-    .link {
-      position: relative;
-      top: -3px;
-    }
-  }
-  .login-btn {
-    width: 35%;
-    right: 11%;
-    position: relative;
-    float: right;
-    .btn {
-      width: 100%;
-    }
-  }
-  .container-button-signin {
-    width: 80%;
-    left: 10%;
-    position: relative;
-    clear: both;
-    .btn {
-      width: 100%;
     }
   }
 }

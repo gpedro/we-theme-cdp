@@ -13,8 +13,22 @@
     // Prevent columns from collapsing when empty
     min-height: 1px;
     // Inner gutter via padding
-    padding-left:  ($grid-gutter-width / 2);
-    padding-right: ($grid-gutter-width / 2);
+    @media (max-width: $screen-xs-max) {
+      padding-left:  ($grid-xs-gutter-width / 2);
+      padding-right: ($grid-xs-gutter-width / 2);
+    }
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      padding-left:  ($grid-sm-gutter-width / 2);
+      padding-right: ($grid-sm-gutter-width / 2);
+    }
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      padding-left:  ($grid-md-gutter-width / 2);
+      padding-right: ($grid-md-gutter-width / 2);
+    }
+    @media (min-width: $screen-lg-min) {
+      padding-left:  ($grid-lg-gutter-width / 2);
+      padding-right: ($grid-lg-gutter-width / 2);
+    }
   }
 }
 
