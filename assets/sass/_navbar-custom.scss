@@ -339,3 +339,52 @@ $header-main-logo-width:   132px;
     }
   }
 }
+
+
+// Tablets
+//
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  #header-main {
+    .header-main-brand {
+      .app-main-logo {
+        width: $header-main-logo-width - 73;
+        #logo-cdp-main {
+          left: -3px;
+          position: relative;
+          .logo-text {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  #menu-main {
+    .navbar-menu-item {
+      width: 50px;
+      line-height: 55px;
+      .cdp {
+        font-size: 2em;
+        top: 18px;
+      }
+      .text-menu {
+        display: none;
+      }
+    }
+  }
+  .login-menu-dropdown {
+    #form-login {
+      .input-group {
+        left: -6px;
+      }
+      .checkbox {
+        left: -6px;
+      }
+      .login-btn {
+        right: -3px;
+      }
+      .container-button-signin {
+        left: -6px;
+      }
+    }
+  }
+}
