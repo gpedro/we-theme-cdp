@@ -388,3 +388,30 @@ $header-main-logo-width:   132px;
     }
   }
 }
+
+
+// Medium screens
+//
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  #menu-main {
+    .navbar-menu-item {
+      width: 76px;
+    }
+  }
+  .login-menu-dropdown {
+    #form-login {
+      .input-group {
+        left: -8px;
+      }
+      .checkbox {
+        left: -8px;
+      }
+      .login-btn {
+        right: -6px;
+      }
+      .container-button-signin {
+        left: -8px;
+      }
+    }
+  }
+}
