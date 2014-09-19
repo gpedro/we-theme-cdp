@@ -1,38 +1,44 @@
 <section class="section">
   <div class="container">
+    <div class="row">
 
-    {{partial "partials/breadcrumb" }}
+      <!-- breadcrumb -->
+      {{partial "partials/breadcrumb" }}
+      <!-- /breadcrumb -->
 
-    <div id="group-list">
+      <!-- group-list -->
+      <div id="group-list">
 
-      {{partial "partials/group-header-main" }}
+        <!-- header-main -->
+        {{partial "partials/group-header-main" }}
+        <!-- /header-main -->
 
-      <div>
-      {{#if App.currentUser.id}}
-        {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
-          {{t "Create group"}}
-        {{/link-to}}
-      {{/if}}
-      </div>
-
-      {{#each controller}}
         <div>
-          {{render 'group/teaser' this}}
+        {{#if App.currentUser.id}}
+          {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
+            {{t "Create group"}}
+          {{/link-to}}
+        {{/if}}
         </div>
-      {{else}}
-        <p>{{t "groups.empty"}}</p>
-      {{/each}}
-    </div><!-- /group-list -->
 
-    <div id="draggable-widgets">
-      <!-- widgets -->
-      {{partial 'partials/feed-sidebar-widget'}}
+        {{#each controller}}
+          <div>
+            {{render 'group/teaser' this}}
+          </div>
+        {{else}}
+          <p>{{t "groups.empty"}}</p>
+        {{/each}}
+      </div>
+      <!-- /group-list -->
 
-      {{partial 'partials/group-sidebar-widget'}}
+      <!-- sidebar-widgets -->
+      <div id="draggable-widgets">
+        {{partial 'partials/feed-sidebar-widget'}}       <!-- feed -->
+        {{partial 'partials/group-sidebar-widget'}}      <!-- group -->
+        {{partial 'partials/course-sidebar-widget'}}     <!-- course -->
+      </div>
+      <!-- /sidebar-widgets -->
 
-      {{partial 'partials/course-sidebar-widget'}}
-      <!-- /widgets -->
-    </div>
-
+    </div><!-- /row -->
   </div><!-- /container -->
-</section><!-- end -->
+</section><!-- /section -->
