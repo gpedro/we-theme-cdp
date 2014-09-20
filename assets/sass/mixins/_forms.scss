@@ -78,3 +78,37 @@
     height: auto;
   }
 }
+
+// [new] Search header section
+//
+// Search field input for sections, included in header of section.
+@mixin search-header-section {
+  @include make-lg-column(4);
+  @include make-xs-column(12);
+  padding: 0;
+  float: right !important;
+  .input-group {
+    width: 260px;
+    float: right;
+  }
+  .input-search {
+    width: 100%;
+    margin-right: 60px;
+    font-size: 11px;
+    background: $gray-lighter;
+    border-color: $gray-lighter;
+  }
+  .search-btn {
+    background: $gray-lighter;
+    color: $gray-light;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $gray-lighter;
+    .icon-search {
+      top: 3px;
+      position: relative;
+      color: $brand-primary;
+      font-size: 16px;
+    }
+  }
+}

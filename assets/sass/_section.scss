@@ -44,6 +44,11 @@
       font-size: ($font-size-base * 4.5);
     }
   }
+
+  .people-list--header-search,
+  .group-list--header-search {
+    @include search-header-section;
+  }
 }
 
 
@@ -96,24 +101,6 @@
           width: 100%;
           color: $gray;
         }
-      }
-    }
-    .group-list--header-search {
-      @include make-xs-column(4);
-      padding: 0;
-      margin-right: -6px;
-      float: right;
-      .group-list--header-search-input {
-        padding-right: 30px;
-        background: $gray-lighter;
-        border-color: $gray-lighter;
-      }
-      .btn-default {
-        background: $gray-lighter;
-        color: $gray-light;
-        border-width: 1px;
-        border-style: solid;
-        border-color: $gray-lighter;
       }
     }
   }
@@ -205,26 +192,7 @@
         }
       }
     }
-    .people-list--header-search {
-      @include make-lg-column(4);
-      @include make-xs-column(1);
-      padding: 0;
-      float: right !important;
-      .input-group {
-        float: right ;
-      }
-      .people-list--header-search-input {
-        background: $gray-lighter;
-        border-color: $gray-lighter;
-      }
-      .btn-default {
-        background: $gray-lighter;
-        color: $gray-light;
-        border-width: 1px;
-        border-style: solid;
-        border-color: $gray-lighter;
-      }
-    }
+
   }
 
   .user-list-widget {
