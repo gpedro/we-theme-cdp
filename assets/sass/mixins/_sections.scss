@@ -1,0 +1,6 @@
+@mixin section-list {
+  @include make-lg-column(9);
+  @include make-xs-column(12);
+  float: right !important;
+  padding-right: 0;
+}
