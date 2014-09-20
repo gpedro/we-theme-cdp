@@ -128,26 +128,32 @@ $header-main-logo-width:   132px;
   padding-top: $header-main-height * 0.225;
   .form-group {
     width: 100%;
-    .fa-search {
+    .icon-search {
       top: -1.75em;
       right: 0.8em;
       color: $gray-light;
       float: right;
     }
   }
-  .btn {
+  .search-btn {
     background: darken($gray-lighter, 4%);
     color: $gray-light;
     border-width: 1px;
     border-style: solid;
     border-color: darken($gray-lighter, 4%);
+    .icon-search {
+      top: 3px;
+      position: relative;
+      color: $brand-primary;
+      font-size: 16px;
+    }
   }
   .search-input {
     width: 100%;
     padding-right: 30px;
     background: darken($gray-lighter, 4%);
     border-color: darken($gray-lighter, 4%);
-    font-size: 0.9em;
+    font-size: 11px;
     &::-webkit-input-placeholder { /* WebKit browsers */
       color: lighten($gray, 30%);
     }
@@ -161,24 +167,6 @@ $header-main-logo-width:   132px;
     }
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
         color: lighten($gray, 30%);
-    }
-    &:hover {
-      background: lighten($gray-lighter, 1.5%);
-      border-color: lighten($gray-lighter, 1.5%);
-      &::-webkit-input-placeholder { /* WebKit browsers */
-        color: $gray;
-      }
-      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-          color: $gray;
-          opacity:  1;
-      }
-      &::-moz-placeholder { /* Mozilla Firefox 19+ */
-          color: $gray;
-          opacity:  1;
-      }
-      &:-ms-input-placeholder { /* Internet Explorer 10+ */
-          color: $gray;
-      }
     }
   }
 }
