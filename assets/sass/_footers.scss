@@ -5,9 +5,14 @@
 /* Sticky footer styles
 -------------------------------------------------- */
 
-$footer-fixed-height: 405px;
-$footer-first-line-height: 180px;
+$footer-fixed-height: 460px;
+$footer-first-line-height: 240px;
 $footer-second-line-height: 120px;
+
+$footer-md-fixed-height: 485px;
+$footer-sm-fixed-height: 520px;
+$footer-xs-fixed-height: 910px;
+
 
 body {
   /* keep footer on bottom helper
@@ -23,80 +28,183 @@ body {
   height: $footer-fixed-height;
   background-color: $gray-lighter;
   border-top: 2px solid lighten($gray-light, 45%);
-  .container .text-muted {
-    margin: 15px 0;
+  .copyright {
+    height: 20px;
+    padding: 0;
+    text-align: center;
+    line-height: $line-height-base;
+    font-size: $font-size-small;
+    clear: both;
+    .text-muted {
+      margin-top: 25px;
+    }
+  }
+}
+
+
+#footer-main--blog,
+#footer-main--facebook,
+#footer-main--links,
+#footer-main--about,
+#footer-main--sponsor,
+#footer-main--partner {
+  margin: 15px 0;
+  padding-top: 10px;
+  &:hover {
+    background: lighten($gray-lighter, 1%);
   }
   .title-footer {
-    font-size: 1em;
+    font-size: $font-size-base;
     color: $brand-primary;
-    text-transform: uppercase;
+  }
+}
+#footer-main--blog,
+#footer-main--facebook,
+#footer-main--links {
+  height: $footer-first-line-height;
+}
+#footer-main--about,
+#footer-main--sponsor,
+#footer-main--partner {
+  height: $footer-second-line-height;
+}
+#footer-main--facebook {
+  @include make-sm-column(6);
+  @include make-md-column(5);
+  @include make-lg-column(4);
+  .fb-like-box-lg {
+    display: block;
+  }
+  .fb-like-box-sm {
+    display: none;
+  }
+}
+#footer-main--blog {
+  @include make-sm-column(6);
+  @include make-md-column(7);
+  @include make-lg-column(3);
+  .date-footer,
+  .small-footer {
+    font-weight: normal;
+  }
+  .small-footer,
+  .link-footer {
+    top: $padding-base-vertical;
+    position: relative;
+  }
+  .date-footer {
+    font-size: $font-size-small;
+    color: lighten($gray-light, 10%);
   }
   .small-footer {
-    margin: 3px 0;
+    line-height: $line-height-base;
+    font-size: $font-size-base;
+  }
+}
+#footer-main--links {
+  @include make-md-column(12);
+  @include make-lg-column(5);
+  .links-section--icon {
+    font-size: 18px;
+  }
+  .links-section--subtitle {
+    font-size: $font-size-base;
+    color: $gray-light;
+  }
+  .links-section--description {
+    font-size: $font-size-small;
     color: lighten($gray-light, 10%);
-    font-size: 0.7em;
     font-weight: normal;
     line-height: 1.5em;
   }
-  .date {
-    font-size: 0.65em;
-    color: lighten($gray-light, 25%);
-  }
-
-  .blog-section,
-  .facebook-section,
-  .links-section,
-  .about-section,
-  .sponsor-section,
-  .partner-section {
-    &:hover {
-      background: lighten($gray-lighter, 1%);
+  .links-section--list {
+    line-height: 1em;
+    padding: 0;
+    .links-section--list-item {
+      width: 180px;
+      height: 70px;
+      margin-right: 0;
+      list-style: none;
+      float: left;
+      padding: 0;
+      .links-section--description {
+        color: lighten($gray-light, 20%);
+      }
+      &.help-center {
+        .links-section--subtitle {
+          color: $brand-cool;
+        }
+      }
+      &.careers {
+        .links-section--subtitle {
+          color: $color-people;
+        }
+      }
+      &.notifications {
+        .links-section--subtitle {
+          color: $brand-danger;
+        }
+      }
+      &.contact {
+        .links-section--subtitle {
+          color: $color-course;
+        }
+      }
+      &:first-child,
+      &:nth-child(3) {
+        margin-right: 45px;
+      }
+      &:first-child,
+      &:nth-child(2) {
+        margin-bottom: 30px;
+      }
     }
   }
-  .blog-section {
-    margin-bottom: 3em;
-    height: $footer-first-line-height;
-    margin: 15px 0 15px 0;
-    padding: 10px 20px 20px 20px;
-  }
-  .facebook-section {
-    height: $footer-first-line-height;
-    margin: 15px 0 15px 0;
-    padding: 10px 20px 20px 20px;
-  }
-  .about-section {
-    height: $footer-second-line-height;
-    margin: 15px 0 15px 0;
-    padding: 10px 20px 20px 20px;
-    .about-section--title {
-      font-size: 1em;
+}
+#footer-main--about {
+  @include make-md-column(3);
+  @include make-lg-column(3);
+  .title-footer {
+    width: 50px;
+    float: left;
+    #logo-cdp-footer {
+      width: 135px;
+      top: 8px;
+      left: -13px;
       position: relative;
-      top: -7px;
-      color: $gray-light;
+    }
+  }
+  .description-footer {
+    width: 180px;
+    float: right;
+    top: 2px;
+    position: relative;
+    .about-section--title {
+      font-size: $font-size-small;
+      color: lighten($gray-light, 20%);
     }
     .small-footer {
-      line-height: 1.5em!important;
-      position: relative;
-      top: -10px;
-    }
-    .btn-xs {
-      font-size: 0.8em;
-      background: #00afed;
-      padding: 2px 12px;
-      position: relative;
       top: -5px;
+      font-size: $font-size-small;
+      color: lighten($gray-light, 20%);
+      line-height: $line-height-base;
+      position: relative;
+    }
+    .footer-main--about-btn {
+      font-size: $font-size-small;
+      background: #00afed;
+      top: -11px;
+      padding: 2px 18px;
+      position: relative;
     }
   }
-  .sponsor-section,
-  .partner-section {
-    height: $footer-second-line-height;
-    margin: 15px 0 15px 0;
-    padding: 10px 20px 20px 20px;
-    .sponsor-title,
-    .partner-title {
-      color: $gray-light;
-      font-size: 1em;
-    }
+}
+#footer-main--sponsor,
+#footer-main--partner {
+  .sponsor-title,
+  .partner-title {
+    color: $gray-light;
+    font-size: 1em;
   }
   .sponsor-list,
   .partner-list {
@@ -106,113 +214,30 @@ body {
       float: left;
       list-style: none;
       padding: 0;
-    }
-  }
-  .links-section {
-    height: $footer-first-line-height;
-    margin: 15px 0 15px 0;
-    padding: 10px 20px 20px 20px;
-    .links-section--title {
-    }
-    .links-section--icon {
-      font-size: 1.4em;
-    }
-    .links-section--subtitle {
-      font-size: 0.9em;
-      color: $gray-light;
-    }
-    .links-section--list {
-      margin-top: -6px;
-      line-height: 1em;
-      .links-section--list-item {
-        list-style: none;
-        float: left;
-        padding: 0 1em 0 0;
-
-        .small-footer {
-          font-family: 'Open Sans';
-          font-weight: normal;
-          margin-top: -5px;
-        }
-
-        &.help-center,
-        &.cdp {
-          margin-right: 2em
-        }
-        &:hover {
-          &.help-center {
-            .links-section--subtitle,
-            .small-footer {
-              color: $brand-cool;
-            }
-          }
-          &.careers {
-            .links-section--subtitle,
-            .small-footer {
-              color: $color-people;
-            }
-          }
-          &.cdp {
-            .links-section--subtitle,
-            .small-footer {
-              color: $brand-info;
-            }
-          }
-          &.contact {
-            .links-section--subtitle,
-            .small-footer {
-              color: $color-course;
-            }
-          }
-        }
+      .sponsor-list--item-img {
+        width: 100%;
+      }
+      &:first-child {
+        margin-left: -12px;
       }
     }
   }
-  .copyright {
-    border-top: 1px solid lighten($gray-light, 45%);
-    height: 30px;
-    padding: 0;
-    text-align: center;
-    line-height: 10px;
-    font-size: 0.85em;
-  }
-  #logo-cdp-footer {
-    width: 10.4em;
-    left: -11px;
-    position: relative;
-  }
+}
+#footer-main--sponsor {
+  @include make-xs-column(12);
+  @include make-sm-column(5);
+  @include make-md-column(4);
+  @include make-lg-column(4);
+  float: left;
+}
+#footer-main--partner {
+  @include make-xs-column(12);
+  @include make-sm-column(7);
+  @include make-md-column(5);
+  @include make-lg-column(5);
+  float: right;
 }
 
-// Grids
-//
-// -------------------------------
-
-.first-line-block {
-  @include make-row;
-  .blog-section { @include make-lg-column(4); }
-  .facebook-section { @include make-lg-column(3); }
-  .links-section { @include make-lg-column(5); }
-  .links-section--list { @include make-row; padding: 1em; }
-  .links-section--list-item { width: 46.5%; float: left; }
-}
-
-.second-line-block {
-  @include make-row;
-  .sponsor-list,
-  .partner-list {
-    .sponsor-list--item,
-    .partner-list--item { margin-left: -10px; }
-  }
-  .about-section { @include make-lg-column(4); }
-  .sponsor-section { @include make-lg-column(3); }
-  .partner-section { @include make-lg-column(5); }
-  .about-section {
-    .title-footer { width: 15%; padding: 0; float: left; }
-    .description-footer { width: 80%; float: right; }
-  }
-}
-
-.copyright { @include make-row }
 
 // Media Queries
 //
@@ -220,107 +245,238 @@ body {
 
 @media (max-width: $screen-xs-max) {
   body {
-    margin-bottom: 920px;
+    margin-bottom: $footer-xs-fixed-height;
   }
   #footer-main {
-    height: 920px;
-    .first-line-block {
-      @include make-row;
-      .blog-section { @include make-xs-column(12) }
-      .facebook-section { display: none; }
-      .links-section { @include make-xs-column(12); }
-      .links-section--list { @include make-row; padding: 1em; }
-      .links-section--list-item { width: 45.5%; float: left; }
+    height: $footer-xs-fixed-height;
+    #footer-main--blog,
+    #footer-main--facebook,
+    #footer-main--links,
+    #footer-main--sponsor,
+    #footer-main-partner {
+      margin: 10px 0 0 0;
+      padding-top: 5px;
     }
-    .second-line-block {
-      @include make-row;
-      .sponsor-list,
-      .partner-list {
-        .sponsor-list--item,
-        .partner-list--item { margin-left: -10px; }
+    #footer-main--blog {
+      height: 190px
+    }
+    #footer-main--facebook {
+      height: 140px;
+      .fb-like-box-lg { display: none; }
+      .fb-like-box-sm { display: block; }
+    }
+    #footer-main--links {
+      @include make-md-column(12);
+      height: 235px;
+      clear: both;
+      .links-section--list-item {
+        width: 48.5%;
+        margin-right: 3%;
+        &:nth-child(2),
+        &:last-child {
+          margin-right: 0;
+        }
       }
-      .about-section { @include make-xs-column(12); }
-      .sponsor-section { @include make-xs-column(12); }
-      .partner-section { @include make-xs-column(12); }
-      .about-section {
-        .title-footer { font-size: 1.3em; width: 25%; padding: 0; float: left; }
-        .description-footer { width: 75%; float: right; padding-right: 1em; }
+    }
+    #footer-main--about { display: none; }
+    #footer-main--sponsor {
+      .sponsor-list--item {
+        .sponsor-list--item-img {
+          width: 90%;
+        }
+        &:first-child {
+          margin-left: -12px;
+        }
+      }
+    }
+    #footer-main--partner {
+      .partner-list--item {
+        width: 85px;
+        margin-right: 4.5%;
+        .partner-list--item-img {
+          width: 100%;
+        }
+        &:first-child {
+          margin-left: -12px;
+        }
       }
     }
   }
 }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  body {
+    margin-bottom: $footer-sm-fixed-height;
+  }
   #footer-main {
-    .first-line-block {
-      @include make-row;
-      .blog-section { @include make-sm-column(5) }
-      .facebook-section { display: none; }
-      .links-section { @include make-sm-column(7); }
-      .links-section--list { @include make-row; padding: 1em; }
-      .links-section--list-item { width: 46.5%; float: left; }
+    height: $footer-sm-fixed-height;
+    #footer-main--about {
+      display: none;
     }
-    .second-line-block {
-      @include make-row;
-      .sponsor-list,
+    #footer-main--blog,
+    #footer-main--facebook {
+      margin: 10px 0 0 0;
+      padding-top: 5px;
+    }
+    #footer-main--blog {
+      height: 160px;
+      .date-footer {
+        font-size: $font-size-small * 0.90;
+      }
+      .small-footer {
+        line-height: $line-height-base * 0.90;
+        font-size: $font-size-base * 0.90;
+      }
+      .link-footer {
+        font-size: $font-size-base * 0.90;
+      }
+    }
+    #footer-main--facebook {
+      height: 160px;
+      .fb-like-box-lg { display: none; }
+      .fb-like-box-sm { display: block; }
+    }
+    #footer-main--links {
+      @include make-md-column(12);
+      height: 140px;
+      clear: both;
+      .links-section--list-item {
+        width: 150px;
+        margin-right: 18px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    #footer-main--sponsor {
+      .sponsor-list--item {
+        .sponsor-list--item-img {
+          width: 90%;
+        }
+        &:first-child {
+          margin-left: -12px;
+        }
+      }
+    }
+    #footer-main--partner {
       .partner-list {
-        .sponsor-list--item,
-        .partner-list--item { margin-left: -10px; }
+        width: 335px;
       }
-      .about-section { @include make-sm-column(5); }
-      .sponsor-section {
-        @include make-sm-column(3);
-        .sponsor-list--item {
-          width: 55%;
-          .sponsor-list--item-img {
-            width: 100%;
-          }
+      .partner-list--item {
+        width: 96px;
+        margin-right: 10px;
+        .partner-list--item-img {
+          width: 100%;
         }
-      }
-      .partner-section {
-        @include make-sm-column(4);
-        .sponsor-list--item {
-          width: 35%;
-          .sponsor-list--item-img {
-            width: 100%;
-          }
+        &:first-child {
+          margin-left: -12px;
         }
-      }
-      .about-section {
-        .title-footer { width: 25%; padding: 0; float: left; }
-        .description-footer { width: 75%; float: right; }
       }
     }
   }
 }
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-  #footer-main {
-    .first-line-block {
-      @include make-row;
-      .blog-section { @include make-md-column(5) }
-      .facebook-section { display: none; }
-      .links-section { @include make-md-column(7); }
-      .links-section--list { @include make-row; padding: 1em; }
-      .links-section--list-item { width: 46.5%; float: left; }
-    }
-    .second-line-block {
-      @include make-row;
-      .sponsor-list,
-      .partner-list {
-        .sponsor-list--item,
-        .partner-list--item { margin-left: -10px; }
-      }
-      .about-section { @include make-md-column(3); }
-      .sponsor-section { @include make-md-column(4); }
-      .partner-section { @include make-md-column(5); }
-      .about-section {
-        .about-section--title { font-size: 0.9em; }
-        .title-footer { font-size: 0.9em; width: 25%; padding: 0; float: left; }
-        .description-footer { width: 75%; float: right; }
-      }
-    }
+  body {
+    margin-bottom: $footer-md-fixed-height;
   }
-}
-@media (min-width: $screen-lg-min) {
   #footer-main {
+    height: $footer-md-fixed-height;
+    #footer-main--blog,
+    #footer-main--facebook {
+      margin: 10px 0 0 0;
+    }
+    #footer-main--links { margin: 0; }
+    #footer-main--about,
+    #footer-main--sponsor,
+    #footer-main--partner {
+      margin-bottom: 0;
+    }
+    #footer-main--blog,
+    #footer-main--facebook {
+      height: 160px;
+      .fb-like-box-lg { display: none; }
+      .fb-like-box-sm { display: block; }
+    }
+    #footer-main--blog {
+      .date-footer {
+        font-size: $font-size-small * 0.90;
+      }
+      .small-footer {
+        line-height: $line-height-base * 0.90;
+        font-size: $font-size-base * 0.90;
+      }
+      .link-footer {
+        font-size: $font-size-base * 0.90;
+      }
+    }
+    #footer-main--links {
+      @include make-md-column(12);
+      height: 140px;
+      clear: both;
+      .links-section--list-item {
+        width: 185px;
+        margin-right: 40px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    #footer-main--about {
+      .title-footer {
+        width: 15px;
+        #logo-cdp-footer {
+          width: 100px;
+        }
+      }
+      .description-footer {
+        width: 150px;
+        top: 2px;
+        .about-section--title {
+          font-size: $font-size-small - 2;
+        }
+        .small-footer {
+          top: -5px;
+          font-size: $font-size-small - 2;
+          line-height: $line-height-base -2;
+        }
+        .footer-main--about-btn {
+          font-size: $font-size-small - 2;
+          top: -11px;
+          padding: 1px 16px;
+        }
+      }
+    }
+    #footer-main--sponsor {
+      .sponsor-list--item {
+        .sponsor-list--item-img {
+          width: 90%;
+        }
+        &:first-child {
+          margin-left: -12px;
+        }
+      }
+    }
+    #footer-main--partner {
+      .partner-list {
+        width: 335px;
+      }
+      .partner-list--item {
+        width: 96px;
+        margin-right: 10px;
+        .partner-list--item-img {
+          width: 100%;
+        }
+        &:first-child {
+          margin-left: -12px;
+        }
+      }
+    }
+    .copyright {
+      height: 38px;
+      .text-muted {
+        height: 38px;
+        line-height: 38px;
+        margin: 0;
+      }
+    }
   }
 }
