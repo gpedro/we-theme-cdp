@@ -143,15 +143,18 @@
 // slide your carousel holds.
 
 .carousel-indicators {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  z-index: 15;
-  width: 60%;
-  margin-left: -30%;
-  padding-left: 0;
-  list-style: none;
-  text-align: center;
+
+  // Reset default
+  //
+  /*position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    margin-left: -30%;
+    padding-left: 0;
+    list-style: none;*/
+    text-align: center;
 
   li {
     display: inline-block;
@@ -186,15 +189,17 @@
 // -----------------------------
 // Hidden by default for smaller viewports
 .carousel-caption {
-  position: absolute;
+  // Reset default
+  //
+  /*position: absolute;
   left: 15%;
   right: 15%;
   bottom: 20px;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
+  text-align: center;*/
   color: $carousel-caption-color;
-  text-align: center;
   & .btn {}
 }
 
@@ -233,149 +238,5 @@
   // Move up the indicators
   .carousel-indicators {
     bottom: 20px;
-  }
-}
-
-
-// Custom Home carousel
-//
-// ------------------------------
-
-#home-carousel {
-  background: #eaeaea;
-  height: 590px;
-  margin-top: 4px;
-  margin-bottom: 0;
-  position: relative;
-  z-index: 9;
-  .carousel-control {
-    &.left {
-      width: 60px;
-    }
-    &.right {
-      width: 60px;
-    }
-  }
-  .home-carousel--text {
-    @include make-lg-column(5);
-    height: 220px;
-    color: #fff;
-    line-height: 1.5em;
-    position: absolute;
-    top: -400px;
-    bottom: 0;
-    margin: auto;
-    font-size: 1.5em;
-    &.text-left {
-      float: left;
-      text-align: left;
-      left: -12%;
-    }
-    &.text-right {
-      float: right;
-      text-align: right;
-      right: 22%;
-    }
-    .home-carousel--text-title {
-      line-height: 1.4em;
-      font-size: 1.4em;
-    }
-    .home-carousel--text-subtitle {
-      font-size: 1em;
-    }
-  }
-  .transition-timer-carousel-progress-bar {
-    height: 8px;
-    background-color: $brand-success;
-    width: 0%;
-    margin: 0;
-    border: none;
-    z-index: 11;
-    position: relative;
-  }
-  .carousel-indicators {
-    width: 91%;
-    height: 113px;
-    background: #eaeaea;
-    margin: 0 0 0 4.5%;
-    padding: 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-  }
-  .carousel-indicators li {
-    text-indent: 0;
-    color: #fff;
-    &.carousel-indicators--black {
-      background: #133540;
-      font-size: 5em;
-      line-height: 1.7em;
-      &.active {
-        background: darken(#133540, 20%);
-      }
-    }
-    &.carousel-indicators--green {
-      background: #74c125;
-      font-size: 5em;
-      line-height: 1.7em;
-      &.active {
-        background: darken(#74c125, 20%);
-      }
-    }
-    &.carousel-indicators--blue {
-      background: #4f87d2;
-      font-size: 5em;
-      line-height: 1.7em;
-      &.active {
-        background: darken(#4f87d2, 20%);
-      }
-    }
-    &.carousel-indicators--purple {
-      background: #7e4eb0;
-      font-size: 5em;
-      line-height: 1.7em;
-      &.active {
-        background: darken(#7e4eb0, 20%);
-      }
-    }
-    &.carousel-indicators--red {
-      background: #b0452b;
-      font-size: 5em;
-      line-height: 1.7em;
-      &.active {
-        background: darken(#b0452b, 20%);
-      }
-    }
-    &.carousel-indicators--lime {
-      background: #85f6ab;
-      font-size: 5em;
-      line-height: 1.7em;
-      &.active {
-        background: darken(#85f6ab, 20%);
-      }
-    }
-    &.carousel-indicators--yellow {
-      background: #e9b314;
-      font-size: 5em;
-      line-height: 1.7em;
-      &.active {
-        background: darken(#e9b314, 20%);
-      }
-    }
-  }
-  .carousel-indicators li,
-  .carousel-indicators li.active {
-    float: left;
-    width: 228px;
-    height: 105px;
-    border-radius: 0!important;
-    border: none;
-    margin: 0 0 0 4px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  .carousel-control {
-    margin-top: 16%;
   }
 }
