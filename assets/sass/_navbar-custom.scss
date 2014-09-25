@@ -21,7 +21,6 @@ $header-main-logo-width:   132px;
       width: $header-main-logo-width + 4;
       height: $header-main-height;
       padding-top: $header-main-height * 0.1;
-      left: -23px; /* normalize */
       position: relative;
       display: block;
       &:hover {
@@ -39,6 +38,7 @@ $header-main-logo-width:   132px;
     height: $header-main-bar-bottom;
     bottom: -$header-main-height;
     position: relative;
+    right: ($grid-lg-gutter-width / 2);
   }
 }
 
@@ -172,7 +172,7 @@ $header-main-logo-width:   132px;
 }
 
 .login-menu-dropdown {
-  width: 60px;
+  @include make-lg-column(1);
   height: $header-main-height;
   padding-right: 0; /* normalize */
   float: right !important;
@@ -180,6 +180,7 @@ $header-main-logo-width:   132px;
     margin-top: $header-main-height * 0.93;
   }
   .navbar-login-button {
+    @include make-row;
     cursor: pointer;
     font-weight: bold;
     float: right;
