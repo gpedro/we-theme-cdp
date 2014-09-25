@@ -14,6 +14,9 @@
   }
   .panel-heading {
     padding: 0; // reset for using w/ button
+    .panel-title {
+      font-size: $font-size-base;
+    }
   }
   .description {
     clear: both;
