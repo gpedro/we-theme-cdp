@@ -143,13 +143,11 @@
 #people-list {
   @include section-list;
   #people-list--header {
-    width: 100%;
-    height: 48px;
+    @include make-row;
+    height: 45px;
     margin-bottom: 10px;
     .people-list--header-brand {
-      @include make-lg-column(4);
-      @include make-xs-column(8);
-      padding: 0 10px 0 0;
+      width: 260px;
       float: left;
       .people-list--header-brand-icon {
         width: 20%;
@@ -191,21 +189,28 @@
   }
 
   .user-list-widget {
-    @include make-lg-column(4);
-    @include make-xs-column(12);
-    height: 300px;
-    overflow: hidden;
-    &:hover {
-      background: lighten($gray-lighter, 3%);
+    @include make-xs-column(6);
+    @include make-sm-column(6);
+    @include make-md-column(3);
+    @include make-lg-column(3);
+    .user-list-widget--item {
+      background: $brand-white;
+      margin-bottom: 25px;
+      padding: 9px 15px;
+      overflow: hidden;
+      border-top: 1px solid darken($gray-lighter, 5%);
+      border-left: 1px solid darken($gray-lighter, 5%);
+      border-right: 1px solid darken($gray-lighter, 5%);
+      border-bottom: 2px solid darken($gray-lighter, 5%);
+      border-radius: $border-radius-small;
     }
-    .user-list-img {}
+    .user-list-img {
+      @extend .img-circle;
+      background: $brand-white;
+    }
     .user-list-name {
-      text-align: left;
+      font-size: $font-size-small;
     }
-    .user-list-desc {
-      font-size: 0.9em;
-    }
-    .user-list-nav {}
   }
 }
 
@@ -300,10 +305,158 @@
 }
 
 #draggable-widgets {
-  @include make-lg-column(3);
-  @include make-xs-column(12);
-  padding: 0;
+  width: 215px;
+  padding-left: 0;
   float: left;
+}
+@media (max-width: $screen-xs-max) {
+  #draggable-widgets {
+    display: none;
+  }
+  #people-list--header {
+    margin-top: -18px;
+  }
+  .user-list-widget {
+    .user-list-widget--item {
+      width: 142px;
+      height: 272px;
+      margin-left: -4px;
+      .user-list-nav {
+        width: 108px;
+        .btn-xs {
+          display: block;
+          margin: 5px 0;
+        }
+      }
+      .user-list-img {
+        width: 65px;
+        height: 65px;
+        margin-left: 22px;
+      }
+      .user-list-name {
+        text-align: center;
+      }
+      .user-list-desc {
+        font-size: $font-size-small;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  #draggable-widgets {
+    @include make-md-column-offset(1);
+    margin-left: ($grid-md-gutter-width / 2);
+  }
+  .user-list-widget {
+    .user-list-widget--item {
+      width: 206px;
+      height: 130px;
+      margin-left: -6px;
+      margin-bottom: 25px;
+      padding: 9px 15px;
+      .user-list-img {
+        float: left;
+        width: 60px;
+        height: 60px;
+        margin-left: 0;
+      }
+      .caption {
+        width: 108px;
+        float: right;
+      }
+      .user-list-name {
+        margin-top: -0;
+        text-align: left;
+      }
+      .user-list-desc {
+        margin: -5px 0 8px 0;
+        font-size: ($font-size-small * 0.95);
+      }
+      .user-list-nav {
+        clear: both;
+        .btn-xs {
+          font-size: ($font-size-small * 0.9);
+        }
+      }
+    }
+  }
+}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  #draggable-widgets {
+    margin-left: ($grid-md-gutter-width / 2);
+  }
+  .user-list-widget {
+    .user-list-widget--item {
+      width: 142px;
+      height: 198px;
+      .user-list-nav { display: none; }
+      &:hover {
+        background: lighten($gray-lighter, 1.5%);
+        .user-list-desc {
+          display: none;
+        }
+        .user-list-nav {
+          width: 108px;
+          display: block;
+          position: absolute;
+          top: 108px;
+          .btn-xs {
+            margin: 5px 0;
+            display: block;
+          }
+        }
+      }
+      .user-list-img {
+        width: 65px;
+        height: 65px;
+        margin-left: 22px;
+      }
+      .user-list-desc {
+        font-size: $font-size-small;
+        text-align: center;
+      }
+    }
+  }
+}
+@media (min-width: $screen-lg-min) {
+  #draggable-widgets {
+    @include make-lg-column-offset(1);
+  }
+  .user-list-widget {
+    .user-list-widget--item {
+      width: 142px;
+      height: 198px;
+      .user-list-nav { display: none; }
+      &:hover {
+        background: lighten($gray-lighter, 1.5%);
+        .user-list-desc {
+          display: none;
+        }
+        .user-list-nav {
+          width: 108px;
+          display: block;
+          position: absolute;
+          top: 108px;
+          .btn-xs {
+            margin: 5px 0;
+            display: block;
+          }
+        }
+      }
+      .user-list-img {
+        width: 65px;
+        height: 65px;
+        margin-left: 22px;
+      }
+      .user-list-name {
+        text-align: center;
+      }
+      .user-list-desc {
+        font-size: $font-size-small;
+      }
+    }
+  }
 }
 
 // Register
