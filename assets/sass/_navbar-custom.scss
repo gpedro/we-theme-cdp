@@ -3,13 +3,14 @@
 // --------------------------------------------------
 
 $header-main-bar-bottom:   4px;
-$header-main-bar-color:    lighten($gray-light, 35%);
-$header-main-height:       62px;
+$header-main-bar-color:    lighten($gray-light, 47%);
+$header-main-height:       80px;
 $header-main-logo-width:   132px;
+$header-main-item-padding: 15px;
 
 #header-main {
   outline: $header-main-bar-bottom solid $header-main-bar-color;
-  background-color: $gray-lighter;
+  background-color: $brand-white;
   height: $header-main-height;
   .header-main-brand {
     @include make-xs-column(2);
@@ -20,12 +21,9 @@ $header-main-logo-width:   132px;
     .app-main-logo {
       width: $header-main-logo-width + 4;
       height: $header-main-height;
-      padding-top: $header-main-height * 0.1;
+      padding-top: $header-main-item-padding;
       position: relative;
       display: block;
-      &:hover {
-        background: #fff;
-      }
       #logo-cdp-main {
         width: $header-main-logo-width;
       }
@@ -45,13 +43,12 @@ $header-main-logo-width:   132px;
 #menu-main {
   @include make-lg-column(5);
   .navbar-menu-item {
-    width: 83px;
     height: $header-main-height + $header-main-bar-bottom;
-    line-height: 40px;
+    line-height: 40px + $header-main-item-padding;
     position: relative;
     display: block;
     text-align:left;
-    margin: auto;
+    margin: auto 10px;
     .cdp {
       width: 100%;
       height: 34px;
@@ -59,7 +56,7 @@ $header-main-logo-width:   132px;
       margin: 0 auto;
       text-align: center;
       position: absolute;
-      top: 10px;
+      top: 20px;
       left: 0;
     }
     .text-menu {
@@ -67,49 +64,59 @@ $header-main-logo-width:   132px;
       font-size: 0.75em;
       font-weight: 500;
       position: absolute;
-      top: 36px;
+      top: 50px;
       left: 0;
       margin: 0 auto;
       text-align: center;
     }
+    &.item-people {
+      width: 42px;
+    }
+    &.item-group {
+      width: 69px;
+    }
+    &.item-course {
+      width: 34px;
+    }
+    &.item-feed {
+      width: 56px;
+    }
+    &.item-notifications {
+      width: 62px;
+    }
     &:hover,
     &.active {
-      background: #fff;
+      background: $brand-white;
       &.item-people {
-        .cdp,
-        .text-menu {
+        .cdp {
           color: $color-people!important;
         }
         box-shadow: inset 0 -4px 0 $color-people;
         transition: all .25s ease-in-out;
       }
       &.item-feed {
-        .cdp,
-        .text-menu {
+        .cdp {
           color: $color-feed!important;
         }
         box-shadow: inset 0 -4px 0 $color-feed;
         transition: all .25s ease-in-out;
       }
       &.item-group {
-        .cdp,
-        .text-menu {
+        .cdp {
           color: $color-group!important;
         }
         box-shadow: inset 0 -4px 0 $color-group;
         transition: all .25s ease-in-out;
       }
       &.item-course {
-        .cdp,
-        .text-menu {
+        .cdp {
           color: $color-course!important;
         }
         box-shadow: inset 0 -4px 0 $color-course;
         transition: all .25s ease-in-out;
       }
       &.item-notifications {
-        .cdp,
-        .text-menu {
+        .cdp {
           color: $brand-danger!important;
         }
         box-shadow: inset 0 -4px 0 $brand-danger;
@@ -125,7 +132,7 @@ $header-main-logo-width:   132px;
   @include make-md-column(3);
   @include make-lg-column(4);
   height: $header-main-height;
-  padding-top: $header-main-height * 0.225;
+  padding-top: 22px;
   .form-group {
     width: 100%;
     .icon-search {
@@ -288,12 +295,12 @@ $header-main-logo-width:   132px;
     }
   }
   .toggle-button {
-    top: 0;
+    top: 10px;
     right: 50px;
     position: absolute;
   }
   #search-main {
-    top: 0;
+    top: 2px;
     left: 55px;
     position: absolute;
     .search-input {
@@ -301,7 +308,7 @@ $header-main-logo-width:   132px;
     }
   }
   .login-menu-dropdown {
-    top: 0;
+    top: 5px;
     right: 15px;
     position: absolute;
   }
@@ -349,11 +356,18 @@ $header-main-logo-width:   132px;
   }
   #menu-main {
     .navbar-menu-item {
-      width: 50px;
+      margin: auto 5px;
       line-height: 55px;
+      &.item-people,
+      &.item-group,
+      &.item-course,
+      &.item-feed,
+      &.item-notifications {
+        width: 32px;
+      }
       .cdp {
         font-size: 2em;
-        top: 18px;
+        top: 29px;
       }
       .text-menu {
         display: none;
@@ -386,6 +400,9 @@ $header-main-logo-width:   132px;
     .navbar-menu-item {
       width: 76px;
     }
+  }
+  #search-main {
+    padding-top: 22px;
   }
   .login-menu-dropdown {
     #form-login {
