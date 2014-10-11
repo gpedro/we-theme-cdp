@@ -41,7 +41,7 @@ $header-main-item-padding: 15px;
 }
 
 #menu-main {
-  @include make-lg-column(5);
+  @include make-lg-column(8);
   .navbar-menu-item {
     height: $header-main-height + $header-main-bar-bottom;
     line-height: 40px + $header-main-item-padding;
@@ -69,25 +69,59 @@ $header-main-item-padding: 15px;
       margin: 0 auto;
       text-align: center;
     }
-    &.item-people {
-      width: 42px;
+    &.item-reports {
+      width: 50px;
+      margin: 0 20px;
     }
     &.item-group {
       width: 69px;
+    }
+    &.item-services {
+      width: 69px;
+      list-style: none;
+      .text-menu {
+        top: 34px;
+      }
     }
     &.item-course {
       width: 34px;
     }
     &.item-feed {
-      width: 56px;
+      width: 55px;
+      margin: 0;
+      top: 8px;
+      .badge {
+        background: $color-notification;
+        position: relative;
+        top: -56px;
+        left: 22px;
+        border-radius: 2px;
+        padding: 3px 5px;
+      }
+      .cdp {
+        margin-left: -10px;
+      }
     }
     &.item-notifications {
-      width: 62px;
+      width: 55px;
+      margin: 0;
+      top: 8px;
+      .badge {
+        background: $color-notification;
+        position: relative;
+        top: -56px;
+        left: 18px;
+        border-radius: 2px;
+        padding: 3px 5px;
+      }
+      .cdp {
+        margin-left: -10px;
+      }
     }
     &:hover,
     &.active {
       background: $brand-white;
-      &.item-people {
+      &.item-reports {
         .cdp {
           color: $color-people!important;
         }
@@ -98,8 +132,15 @@ $header-main-item-padding: 15px;
         .cdp {
           color: $color-feed!important;
         }
-        box-shadow: inset 0 -4px 0 $color-feed;
-        transition: all .25s ease-in-out;
+        height: 76px;
+        box-shadow: inset 0 -4px 0 $header-main-bar-color;
+      }
+      &.item-services {
+        .cdp {
+          color: $color-feed!important;
+        }
+        height: 84px;
+        box-shadow: inset 0 -4px 0 $header-main-bar-color;
       }
       &.item-group {
         .cdp {
@@ -119,8 +160,8 @@ $header-main-item-padding: 15px;
         .cdp {
           color: $brand-danger!important;
         }
-        box-shadow: inset 0 -4px 0 $brand-danger;
-        transition: all .25s ease-in-out;
+        height: 76px;
+        box-shadow: inset 0 -4px 0 $header-main-bar-color;
       }
     }
   }
@@ -130,7 +171,7 @@ $header-main-item-padding: 15px;
   @include make-xs-column(7);
   @include make-sm-column(4);
   @include make-md-column(3);
-  @include make-lg-column(4);
+  @include make-lg-column(12);
   height: $header-main-height;
   padding-top: 22px;
   .form-group {
@@ -143,12 +184,15 @@ $header-main-item-padding: 15px;
     }
   }
   .search-btn {
+    position: relative;
+    top: -7px;
     background: darken($gray-lighter, 4%);
     color: $gray-light;
     border-width: 1px;
     border-style: solid;
     border-color: darken($gray-lighter, 4%);
     .icon-search {
+      height: 20px;
       top: 3px;
       position: relative;
       color: $brand-primary;
@@ -239,6 +283,34 @@ $header-main-item-padding: 15px;
       .btn {
         width: 100%;
       }
+    }
+  }
+}
+
+.services-menu-dropdown {
+  @include make-lg-column(1);
+  height: $header-main-height;
+  padding-right: 0; /* normalize */
+  float: right !important;
+  #dropdown-menu-services {
+    background: $gray-lighter;
+    width: 300px;
+    height: 300px;
+    margin-top: 18px;
+    margin-right: -100px;
+  }
+  .navbar-login-button {
+    @include make-row;
+    cursor: pointer;
+    font-weight: bold;
+    float: right;
+  }
+  #menu-services-dropdown {
+    list-style: none;
+    padding-top: $header-main-height * 0.165;
+    .dropdown-menu {
+      width: 240px;
+      background: #f8f8f8;
     }
   }
 }
@@ -358,7 +430,7 @@ $header-main-item-padding: 15px;
     .navbar-menu-item {
       margin: auto 5px;
       line-height: 55px;
-      &.item-people,
+      &.item-reports,
       &.item-group,
       &.item-course,
       &.item-feed,

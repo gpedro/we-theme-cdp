@@ -12,42 +12,49 @@
 
       <!-- Menu main -->
       <nav id="menu-main" class="nav navbar-nav navbar-collapse collapse">
-        <li class="navbar-menu-item item-people" data-toggle="collapse">
-          {{#link-to 'users' classNames=""}}
-            <i class="cdp cdp-people cdp-2x"></i>
-            <div class="text-menu">{{t 'mainmenu.link.users'}}</div>
-          {{/link-to}}
-        </li>
         <li class="navbar-menu-item item-group" data-target=".navbar-collapse">
           {{#link-to 'groups' classNames=""}}
             <i class="cdp cdp-cdp-logo cdp-2x"></i>
             <div class="text-menu">{{t 'mainmenu.link.groups'}}</div>
           {{/link-to}}
         </li>
-        <li class="navbar-menu-item item-course">
-          <a href="#">
-            <i class="cdp cdp-badge cdp-2x"></i>
-            <div class="text-menu">{{t 'mainmenu.link.courses'}}</div>
-          </a>
-        </li>
-
-        <li class="navbar-menu-item item-feed">
-          <a href="#">
-            <i class="cdp cdp-message cdp-2x"></i>
-            <div class="text-menu">{{t 'mainmenu.link.messages'}}</div>
-          </a>
-        </li>
-        <li class="navbar-menu-item item-notifications">
-          {{#link-to 'notifications' classNames=""}}
-            <i class="cdp cdp-bell cdp-2x cdp-align-justify"></i>
-            <div class="text-menu">{{t 'mainmenu.link.notifications'}}</div>
+        <li class="navbar-menu-item item-reports" data-toggle="collapse">
+          {{#link-to 'users' classNames=""}}
+            <i class="cdp cdp-people cdp-2x"></i>
+            <div class="text-menu">Relatos</div>
           {{/link-to}}
         </li>
-      </nav>
+        <li>
+          <ul class="services-menu-dropdown navbar-menu-item item-services">
+              <li id="menu-services-dropdown" class="dropdown">
+                <li class="dropdown-toggle" data-toggle="dropdown">
+                  <a href="#">
+                    <i class="cdp cdp-services cdp-2x"></i>
+                    <div class="text-menu">Serviços</div>
+                  </a>
+                </li>
+                <ul id="dropdown-menu-services" class="dropdown-menu dropdown-menu-right arrow_box-menu-services" role="menu">
+                  <div class="item">
+                    item
+                  </div>
+                  <div class="item">
+                    item
+                  </div>
+                  <div class="item">
+                    item
+                  </div>
+                  <div class="item">
+                    item
+                  </div>
+                </ul>
+              </li>
+          </ul>
+          <!-- /Menu User -->
+        </li>
       <!-- /Menu main -->
 
       <!-- search -->
-      <div id="search-main" class="search">
+      <li class="navbar-menu-item"><div id="search-main" class="search">
         <form class="form-inline" role="form">
           <div class="input-group">
             <input type="search" class="search-input form-control" placeholder="Faça sua busca">
@@ -59,6 +66,20 @@
           </div>
         </form>
       </div>
+      </li>
+
+      <li class="navbar-menu-item item-feed">
+        <a href="#" alt="{{t 'mainmenu.link.messages'}}">
+          <i class="cdp cdp-message cdp-2x cdp-align-justify"><span class="badge">42</span></i>
+        </a>
+      </li>
+      <li class="navbar-menu-item item-notifications" alt="{{t 'mainmenu.link.notifications'}}">
+        {{#link-to 'notifications' classNames=""}}
+          <i class="cdp cdp-bell cdp-2x cdp-align-justify"><span class="badge">42</span></i>
+        {{/link-to}}
+      </li>
+
+    </nav>
       <!-- /search -->
 
       <!-- Toggle button
