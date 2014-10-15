@@ -1,6 +1,6 @@
 <!-- Splash Global
     Use for welcome to user -->
-{{#if isAuthenticated}}
+{{#if App.auth.isAuthenticated}}
   <section id="splash-global" class="section">
     <div class="container">
 
@@ -10,16 +10,6 @@
             {{render 'post/sharebox' postNew}}
             {{render 'posts/list' posts controller='Posts'}}
           </div>
-        </div>
-
-        <div id="draggable-widgets">
-          <!-- widgets -->
-          {{partial 'partials/feed-widget'}}
-
-          {{partial 'partials/group-widget'}}
-
-          {{partial 'partials/course-widget'}}
-          <!-- /widgets -->
         </div>
 
     </div><!-- end container -->
