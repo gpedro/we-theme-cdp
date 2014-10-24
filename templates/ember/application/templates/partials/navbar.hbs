@@ -20,33 +20,19 @@
         </li>
         <li class="navbar-menu-item item-reports" data-toggle="collapse">
           {{#link-to 'users' classNames=""}}
-            <i class="cdp cdp-people cdp-2x"></i>
+            <i class="cdp cdp-report cdp-2x"></i>
             <div class="text-menu">Relatos</div>
           {{/link-to}}
         </li>
         <li>
-          <ul class="services-menu-dropdown navbar-menu-item item-services">
+          <ul class="navbar-menu-item item-services">
               <li id="menu-services-dropdown" class="dropdown">
-                <li class="dropdown-toggle" data-toggle="dropdown">
-                  <a href="#">
+                <li>
+                  <a href="#" data-toggle="modal" data-target="#modal-services">
                     <i class="cdp cdp-services cdp-2x"></i>
                     <div class="text-menu">Serviços</div>
                   </a>
                 </li>
-                <ul id="dropdown-menu-services" class="dropdown-menu dropdown-menu-right arrow_box-menu-services" role="menu">
-                  <div class="item">
-                    item
-                  </div>
-                  <div class="item">
-                    item
-                  </div>
-                  <div class="item">
-                    item
-                  </div>
-                  <div class="item">
-                    item
-                  </div>
-                </ul>
               </li>
           </ul>
           <!-- /Menu User -->
@@ -54,7 +40,7 @@
       <!-- /Menu main -->
 
       <!-- search -->
-      <li class="navbar-menu-item"><div id="search-main" class="search">
+      <li class="navbar-menu-item item-search"><div id="search-main" class="search">
         <form class="form-inline" role="form">
           <div class="input-group">
             <input type="search" class="search-input form-control" placeholder="Faça sua busca">
@@ -116,3 +102,23 @@
     </div><!-- /row -->
   </div><!-- end container -->
 </header><!-- end navigation #navbarmain -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-services" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Serviços</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-danger-md" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
