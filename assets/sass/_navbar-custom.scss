@@ -24,7 +24,7 @@ $header-main-item-padding: 15px;
       padding-top: $header-main-item-padding;
       position: relative;
       display: block;
-      #logo-cdp-main {
+      .logo-cdp {
         width: $header-main-logo-width;
         margin-top: -9px;
       }
@@ -359,7 +359,7 @@ $header-main-item-padding: 15px;
     .header-main-brand {
       .app-main-logo {
         width: $header-main-logo-width - 73;
-        #logo-cdp-main {
+        .logo-cdp {
           left: -3px;
           position: relative;
           .logo-text {
@@ -444,7 +444,7 @@ $header-main-item-padding: 15px;
     .header-main-brand {
       .app-main-logo {
         width: $header-main-logo-width - 73;
-        #logo-cdp-main {
+        .logo-cdp {
           left: -3px;
           position: relative;
           .logo-text {
