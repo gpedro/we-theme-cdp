@@ -886,17 +886,13 @@ border-style:none;
 }
 
 .tp-caption.black_heavy_60 {
-font-size:60px;
-line-height:60px;
-font-weight:900;
-font-family:Raleway;
-color:rgb(0, 0, 0);
+font-size:26px;
+font-weight: bold;
+font-family: $font-size-base;
+color: $brand-primary;
 text-decoration:none;
 background-color:transparent;
 text-shadow:none;
-border-width:0px;
-border-color:rgb(0, 0, 0);
-border-style:none;
 }
 
 .tp-caption.white_heavy_40 {
@@ -1108,10 +1104,7 @@ border-style:none;
 }
 
 .tp-caption.white_thin_34 {
-font-size:35px;
-line-height:35px;
-font-weight:200;
-font-family:Raleway;
+font-size: 24px;
 color:rgb(255, 255, 255);
 text-decoration:none;
 background-color:transparent;
