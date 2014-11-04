@@ -3,15 +3,15 @@
   <head>
     <title><%- title %></title>
 
-    <%- HelpersService.getRequirejsPreloadConfig() %>
-    <%- HelpersService.getRequireJsScriptTag() %>
+    <%- sails.services.theme.getJsScriptTag() %>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <meta name="csrf-token" content="<%= _csrf %>" />
 
-    <%- HelpersService.getlinkCssTags() %>
+    <%- sails.services.theme.getlinkCssTags() %>
+
     <link rel="stylesheet" href="/bower_components/tupi/css/icon/tupi-icon.outline.css">
     <link rel="stylesheet" href="/bower_components/tupi/css/build.css">
     <style type="text/css">
@@ -39,6 +39,8 @@
     <link rel="icon" href="../favicon.ico">
   </head>
   <body>
+
+    <noscript><%- body %></noscript>
 
     <!-- javascript at the bottom for fast load page -->
 
