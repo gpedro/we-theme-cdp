@@ -12,42 +12,35 @@
 
       <!-- Menu main -->
       <nav id="menu-main" class="nav navbar-nav navbar-collapse collapse">
-        <li class="navbar-menu-item item-people" data-toggle="collapse">
-          {{#link-to 'users' classNames=""}}
-            <i class="cdp cdp-people cdp-2x"></i>
-            <div class="text-menu">{{t 'mainmenu.link.users'}}</div>
-          {{/link-to}}
-        </li>
         <li class="navbar-menu-item item-group" data-target=".navbar-collapse">
           {{#link-to 'groups' classNames=""}}
             <i class="cdp cdp-cdp-logo cdp-2x"></i>
             <div class="text-menu">{{t 'mainmenu.link.groups'}}</div>
           {{/link-to}}
         </li>
-        <li class="navbar-menu-item item-course">
-          <a href="#">
-            <i class="cdp cdp-badge cdp-2x"></i>
-            <div class="text-menu">{{t 'mainmenu.link.courses'}}</div>
-          </a>
-        </li>
-
-        <li class="navbar-menu-item item-feed">
-          <a href="#">
-            <i class="cdp cdp-message cdp-2x"></i>
-            <div class="text-menu">{{t 'mainmenu.link.messages'}}</div>
-          </a>
-        </li>
-        <li class="navbar-menu-item item-notifications">
-          {{#link-to 'notifications' classNames=""}}
-            <i class="cdp cdp-bell cdp-2x cdp-align-justify"></i>
-            <div class="text-menu">{{t 'mainmenu.link.notifications'}}</div>
+        <li class="navbar-menu-item item-reports" data-toggle="collapse">
+          {{#link-to 'users' classNames=""}}
+            <i class="cdp cdp-report cdp-2x"></i>
+            <div class="text-menu">Relatos</div>
           {{/link-to}}
         </li>
-      </nav>
+        <li>
+          <ul class="navbar-menu-item item-services">
+              <li id="menu-services-dropdown" class="dropdown">
+                <li>
+                  <a href="#" data-toggle="modal" data-target="#modal-services">
+                    <i class="cdp cdp-services cdp-2x"></i>
+                    <div class="text-menu">Serviços</div>
+                  </a>
+                </li>
+              </li>
+          </ul>
+          <!-- /Menu User -->
+        </li>
       <!-- /Menu main -->
 
       <!-- search -->
-      <div id="search-main" class="search">
+      <li class="navbar-menu-item item-search"><div id="search-main" class="search">
         <form class="form-inline" role="form">
           <div class="input-group">
             <input type="search" class="search-input form-control" placeholder="Faça sua busca">
@@ -59,6 +52,20 @@
           </div>
         </form>
       </div>
+      </li>
+
+      <li class="navbar-menu-item item-feed">
+        <a href="#" alt="{{t 'mainmenu.link.messages'}}">
+          <i class="cdp cdp-message cdp-2x cdp-align-justify"><span class="badge">42</span></i>
+        </a>
+      </li>
+      <li class="navbar-menu-item item-notifications" alt="{{t 'mainmenu.link.notifications'}}">
+        {{#link-to 'notifications' classNames=""}}
+          <i class="cdp cdp-bell cdp-2x cdp-align-justify"><span class="badge">42</span></i>
+        {{/link-to}}
+      </li>
+
+    </nav>
       <!-- /search -->
 
       <!-- Toggle button
@@ -80,9 +87,7 @@
               {{t 'login.block.button.text'}} <i class="fa fa-caret-down"></i>
             </button>
             <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
-              <!-- FORM LOGIN -->
-              {{we-auth-modal-login}}
-              <!-- /FORM LOGIN -->
+              
             </ul>
           </li>
         {{/unless}}
@@ -95,3 +100,23 @@
     </div><!-- /row -->
   </div><!-- end container -->
 </header><!-- end navigation #navbarmain -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-services" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Serviços</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-danger-md" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

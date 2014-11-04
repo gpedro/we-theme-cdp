@@ -52,7 +52,7 @@ a {
   &:hover,
   &:focus {
     color: $link-hover-color;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   &:focus {
@@ -156,11 +156,4 @@ hr {
 html {
   position: relative;
   min-height: 100%;
-}
-body {
-  background: url('../img/bg-pattern.png') fixed;
-}
-
-#splash-global {
-  min-height: 30em;
 }

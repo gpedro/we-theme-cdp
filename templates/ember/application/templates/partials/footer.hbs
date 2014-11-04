@@ -2,128 +2,105 @@
   <div class="container">
     <div class="row">
 
-    <!-- blog-section -->
-    <div id="footer-main--blog">
-      <h4 class="title-footer">BLOG<h4>
-      <div class="date-footer">{{t 'blog.post.createdAt'}}</div>
-      <div class="small-footer">
-        <p>Todavia, o fenômeno da Internet deve passar por modificações independentemente das diversas correntes de pensamento. Todavia, a valorização de de ação.</p>
+      <!-- blog-section -->
+      <div id="footer-main--blog">
+        <h4 class="title-footer">
+          {{partial 'partials/logo-cdp'}}
+        <h4>
+        <div class="small-footer">
+          <p>Todavia, o fenômeno da Internet deve passar por modificações independentemente das diversas.</p>
+        </div>
       </div>
-      <button class="link-footer btn btn-link">{{t 'posts.readmore'}}</button>
-    </div>
-    <!-- /blog-section -->
+      <!-- /blog-section -->
 
-    <!-- facebook-section -->
-    <div id="footer-main--facebook">
-      <h4 class="title-footer">FACEBOOK</h4>
-      <div class="fb-like-box-lg">
-        {{ partial 'partials/facebook-like-box-lg'}}
+      <!-- facebook-section -->
+      <div id="footer-main--facebook">
+        <h4 class="title-footer">FACEBOOK</h4>
+        <div class="fb-like-box-lg">
+          {{ partial 'partials/facebook-like-box-lg'}}
+        </div>
+        <div class="fb-like-box-sm">
+          {{ partial 'partials/facebook-like-box-sm'}}
+        </div>
       </div>
-      <div class="fb-like-box-sm">
-        {{ partial 'partials/facebook-like-box-sm'}}
+      <!-- /facebook-section -->
+
+      <!-- links-section ::expose links for some sections -->
+      <div id="footer-main--links">
+        <h4 class="links-section--title title-footer">Links</h4>
+        <ul class="links-section--list">
+          <!-- help-center-item -->
+          <li class="links-section--list-item courses">
+            <h5 class="links-section--subtitle">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x fa-4x pull-left icon-circle-group"></i>
+                <i class="cdp cdp-badge cdp-lg cdp-stack-1x cdp-inverse"></i>
+              </span>
+              <span class="icon-title">Cursos</span>
+            </h5>
+            <p class="links-section--description">Trocar experiências e fazer uma rede dinâmica e viva.</p>
+          </li>
+
+          <li class="links-section--list-item reports">
+            <h5 class="links-section--subtitle">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x fa-4x pull-left icon-circle-group"></i>
+                <i class="cdp cdp-report cdp-lg cdp-stack-1x cdp-inverse"></i>
+              </span>
+              <span class="icon-title">Relatos</span>
+            </h5>
+            <p class="links-section--description">Trocar experiências e fazer uma rede dinâmica e viva.</p>
+          </li>
+        </ul>
       </div>
-    </div>
-    <!-- /facebook-section -->
+      <!-- /links-section -->
 
-    <!-- links-section ::expose links for some sections -->
-    <div id="footer-main--links">
-      <h4 class="links-section--title title-footer">Links</h4>
-      <ul class="links-section--list">
-        <!-- help-center-item -->
-        <li class="links-section--list-item help-center">
-          <h5 class="links-section--subtitle">
-            <i class="links-section--icon cdp cdp-cdp-logo pull-left"></i>
-            <span>Comunidades</span>
-          </h5>
-          <p class="links-section--description">Duo Reges: constructio interrete. Mene ergo</p>
-        </li>
-
-        <li class="links-section--list-item careers">
-          <h5 class="links-section--subtitle">
-            <i class="links-section--icon cdp cdp-message pull-left"></i>
-            <span>Mensagens</span>
-          </h5>
-          <p class="links-section--description">Duo Reges: constructio interrete. Mene ergo</p>
-        </li>
-
-        <li class="links-section--list-item notifications">
-          <h5 class="links-section--subtitle">
-            <i class="links-section--icon cdp cdp-bell pull-left"></i>
-            <span>Notificações</span>
-          </h5>
-          <p class="links-section--description">Duo Reges: constructio interrete. Mene ergo</p>
-        </li>
-
-        <li class="links-section--list-item contact">
-          <h5 class="links-section--subtitle">
-            <i class="links-section--icon  cdp cdp-question pull-left"></i>
-            <span>Cursos</span>
-          </h5>
-          <p class="links-section--description">Duo Reges: constructio interrete. Mene ergo</p>
-        </li>
-      </ul>
-    </div>
-    <!-- /links-section -->
-
-    <!-- footer-main--about -->
-    <div id="footer-main--about">
-      <div class="title-footer">
-        {{ partial 'partials/logo-cdp-footer'}}
+      <!-- sponsor-section -->
+      <div id="footer-main--sponsor">
+        <h4 class="sponsor-title">{{t 'sponsor.title'}}</h4>
+        <ul class="sponsor-list pull-left">
+          <li class="sponsor-list--item">
+            <a href="#"target="_blank">
+              <img class="sponsor-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
+            </a>
+          </li>
+          <li class="sponsor-list--item">
+            <a href="#"target="_blank">
+              <img class="sponsor-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="description-footer">
-        <h4 class="about-section--title">Comunidade de Práticas</h4>
-        <p class="small-footer">Todavia, o fenômeno da Internet deve passar por modificações.</p>
-        <button class="footer-main--about-btn btn btn-xs btn-primary">Leia mais</button>
+      <!-- /sponsor-section -->
+
+      <!-- partner-section -->
+      <div id="footer-main--partner">
+        <h4 class="partner-title">{{t 'partner.title'}}</h4>
+        <ul class="partner-list">
+          <li class="partner-list--item">
+            <a href="#"target="_blank">
+              <img class="partner-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
+            </a>
+          </li>
+          <li class="partner-list--item">
+            <a href="#"target="_blank">
+              <img class="partner-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
+            </a>
+          </li>
+          <li class="partner-list--item">
+            <a href="#"target="_blank">
+              <img class="partner-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
-    <!-- /footer-main--about -->
-
-    <!-- sponsor-section -->
-    <div id="footer-main--sponsor">
-      <h4 class="sponsor-title">{{t 'sponsor.title'}}</h4>
-      <ul class="sponsor-list pull-left">
-        <li class="sponsor-list--item">
-          <a href="#"target="_blank">
-            <img class="sponsor-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
-          </a>
-        </li>
-        <li class="sponsor-list--item">
-          <a href="#"target="_blank">
-            <img class="sponsor-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- /sponsor-section -->
-
-    <!-- partner-section -->
-    <div id="footer-main--partner">
-      <h4 class="partner-title">{{t 'partner.title'}}</h4>
-      <ul class="partner-list">
-        <li class="partner-list--item">
-          <a href="#"target="_blank">
-            <img class="partner-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
-          </a>
-        </li>
-        <li class="partner-list--item">
-          <a href="#"target="_blank">
-            <img class="partner-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
-          </a>
-        </li>
-        <li class="partner-list--item">
-          <a href="#"target="_blank">
-            <img class="partner-list--item-img" src="/theme/assets/img/sponsor-partner.jpg">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- /partner-section -->
-
-    <div class="copyright">
-      <p class="text-muted">Comunidade de Práticas - <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC</a> 2014</p>
-    </div>
+      <!-- /partner-section -->
 
     </div>
+  </div>
+
+  <div class="copyright">
+    <p class="text-muted">Comunidade de Práticas - <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC</a> 2014</p>
   </div>
 </footer>
 {{we-avatar-modal store=store}}
