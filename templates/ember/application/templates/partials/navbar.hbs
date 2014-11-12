@@ -19,7 +19,7 @@
           {{/link-to}}
         </li>
         <li class="navbar-menu-item item-reports" data-toggle="collapse">
-          {{#link-to 'users' classNames=""}}
+          {{#link-to 'relatos' classNames=""}}
             <i class="cdp cdp-report cdp-2x"></i>
             <div class="text-menu">Relatos</div>
           {{/link-to}}
@@ -87,7 +87,9 @@
               {{t 'login.block.button.text'}} <i class="fa fa-caret-down"></i>
             </button>
             <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
-              
+              <!-- FORM LOGIN -->
+              {{we-auth-modal-login}}
+              <!-- /FORM LOGIN -->
             </ul>
           </li>
         {{/unless}}

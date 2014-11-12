@@ -1,14 +1,25 @@
 <ul class="nav nav-pills nav-stacked">
-  <li class="active">
-    {{#link-to 'notifications'}}
-      <span class="badge pull-right">83</span>
+
+  {{#link-to 'notifications.index' tagName="li" href=false}}
+    {{#link-to 'notifications.index' bubbles=false}}
+      {{we-notifications-count
+      count=App.WeNotification.notificationCount
+      pullRight=true
+      labelHighlightClass='badge pull-right'
+      labelDefaultClass='badge pull-right'}}
       {{t "notifications.unread"}}
     {{/link-to}}
-  </li>
-  <li>
-    {{#link-to 'notifications.lidas'}}
-      <span class="badge pull-right">10</span>
+  {{/link-to}}
+
+  {{#link-to 'notifications.lidas' tagName="li" href=false}}
+    {{#link-to 'notifications.lidas' bubbles=false}}
+      {{we-notifications-count
+      count=App.WeNotification.readNotificationCount
+      highlight=false
+      pullRight=true
+      labelHighlightClass='badge pull-right'
+      labelDefaultClass='badge pull-right'}}
       {{t "notifications.read"}}
     {{/link-to}}
-  </li>
+  {{/link-to}}
 </ul>
