@@ -15,11 +15,10 @@
     </div><!-- end container -->
   </section><!-- end splash global -->
 {{else}}
-  <div id="home-logged-out">
+  <section class="section-home">
     {{partial 'partials/home-about-site'}}
 
     <div class="collapse-blocks">
-
       <div class="panel-group" id="accordion-one">
         <div class="block-collapse panel panel-default">
           <div class="panel-heading">
@@ -168,6 +167,7 @@
       </div>
 
     </div>
+    <!-- /collapse-blocks -->
 
     <div class="info-blocks">
       <div class="info-blocks--blog">
@@ -211,5 +211,5 @@
         <a class="btn-success-md">Ver resposta</a>
       </div>
     </div>
-  </div>
+  </section>
 {{/if}}
