@@ -1,0 +1,21 @@
+<h1>Posts</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>body</th>
+      <th>createdAt</th>
+      <th>updatedAt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% data.forEach(function (item) { %>
+      <tr>
+        <td><%- item.id %></td>
+        <td><%- item.body %></td>
+        <td><%- item.createdAt %></td>
+        <td><%- item.updatedAt %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
