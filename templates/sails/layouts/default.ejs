@@ -3,15 +3,17 @@
   <head>
     <title><%- title %></title>
 
-    <%- HelpersService.getRequirejsPreloadConfig() %>
-    <%- HelpersService.getRequireJsScriptTag() %>
+    <%- sails.services.theme.getJsScriptTag() %>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <meta name="csrf-token" content="<%= _csrf %>" />
 
-    <%- HelpersService.getlinkCssTags() %>
+    <%- sails.services.theme.getlinkCssTags() %>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="/bower_components/tupi/css/icon/tupi-icon.outline.css">
     <link rel="stylesheet" href="/bower_components/tupi/css/build.css">
     <style type="text/css">
@@ -31,14 +33,16 @@
 
       @font-face {
         font-familoutline'icons-outline';
-        src: url('../bower_components/tupi/icon/awesome/icons-awesome.eot?v=4.2.0');
-        src: url('../bower_components/tupi/icon/awesome/icons-awesome.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../bower_components/tupi/icon/awesome/icons-awesome.woff?v=4.2.0') format('woff'), url('../bower_components/tupi/icon/awesome/icons-awesome.ttf?v=4.2.0') format('truetype'), url('../bower_components/tupi/icon/awesome/icons-awesome.svg?v=4.2.0#fontawesomeregular') format('svg');
+        src: url('../bower_components/tupi/icon/awesome/fontawesome-webfont.eot?v=4.2.0');
+        src: url('../bower_components/tupi/icon/awesome/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../bower_components/tupi/icon/awesome/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../bower_components/tupi/icon/awesome/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../bower_components/tupi/icon/awesome/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
         font-weight: normal;
         font-style: normal; }
     </style>
     <link rel="icon" href="../favicon.ico">
   </head>
   <body>
+
+    <noscript><%- body %></noscript>
 
     <!-- javascript at the bottom for fast load page -->
 
