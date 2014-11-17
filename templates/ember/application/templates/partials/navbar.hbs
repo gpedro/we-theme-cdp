@@ -1,108 +1,84 @@
-<header id="header-main" class="navbar-default" role="navigation">
-  <div class="container">
-    <div class="row">
+<nav id="header-main" class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="navbar-brand header-main-brand" href="#">
+                <!-- Logo -->
+                {{#link-to 'home' classNames="app-main-logo"}}
+                  {{partial 'partials/logo-cdp'}}
+                {{/link-to}}
+                <!-- /Logo -->
+              </div>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
 
-      <div class="header-main-brand" alt="Comunidade de Práticas">
-        <!-- Logo -->
-        {{#link-to 'home' classNames="app-main-logo"}}
-          {{partial 'partials/logo-cdp'}}
-        {{/link-to}}
-        <!-- /Logo -->
-      </div>
-
-      <!-- Menu main -->
-      <nav id="menu-main" class="nav navbar-nav navbar-collapse collapse">
-        <li class="navbar-menu-item item-group" data-target=".navbar-collapse">
-          {{#link-to 'groups' classNames=""}}
-            <i class="cdp cdp-cdp-logo cdp-2x"></i>
-            <div class="text-menu">{{t 'mainmenu.link.groups'}}</div>
-          {{/link-to}}
-        </li>
-        <li class="navbar-menu-item item-reports" data-toggle="collapse">
-          {{#link-to 'relatos' classNames=""}}
-            <i class="cdp cdp-report cdp-2x"></i>
-            <div class="text-menu">Relatos</div>
-          {{/link-to}}
-        </li>
-        <li>
-          <ul class="navbar-menu-item item-services">
-              <li id="menu-services-dropdown" class="dropdown">
-                <li>
-                  <a href="#" data-toggle="modal" data-target="#modal-services">
-                    <i class="cdp cdp-services cdp-2x"></i>
-                    <div class="text-menu">Serviços</div>
+              <ul class="nav navbar-nav">
+                <li class="main_menu-item style_group active">
+                  {{#link-to 'groups' classNames="main_menu-item--wrapper"}}
+                    <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
+                    <span class="main_menu-item--name">{{t 'mainmenu.link.groups'}}</span>
+                  {{/link-to}}
+                </li>
+                <li class="main_menu-item style_story">
+                  {{#link-to 'relatos' classNames="main_menu-item--wrapper"}}
+                    <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
+                    <span class="main_menu-item--name">Relatos</span>
+                  {{/link-to}}
+                </li>
+                <li class="main_menu-item style_service">
+                  <a class="main_menu-item--wrapper" href="#" data-toggle="modal" data-target="#modal-services">
+                    <i class="main_menu-item--icon cdp cdp-services cdp-2x"></i>
+                    <span class="main_menu-item--name">Serviços</span>
                   </a>
                 </li>
-              </li>
-          </ul>
-          <!-- /Menu User -->
-        </li>
-      <!-- /Menu main -->
+                <li class="main_menu-search">
 
-      <!-- search -->
-      <li class="navbar-menu-item item-search">
-        <div id="search-main" class="search">
-          <form class="form-inline" role="form">
-            <div class="input-group">
-              <input type="search" class="search-input form-control" placeholder="Faça sua busca">
-              <span class="input-group-btn">
-                <button class="search-btn btn btn-default" type="button">
-                  <i class="icon-search cdp cdp-search"></i>
-                </button>
-              </span>
+                    <form class="form-inline" role="form">
+                      <div class="input-group">
+                        <input type="search" class="search-input form-control" placeholder="Faça sua busca">
+                        <span class="input-group-btn">
+                          <button class="search-btn btn btn-default" type="button">
+                            <i class="icon-search cdp cdp-search"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </form>
+                </li>
+                <li class="main_menu-notification">
+                  <a href="#" alt="{{t 'mainmenu.link.messages'}}">
+                    <i class="cdp cdp-message cdp-2x cdp-align-justify"><span class="badge">42</span></i>
+                  </a>
+                </li>
+                <li class="main_menu-message" alt="{{t 'mainmenu.link.notifications'}}">
+                  {{#link-to 'notifications' classNames=""}}
+                    <i class="cdp cdp-bell cdp-2x cdp-align-justify"><span class="badge">42</span></i>
+                  {{/link-to}}
+                </li>
+
+
+
+
+                <li class="main_menu-dropdown dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Entrar <span class="caret"></span></a>
+                  <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
+                    <!-- FORM LOGIN -->
+                    {{we-auth-modal-login}}
+                    <!-- /FORM LOGIN -->
+                  </ul>
+                </li>
+              </ul>
+
+              <div class="bar-colored"></div>
+
             </div>
-          </form>
-        </div>
-      </li>
+          </div>
+        </nav>
 
-      <li class="navbar-menu-item item-feed">
-        <a href="#" alt="{{t 'mainmenu.link.messages'}}">
-          <i class="cdp cdp-message cdp-2x cdp-align-justify"><span class="badge">42</span></i>
-        </a>
-      </li>
-      <li class="navbar-menu-item item-notifications" alt="{{t 'mainmenu.link.notifications'}}">
-        {{#link-to 'notifications' classNames=""}}
-          <i class="cdp cdp-bell cdp-2x cdp-align-justify"><span class="badge">42</span></i>
-        {{/link-to}}
-      </li>
-
-    </nav>
-      <!-- /search -->
-
-      <!-- Toggle button
-          for mobile devices -->
-      <button class="toggle-button navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- /Toggle button -->
-
-      <!-- Menu User #menu-user-dropdown
-           only on login -->
-      <ul class="login-menu-dropdown">
-        {{#unless isAuthenticated}}
-          <li id="menu-user-dropdown" class="dropdown">
-            <button class="btn btn-link navbar-login-button navbar-btn dropdown-toggle" data-toggle="dropdown">
-              {{t 'login.block.button.text'}} <i class="fa fa-caret-down"></i>
-            </button>
-            <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
-              <!-- FORM LOGIN -->
-              {{we-auth-modal-login}}
-              <!-- /FORM LOGIN -->
-            </ul>
-          </li>
-        {{/unless}}
-        {{render 'user/usermenu' App.currentUser controller='UserMenu'}}
-      </ul>
-      <!-- /Menu User -->
-
-      <div class="bar-colored"></div>
-
-    </div><!-- /row -->
-  </div><!-- end container -->
-</header><!-- end navigation #navbarmain -->
 
 <!-- Modal -->
 <div class="modal fade" id="modal-services" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -116,7 +92,7 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-danger-md" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
