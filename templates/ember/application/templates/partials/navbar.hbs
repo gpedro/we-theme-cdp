@@ -1,112 +1,84 @@
 <nav id="header-main" class="navbar navbar-default navbar-static-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <div class="navbar-brand header-main-brand" href="#">
-                <!-- Logo -->
-                {{#link-to 'home' classNames="app-main-logo"}}
-                  {{partial 'partials/logo-cdp'}}
-                {{/link-to}}
-                <!-- /Logo -->
-              </div>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-
-              <ul class="nav navbar-nav">
-                <li class="main_menu-item style_group active">
-                  {{#link-to 'groups' classNames="main_menu-item--wrapper"}}
-                    <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
-                    <span class="main_menu-item--name">{{t 'mainmenu.link.groups'}}</span>
-                  {{/link-to}}
-                </li>
-                <li class="main_menu-item style_story">
-                  {{#link-to 'relatos' classNames="main_menu-item--wrapper"}}
-                    <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
-                    <span class="main_menu-item--name">Relatos</span>
-                  {{/link-to}}
-                </li>
-                <li class="main_menu-item style_service">
-                  <a class="main_menu-item--wrapper" href="#" data-toggle="modal" data-target="#modal-services">
-                    <i class="main_menu-item--icon cdp cdp-services cdp-2x"></i>
-                    <span class="main_menu-item--name">Serviços</span>
-                  </a>
-                </li>
-                <li class="main_menu-search">
-
-                    <form class="form-inline" role="form">
-                      <div class="input-group">
-                        <input type="search" class="search-input form-control" placeholder="Faça sua busca">
-                        <span class="input-group-btn">
-                          <button class="search-btn btn btn-default" type="button">
-                            <i class="icon-search cdp cdp-search"></i>
-                          </button>
-                        </span>
-                      </div>
-                    </form>
-                </li>
-                <li class="main_menu-notification">
-                  <a href="#" alt="{{t 'mainmenu.link.messages'}}">
-                    <i class="cdp cdp-message cdp-2x cdp-align-justify"><span class="badge">42</span></i>
-                  </a>
-                </li>
-                <li class="main_menu-message" alt="{{t 'mainmenu.link.notifications'}}">
-                  {{#link-to 'notifications' classNames=""}}
-                    <i class="cdp cdp-bell cdp-2x cdp-align-justify"><span class="badge">42</span></i>
-                  {{/link-to}}
-                </li>
-
-
-
-
-                <li class="main_menu-dropdown dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Entrar <span class="caret"></span></a>
-                  <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
-                    <!-- FORM LOGIN -->
-                    {{we-auth-modal-login}}
-                    <!-- /FORM LOGIN -->
-                  </ul>
-                </li>
-              </ul>
-
-              <div class="bar-colored"></div>
-
-            </div>
-          </div>
-        </nav>
-
-
-<!-- Modal -->
-<div class="modal fade" id="modal-services" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="header-brand--services">
-          <div class="header-brand-icon">
-            <span class="fa-stack">
-              <i class="fa fa-circle fa-stack-2x fa-4x pull-left icon-circle-people"></i>
-              <i class="cdp cdp-services cdp-stack-1x cdp-inverse"></i>
-            </span>
-          </div>
-          <div class="header-brand-text">
-            <h3 class="header-brand-text--title">Serviços</h3>
-            <small class="header-brand-text--small">Envie seu relato, preencha os campos</small>
-          </div>
-        </div>
-        <button type="button" class="close" data-dismiss="modal"><i class="icons-outline icons-outline-circle-close icons-outline-2x"></i></button>
-      </div>
-      <div class="modal-body">
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand header-main-brand" href="#">
+        <!-- Logo -->
+        {{#link-to 'home' classNames="app-main-logo"}}
+          {{partial 'partials/logo-cdp'}}
+        {{/link-to}}
+        <!-- /Logo -->
       </div>
     </div>
+    <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+
+      <ul class="nav navbar-nav">
+        <li class="main_menu-item style_group active">
+          {{#link-to 'groups' classNames="main_menu-item--wrapper"}}
+            <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
+            <span class="main_menu-item--name">{{t 'mainmenu.link.groups'}}</span>
+          {{/link-to}}
+        </li>
+        <li class="main_menu-item style_story">
+          {{#link-to 'relatos' classNames="main_menu-item--wrapper"}}
+            <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
+            <span class="main_menu-item--name">Relatos</span>
+          {{/link-to}}
+        </li>
+        <li class="main_menu-item style_service">
+          <a class="main_menu-item--wrapper" href="#" data-toggle="modal" data-target="#modal-services">
+            <i class="main_menu-item--icon cdp cdp-services cdp-2x"></i>
+            <span class="main_menu-item--name">Serviços</span>
+          </a>
+        </li>
+        <li class="main_menu-search">
+
+            <form class="form-inline" role="form">
+              <div class="input-group">
+                <input type="search" class="search-input form-control" placeholder="Faça sua busca">
+                <span class="input-group-btn">
+                  <button class="search-btn btn btn-default" type="button">
+                    <i class="icon-search cdp cdp-search"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
+        </li>
+        <li class="main_menu-notification">
+          <a href="#" alt="{{t 'mainmenu.link.messages'}}">
+            <i class="cdp cdp-message cdp-2x cdp-align-justify"><span class="badge">42</span></i>
+          </a>
+        </li>
+        <li class="main_menu-message" alt="{{t 'mainmenu.link.notifications'}}">
+          {{#link-to 'notifications' classNames=""}}
+            <i class="cdp cdp-bell cdp-2x cdp-align-justify"><span class="badge">42</span></i>
+          {{/link-to}}
+        </li>
+
+
+
+
+        <li class="main_menu-dropdown dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Entrar <span class="caret"></span></a>
+          <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
+            <!-- FORM LOGIN -->
+            {{we-auth-modal-login}}
+            <!-- /FORM LOGIN -->
+          </ul>
+        </li>
+      </ul>
+
+      <div class="bar-colored"></div>
+
+    </div>
   </div>
-</div>
+</nav>
+
+<!-- Modal Services -->
+{{partial 'partials/modal-services'}}
+<!-- /Modal Services -->
