@@ -1,5 +1,3 @@
-<!-- Splash Global
-    Use for welcome to user -->
 {{#if App.auth.isAuthenticated}}
   <section id="splash-global" class="section">
     <div class="container">
@@ -12,11 +10,10 @@
           </div>
         </div>
 
-    </div><!-- end container -->
-  </section><!-- end splash global -->
+    </div>
+  </section>
 {{else}}
   <div id="home-logged-out">
-    {{partial 'partials/home-about-site'}}
 
     <div class="collapse-blocks">
 
@@ -170,27 +167,8 @@
     </div>
 
     <div class="info-blocks">
-      <div class="info-blocks--blog">
-        <header class="info-blocks--blog-header">
-          <h3 class="info-blocks--blog-title">
-            Blog <small class="info-blocks--blog-subtitle">Fique por dentro da novidades da CdP</small>
-          </h3>
-        </header>
-        <div class="info-blocks--blog-content">
-          <img class="info-blocks--blog-content-img" src="http://goo.gl/gxbrPl" />
-          <h4 class="info-blocks--blog-content-title">Título do post</h4>
-          <p class="info-blocks--blog-content-description">
-            Trocar experiências e fazer uma rede dinâmica e viva. Comunique-se, participe das mais diversas comunidades.
-          </p>
-        </div>
-        <div class="info-blocks--blog-content">
-          <img class="info-blocks--blog-content-img" src="http://goo.gl/gxbrPl" />
-          <h4 class="info-blocks--blog-content-title">Título do post</h4>
-          <p class="info-blocks--blog-content-description">
-            Trocar experiências e fazer uma rede dinâmica e viva. Comunique-se, participe das mais diversas comunidades.
-          </p>
-        </div>
-      </div>
+
+      {{we-cdp-blog-post-block}}
 
       <div class="info-blocks--help_center">
         <h3 class="info-blocks--help_center-title">
