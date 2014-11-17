@@ -1,17 +1,11 @@
 <section class="section">
   <div class="container">
     <div class="row">
-
-      <!-- breadcrumb -->
       {{partial "partials/breadcrumb" }}
-      <!-- /breadcrumb -->
 
-      <!-- group-list -->
       <div id="group-list">
 
-        <!-- header-main -->
         {{partial "partials/group-header-main" }}
-        <!-- /header-main -->
 
         <div>
         {{#if App.currentUser.id}}
@@ -29,16 +23,13 @@
           <p>{{t "groups.empty"}}</p>
         {{/each}}
       </div>
-      <!-- /group-list -->
 
-      <!-- sidebar-widgets -->
       <div id="draggable-widgets">
-        {{partial 'partials/feed-sidebar-widget'}}       <!-- feed -->
-        {{partial 'partials/group-sidebar-widget'}}      <!-- group -->
-        {{partial 'partials/course-sidebar-widget'}}     <!-- course -->
+        {{partial 'partials/feed-sidebar-widget'}}
+        {{partial 'partials/group-sidebar-widget'}}
+        {{partial 'partials/course-sidebar-widget'}}
       </div>
-      <!-- /sidebar-widgets -->
 
-    </div><!-- /row -->
-  </div><!-- /container -->
-</section><!-- /section -->
+    </div>
+  </div>
+</section>

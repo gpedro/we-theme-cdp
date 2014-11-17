@@ -10,25 +10,18 @@
         <form id="form-signin" class="form-horizontal user-signup-form" role="form" {{action "submit" on="submit"}} name="createAccountForm" method="POST">
           {{we-sys-messages messages=messages}}
 
-          <!-- input: username -->
           {{input name="username" value=user.username  type="text" placeholder=usernamePlaceholder required="true" classNames="form-signin--input-name form-control input-lg"}}
-          <!-- /input: username -->
 
-          <!-- input: email -->
           <div>
             {{input name="email" value=user.email  type="email" placeholder=emailPlaceholder classNames="form-signin--input-email form-control input-lg" required="true"}}
             <div class="message">
               <div class="message.type">{{message.message}}</div>
             </div>
           </div>
-          <!-- /input: email -->
 
-          <!-- input: password -->
           {{input name="password" value=user.password  type="password" placeholder=passwordPlaceholder required="true" classNames="form-signin--input-password form-control input-lg"}}
-          <!-- /input: password -->
-          <!-- input: confirm-password -->
+
           {{input name="confirmPassword" value=user.confirmPassword  type="password" placeholder=confirmPasswordPlaceholder required="true" classNames="form-signin--input-password-confirm form-control input-lg"}}
-          <!-- /input: confirm-password -->
 
           <div class="form-signin--radio-gender">
             <label class="radio-male">
@@ -40,8 +33,6 @@
               Feminino
             </label>
           </div>
-
-
 
           {{we-sys-messages messages=messages}}
 
@@ -97,5 +88,5 @@
       </div>
     </div>
 
-  </div><!-- end container -->
-</section><!-- end -->
+  </div>
+</section>
