@@ -3155,8 +3155,6 @@ body {
   margin-bottom: 410px; }
 
 #footer-main {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 410px;
