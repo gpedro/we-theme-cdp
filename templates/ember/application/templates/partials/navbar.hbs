@@ -64,6 +64,7 @@
 
 
         <li class="main_menu-dropdown dropdown">
+          {{#unless isAuthenticated}}
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Entrar <span class="caret"></span></a>
           <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
             <!-- FORM LOGIN -->
@@ -71,6 +72,8 @@
             <!-- /FORM LOGIN -->
           </ul>
         </li>
+        {{/unless}}
+        {{render 'user/usermenu' App.currentUser controller='UserMenu'}}
       </ul>
 
       <div class="bar-colored"></div>
