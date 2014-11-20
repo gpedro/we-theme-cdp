@@ -1,10 +1,6 @@
 {
   "name": "we-theme-cdp",
-<<<<<<< HEAD
   "version": "0.1.0-beta.45",
-=======
-  "version": "0.1.0-beta.423",
->>>>>>> 329a3c62d9ca7211f138fd1d9ffb5f2a3f2a0dbe
   "description": "Tema do We.js para a Comunidade de Práticas",
   "homepage": "http://abs-org.github.io/we-theme-cdp/",
   "repository": {
