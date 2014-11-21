@@ -2,14 +2,15 @@
   <div class="container">
     <div class="row">
 
-    <div id="group-list">
-      <h3>{{t 'Atividades'}}</h3>
-      {{render 'posts/list' posts controller='Posts'}}
+      <div id="group-list">
+        <h3>Atividades</h3>
 
-      <div class="sharebox-area">
-        {{render 'post/sharebox' postNew}}
+        <div class="sharebox-area">
+          {{render 'post/sharebox' postNew}}
+        </div>
+
+        {{render 'posts/list' posts controller='Posts'}}
       </div>
-    </div>
 
     </div>
   </div>
