@@ -1,5 +1,8 @@
 <div class="form-group">
-  {{we-wysiwyg-editor name="body" value=body onPaste="onPasteInBody"}}
+  {{we-wysiwyg-editor name="body" linkedPage=newWembed value=body
+    onChangeText="onChangeBodyText"
+    onPasteText="onPasteBodyText"
+  }}
 </div>
 
 {{#if selectingAttachOption}}
@@ -23,13 +26,9 @@
 {{/if}}
 
 <div class="form-group">
-  <div class='row'>
-  {{#each videos}}
-    <div class='col-md-6'>
-      {{we-video-preview url=this onRemove="onRemoveVideo"}}
-    </div>
-  {{/each}}
-  </div>
+  {{#if wembed.url}}
+    {{we-wembed url=wembed.url imageIndex=wembed.imageIndex isEditing='true'}}
+  {{/if}}
 </div>
 
 {{#if shareImages}}
@@ -59,20 +58,14 @@
 </div>
 
 <div class="footer">
-  <div class="form-group">
-    <div class="input-group">
-      <label for="toId" class="input-group-addon">{{t "To"}}:</label>
-      {{we-select2 shareWithOptions=App.currentUser.shareWithOptions shareWithUsers=sharedWith  shareInGroups=sharedWith}}
-    </div>
-  </div>
 
   <div class="actions">
     <button type="submit" class="btn btn-info">
-      <span class="fa fa-share"></span> {{t "Compartilhar"}}
+      <span class="fa fa-share"></span>Compartilhar
     </button>
-    <button type="button" {{action 'cancel'}} class="btn btn-danger">
+    <button type="button" {{action 'cancel'}} class="btn btn-default">
       <i class="fa fa-close"></i>
-      {{t "Cancelar"}}
+      Cancelar
     </button>
   </div>
 </div>

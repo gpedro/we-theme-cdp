@@ -22,7 +22,7 @@
       {{view App.postEditFormView}}
     {{else}}
       <div class="content">
-        <div class="post-text">{{{body}}}</div>
+        <div class="post-text">{{html body}}</div>
         <div class="videos">
           {{#each videos}}
             {{we-video url=this}}
@@ -36,27 +36,23 @@
       </div>
       <div class="footer">
           <div class="actions">
-            <button type="button" class="btn btn-xs btn-warning">
-              <i class="fa fa-envelope" title="Mensagem"></i>
-            </button>
 
-            <button type="button" class="btn btn-xs btn-danger">
-              <i class="fa fa-heart" title="Amar"></i>
-            </button>
+            {{we-follow model='post' modelId=id flagText="Seguir" unFlagText="Seguindo"}}
 
-            <button type="button" class="btn btn-xs btn-primary">
-              <i class="fa fa-share" title="Compartilhar"></i> {{t 'Compartilhar'}}
-            </button>
+            {{we-flag flagType='like' model='post' modelId=id
+              flagText='<i class="fa fa-heart" title="Amar"></i>'
+              flagClass= 'btn btn-xs btn-danger active'
+              unFlagClass= 'btn btn-xs btn-danger' }}
 
             {{#can editPost model}}
               <button type="button" class="btn btn-xs btn-warning" {{action 'edit'}}>
-                <i class="fa fa-edit-marked"></i> {{t 'Editar'}}
+                <i class="fa fa-edit-marked"></i>Editar
               </button>
             {{/can}}
 
             {{#can deletePost model}}
-              <button class="btn btn-xs btn-danger" {{action 'deleteItem'}}>
-                <i class="fa fa-close"></i> {{t 'Deletar'}}
+              <button class="btn btn-xs btn-default" {{action 'deleteItem'}}>
+                <i class="fa fa-close text-danger"></i>Deletar
               </button>
             {{/can}}
           </div>
