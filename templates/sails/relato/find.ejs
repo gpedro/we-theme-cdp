@@ -1,0 +1,10 @@
+<h1>Relatos da Comunidade de Práticas</h1>
+
+<% data.forEach(function (item) { %>
+  <h2>
+    <a href="/relato/<%- item.id %>"><%- item.titulo %></a>
+  </h2>
+  <p><%- item.descricao %></p>
+  <span>Criado em: <%- item.createdAt %></span>
+  <span>Atualizado em: <%- item.updatedAt %></span>
+<% }); %>
