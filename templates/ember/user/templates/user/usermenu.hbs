@@ -1,32 +1,31 @@
 {{#if isVisible}}
-  <li class="dropdown">
-    <button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown" style="margin-top: -12px; border: none;">
-      <span class="avatar-small">{{we-avatar userId=App.currentUser.id}}</span>
-      <span class="user-name " >{{App.currentUser.username}}</span><b class="caret"></b>
+<li class="main_menu-dropdown logged-on dropdown">
+  <button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown">
+    <span class="avatar-small">{{we-avatar userId=App.currentUser.id}}</span>
+    <span class="user-name " >{{App.currentUser.username}}</span><b class="caret"></b>
+    {{we-connection-status}}
+  </button>
 
-      {{we-connection-status}}
-
-    </button>
-    <ul class="dropdown-menu dropdown-menu-right" style="margin-top: 20px;">
-      <li>
-        <a href="#ChangeAvatarModal" {{action "showAvatarChangeModal"}} >
-          Mudar imagem de perfil
-        </a>
-      </li>
-      <li class="divider"></li>
-      <li>
-        {{#link-to 'user' App.currentUser.id}}
-          {{t "View / edit profile"}}
-        {{/link-to}}
-      </li>
-      <li class="divider"></li>
-      <li>
-        {{#link-to 'authChangePassword'}}
-          {{t "Change password"}}
-        {{/link-to}}
-      </li>
-      <li class="divider"></li>
-      <li><a href="/auth/logout" style="margin-left: 8px; color: white;" class="btn btn-sm btn-danger">{{t 'Exit'}}</a></li>
-    </ul>
-  </li>
+  <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
+    <li>
+      <a href="#ChangeAvatarModal" {{action "showAvatarChangeModal"}} >
+        Mudar imagem de perfil
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      {{#link-to 'user' App.currentUser.id}}
+      {{t "View / edit profile"}}
+      {{/link-to}}
+    </li>
+    <li class="divider"></li>
+    <li>
+      {{#link-to 'authChangePassword'}}
+      {{t "Change password"}}
+      {{/link-to}}
+    </li>
+    <li class="divider"></li>
+    <li><a href="/auth/logout" class="btn btn-sm btn-danger">{{t 'Exit'}}</a></li>
+  </ul>
+</li>
 {{/if}}
