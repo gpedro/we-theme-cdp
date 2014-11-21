@@ -4,6 +4,12 @@
 
       {{partial "partials/breadcrumb" }}
 
+      <div id="sidebar-notifications">
+        <aside role="complementary">
+          {{partial 'notifications/sidebar'}}
+        </aside>
+      </div>
+      
       <div id="notification-list">
 
         {{partial "partials/notification-header-main" }}
@@ -24,12 +30,6 @@
             {{/each}}
           </tbody>
         </table>
-      </div>
-
-      <div id="sidebar-notifications">
-        <aside role="complementary">
-          {{partial 'notifications/sidebar'}}
-        </aside>
       </div>
 
     </div>
