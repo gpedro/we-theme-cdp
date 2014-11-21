@@ -93,9 +93,6 @@
       </div>
 
       <div id="group-list">
-
-        {{partial "partials/group-header-main" }}
-
         <div>
         {{#if App.currentUser.id}}
           {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
@@ -103,6 +100,8 @@
           {{/link-to}}
         {{/if}}
         </div>
+
+        {{partial "partials/group-header-main" }}
 
         {{#each controller}}
           <div>
