@@ -18,18 +18,21 @@
     <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
 
       <ul class="nav navbar-nav">
-        <li class="main_menu-item style_group active">
+
+        {{#active-li currentWhen="groups" classNames="main_menu-item style_group"}}
           {{#link-to 'groups' classNames="main_menu-item--wrapper"}}
             <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
             <span class="main_menu-item--name">{{t 'mainmenu.link.groups'}}</span>
           {{/link-to}}
-        </li>
-        <li class="main_menu-item style_story">
+        {{/active-li}}
+
+        {{#active-li currentWhen="relatos" classNames="main_menu-item style_story"}}
           {{#link-to 'relatos' classNames="main_menu-item--wrapper"}}
             <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
             <span class="main_menu-item--name">Relatos</span>
           {{/link-to}}
-        </li>
+        {{/active-li}}
+
         <li class="main_menu-item style_service">
           <a class="main_menu-item--wrapper" href="#" data-toggle="modal" data-target="#modal-services">
             <i class="main_menu-item--icon cdp cdp-services cdp-2x"></i>
