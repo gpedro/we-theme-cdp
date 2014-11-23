@@ -1,37 +1,59 @@
+<section class="section"><div class="container">
+ {{bread-crumbs}}
+<h3>Criar comunidade</h3>
+
+<div class="row"><div class="col-lg-12">
+
 <form role="form" {{action "submit" on="submit"}}>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4>{{t 'Create group'}}</h4>
+  <div class="form-group">
+    <div class="input-group">
+      <label for="name" class="input-group-addon">
+        <i class="icons-outline icons-outline-play"></i> Nome da comunidade
+      </label>
+      {{input id="name" name="name" value=group.name type="text" placeholder="Digite o nome da comunidade" required="true" classNames="form-control"}}
+    </div>
   </div>
-  <div class="panel-body">
 
-    <div class="row"><div class="col-lg-12">
-      <div class="form-group">
-        <div class="input-group">
-          <label for="name" class="input-group-addon">{{t 'Group name'}}</label>
-          {{input id="name" name="name" value=group.name type="text" placeholder="Enter group name" required="true" classNames="form-control"}}
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-          <label for="privacity" class="input-group-addon">
-            <span class="glyphicon glyphicon-lock"></span>
-            {{t 'Privacity'}}
-          </label>
-          {{view "select" name="Privacity" value=group.privacity optionValuePath="content.value" optionLabelPath="content.label" content=privacityList classNames="form-control"}}
-        </div>
-      </div>
-    </div><!-- /col-lg-12 --></div><!-- /row -->
+  <div class="form-group">
+    <div class="input-group">
+      <label for="privacity" class="input-group-addon">
+        <i class="icons-outline icons-outline-padlock-closed"></i> Privacidade
+      </label>
+      {{view "select" name="Privacity" value=group.privacity optionValuePath="content.value" optionLabelPath="content.label" content=privacityList classNames="form-control"}}
+    </div>
+  </div>
 
-    {{#if imageSelected}}
+  <div class="form-group">
+    <div class="input-group">
+      <label for="categories" class="input-group-addon">
+        <i class="icons-outline icons-outline-label"></i> Categorias:
+      </label>
+      {{we-category-field value=group.categories class="form-control"
+      newTagMark=' (nova)' vocabulary=vocabularyId placeholder="Clique aqui para selecionar as categorias"}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <label for="tags" class="input-group-addon">
+        <i class="icons-outline icons-outline-label"></i> Tags:
+      </label>
+      {{we-tag-field value=group.tags class="form-control" newTagMark=' (nova)' placeholder="Digite aqui as tags do seu grupo"}}
+    </div>
+  </div>
+
+{{!--     {{#if imageSelected}}
       {{we-image-crop src=salvedImage.urls.original file=salvedImage data=cropImageData}}
     {{else}}
+    <div class="form-group">
       <div class="row">
         <div class="col-lg-9">
           <div class="input-group">
             <span class="input-group-addon">
-              <label for="image">{{t 'Group image'}}</label>
+              <label for="image">
+                <i class="icons-outline icons-outline-picture"></i> Foto da comunidade
+              </label>
             </span>
             {{image-upload multiple="false" files=files classNames="form-control"}}
           </div><!-- /input-group -->
@@ -42,10 +64,15 @@
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
       </div><!-- /.row -->
-    {{/if}}
+    </div>
+    {{/if}} --}}
+
+  <div class="form-group">
+    <button class="btn btn-primary" type="buttom" {{action 'cropAndSave'}}>Salvar</button>
   </div>
-  <div class="panel-footer">
-     <button class="btn btn-primary" type="buttom" {{action 'cropAndSave'}}>Salvar grupo</button>
-  </div>
-</div>
+
 </form>
+
+</div></div>
+
+</div></section>

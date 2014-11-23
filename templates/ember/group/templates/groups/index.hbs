@@ -1,167 +1,17 @@
 <section class="section">
   <div class="container">
-    {{partial "partials/breadcrumb" }}
+    {{bread-crumbs}}
+
+    {{partial "partials/group-header-main" }}
+
     <div class="row">
-
-      <div id="draggable-widgets">
-        <div id="group-picture">
-          <img src="http://dummyimage.com/212x119/cccccc/666666.gif&text=Figura+da+Comunidade" alt="nome da comunidade">
-        </div>
-        <div id="group-icons">
-          <ul>
-            <li class="group-icon-like"><i class="cdp cdp-love"></i></li>
-            <li class="group-icon-access"><i class="icons-outline icons-outline-padlock-open"></i></li>
-            <li class="group-icon-follow"><i class="icons-outline icons-outline-eye"></i></li>
-          </ul>
-        </div>
-        {{partial 'partials/feed-sidebar-widget'}}
-        {{partial 'partials/group-sidebar-widget'}}
-        {{partial 'partials/course-sidebar-widget'}}
-
-
-        <aside id="administer-widget" class="panel panel-gray">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse-administer-widget">
-                <span class="fa-stack">
-                  <i class="cdp cdp-settings cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
-                </span>
-                <span class="icon-title">Administrar</span>
-              </a>
-            </h3>
-          </div>
-          <div id="collapse-administer-widget" class="panel-collapse collapse list-group">
-            <a href="#" class="list-group-item">
-              Editar
-            </a>
-            <a href="#" class="list-group-item">
-              Adicionar Pessoa
-            </a>
-            <a href="#" class="list-group-item">
-              Mensagens do Grupo
-            </a>
-            <a href="#" class="list-group-item">
-              Recursos
-            </a>
-          </div>
-        </aside>
-
-        <aside id="group-members" class="group-members-list group-widget">
-          <h3>Quem Faz Parte?</h3>
-          <p>Membros da Comunidade</p>
-          <div class="content members-list">
-            <img src="http://dummyimage.com/32x32/cccccc/666666.gif&text=M" alt="Nome do Membro" class="img-circle">
-            <img src="http://dummyimage.com/32x32/cccccc/666666.gif&text=M" alt="Nome do Membro" class="img-circle">
-            <img src="http://dummyimage.com/32x32/cccccc/666666.gif&text=M" alt="Nome do Membro" class="img-circle">
-            <img src="http://dummyimage.com/32x32/cccccc/666666.gif&text=M" alt="Nome do Membro" class="img-circle">
-            <img src="http://dummyimage.com/32x32/cccccc/666666.gif&text=M" alt="Nome do Membro" class="img-circle">
-            <img src="http://dummyimage.com/32x32/cccccc/666666.gif&text=M" alt="Nome do Membro" class="img-circle">
-            <img src="http://dummyimage.com/32x32/cccccc/666666.gif&text=M" alt="Nome do Membro" class="img-circle">
-            <img src="http://dummyimage.com/32x32/cccccc/666666.gif&text=M" alt="Nome do Membro" class="img-circle">
-            <img src="http://dummyimage.com/32x32/cccccc/666666.gif&text=M" alt="Nome do Membro" class="img-circle">
-          </div>
-          <div class="group-widget-more">
-            <a href="#" class="pull-right btn">Ver Todos</a>
-          </div>
-        </aside>
-
-        <aside id="group-facilitadores" class="group-facilitadores-list group-widget">
-          <h3>Facilitadores</h3>
-
-          <div class="content facilitadores-list">
-            <a href="#" class="facilitador">
-              <img src="http://dummyimage.com/64x64/cccccc/666666.gif&text=Facilitador" alt="Nome do Facilitador" class="img-circle">
-              <h4 class="nome">Otávio Azevedo Cavalcanti</h4>
-            </a>
-            <a href="#" class="facilitador">
-              <img src="http://dummyimage.com/64x64/cccccc/666666.gif&text=Facilitador" alt="Nome do Facilitador" class="img-circle">
-              <h4 class="nome">Otávio Azevedo Cavalcanti</h4>
-            </a>
-            <a href="#" class="facilitador">
-              <img src="http://dummyimage.com/64x64/cccccc/666666.gif&text=Facilitador" alt="Nome do Facilitador" class="img-circle">
-              <h4 class="nome">Otávio Azevedo Cavalcanti</h4>
-            </a>
-            <a href="#" class="facilitador">
-              <img src="http://dummyimage.com/64x64/cccccc/666666.gif&text=Facilitador" alt="Nome do Facilitador" class="img-circle">
-              <h4 class="nome">Otávio Azevedo Cavalcanti</h4>
-            </a>
-          </div>
-
-        </aside>
-
-
-      </div>
-
-      <div id="group-list">
+      <div class="group-list">
         <div>
         {{#if App.currentUser.id}}
           {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
             {{t "Create group"}}
           {{/link-to}}
         {{/if}}
-        </div>
-
-        {{partial "partials/group-header-main" }}
-
-        <h4><i class="cdp cdp-report"></i> Relatos relacionado à comunidade</h4>
-
-        <div id="groups-slider" class="carousel slide group-slider" data-ride="carousel">
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img src="http://dummyimage.com/900x300/ff0000/ffffff.gif&amp;text=Slide+1">
-              <div class="carousel-caption">
-                <h3>Slide 1. Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</h3>
-              </div>
-            </div>
-            <div class="item">
-              <img src="http://dummyimage.com/900x300/00ff00/ffffff.gif&amp;text=Slide+2">
-              <div class="carousel-caption">
-                <h3>Slide 2. Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</h3>
-              </div>
-            </div>
-            <div class="item">
-              <img src="http://dummyimage.com/900x300/0000ff/ffffff.gif&amp;text=Slide+3">
-              <div class="carousel-caption">
-                <h3>Slide 3. Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Controls -->
-          <a class="left carousel-control" href="#groups-slider" role="button" data-slide="prev">
-            <span class="icons-outline icons-outline-skip-previous" aria-hidden="true"></span>
-          </a>
-          <a class="right carousel-control" href="#groups-slider" role="button" data-slide="next">
-            <span class="icons-outline icons-outline-skip-next" aria-hidden="true"></span>
-          </a>
-
-        </div>
-
-        <div id="groups-destaque">
-          <div class="destaque">
-            <img src="http://dummyimage.com/225x100/ff0000/ffffff.gif&amp;text=Destaque+1">
-          </div>
-          <div class="destaque">
-            <img src="http://dummyimage.com/225x100/00ff00/ffffff.gif&amp;text=Destaque+2">
-          </div>
-          <div class="destaque">
-            <img src="http://dummyimage.com/225x100/0000ff/ffffff.gif&amp;text=Destaque+3">
-          </div>
-          <div class="destaque">
-            <img src="http://dummyimage.com/225x100/ff00ff/ffffff.gif&amp;text=Destaque+4">
-          </div>
-        </div>
-
-        <div id="groups-assuntos">
-          <span class="fa-stack">
-            <i class="icons-outline icons-outline-label"></i>
-          </span>
-          <div class="groups-assuntos-text">
-            <h3>Assuntos do Momento</h3>
-            <div class="tags"><a href="#" class="tag">Atenção Básica</a>, <a href="#" class="tag">Ebola</a>, <a href="#" class="tag">Saúde</a>, <a href="#" class="tag">Prevenção</a>, <a href="#" class="tag">Posto de Saúde</a>, <a href="#" class="tag">Médico</a>, <a href="#" class="tag">OMS</a>, <a href="#" class="tag">Vírus</a>, <a href="#" class="tag">Mortal</a></div>
-          </div>
         </div>
 
         {{#each controller}}
