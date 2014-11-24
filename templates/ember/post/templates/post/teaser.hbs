@@ -68,14 +68,11 @@
       </div>
       <hr>
     {{/if}}
-    <div class="comments">
 
-      {{#each comments}}
-        {{render 'comment/item' this}}
-      {{/each}}
-    </div>
-    {{we-comment-form creatorId=App.currentUser.id post=model store=store}}
-
+    {{#if id}}
+      {{we-comments commentedModelName="post" commentedModelId=id}}
+      {{we-comment-form commentedModelName="post" commentedModelId=id}}
+    {{/if}}
   </div>
 </div>
 </div>

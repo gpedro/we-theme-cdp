@@ -56,12 +56,16 @@
     </span>
     <div class="groups-assuntos-text">
       <h3>Assuntos do Momento</h3>
-      {{#we-term-editable value=group.categories onSave="saveCategories"}}
-        <div class="form-group">
-          {{we-category-field value=group.categories
-          newTagMark=' (nova)' vocabulary=vocabularyId}}
-        </div>
-      {{/we-term-editable}}
+      {{#if group.canAdmin}}
+        {{#we-term-editable value=group.categories onSave="saveCategories"}}
+          <div class="form-group">
+            {{we-category-field value=group.categories
+            newTagMark=' (nova)' vocabulary=vocabularyId}}
+          </div>
+        {{/we-term-editable}}
+      {{else}}
+        {{we-terms terms=group.categories}}
+      {{/if}}
     </div>
   </div>
 

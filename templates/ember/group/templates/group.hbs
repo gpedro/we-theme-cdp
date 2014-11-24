@@ -20,24 +20,25 @@
       <li class="group-icon-follow"><i class="icons-outline icons-outline-eye"></i></li>
     </ul>
   </div>
-
-  <aside id="administer-widget" class="panel panel-gray">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse-administer-widget">
-          <span class="fa-stack">
-            <i class="cdp cdp-settings cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
-          </span>
-          <span class="icon-title">Administrar</span>
-        </a>
-      </h3>
-    </div>
-    <div id="collapse-administer-widget" class="panel-collapse list-group in" style="height: auto;">
-      {{#link-to 'group.addMember' group.id classNames="list-group-item" }}
-        Convidar Pessoa
-      {{/link-to}}
-    </div>
-  </aside>
+  {{#if group.canAdmin}}
+    <aside id="administer-widget" class="panel panel-gray">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse-administer-widget">
+            <span class="fa-stack">
+              <i class="cdp cdp-settings cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
+            </span>
+            <span class="icon-title">Administrar</span>
+          </a>
+        </h3>
+      </div>
+      <div id="collapse-administer-widget" class="panel-collapse list-group in" style="height: auto;">
+        {{#link-to 'group.addMember' group.id classNames="list-group-item" }}
+          Convidar Pessoa
+        {{/link-to}}
+      </div>
+    </aside>
+  {{/if}}
 
   <aside id="group-members" class="group-members-list group-widget">
     <h3>Quem Faz Parte?</h3>
