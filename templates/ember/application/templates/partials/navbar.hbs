@@ -33,11 +33,15 @@
           {{/link-to}}
         {{/active-li}}
 
-        <li class="main_menu-item style_service">
-          <a class="main_menu-item--wrapper" href="#" data-toggle="modal" data-target="#modal-services">
+        <li class="main_menu-item dropdown style_service">
+          <a class="main_menu-item--wrapper dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
             <i class="main_menu-item--icon cdp cdp-services cdp-2x"></i>
             <span class="main_menu-item--name">Serviços</span>
           </a>
+
+          <ul class="dropdown-services dropdown-menu dropdown-menu-right arrow_box-menu-services" role="menu">
+
+          </ul>
         </li>
         <li class="main_menu-search">
             <form class="form-inline" role="form">
