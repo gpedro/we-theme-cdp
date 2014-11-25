@@ -21,7 +21,7 @@
     </ul>
   </div>
   {{#if group.canAdmin}}
-    <aside id="administer-widget" class="panel panel-gray">
+    <aside id="administer-widget" class="group-widget panel panel-gray">
       <div class="panel-heading">
         <h3 class="panel-title">
           <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse-administer-widget">
@@ -46,7 +46,7 @@
     <div class="content members-list">
       {{#each members}}
         {{#link-to 'user' id classNames="facilitador"}}
-          {{we-avatar userId=id size="thumbnail" classNames="img-circle"}}
+          <span class="img-wrapper">{{we-avatar userId=id size="thumbnail" classNames="img-circle"}}</span>
         {{/link-to}}
       {{/each}}
     </div>
@@ -61,7 +61,7 @@
     <div class="content facilitadores-list">
       {{#each members}}
         {{#link-to 'user' id classNames="facilitador"}}
-          {{we-avatar userId=id size="medium" classNames="img-circle"}}
+          <span class="img-wrapper">{{we-avatar userId=id size="medium" classNames="img-circle"}}</span>
           <h4 class="nome">{{displayName}}</h4>
         {{/link-to}}
       {{/each}}
