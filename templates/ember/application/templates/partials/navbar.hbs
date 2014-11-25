@@ -27,7 +27,7 @@
         {{/active-li}}
 
         {{#active-li currentWhen="relatos" classNames="main_menu-item style_story"}}
-          {{#link-to 'relatos' classNames="main_menu-item--wrapper"}}
+          {{#link-to 'relatos' (query-params categorias='' order='new' q='') classNames="main_menu-item--wrapper"}}
             <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
             <span class="main_menu-item--name">Relatos</span>
           {{/link-to}}
