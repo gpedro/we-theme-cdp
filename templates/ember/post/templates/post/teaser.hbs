@@ -14,6 +14,15 @@
       <i class="fa fa-user"></i>
     </a>
     <span class="createdAt post-created-at">{{format-date createdAt}}</span>
+
+    {{#if sharedIn}}
+      <span class="pull-right"> na comunidade
+        {{#link-to 'group' sharedIn.id}}
+          {{sharedIn.name}}
+        {{/link-to}}
+      </span>
+    {{/if}}
+
   </div>
 
   <div class="panel-body">
