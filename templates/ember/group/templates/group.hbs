@@ -3,15 +3,38 @@
     {{bread-crumbs}}
 <div class="row">
 <div class="col-md-3">
-  <div id="group-picture">
-    {{#link-to 'group' group.id}}
-      {{#if group.logo}}
-        <img width="100%" {{bind-attr src="group.logo.urls.large"}} />
-      {{else}}
-        <img width="100%" src="/core/images/logos/group2.jpg">
-      {{/if}}
-    {{/link-to}}
-  </div>
+
+  {{#unless group.newAvatarSRC}}
+    <div id="group-picture">
+      {{#link-to 'group' group.id}}
+        {{#if group.logo}}
+          <img width="100%" {{bind-attr src="group.logo.urls.large"}} />
+        {{else}}
+          <img width="100%" class="group-list-img img-circle" src="/theme/assets/img/img-groups.jpg">
+        {{/if}}
+      {{/link-to}}
+    </div>
+  {{else}}
+    <div id="group-picture">
+      <img width="100%" {{bind-attr src=group.newAvatarSRC}}>
+    </div>
+
+    <button class="btn btn-success" {{action 'saveAvatar'}}>Salvar</button>
+    <button {{action 'cancelChangeAvatar'}} class="btn btn-default">
+      Cancelar
+    </button>
+  {{/unless}}
+  {{#if changeAvatar}}
+    <div class="group-change-picture group-widget" >
+      {{image-upload name="chaneGroupAvatar" classNames="we-share-images-input" files=group.avatarSelected}}
+    </div>
+  {{else}}
+    {{#if group.canAdmin}}
+      <button {{action 'showChangeAvatar'}} class="btn btn-primary">
+        Mudar imagem
+      </button>
+    {{/if}}
+  {{/if}}
 
   <div id="group-icons">
     <ul>

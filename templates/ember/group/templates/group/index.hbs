@@ -11,7 +11,13 @@
       </div>
       <div class="group--header-brand-text">
         <h3 class="group--header-brand-text--title">
-          {{group.name}}
+          {{#if group.isAdmin}}
+            {{#we-content-editable value=group.name attribute='name' onSave="salvarAtributo" }}
+            {{focus-input value=group.name classNames="form-control" type="text"}}
+            {{/we-content-editable}}
+          {{else}}
+            {{group.name}}
+          {{/if}}
         </h3>
         <small class="group--header-brand-text--small">
           Alguma Coisa
