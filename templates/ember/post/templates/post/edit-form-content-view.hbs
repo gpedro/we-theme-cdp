@@ -10,18 +10,6 @@
   <button {{action 'openShareImage'}} type="button" class="btn btn-info" title="Imagem">
     <i class="fa fa-image"></i>
   </button>
-  <button {{action 'openShareAudio'}} type="button" class="btn btn-warning" title="Áudio">
-    <i class="fa fa-music"></i>
-  </button>
-  <button {{action 'openShareVideo'}} type="button" class="btn btn-danger" title="Vídeo">
-    <i class="fa fa-video-camera"></i>
-  </button>
-  <button {{action 'openShareDocs'}} type="button" class="btn btn-success" title="Documento">
-    <i class="fa fa-file-text"></i>
-  </button>
-  <button {{action 'openShareLinks'}} type="button" class="btn btn-primary" title="Link">
-    <i class="fa fa-link"></i>
-  </button>
 </div>
 {{/if}}
 
@@ -34,7 +22,7 @@
 {{#if shareImages}}
   <div class="form-group">
     <div class="form-group row add-images">
-      <label for="addImages" class="col-sm-2 control-label">{{t "Attach images"}}</label>
+      <label for="addImages" class="col-sm-2 control-label">Imagens:</label>
       <div class="col-sm-10">
         {{image-upload files=filesNew}}
       </div>
@@ -61,7 +49,7 @@
 
   <div class="actions">
     <button type="submit" class="btn btn-info">
-      <span class="fa fa-share"></span>Compartilhar
+      Salvar
     </button>
     <button type="button" {{action 'cancel'}} class="btn btn-default">
       <i class="fa fa-close"></i>
