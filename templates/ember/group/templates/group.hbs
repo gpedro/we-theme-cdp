@@ -20,6 +20,11 @@
       <li class="group-icon-follow"><i class="icons-outline icons-outline-eye"></i></li>
     </ul>
   </div>
+
+  <aside id="group-menu-widget" class="group-widget">
+    <button {{action 'joinGroup'}} class="btn btn-success">Participar</button>
+  </aside>
+
   {{#if group.canAdmin}}
     <aside id="administer-widget" class="group-widget panel panel-gray">
       <div class="panel-heading">
