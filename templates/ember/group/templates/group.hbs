@@ -22,9 +22,8 @@
   </div>
 
   <aside id="group-menu-widget" class="group-widget">
-    <button {{action 'joinGroup'}} class="btn btn-success">Participar</button>
+    {{we-group-join-button status=membership.status action="changeMembership" classNames="btn btn-success"}}
   </aside>
-
   {{#if group.canAdmin}}
     <aside id="administer-widget" class="group-widget panel panel-gray">
       <div class="panel-heading">
@@ -45,33 +44,39 @@
     </aside>
   {{/if}}
 
-  <aside id="group-members" class="group-members-list group-widget">
-    <h3>Quem Faz Parte?</h3>
-    <p>Membros da Comunidade</p>
-    <div class="content members-list">
-      {{#each members}}
-        {{#link-to 'user' id classNames="facilitador"}}
-          <span class="img-wrapper">{{we-avatar userId=id size="thumbnail" classNames="img-circle"}}</span>
+  {{#if members}}
+    <aside id="group-members" class="group-members-list group-widget">
+      <h3>Quem Faz Parte?</h3>
+      <p>Membros da Comunidade</p>
+      <div class="content members-list">
+        {{#each members}}
+          {{#link-to 'user' id classNames="facilitador"}}
+            <span class="img-wrapper">{{we-avatar userId=id size="thumbnail" classNames="img-circle"}}</span>
+          {{/link-to}}
+        {{/each}}
+      </div>
+      <div class="group-widget-more">
+        {{#link-to 'group.members' ../group.id classNames="pull-right btn"}}
+          Ver Todos
         {{/link-to}}
-      {{/each}}
-    </div>
-    <div class="group-widget-more">
-      <a href="#" class="pull-right btn">Ver Todos</a>
-    </div>
-  </aside>
+      </div>
+    </aside>
+  {{/if}}
 
-  <aside id="group-facilitadores" class="group-facilitadores-list group-widget">
-    <h3>Facilitadores</h3>
+  {{#if moderators}}
+    <aside id="group-facilitadores" class="group-facilitadores-list group-widget">
+      <h3>Facilitadores</h3>
+        <div class="content facilitadores-list">
+          {{#each moderators}}
+            {{#link-to 'user' id classNames="facilitador"}}
+              <span class="img-wrapper">{{we-avatar userId=id size="medium" classNames="img-circle"}}</span>
+              <h4 class="nome">{{displayName}}</h4>
+            {{/link-to}}
+          {{/each}}
+        </div>
+    </aside>
+  {{/if}}
 
-    <div class="content facilitadores-list">
-      {{#each members}}
-        {{#link-to 'user' id classNames="facilitador"}}
-          <span class="img-wrapper">{{we-avatar userId=id size="medium" classNames="img-circle"}}</span>
-          <h4 class="nome">{{displayName}}</h4>
-        {{/link-to}}
-      {{/each}}
-    </div>
-  </aside>
 </div>
 <div class="col-md-9">
   {{outlet}}
