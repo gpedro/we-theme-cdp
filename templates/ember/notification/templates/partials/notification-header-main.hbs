@@ -15,7 +15,9 @@
   </div>
 
   <div class="notification-list--header-button">
-    <button {{action 'markAllAsRead'}} {{bind-attr disabled=isEmpty}} class="btn btn-sm btn-primary">Marcar todas como lido</button>
+    {{#unless readNotificationPage}}
+      <button {{action 'markAllAsRead'}} {{bind-attr disabled=isEmpty}} class="btn btn-sm btn-primary">Marcar todas como lido</button>
+    {{/unless}}
   </div>
 
 </header>
