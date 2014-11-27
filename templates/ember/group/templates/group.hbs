@@ -15,9 +15,16 @@
 
   <div id="group-icons">
     <ul>
-      <li class="group-icon-like"><i class="cdp cdp-love"></i></li>
+      <li class="group-icon-like">
+        {{we-flag flagType='like' model='group' modelId=group.id
+          flagText=' '
+          flagClass= 'cdp cdp-love'
+          unFlagClass= 'cdp cdp-love active' }}
+      </li>
       <li class="group-icon-access"><i class="icons-outline icons-outline-padlock-open"></i></li>
-      <li class="group-icon-follow"><i class="icons-outline icons-outline-eye"></i></li>
+      <li class="group-icon-follow">
+        {{we-follow model='group' modelId=group.id flagText='<i class="icons-outline icons-outline-eye"></i>' unFlagText="Seguindo"}}
+      </li>
     </ul>
   </div>
 
