@@ -52,7 +52,7 @@
   </div>
 
   <aside id="group-menu-widget" class="group-widget">
-    {{we-group-join-button status=membership.status action="changeMembership" classNames="btn btn-success"}}
+    {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
   </aside>
   {{#if group.canAdmin}}
     <aside id="administer-widget" class="widget panel panel-gray">
