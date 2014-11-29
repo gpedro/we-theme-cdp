@@ -4,16 +4,20 @@
   <div class="header panel-heading">
     <span class="creator">
       {{#link-to 'user' creator.id}}
-        <span class="creator-avatar avatar-small">{{we-avatar userId=creator.id}}</span>
-        <span class="creator-name">
-          {{creator.username}}
-        </span>
+        <div class="post-creator">
+          <span class="creator-avatar avatar-small">{{we-avatar userId=creator.id}}</span>
+          <span class="creator-name">
+            {{creator.username}}
+          </span>
+        </div>
       {{/link-to}}
     </span>
-    <a {{action 'showSharedWith'}} href="#" class="shared-with text-mute">
-      <i class="fa fa-user"></i>
-    </a>
-    <span class="createdAt post-created-at">{{format-date createdAt}}</span>
+    <div class="post-user-info">
+      <a {{action 'showSharedWith'}} href="#" class="shared-with text-mute">
+        <i class="fa fa-user"></i>
+      </a>
+      <span class="createdAt post-created-at">{{format-date createdAt}}</span>
+    </div>
   </div>
 
   <div class="panel-body">
@@ -52,7 +56,7 @@
 
             {{#can deletePost model}}
               <button class="btn btn-xs btn-default" {{action 'deleteItem'}}>
-                <i class="fa fa-close text-danger"></i>Deletar
+                <i class="fa fa-close text-danger"></i> Deletar
               </button>
             {{/can}}
           </div>
