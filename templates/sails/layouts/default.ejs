@@ -3,6 +3,12 @@
   <head>
     <title><%- title %></title>
 
+    <% if (typeof metadata !== 'undefined' || metadata) { %>
+      <% include ../partials/metadata %>
+    <% } else { %>
+      <% include ../partials/default-metadata %>
+    <% } %>
+
     <%- sails.services.theme.getJsScriptTag() %>
 
     <!-- Viewport mobile tag for sensible mobile support -->
