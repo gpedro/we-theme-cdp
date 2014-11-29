@@ -5,44 +5,31 @@
 
     <div class="row">
       <div class="col-md-3">
-      
+
         <div class="avatar-large">{{we-avatar userId=user.id size="responsive"}}</div>
 
         <div class="user-profile-edit">
-          {{#if isEditing}}
-            <div class="form-group">
-              {{view Ember.Select name="language" value=user.language content=defaultlanguages classNames="form-control input-md"}}
-            </div>
+
+          <div class="user-admin-actions-area">
+            <div class="actions">
+        {{#if user.canEdit}}
+          {{#if edit}}
+              <button {{action 'save'}} type="button" class="btn btn-xs btn-primary">
+                <i class="fa fa-saved"></i> {{t 'Save'}}
+              </button>
+
+              <button {{action 'cancel'}} type="button" class="btn btn-xs btn-default">
+                <i class="fa fa-unchecked"></i> {{t 'Cancel'}}
+              </button>
           {{else}}
-            <div class="language-area text-center">{{user.language}}</div>
+            <button {{action 'edit'}} class="btn btn-warning">Editar</button>
           {{/if}}
+        {{else}}
+          <button class="btn btn-warning">Seguir</button>
+        {{/if}}
 
-          {{#can editUser model.user}}
-            <div class="user-admin-actions-area">
-              <div class="actions">
-                {{!--
-                <button {{action 'save'}} type="button" class="btn btn-xs btn-success">
-                  <i class="fa fa-saved"></i> {{t 'Save'}}
-                </button>
-
-                <button {{action 'cancel'}} type="button" class="btn btn-xs btn-warning">
-                  <i class="fa fa-unchecked"></i> {{t 'Cancel'}}
-                </button>
-
-                <button {{action 'edit'}} type="button" class="btn btn-xs btn-primary">
-                  <i class="fa fa-edit"></i> {{t 'Edit'}}
-                </button>
-
-                --}}
-
-                <button class="btn btn-warning">Seguir</button>
-
-                <button class="btn btn-warning">Editar</button>
-
-              </div>
             </div>
-          {{/can}}
-
+          </div>
         </div>
 
         <div id="group-icons">
@@ -88,7 +75,7 @@
           <h3>Membros Relacionados</h3>
 
           <div class="content user-list">
-            
+
               <a class="user-list-user" href="#">
                 <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
                 <h4 class="nome">marcusvbp</h4>
@@ -105,15 +92,13 @@
                 <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
                 <h4 class="nome">marcusvbp</h4>
               </a>
-            
+
           </div>
         </aside>
 
       </div>
-      
+
       <div class="col-md-9">
-
-
         <header id="user--header" class="section-header">
           <div class="header-brand">
             <div class="header-brand-icon">
@@ -123,8 +108,11 @@
             </div>
             <div class="header-brand-text">
               <h3 class="header-brand-text--title">
-              {{!-- t 'user.activity.title'--}} 
+              {{#if edit}}
+                Olá, {{focus-input value=user.displayName type="text"}}
+              {{else}}
                 {{t 'user.sidebar.username' usernameBinding=user.displayName}}
+              {{/if}}
               </h3>
               <small class="header-brand-text--small">
                 {{t 'user.activity.subtitle'}}
@@ -133,10 +121,27 @@
           </div>
 
           <div class="header-info">
-            <div class="local"><b>Local</b>: Rio de Janeiro, RJ</div>
-            <div class="area"><b>Área</b>: Enfermagem</div>
+            <div class="local">
+            {{#if edit}}
+              <b>Local</b>:
+              {{we-state-city-simple-selector tagName="span" country="BR" selectedState=user.locationState selectedCity=user.city}}
+            {{else}}
+              {{#if user.locationState}}
+                <b>Local</b>: {{user.locationState}}, {{user.city}}
+              {{/if}}
+            {{/if}}
+            </div>
+            {{!--
+              <div class="area"><b>Área</b>: Enfermagem</div>
+             --}}
             <div class="about">
-              <p>Holisticly deliver high-payoff partnerships after distinctive intellectual capital. Conveniently monetize customer directed convergence for reliable e-markets. Enthusiastically plagiarize multifunctional benefits after functionalized methods of empowerment. Interactively aggregate B2C human capital after goal-oriented innovation. Competently cultivate emerging action items before magnetic internal or "organic" sources.</p>
+              <p>
+              {{#if edit}}
+                {{we-editor value=user.biography}}
+              {{else}}
+                {{user.biography}}
+              {{/if}}
+              </p>
             </div>
           </div>
 
@@ -144,29 +149,6 @@
 
         </header>
 
-        {{!--- 
-        <div class="user-profile-menu-area text-center">
-          <ul class="user-profile-menu nav nav-pills pull-right">
-            <li>
-            {{#link-to 'user' user.id classNames='btn btn-success'}}
-              {{t 'user.menu.activity.link'}}
-            {{/link-to}}
-            </li>
-            <li>
-            {{#link-to 'user.contacts' user.id classNames='btn btn-primary'}}
-              {{t 'user.menu.contacts.link'}}
-            {{/link-to}}
-            </li>
-            <li>
-            {{#link-to 'user.images' user.id classNames='btn btn-warning'}}
-              {{t 'user.menu.imagens.link'}}
-            {{/link-to}}
-            </li>
-          </ul>
-        </div>
-        --}}
-
-        
         {{outlet}}
 
       </div>
