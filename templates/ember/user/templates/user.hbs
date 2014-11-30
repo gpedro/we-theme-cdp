@@ -12,42 +12,40 @@
 
           <div class="user-admin-actions-area">
             <div class="actions">
-        {{#if user.canEdit}}
-          {{#if edit}}
-              <button {{action 'save'}} type="button" class="btn btn-xs btn-primary">
-                <i class="fa fa-saved"></i> {{t 'Save'}}
-              </button>
-
-              <button {{action 'cancel'}} type="button" class="btn btn-xs btn-default">
-                <i class="fa fa-unchecked"></i> {{t 'Cancel'}}
-              </button>
-          {{else}}
-            <button {{action 'edit'}} class="btn btn-warning">Editar</button>
-          {{/if}}
-        {{else}}
-          <button class="btn btn-warning">Seguir</button>
-        {{/if}}
-
+              {{#if user.canEdit}}
+                {{#if edit}}
+                    <button {{action 'save'}} type="button" class="btn btn-xs btn-primary">
+                      <i class="fa fa-saved"></i>Salvar
+                    </button>
+                    <button {{action 'cancel'}} type="button" class="btn btn-xs btn-default">
+                      <i class="fa fa-unchecked"></i>Cancelar
+                    </button>
+                {{else}}
+                  <button {{action 'edit'}} class="btn btn-warning">Editar</button>
+                {{/if}}
+              {{else}}
+                {{#if showSocialActions}}
+                  {{view App.ContactButtomView contactStatus=contact.currentUserStatus}}
+                  {{we-follow model='user' classNames="btn btn-warning" modelId=user.id flagText="Seguir" }}
+                {{/if}}
+              {{/if}}
             </div>
           </div>
         </div>
 
-        <div id="group-icons">
-          <ul>
-            <li class="group-icon-like"><i class="cdp cdp-love"></i></li>
-            <li class="group-icon-access"><i class="icons-outline icons-outline-padlock-closed"></i></li>
-            <li class="group-icon-follow"><i class="icons-outline icons-outline-eye"></i></li>
-          </ul>
-        </div>
+        <aside id="feed-widget" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+            {{#link-to 'user.index' user.id classNames="widget-trigger-collapse"}}
+                <span class="fa-stack">
+                  <i class="cdp cdp-time cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
+                </span>
+                <span class="icon-title">O que está rolando?</span>
+            {{/link-to}}
+            </h3>
+          </div>
+        </aside>
 
-        <div class="user-profile-actions">
-          {{#if showSocialActions}}
-            {{view App.ContactButtomView contactStatus=contactStatus}}
-            {{we-follow model='user' modelId=user.id flagText="Seguir" }}
-          {{/if}}
-        </div>
-
-        {{partial 'partials/feed-sidebar-widget'}}
 
         {{partial 'partials/group-sidebar-widget'}}
 
