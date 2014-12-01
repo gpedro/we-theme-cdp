@@ -51,23 +51,8 @@
 
         {{partial 'partials/course-sidebar-widget'}}
 
-        <aside id="favs" class="widget-fav widget">
-          <h3><i class="cdp cdp-report"></i>Relatos Favoritos</h3>
-          <div class="filter">
-            <select>
-              <option>Relatos</option>
-              <option>opt 1</option>
-              <option>opt 2</option>
-              <option>opt 3</option>
-            </select>
-          </div>
-          <div class="content">
-            <a href="#">
-            <img src="http://dummyimage.com/243x184/efefef/787878.jpg&text=relato">
-            <p>Campanha "Dentinho Sadio Sorriso Legal"</p>
-            </a>
-          </div>
-        </aside>
+
+        {{we-user-relatos-favoritos userId=user.id relatos=null}}
 
         <aside id="related-users" class="widget-user-list widget">
           <h3>Membros Relacionados</h3>

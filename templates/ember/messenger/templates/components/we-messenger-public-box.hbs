@@ -2,33 +2,30 @@
 <div class="messenger-column">
   <div class="messenger-chat-area">
     <div class="contact-chat">
-      <div {{action 'toggleList'}} class="header" style="background: #69bd44">
-        <span class="contact-name">{{t "Public room"}}</span>
+      <div {{action 'toggleList'}} class="header">
+        <span class="contact-name">{{t "Public"}}</span>
       </div>
       <div class="actions">
         <button {{action 'closeList'}} type="button" class="remove btn btn-danger btn-xs pull-right">
-          <div class="icon icon-star-full"></div>
+          <span class="glyphicon glyphicon-remove"></span>
         </button>
       </div>
 
       {{#if isListOpen}}
+        {{render 'messenger/messages-public-room' messages controller="MessengerMessages"}}
 
-      <div scrollTo="bottom" id="messengerBox-public" class="messages">
-        {{#each messages}}
-          {{render 'messenger/message' this}}
-        {{/each}}
+        <div class="footer">
+          <form {{action "sendMessage" on="submit"}} >
+            <div class="input-group">
 
-        <div id='messenger-after-contacts'></div>
-      </div>
+              {{input name="messageNew" value=messageNew type="text" placeholder=messagePlaceholder classNames="input-xs"}}
 
-      <div class="footer">
-        <form {{action "sendMessage" on="submit"}} >
-          <div class="input-group">
-            {{input name="messageNew" value=messageNew type="text" placeholder=messagePlaceholder classNames="form-control input-xs"}}
-            <button style="margin: 2px 0 0 6px;" {{action "sendMessage"}} class="btn btn-sm btn-primary" type="submit">{{t "Ok"}}</button>
-          </div>
-        </form>
-      </div>
+              <span class="input-group-btn">
+                <button  {{action "sendMessage"}} class="btn btn-xs btn-primary" type="submit">{{t "Send"}}</button>
+              </span>
+            </div>
+          </form>
+        </div>
 
       {{/if}}
     </div>

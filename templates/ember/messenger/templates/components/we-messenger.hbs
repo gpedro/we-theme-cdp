@@ -3,10 +3,10 @@
     <div class="messenger-area">
       {{#if isListOpen}}
         <div class="messenger">
-          <div class="header" {{action 'closeList'}} style="background: #69bd44">
+          <div class="header" {{action 'closeList'}}>
             {{t 'Messenger'}}
           <button type="button" class="remove btn btn-default btn-xs pull-right">
-            <div class="icon icon-star-full"></div>
+            <span class="glyphicon glyphicon-wrench"></span>
           </button>
           </div>
           <ul class="nav nav-list friendlist contact-list">
@@ -17,20 +17,20 @@
           <ul class="nav nav-list rooms-list contact-list">
             <li class="global-room">
               <a {{action 'openPublicBox'}} >
-                {{t "Public room"}}
+                {{t 'Public room'}}
               </a>
             </li>
           </ul>
           <div class="search-area">
-            <input type="search" class="form-control" placeholder="Buscar" style="margin: 0 0 10px -7px; background: #f2f2f2; border-color: #f2f2f2;">
+            <input type="search" data-ng-model="searchFriend" placeholder="Search ...">
           </div>
         </div>
       {{else}}
-        <div class="messenger-off" {{action 'openList'}} style="background: #69bd44">
+        <div class="messenger-off" {{action 'openList'}}>
           <span class="ui-icon ui-icon-person"></span>
           <span class="text">{{t 'Messenger'}}</span>
           <button type="button" class="remove btn btn-default btn-xs pull-right">
-            <div class="icon icon-star-open"></div>
+            <span class="glyphicon glyphicon-wrench"></span>
           </button>
         </div>
       {{/if}}
@@ -38,9 +38,9 @@
   </div>
 
   {{#each openContacts}}
-    {{we-messenger-box contact=this}}
+    {{render 'messenger/box' this}}
   {{/each}}
 
-  {{we-messenger-public-box }}
+  {{we-messenger-public-box store=store}}
 
 </div>
