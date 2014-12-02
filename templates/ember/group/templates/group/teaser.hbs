@@ -19,10 +19,10 @@
     </p>
     <nav class="group-list-nav pull-right">
       {{membersCount}}
-
+{{!--
       {{we-follow classNames="btn btn-sm btn-success" model='group' modelId=id flagText="Seguir"}}
 
-      <a href="#" class="btn btn-sm btn-primary" role="button">{{t 'Participar'}}</a>
+     {{we-group-join-button status=membership.status action="changeMembership" disabled=isCreator classNames="btn btn-success"}} --}}
     </nav>
   </div>
 </div>
