@@ -50,9 +50,21 @@
       </li>
     </ul>
   </div>
-  <aside id="group-menu-widget" class="group-widget">
-    {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
-  </aside>
+
+  {{#link-to 'group.about' group.id classNames="btn btn-default"}}
+    Sobre
+  {{/link-to}}
+
+  {{#if group.isCreator}}
+    {{!-- group create is a super admin and cant leave the group --}}
+    <aside id="group-menu-widget" class="group-widget">
+      <button disabled="true" type="button" class="btn btn-success">Super Admin</button>
+    </aside>
+  {{else}}
+    <aside id="group-menu-widget" class="group-widget">
+      {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
+    </aside>
+  {{/if}}
   {{#if group.canAdmin}}
     <aside id="administer-widget" class="widget panel panel-gray">
       <div class="panel-heading">
