@@ -27,9 +27,9 @@
   {{#if group.canAdmin}}
     <label>{{input checked=group.disableRelatoFeature type="checkbox"}} Desativar os relatos relacionados?</label>
   {{/if}}
-  {{#unless group.disableRelatoFeature}}
+{{!--   {{#unless group.disableRelatoFeature}}
     {{we-group-related-relato-slideshow groupId=group.id}}
-  {{/unless}}
+  {{/unless}} --}}
 
   <div id="groups-assuntos">
     <span class="fa-stack">
