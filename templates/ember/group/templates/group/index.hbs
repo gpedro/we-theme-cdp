@@ -1,7 +1,4 @@
 <div class="row"><div class="col-md-12">
-  <!--<h2></h2>
-  <h4><i class="cdp cdp-report"></i> </h4>-->
-
   <header id="group--header" class="section-header">
     <div class="header-brand">
       <div class="header-brand-icon">
@@ -11,7 +8,7 @@
       </div>
       <div class="header-brand-text">
         <h3 class="header-brand-text--title">
-         {{#if group.isAdmin}}
+         {{#if group.canAdmin}}
             {{#we-content-editable value=group.name attribute='name' onSave="salvarAtributo" }}
             {{focus-input value=group.name classNames="form-control" type="text"}}
             {{/we-content-editable}}
@@ -20,66 +17,76 @@
           {{/if}}
         </h3>
         <small class="header-brand-text--small">
-          Alguma Coisa
+          Atualizado ha {{format-date group.updatedAt}}
         </small>
       </div>
     </div>
 
-    <a href="#" class="about-group btn"><span class="caret"></span> Sobre</a>
+    <div>
+
+    </div>
+
+    {{#link-to 'group.about' group.id classNames="about-group btn"}}
+      <span class="caret"></span> Sobre
+    {{/link-to}}
 
   </header>
 
   <h4><i class="cdp cdp-report"></i> Relatos relacionado à comunidade</h4>
 
 
+  {{#if group.canAdmin}}
+    {{input checked=showSlideshow type="checkbox"}} <label>Exibir slideshow com relatos relacionados?</label>
+  {{/if}}
 
-  <div id="groups-slider" class="carousel slide group-slider" data-ride="carousel">
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="http://dummyimage.com/900x300/ff0000/ffffff.gif&amp;text=Slide+1">
-        <div class="carousel-caption">
-          <h3>Slide 1. Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</h3>
+  {{#if showSlideshow}}
+    <div id="groups-slider" class="carousel slide group-slider" data-ride="carousel">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="http://dummyimage.com/900x300/ff0000/ffffff.gif&amp;text=Slide+1">
+          <div class="carousel-caption">
+            <h3>Slide 1. Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</h3>
+          </div>
+        </div>
+        <div class="item">
+          <img src="http://dummyimage.com/900x300/00ff00/ffffff.gif&amp;text=Slide+2">
+          <div class="carousel-caption">
+            <h3>Slide 2. Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</h3>
+          </div>
+        </div>
+        <div class="item">
+          <img src="http://dummyimage.com/900x300/0000ff/ffffff.gif&amp;text=Slide+3">
+          <div class="carousel-caption">
+            <h3>Slide 3. Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</h3>
+          </div>
         </div>
       </div>
-      <div class="item">
-        <img src="http://dummyimage.com/900x300/00ff00/ffffff.gif&amp;text=Slide+2">
-        <div class="carousel-caption">
-          <h3>Slide 2. Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</h3>
-        </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#groups-slider" role="button" data-slide="prev">
+        <span class="icons-outline icons-outline-skip-previous" aria-hidden="true"></span>
+      </a>
+      <a class="right carousel-control" href="#groups-slider" role="button" data-slide="next">
+        <span class="icons-outline icons-outline-skip-next" aria-hidden="true"></span>
+      </a>
+
+    </div>
+    <div id="groups-destaque">
+      <div class="destaque">
+        <img src="http://dummyimage.com/225x100/ff0000/ffffff.gif&amp;text=Destaque+1">
       </div>
-      <div class="item">
-        <img src="http://dummyimage.com/900x300/0000ff/ffffff.gif&amp;text=Slide+3">
-        <div class="carousel-caption">
-          <h3>Slide 3. Aqui gestores e trabalhadores do SUS se comunicam, compartilham experiências e constituem esta grande rede colaborativa, dinâmica e viva.</h3>
-        </div>
+      <div class="destaque">
+        <img src="http://dummyimage.com/225x100/00ff00/ffffff.gif&amp;text=Destaque+2">
+      </div>
+      <div class="destaque">
+        <img src="http://dummyimage.com/225x100/0000ff/ffffff.gif&amp;text=Destaque+3">
+      </div>
+      <div class="destaque">
+        <img src="http://dummyimage.com/225x100/ff00ff/ffffff.gif&amp;text=Destaque+4">
       </div>
     </div>
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#groups-slider" role="button" data-slide="prev">
-      <span class="icons-outline icons-outline-skip-previous" aria-hidden="true"></span>
-    </a>
-    <a class="right carousel-control" href="#groups-slider" role="button" data-slide="next">
-      <span class="icons-outline icons-outline-skip-next" aria-hidden="true"></span>
-    </a>
-
-  </div>
-
-  <div id="groups-destaque">
-    <div class="destaque">
-      <img src="http://dummyimage.com/225x100/ff0000/ffffff.gif&amp;text=Destaque+1">
-    </div>
-    <div class="destaque">
-      <img src="http://dummyimage.com/225x100/00ff00/ffffff.gif&amp;text=Destaque+2">
-    </div>
-    <div class="destaque">
-      <img src="http://dummyimage.com/225x100/0000ff/ffffff.gif&amp;text=Destaque+3">
-    </div>
-    <div class="destaque">
-      <img src="http://dummyimage.com/225x100/ff00ff/ffffff.gif&amp;text=Destaque+4">
-    </div>
-  </div>
+  {{/if}}
 
   <div id="groups-assuntos">
     <span class="fa-stack">
