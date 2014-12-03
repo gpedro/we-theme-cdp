@@ -5,30 +5,26 @@
 
     <div class="row">
       <div class="col-md-3">
+        <div class="avatar-large">
+          {{we-image file=user.avatar defaultSrc="/core/images/avatars/user-avatar.png" size="large"}}
+        </div>
 
-        <div class="avatar-large">{{we-avatar userId=user.id size="responsive"}}</div>
+        {{#if user.canEdit}}
+          <button classNames="btn btn-primary" {{action "showAvatarChangeModal"}} >
+            Mudar imagem
+          </button>
+        {{/if}}
+
 
         <div class="user-profile-edit">
 
           <div class="user-admin-actions-area">
             <div class="actions">
-              {{#if user.canEdit}}
-                {{#if edit}}
-                    <button {{action 'save'}} type="button" class="btn btn-xs btn-primary">
-                      <i class="fa fa-saved"></i>Salvar
-                    </button>
-                    <button {{action 'cancel'}} type="button" class="btn btn-xs btn-default">
-                      <i class="fa fa-unchecked"></i>Cancelar
-                    </button>
-                {{else}}
-                  <button {{action 'edit'}} class="btn btn-warning">Editar</button>
-                {{/if}}
-              {{else}}
-                {{#if showSocialActions}}
-                  {{view App.ContactButtomView contactStatus=contact.currentUserStatus}}
-                  {{we-follow model='user' classNames="btn btn-warning" modelId=user.id flagText="Seguir" }}
-                {{/if}}
-              {{/if}}
+            {{#if showSocialActions}}
+              {{view App.ContactButtomView contactStatus=contact.currentUserStatus}}
+              {{we-follow model='user' classNames="btn btn-warning" modelId=user.id flagText="Seguir" }}
+            {{/if}}
+
             </div>
           </div>
         </div>
@@ -91,44 +87,40 @@
             </div>
             <div class="header-brand-text">
               <h3 class="header-brand-text--title">
-              {{#if edit}}
-                Olá, {{focus-input value=user.displayName type="text"}}
-              {{else}}
-                {{t 'user.sidebar.username' usernameBinding=user.displayName}}
-              {{/if}}
+                {{#we-content-editable value=user.displayName attribute='displayName' onSave="saveAttribute" canEdit=user.canEdit}}
+                  {{focus-input value=user.displayName type="text"}}
+                {{/we-content-editable}}
               </h3>
               <small class="header-brand-text--small">
-                {{t 'user.activity.subtitle'}}
+                Membro ha {{format-date user.createdAt}}
               </small>
             </div>
           </div>
 
           <div class="header-info">
             <div class="local">
-            {{#if edit}}
-              <b>Local</b>:
-              {{we-state-city-simple-selector tagName="span" country="BR" selectedState=user.locationState selectedCity=user.city}}
+            {{#if user.canEdit}}
+              <b>Local</b>: {{we-state-city-selector-inline tagName="span" country="BR" selectedState=user.locationState selectedCity=user.city}}
             {{else}}
               {{#if user.locationState}}
                 <b>Local</b>: {{user.locationState}}, {{user.city}}
               {{/if}}
             {{/if}}
+
             </div>
             {{!--
               <div class="area"><b>Área</b>: Enfermagem</div>
              --}}
             <div class="about">
               <p>
-              {{#if edit}}
+              {{#we-content-editable value=user.biography attribute='biography' onSave="saveAttribute" canEdit=user.canEdit}}
                 {{we-editor value=user.biography}}
-              {{else}}
-                {{user.biography}}
-              {{/if}}
+              {{/we-content-editable}}
               </p>
             </div>
           </div>
 
-          <a href="#" class="about-group btn">Sobre <span class="caret"></span></a>
+ {{!--          <a href="#" class="about-group btn">Sobre <span class="caret"></span></a> --}}
 
         </header>
 
