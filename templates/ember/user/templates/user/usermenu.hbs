@@ -1,8 +1,8 @@
 {{#if isVisible}}
 <li class="main_menu-dropdown logged-on dropdown">
   <button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown">
-    <span class="avatar-small">{{we-avatar userId=App.currentUser.id}}</span>
-    <span class="user-name " >{{App.currentUser.username}}</span><b class="caret"></b>
+    <span class="avatar-small" {{bind-attr class=status}}>{{we-avatar userId=currentUser.id}}</span>
+    <span class="user-name " >{{currentUser.username}}</span><b class="caret"></b>
     {{we-connection-status}}
   </button>
 
@@ -14,7 +14,7 @@
     </li>
     <li class="divider"></li>
     <li>
-      {{#link-to 'user' App.currentUser.id}}
+      {{#link-to 'user' currentUser.id}}
       {{t "View / edit profile"}}
       {{/link-to}}
     </li>
@@ -25,11 +25,8 @@
       {{/link-to}}
     </li>
     <li class="divider"></li>
-
     <div class="container-button-signin">
-      <a href="/auth/logout" data-toggle="dropdown" class="btn btn-sm btn-danger">
-        {{t 'Exit'}}
-      </a>
+      <a href="/auth/logout" class="btn btn-sm btn-danger">Exit</a>
     </div>
   </ul>
 </li>

@@ -1,16 +1,16 @@
 <!-- Splash Global
     Use for welcome to user -->
-{{#if App.auth.isAuthenticated}}
+{{#if currentUser.id}}
   <section id="splash-global" class="section">
     <div class="container">
 
-        <div class="timeline-wrapper">
-          <h3>Conteúdos que sigo<small><br>Acompanhe o que acontece na rede</small></h3>
-          <div id="user-list">
-            {{render 'post/sharebox' postNew}}
-            {{render 'posts/list' posts}}
-          </div>
+      <div class="timeline-wrapper">
+        <h3>Conteúdos que sigo<small><br>Acompanhe o que acontece na rede</small></h3>
+        <div id="user-list">
+          {{render 'post/sharebox' postNew}}
+          {{render 'posts/list' posts}}
         </div>
+      </div>
 
     </div><!-- end container -->
   </section><!-- end splash global -->
@@ -20,9 +20,8 @@
 
     <div class="container">
       <!-- collapse-blocks -->
-      {{partial 'partials/collapse-blocks'}}
+      {{partial 'partials/home-collapse-blocks'}}
       <!-- /collapse-blocks -->
-
       <!-- info-blocks -->
       {{partial 'partials/info-blocks'}}
       <!-- /info-blocks -->

@@ -1,109 +1,135 @@
 <section class="section">
-  <div class="container">
+  <div class="container user-profile">
 
     {{bread-crumbs}}
 
-    <div id="user-list">
-      <h3 class="title-icon">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x pull-left"></i>
-          <i class="fa fa-user cdp-lg cdp-stack-1x cdp-inverse"></i>
-        </span>
-        <span class="title">{{t 'user.activity.title'}}</span>
-        <small class="subtitle">{{t 'user.activity.subtitle'}}</small>
-      </h3>
-      <div class="user-profile-menu-area text-center">
-        <ul class="user-profile-menu nav nav-pills pull-right">
-          <li>
-          {{#link-to 'user' user.id classNames='btn btn-success'}}
-            {{t 'user.menu.activity.link'}}
-          {{/link-to}}
-          </li>
-          <li>
-          {{#link-to 'user.contacts' user.id classNames='btn btn-primary'}}
-            {{t 'user.menu.contacts.link'}}
-          {{/link-to}}
-          </li>
-          <li>
-          {{#link-to 'user.images' user.id classNames='btn btn-warning'}}
-            {{t 'user.menu.imagens.link'}}
-          {{/link-to}}
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        {{outlet}}
-      </div>
-    </div>
-
-    <div id="draggable-widgets">
-      <!-- widgets -->
-      <aside id="user-view-widget" class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-              <div class="icon icon-user pull-left"></div>
-              {{t 'user.sidebar.username' usernameBinding=user.displayName}}
-            </a>
-          </h3>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="avatar-large">
+          {{we-image file=user.avatar defaultSrc="/core/images/avatars/user-avatar.png" size="large"}}
         </div>
-        <div id="collapseFour" class="panel-collapse collapse in list-group">
-          <div href="#" class="list-group-item">
-            <span class="avatar-large">{{we-avatar userId=user.id size="responsive"}}</span>
 
-            {{#if isEditing}}
-              <div class="form-group">
-                {{view Ember.Select name="language" value=user.language content=defaultlanguages classNames="form-control input-md"}}
-              </div>
-            {{else}}
-              <div class="language-area text-center">{{user.language}}</div>
+        {{#if user.canEdit}}
+          <button classNames="btn btn-primary" {{action "showAvatarChangeModal"}} >
+            Mudar imagem
+          </button>
+        {{/if}}
+
+
+        <div class="user-profile-edit">
+
+          <div class="user-admin-actions-area">
+            <div class="actions">
+            {{#if showSocialActions}}
+              {{view App.ContactButtomView contactStatus=contact.currentUserStatus}}
+              {{we-follow model='user' classNames="btn btn-warning" modelId=user.id flagText="Seguir" }}
             {{/if}}
 
-            {{#can editUser model.user}}
-              <div class="user-admin-actions-area">
-                <div class="actions">
-
-                  <button {{action 'save'}} type="button" class="btn btn-xs btn-success">
-                    <i class="fa fa-saved"></i> {{t 'Save'}}
-                  </button>
-
-                  <button {{action 'cancel'}} type="button" class="btn btn-xs btn-warning">
-                    <i class="fa fa-unchecked"></i> {{t 'Cancel'}}
-                  </button>
-
-                  <button {{action 'edit'}} type="button" class="btn btn-xs btn-primary">
-                    <i class="fa fa-edit"></i> {{t 'Edit'}}
-                  </button>
-
-                </div>
-              </div>
-            {{/can}}
-
-            <div class="user-full">
-              <div class="user-area-data">
-                <div class="user-area-data-rigth">
-                  <div class="actions">
-                    {{#if showSocialActions}}
-                      {{view App.ContactButtomView contactStatus=contactStatus}}
-                      {{we-follow model='user' modelId=user.id flagText="Seguir" }}
-                    {{/if}}
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-      </aside>
 
-      {{partial 'partials/feed-sidebar-widget'}}
+        <aside id="feed-widget" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+            {{#link-to 'user.index' user.id classNames="widget-trigger-collapse"}}
+                <span class="fa-stack">
+                  <i class="cdp cdp-time cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
+                </span>
+                <span class="icon-title">O que está rolando?</span>
+            {{/link-to}}
+            </h3>
+          </div>
+        </aside>
 
-      {{partial 'partials/group-sidebar-widget'}}
 
-      {{partial 'partials/course-sidebar-widget'}}
-      <!-- /widgets -->
+        {{partial 'partials/group-sidebar-widget'}}
+
+        {{partial 'partials/course-sidebar-widget'}}
+
+
+        {{we-user-relatos-favoritos userId=user.id relatos=null}}
+
+        <aside id="related-users" class="widget-user-list widget">
+          <h3>Membros Relacionados</h3>
+
+          <div class="content user-list">
+
+              <a class="user-list-user" href="#">
+                <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
+                <h4 class="nome">marcusvbp</h4>
+              </a>
+              <a class="user-list-user" href="#">
+                <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
+                <h4 class="nome">marcusvbp</h4>
+              </a>
+              <a class="user-list-user" href="#">
+                <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
+                <h4 class="nome">marcusvbp</h4>
+              </a>
+              <a class="user-list-user" href="#">
+                <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
+                <h4 class="nome">marcusvbp</h4>
+              </a>
+
+          </div>
+        </aside>
+
+      </div>
+
+      <div class="col-md-9">
+        <header id="user--header" class="section-header">
+          <div class="header-brand">
+            <div class="header-brand-icon">
+              <span class="fa-stack">
+                <i class="fa fa-user cdp-lg cdp-stack-1x cdp-inverse"></i>
+              </span>
+            </div>
+            <div class="header-brand-text">
+              <h3 class="header-brand-text--title">
+                {{#we-content-editable value=user.displayName attribute='displayName' onSave="saveAttribute" canEdit=user.canEdit}}
+                  {{focus-input value=user.displayName type="text"}}
+                {{/we-content-editable}}
+              </h3>
+              <small class="header-brand-text--small">
+                Membro ha {{format-date user.createdAt}}
+              </small>
+            </div>
+          </div>
+
+          <div class="header-info">
+            <div class="local">
+            {{#if user.canEdit}}
+              <b>Local</b>: {{we-state-city-selector-inline tagName="span" country="BR" selectedState=user.locationState selectedCity=user.city}}
+            {{else}}
+              {{#if user.locationState}}
+                <b>Local</b>: {{user.locationState}}, {{user.city}}
+              {{/if}}
+            {{/if}}
+
+            </div>
+            {{!--
+              <div class="area"><b>Área</b>: Enfermagem</div>
+             --}}
+            <div class="about">
+              <p>
+              {{#we-content-editable value=user.biography attribute='biography' onSave="saveAttribute" canEdit=user.canEdit}}
+                {{we-editor value=user.biography}}
+              {{/we-content-editable}}
+              </p>
+            </div>
+          </div>
+
+ {{!--          <a href="#" class="about-group btn">Sobre <span class="caret"></span></a> --}}
+
+        </header>
+
+        {{outlet}}
+
+      </div>
+
     </div>
+
 
   </div><!-- /container -->
 </section><!-- end -->

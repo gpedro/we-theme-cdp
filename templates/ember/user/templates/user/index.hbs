@@ -1,15 +1,14 @@
 <section class="section">
-  <div class="container">
 
-    <div class="activities">
-      <div class="activities-left">
-        Últimas atividades deste usuário
-      </div>
-      <div class="activities-right">
-        <h3>{{t "users.title"}}</h3>
-       {{render 'posts/list' posts controller='Posts'}}
-      </div>
-    </div>
-
+  <div class="user-badges badge-list">
+  	<a class="badge">Descrição</a>
+  	<a class="badge">Saúde</a>
+  	<a class="badge">SUS</a>
   </div>
+
+  <div class="activities">
+    {{!--<h3>{{t "users.title"}}</h3>--}}
+   {{render 'posts/list' posts controller='Posts'}}
+  </div>
+
 </section>
