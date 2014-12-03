@@ -11,9 +11,19 @@
       <label for="name" class="input-group-addon">
         <i class="icons-outline icons-outline-play"></i> Nome da comunidade
       </label>
-      {{input id="name" name="name" value=group.name type="text" placeholder="Digite o nome da comunidade" required="true" classNames="form-control"}}
+      {{input name="name" value=group.name type="text" placeholder="Digite o nome da comunidade" required="true" classNames="form-control"}}
     </div>
   </div>
+
+
+  <div class="form-group">
+    <div class="input-group">
+      <label for="description" class="input-group-addon">Descrição</label>
+      {{we-editor name="description" value=group.description type="text" placeholder="Fale sobre sua comunidade" required="true"}}
+
+    </div>
+  </div>
+
 
   <div class="form-group">
     <div class="input-group">
@@ -29,7 +39,7 @@
       <label for="categories" class="input-group-addon">
         <i class="icons-outline icons-outline-label"></i> Categorias:
       </label>
-      {{we-category-field value=categories class="form-control"
+      {{we-category-field value=group.categories class="form-control"
       newTagMark=' (nova)' vocabulary=vocabularyId placeholder="Clique aqui para selecionar as categorias"}}
     </div>
   </div>
@@ -43,32 +53,8 @@
     </div>
   </div>
 
-{{!--     {{#if imageSelected}}
-      {{we-image-crop src=salvedImage.urls.original file=salvedImage data=cropImageData}}
-    {{else}}
-    <div class="form-group">
-      <div class="row">
-        <div class="col-lg-9">
-          <div class="input-group">
-            <span class="input-group-addon">
-              <label for="image">
-                <i class="icons-outline icons-outline-picture"></i> Foto da comunidade
-              </label>
-            </span>
-            {{image-upload multiple="false" files=files classNames="form-control"}}
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-        <div class="col-lg-3">
-          <div class="input-group">
-            <button class="btn btn-primary" type="buttom" {{action 'selectFile'}}>Selecionar imagem</button>
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-      </div><!-- /.row -->
-    </div>
-    {{/if}} --}}
-
   <div class="form-group">
-    <button class="btn btn-primary" type="buttom" {{action 'cropAndSave'}}>Salvar</button>
+    <button class="btn btn-primary" type="buttom" {{action 'createGroup'}}>Salvar</button>
   </div>
 
 </form>
