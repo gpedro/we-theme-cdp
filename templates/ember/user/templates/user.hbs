@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="avatar-large">
-          {{we-image file=user.avatar defaultSrc="/core/images/avatars/user-avatar.png" size="large"}}
+          {{user-avatar user=user size="large"}}
         </div>
 
         {{#if user.canEdit}}
@@ -14,7 +14,6 @@
             Mudar imagem
           </button>
         {{/if}}
-
 
         <div class="user-profile-edit">
 
@@ -36,43 +35,20 @@
                 <span class="fa-stack">
                   <i class="cdp cdp-time cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
                 </span>
-                <span class="icon-title">O que está rolando?</span>
+                <span class="icon-title">Atividades</span>
             {{/link-to}}
             </h3>
           </div>
         </aside>
 
-
         {{partial 'partials/group-sidebar-widget'}}
 
-        {{partial 'partials/course-sidebar-widget'}}
-
+        {{!-- {{partial 'partials/course-sidebar-widget'}} --}}
 
         {{we-user-relatos-favoritos userId=user.id relatos=null}}
 
         <aside id="related-users" class="widget-user-list widget">
-          <h3>Membros Relacionados</h3>
-
-          <div class="content user-list">
-
-              <a class="user-list-user" href="#">
-                <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
-                <h4 class="nome">marcusvbp</h4>
-              </a>
-              <a class="user-list-user" href="#">
-                <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
-                <h4 class="nome">marcusvbp</h4>
-              </a>
-              <a class="user-list-user" href="#">
-                <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
-                <h4 class="nome">marcusvbp</h4>
-              </a>
-              <a class="user-list-user" href="#">
-                <span class="img-wrapper"><img class="img-circle" heigth="100" width="100" userid="1" src="http://localhost:1430/avatar/1?style=medium"></span>
-                <h4 class="nome">marcusvbp</h4>
-              </a>
-
-          </div>
+          {{we-user-contacts-block userId=user.id}}
         </aside>
 
       </div>
@@ -87,9 +63,10 @@
             </div>
             <div class="header-brand-text">
               <h3 class="header-brand-text--title">
-                {{#we-content-editable value=user.displayName attribute='displayName' onSave="saveAttribute" canEdit=user.canEdit}}
+                {{#we-content-editable tagName="span" value=user.displayName attribute='displayName' onSave="saveAttribute" canEdit=user.canEdit}}
                   {{focus-input value=user.displayName type="text"}}
                 {{/we-content-editable}}
+                <small class="username">@{{user.username}}</small>
               </h3>
               <small class="header-brand-text--small">
                 Membro ha {{format-date user.createdAt}}
@@ -112,6 +89,7 @@
               <div class="area"><b>Área</b>: Enfermagem</div>
              --}}
             <div class="about">
+              <b>Sobre</b>:
               <p>
               {{#we-content-editable value=user.biography attribute='biography' onSave="saveAttribute" canEdit=user.canEdit}}
                 {{we-editor value=user.biography}}
