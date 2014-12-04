@@ -35,7 +35,7 @@
                 <span class="fa-stack">
                   <i class="cdp cdp-time cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
                 </span>
-                <span class="icon-title">O que está rolando?</span>
+                <span class="icon-title">Atividades</span>
             {{/link-to}}
             </h3>
           </div>
@@ -43,7 +43,7 @@
 
         {{partial 'partials/group-sidebar-widget'}}
 
-        {{partial 'partials/course-sidebar-widget'}}
+        {{!-- {{partial 'partials/course-sidebar-widget'}} --}}
 
         {{we-user-relatos-favoritos userId=user.id relatos=null}}
 
@@ -63,9 +63,10 @@
             </div>
             <div class="header-brand-text">
               <h3 class="header-brand-text--title">
-                {{#we-content-editable value=user.displayName attribute='displayName' onSave="saveAttribute" canEdit=user.canEdit}}
+                {{#we-content-editable tagName="span" value=user.displayName attribute='displayName' onSave="saveAttribute" canEdit=user.canEdit}}
                   {{focus-input value=user.displayName type="text"}}
                 {{/we-content-editable}}
+                <small class="username">@{{user.username}}</small>
               </h3>
               <small class="header-brand-text--small">
                 Membro ha {{format-date user.createdAt}}
@@ -88,6 +89,7 @@
               <div class="area"><b>Área</b>: Enfermagem</div>
              --}}
             <div class="about">
+              <b>Sobre</b>:
               <p>
               {{#we-content-editable value=user.biography attribute='biography' onSave="saveAttribute" canEdit=user.canEdit}}
                 {{we-editor value=user.biography}}
