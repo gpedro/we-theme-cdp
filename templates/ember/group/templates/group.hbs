@@ -63,6 +63,11 @@
   {{else}}
     <aside id="group-menu-widget" class="group-widget">
       {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
+      {{#if group.canInvite}}
+        {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
+          Convidar Pessoa
+        {{/link-to}}  
+      {{/if}}      
     </aside>
   {{/if}}
   {{#if group.canAdmin}}
@@ -78,7 +83,7 @@
         </h3>
       </div>
       <div id="collapse-administer-widget" class="panel-collapse list-group in" style="height: auto;">
-        {{#link-to 'group.addMember' group.id classNames="list-group-item" }}
+        {{#link-to 'group.addMember' group.id classNames="btn btn-default" }}
           Convidar Pessoa
         {{/link-to}}
       </div>
