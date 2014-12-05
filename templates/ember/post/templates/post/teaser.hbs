@@ -1,98 +1,12 @@
 <div class="content-block post">
 <div class="post-teaser teaser panel panel-default">
-
   <div class="header panel-heading">
-    <span class="creator">
-      {{#link-to 'user' creator.id}}
-        <div class="post-creator">
-          <span class="creator-avatar avatar-small">{{user-avatar width="35px" heigth="35px" user=creator size="thumbnail"}}</span>
-          <span class="creator-name">
-            {{creator.displayName}}
-          </span>
-        </div>
-      {{/link-to}}
-    </span>
-
-    <div class="post-user-info">
-      <a {{action 'showSharedWith'}} href="#" class="shared-with text-mute">
-        <i class="fa fa-user"></i>
-      </a>
-      <span class="createdAt post-created-at">{{format-date createdAt}}</span>
-      {{#if sharedIn}}
-        <span class="pull-right">&nbsp; na comunidade
-          {{#link-to 'group' sharedIn.id}}
-            {{sharedIn.name}}
-          {{/link-to}}
-        </span>
-      {{/if}}
-    </div>
+    {{partial 'partials/post-header-partial'}}
   </div>
 
   <div class="panel-body">
     {{#if isEditing}}
-    <form role="form" {{action "submit" on="submit"}}>
-      <div class="form-group">
-        {{we-wysiwyg-editor name="body" linkedPage=newWembed value=body
-          onChangeText="onChangeBodyText"
-          onPasteText="onPasteBodyText"
-        }}
-      </div>
-
-      {{#if selectingAttachOption}}
-      <div class="form-group attach-options">
-        <button {{action 'openShareImage'}} type="button" class="btn btn-info" title="Imagem">
-          <i class="fa fa-image"></i>
-        </button>
-      </div>
-      {{/if}}
-
-      <div class="form-group">
-        {{#if wembed.url}}
-          {{we-wembed url=wembed.url imageIndex=wembed.imageIndex isEditing='true'}}
-        {{/if}}
-      </div>
-
-      {{#if shareImages}}
-        <div class="form-group">
-          <div class="form-group row add-images">
-            <label for="addImages" class="col-sm-2 control-label">Imagens:</label>
-            <div class="col-sm-10">
-              {{image-upload files=filesNew}}
-            </div>
-          </div>
-        </div>
-      {{/if}}
-      <div class="form-group images-preview">
-        <div class="row">
-          {{#each files}}
-            <div class="col-xs-6 col-md-3">
-              {{we-image-preview file=this onRemove='onRemoveImage'}}
-            </div>
-          {{/each}}
-
-          {{#each images}}
-            <div class="col-xs-6 col-md-3">
-              {{we-image file=this click='onRemoveSalvedImage'}}
-            </div>
-          {{/each}}
-        </div>
-      </div>
-
-      <div class="footer">
-
-        <div class="actions">
-          <button type="submit" class="btn btn-info">
-            Salvar
-          </button>
-          <button type="button" {{action 'cancel'}} class="btn btn-default">
-            <i class="fa fa-close"></i>
-            Cancelar
-          </button>
-        </div>
-      </div>
-
-
-    </form>
+      {{partial 'partials/post-edit-form-partial'}}
     {{else}}
       <div class="content">
         <div class="post-text">{{html body}}</div>
@@ -101,48 +15,11 @@
           {{we-wembed url=wembed.url imageIndex=wembed.imageIndex }}
         {{/if}}
 
-        <div class="images">
-          <div class="row">
-            {{#each images}}
-              <div class="col-md-3">
-                {{#we-image-overlay href=urls.original data-fancybox-group='postGaleria'}}
-                  <div class="img-wrapper">
-                  {{we-image file=this size="large" }}
-                {{/we-image-overlay}}
-                  </div>
-              </div>
-            {{/each}}
-          </div>
-        </div>
+        {{partial 'partials/post-images-display-partial'}}
       </div>
-      <div class="footer">
-          <div class="actions">
-            {{#if id}}
-              {{we-follow model='post' modelId=id flagText="Seguir" unFlagText="Seguindo"}}
 
-              {{we-flag flagType='like' model='post' modelId=id
-                flagText='<i class="fa fa-heart" title="Amar"></i>'
-                flagClass= 'btn btn-xs btn-danger active'
-                unFlagClass= 'btn btn-xs btn-danger' }}
+      {{partial 'partials/post-footer-actions-partial'}}
 
-              {{#can editPost model}}
-                <button type="button" class="btn btn-xs btn-warning" {{action 'edit'}}>
-                  <i class="fa fa-edit-marked"></i>Editar
-                </button>
-              {{/can}}
-
-              {{#can deletePost model}}
-                <button class="btn btn-xs btn-default" {{action 'deleteItem'}}>
-                  <i class="fa fa-close text-danger"></i> Deletar
-                </button>
-              {{/can}}
-
-              {{#link-to 'post' id classNames="btn btn-xs btn-default"}}
-                <span class="glyphicon glyphicon-link text-success"></span>  Ver
-              {{/link-to}}
-            {{/if}}
-          </div>
-      </div>
     {{/if}}
   </div>
   <div class="panel-footer">
