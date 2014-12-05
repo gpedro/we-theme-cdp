@@ -62,7 +62,7 @@
     </aside>
   {{else}}
     <aside id="group-menu-widget" class="group-widget">
-      {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
+      {{we-group-join-button status=membership.status action="changeMembership" classNames="btn btn-success"}}
       {{#if group.canInvite}}
         {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
           Convidar Pessoa
@@ -86,6 +86,11 @@
         {{#link-to 'group.addMember' group.id classNames="btn btn-default" }}
           Convidar Pessoa
         {{/link-to}}
+        {{#if group.shouldAdminRequests}}
+          {{#link-to 'group.requests' group.id classNames="btn btn-default" }}
+            Gerenciar Solicitacões
+          {{/link-to}}        
+        {{/if}}
       </div>
     </aside>
   {{/if}}
