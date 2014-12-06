@@ -19,18 +19,22 @@
       <img width="100%" {{bind-attr src=group.newAvatarSRC}}>
     </div>
 
-    <button class="btn btn-success" {{action 'saveAvatar'}}>Salvar</button>
-    <button {{action 'cancelChangeAvatar'}} class="btn btn-default">
-      Cancelar
-    </button>
+    <div class="btn-group btn-group-lg group-save-group-avatar" role="group">
+
+      <button class="btn btn-success" {{action 'saveAvatar'}}>Salvar</button>
+
+      <button {{action 'cancelChangeAvatar'}} class="btn btn-default">Cancelar</button>
+
+    </div>
+
   {{/unless}}
   {{#if changeAvatar}}
-    <div class="group-change-picture group-widget" >
+    <div class="group-change-picture widget" >
       {{image-upload name="chaneGroupAvatar" classNames="we-share-images-input" files=group.avatarSelected}}
     </div>
   {{else}}
     {{#if group.canAdmin}}
-      <button {{action 'showChangeAvatar'}} class="btn btn-primary">
+      <button {{action 'showChangeAvatar'}} class="btn btn-primary btn-block btn-change-group-avatar">
         Mudar imagem
       </button>
     {{/if}}
@@ -51,25 +55,26 @@
     </ul>
   </div>
 
-  {{#link-to 'group.about' group.id classNames="btn btn-default"}}
+  <aside id="group-menu-widget" class="widget">
+  {{#link-to 'group.about' group.id classNames="btn btn-default btn-block"}}
     Sobre
   {{/link-to}}
-
   {{#if group.isCreator}}
     {{!-- group create is a super admin and cant leave the group --}}
-    <aside id="group-menu-widget" class="group-widget">
-      <button disabled="true" type="button" class="btn btn-success">Super Admin</button>
-    </aside>
+
+    <button disabled="true" type="button" class="btn btn-success btn-block">Super Admin</button>
+
   {{else}}
-    <aside id="group-menu-widget" class="group-widget">
-      {{we-group-join-button status=membership.status action="changeMembership" classNames="btn btn-success"}}
-      {{#if group.canInvite}}
-        {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
-          Convidar Pessoa
-        {{/link-to}}  
-      {{/if}}      
-    </aside>
+
+  {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
+  {{#if group.canInvite}}
+    {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
+      Convidar Pessoa
+    {{/link-to}}
   {{/if}}
+
+  {{/if}}
+  </aside>
   {{#if group.canAdmin}}
     <aside id="administer-widget" class="widget panel panel-gray">
       <div class="panel-heading">
@@ -82,14 +87,15 @@
           </a>
         </h3>
       </div>
-      <div id="collapse-administer-widget" class="panel-collapse list-group in" style="height: auto;">
-        {{#link-to 'group.addMember' group.id classNames="btn btn-default" }}
+      <div id="collapse-administer-widget" class="panel-collapse list-group in">
+
+        {{#link-to 'group.addMember' group.id classNames="list-group-item" }}
           Convidar Pessoa
         {{/link-to}}
         {{#if group.shouldAdminRequests}}
           {{#link-to 'group.requests' group.id classNames="btn btn-default" }}
             Gerenciar Solicitacões
-          {{/link-to}}        
+          {{/link-to}}
         {{/if}}
       </div>
     </aside>
