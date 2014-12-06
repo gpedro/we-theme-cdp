@@ -1,0 +1,17 @@
+{{#link-to 'user' creator.id}}
+  <span class="post-creator">
+    <span class="creator-avatar avatar-small">{{user-avatar width="35px" heigth="35px" user=creator size="thumbnail"}}</span>
+    <span class="creator-name">{{creator.displayName}}</span>
+  </span>
+{{/link-to}}
+
+<span class="post-user-info">
+  <span class="createdAt post-created-at">{{format-date createdAt}}</span>
+  {{#if sharedIn.name}}
+    <span class="pull-right">&nbsp; na comunidade
+      {{#link-to 'group' sharedIn.id}}
+        {{substr sharedIn.name max=20}}
+      {{/link-to}}
+    </span>
+  {{/if}}
+</span>

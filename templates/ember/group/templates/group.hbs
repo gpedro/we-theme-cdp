@@ -65,6 +65,7 @@
     <button disabled="true" type="button" class="btn btn-success btn-block">Super Admin</button>
 
   {{else}}
+<<<<<<< HEAD
 
     {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
     {{#if group.canInvite}}
@@ -73,6 +74,16 @@
       {{/link-to}}  
     {{/if}}      
     
+=======
+    <aside id="group-menu-widget" class="group-widget">
+      {{we-group-join-button status=membership.status action="changeMembership" classNames="btn btn-success"}}
+      {{#if group.canInvite}}
+        {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
+          Convidar Pessoa
+        {{/link-to}}  
+      {{/if}}      
+    </aside>
+>>>>>>> 021ec02d33531c9f65a461fcfee15d5eb8aeae66
   {{/if}}
   </aside>
   {{#if group.canAdmin}}
@@ -92,6 +103,11 @@
         {{#link-to 'group.addMember' group.id classNames="list-group-item" }}
           Convidar Pessoa
         {{/link-to}}
+        {{#if group.shouldAdminRequests}}
+          {{#link-to 'group.requests' group.id classNames="btn btn-default" }}
+            Gerenciar Solicitacões
+          {{/link-to}}        
+        {{/if}}
       </div>
     </aside>
   {{/if}}
