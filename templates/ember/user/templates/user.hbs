@@ -20,8 +20,8 @@
           <div class="user-admin-actions-area">
             <div class="actions">
             {{#if showSocialActions}}
-              {{view App.ContactButtomView contactStatus=contact.currentUserStatus}}
-              {{we-follow model='user' classNames="btn btn-warning" modelId=user.id flagText="Seguir" }}
+              {{view 'contact-buttom' contactStatus=contact.currentUserStatus}}
+              {{we-follow model='user' classNames="btn btn-warning" modelId=user.id flagText="Seguir" unFlagText="Seguindo"}}
             {{/if}}
 
             </div>
