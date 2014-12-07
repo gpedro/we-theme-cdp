@@ -65,6 +65,27 @@
     <button disabled="true" type="button" class="btn btn-success btn-block">Super Admin</button>
 
   {{else}}
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+    {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
+    {{#if group.canInvite}}
+      {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
+        Convidar Pessoa
+      {{/link-to}}  
+    {{/if}}      
+    
+=======
+    <aside id="group-menu-widget" class="group-widget">
+      {{we-group-join-button status=membership.status action="changeMembership" classNames="btn btn-success"}}
+      {{#if group.canInvite}}
+        {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
+          Convidar Pessoa
+        {{/link-to}}  
+      {{/if}}      
+    </aside>
+>>>>>>> 021ec02d33531c9f65a461fcfee15d5eb8aeae66
+=======
 
   {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
   {{#if group.canInvite}}
@@ -73,6 +94,7 @@
     {{/link-to}}
   {{/if}}
 
+>>>>>>> 0ff635605cd217442bec8c7187e766bff6499cf0
   {{/if}}
   </aside>
   {{#if group.canAdmin}}
