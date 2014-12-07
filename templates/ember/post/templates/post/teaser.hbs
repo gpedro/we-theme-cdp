@@ -1,30 +1,6 @@
 <div class="content-block post">
 <div class="post-teaser teaser panel panel-default">
   <div class="header panel-heading">
-    <span class="creator">
-      {{#link-to 'user' creator.id}}
-        <div class="post-creator">
-          <span class="creator-avatar avatar-small">{{user-avatar width="35px" heigth="35px" user=creator size="thumbnail"}}</span>
-          <span class="creator-name">
-            {{creator.displayName}}
-          </span>
-        </div>
-      {{/link-to}}
-    </span>
-
-    <div class="post-user-info">
-      <a {{action 'showSharedWith'}} href="#" class="shared-with text-mute">
-        <i class="fa fa-user"></i>
-      </a>
-      <span class="createdAt post-created-at">{{format-date createdAt}}</span>
-      {{#if sharedIn}}
-        <span>na comunidade
-          {{#link-to 'group' sharedIn.id}}
-            {{sharedIn.name}}
-          {{/link-to}}
-        </span>
-      {{/if}}
-    </div>
 
     {{partial 'partials/post-header-partial'}}
 
