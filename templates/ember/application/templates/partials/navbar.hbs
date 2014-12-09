@@ -19,12 +19,21 @@
 
       <ul class="nav navbar-nav">
 
-        {{#active-li currentWhen="groups" classNames="main_menu-item style_group"}}
+        {{!-- link temporario --}}
+        <li class="ember-view main_menu-item style_group inactive">
+          <a class="ember-view main_menu-item--wrapper" href="http://atencaobasica.org.br/comunidades">
+            <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
+            <span class="main_menu-item--name">Comunidades</span>
+          </a>
+        </li>
+
+        {{!-- link certo das comunidades do we.js --}}
+{{!--         {{#active-li currentWhen="groups" classNames="main_menu-item style_group"}}
           {{#link-to 'groups' classNames="main_menu-item--wrapper"}}
             <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
             <span class="main_menu-item--name">{{t 'mainmenu.link.groups'}}</span>
           {{/link-to}}
-        {{/active-li}}
+        {{/active-li}} --}}
 
         {{#active-li currentWhen="relatos" classNames="main_menu-item style_story"}}
           {{#link-to 'relatos' (query-params categorias=resetQuery order='new' q=resetQuery) classNames="main_menu-item--wrapper"}}
