@@ -14,7 +14,7 @@ window.BreadCrumbs.BreadCrumbsComponent.reopen({
 /**
  * Home page slideshow
  */
- $('.carousel').carousel({
-   interval: 9000,
-   pause: 'none'
- })
+ // $('.carousel').carousel({
+ //   interval: 9000,
+ //   pause: 'none'
+ // })
