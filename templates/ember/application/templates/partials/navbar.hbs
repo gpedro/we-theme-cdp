@@ -69,7 +69,7 @@
               <i class="cdp cdp-message cdp-2x cdp-align-justify"><span class="badge">42</span></i>
             </a>
           </li>
-        
+
         {{#if isAuthenticated}}
           <li class="main_menu-notification">
             {{#link-to 'notifications' classNames=""}}
@@ -82,16 +82,16 @@
           {{#if showOauthLogin}}
             <li class="main_menu-dropdown logged-off dropdown">
             {{log auth}}
-              <a {{bind-attr href=auth.loginUrl}} {{action 'logIn'}} class="dropdown-toggle" role="button">Entrar<span class="caret"></span></a>
+              <a {{bind-attr href=auth.loginUrl}} {{action 'logIn'}} class="dropdown-toggle" role="button">Entrar</a>
 
             </li>
             {{!-- TODO fix navbar css for allow more links --}}
             {{!-- <li class="main_menu-dropdown logged-off dropdown">
-              <a {{bind-attr href=auth.registerUrl}} {{action 'logIn'}} class="dropdown-toggle" role="button">Registrar<span class="caret"></span></a>
+              <a {{bind-attr href=auth.registerUrl}} {{action 'logIn'}} class="dropdown-toggle" role="button">Registrar</a>
             </li> --}}
           {{else}}
             <li class="main_menu-dropdown logged-off dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Entrar <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Entrar</a>
               <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu">
                 <!-- FORM LOGIN -->
                 {{we-auth-modal-login}}
