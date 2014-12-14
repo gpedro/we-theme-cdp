@@ -48,3 +48,15 @@
 @import "utilities";
 @import "responsive-utilities";
 */
+.note-toolbar > .btn-group{
+	display: inline-block;
+}
+
+.note-group-select-from-files {
+	display: none;
+}
+
+.note-toolbar .dropdown-menu {
+ top: inherit; 
+ left: inherit; 
+}
