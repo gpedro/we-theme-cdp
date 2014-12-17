@@ -1,0 +1,22 @@
+<h3 class="email-title">
+<% if (user.displayName) { %>
+  Oi <%= user.displayName %>
+<% } else { %>
+  Oi <%= user.username %>
+<% } %>
+</h3>
+
+<h2 class="notification-title">Email de notificação</h2>
+<table class="notitication-table">
+<% notifications.forEach(function(notification, index) { %>
+  <tr>
+    <td><a class="notification-link" href="<%= notification.emailLink %>">
+      <%- notification.emailText %>...
+    </a></td>
+  </tr>
+<% }); %>
+</table>
+
+<div class="footer">
+  Comunidade de Práticas | <a href="https://atencaobasica.org.br/">https://atencaobasica.org.br/</a>
+</div>
