@@ -57,6 +57,18 @@
 }
 
 .note-toolbar .dropdown-menu {
- top: inherit; 
- left: inherit; 
+ 	top: inherit; 
+ 	left: inherit; 
+}
+
+.we-auth-modal-need-login .close{
+	position: absolute;
+	top: 50px;
+	right: 40px;
+	border: none;
+	background: none;
+}
+
+.we-auth-modal-need-login .modal-header-cdp-logo{
+	width: 50%;
 }
