@@ -1,0 +1,15 @@
+<% if (user.displayName) { %>
+Oi <%= user.displayName %>,
+<% } else { %>
+Oi <%= user.username %>,
+<% } %>
+
+Email de notificação
+
+Notificações:
+
+<% notifications.forEach(function(notification, index) { %>
+  - <%= notification.emailNoHTML %>... link <%= notification.emailLink %>
+<% }); %>
+
+Comunidade de Práticas | https://atencaobasica.org.br/

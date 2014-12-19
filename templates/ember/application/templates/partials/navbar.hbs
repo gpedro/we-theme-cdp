@@ -63,12 +63,12 @@
               </div>
             </form>
         </li>
-        {{!--
-          <li class="main_menu-message">
+        
+          {{!-- <li class="main_menu-message">
             <a href="#">
               <i class="cdp cdp-message cdp-2x cdp-align-justify"><span class="badge">42</span></i>
             </a>
-          </li>
+          </li> --}}
 
         {{#if isAuthenticated}}
           <li class="main_menu-notification">
@@ -76,7 +76,7 @@
               {{we-notifications-link classNames="cdp cdp-bell cdp-2x cdp-align-justify" text='' labelDefaultClass="badge" labelHighlightClass="badge"}}
             {{/link-to}}
           </li>
-        {{/if}}--}}
+        {{/if}}
 
         {{#unless isAuthenticated}}
           {{#if showOauthLogin}}
