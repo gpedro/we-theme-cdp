@@ -16,6 +16,12 @@
     <li>
     <a href="https://cursos.atencaobasica.org.br/user/">Ver / editar perfil</a>
     </li>
+    <li class="divider"></li>
+    {{#if currentUser.isAdmin}}
+    <li>
+        <a href="/admin">Administrar</a>
+    </li>
+    {{/if}}    
 
  {{!--    <li>
       {{#link-to 'user' currentUser.id}}
