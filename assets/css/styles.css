@@ -72,3 +72,10 @@
 .we-auth-modal-need-login .modal-header-cdp-logo{
 	width: 50%;
 }
+
+.story-main-content .story-liked-create .external-link{
+	font-size: 12px;
+	color: #777777;
+	display: block;
+	text-decoration: underline;
+}
