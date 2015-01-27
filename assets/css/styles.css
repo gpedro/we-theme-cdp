@@ -79,3 +79,16 @@
 	display: block;
 	text-decoration: underline;
 }
+
+.we-user-search{
+	width: 451px;
+}
+
+.we-user-search-single{
+	text-align: center;
+}
+
+.we-user-search-single .select2-choice{
+	height: 36px;
+	line-height: 32px;
+}
