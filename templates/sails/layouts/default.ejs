@@ -17,6 +17,8 @@
 
     <meta name="csrf-token" content="<%= _csrf %>" />
 
+    <link href='/public/plugin/we-plugin-core/assets/css/app.css' rel='stylesheet' type="text/css">
+
     <%- sails.services.theme.getlinkCssTags() %>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="icon" href="/theme/assets/images/favicon.ico">
@@ -25,7 +27,7 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-39083204-1', 'auto');      
+      ga('create', 'UA-39083204-1', 'auto');
     </script>
 
   </head>
@@ -37,5 +39,7 @@
     </noscript>
 
     <%- sails.services.theme.getJsScriptTag() %>
+    <!-- Load ember.js models -->
+    <script type="text/javascript" src="/api/v1/models/emberjs"></script>
   </body>
 </html>
