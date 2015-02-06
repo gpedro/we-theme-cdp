@@ -57,8 +57,8 @@
 }
 
 .note-toolbar .dropdown-menu {
- 	top: inherit; 
- 	left: inherit; 
+ 	top: inherit;
+ 	left: inherit;
 }
 
 .we-auth-modal-need-login .close{
@@ -91,4 +91,8 @@
 .we-user-search-single .select2-choice{
 	height: 36px;
 	line-height: 32px;
+}
+
+.comment-form .user-avatar-area {
+	width: 50px;
 }
