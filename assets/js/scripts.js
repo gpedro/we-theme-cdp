@@ -5,8 +5,9 @@ $('#tooltip').tooltip('hide');
 
 $( document ).ready(function() {
   setTimeout(function(){ 
-	$("[data-toggle='tooltip']").tooltip();
-	console.warn('rodou');
+	$('body').tooltip({
+	   selector: "[data-toggle='tooltip']"
+	});
   }, 2000);
 });
 
