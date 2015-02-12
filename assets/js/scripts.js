@@ -3,6 +3,12 @@
 // tootip configs
 $('#tooltip').tooltip('hide');
 
+$( document ).ready(function() {
+  setTimeout(function(){ 
+	$("[data-toggle='tooltip']").tooltip();
+  }, 2000);
+});
+
 // Ember breadcrumbs configs
 window.BreadCrumbs.BreadCrumbsComponent.reopen({
   tagName: 'ol',
