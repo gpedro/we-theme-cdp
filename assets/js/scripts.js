@@ -11,7 +11,6 @@ $( document ).ready(function() {
   }, 2000);
 });
 
-console.warn('no javascript do tema');
 // Ember breadcrumbs configs
 window.BreadCrumbs.BreadCrumbsComponent.reopen({
   tagName: 'ol',
