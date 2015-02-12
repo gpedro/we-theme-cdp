@@ -6,9 +6,11 @@ $('#tooltip').tooltip('hide');
 $( document ).ready(function() {
   setTimeout(function(){ 
 	$("[data-toggle='tooltip']").tooltip();
+	console.warn('rodou');
   }, 2000);
 });
 
+console.warn('no javascript do tema');
 // Ember breadcrumbs configs
 window.BreadCrumbs.BreadCrumbsComponent.reopen({
   tagName: 'ol',
