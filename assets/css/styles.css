@@ -96,3 +96,8 @@
 .comment-form .user-avatar-area {
 	width: 50px;
 }
+
+.story-form-required {
+	color: red;
+	font-size: 10px;
+}
