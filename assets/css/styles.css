@@ -101,3 +101,8 @@
 	color: red;
 	font-size: 10px;
 }
+
+.story-form-count{
+	float: right;
+	font-size: 12px;
+}
