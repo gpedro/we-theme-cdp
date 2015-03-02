@@ -106,3 +106,24 @@
 	float: right;
 	font-size: 12px;
 }
+
+.story-modal-edit .story-main-content--form .story-main-content--form-wrapper .story-form-edit-date .datepicker-end{
+	margin-top: 0;
+}
+
+.radio {
+	margin-top: 40px;
+}
+
+textarea{
+	resize: none;
+}
+
+.story-modal-edit .story-main-content--form .story-main-content--form-wrapper .relato-textarea{
+	height: auto;
+}
+
+.section-story-edit h3 > i, .section-story-edit h4 > i {
+	padding-left: 10px;
+	font-size: 16px;
+}
