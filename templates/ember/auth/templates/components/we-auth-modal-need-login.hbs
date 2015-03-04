@@ -19,8 +19,8 @@
 
       <div class="modal-footer">
         <div class="containter-fluid text-center">
-          <a class="btn btn-default" {{bind-attr href=loginUrl}} >Faça o Login</a>
-          <a class="btn btn-primary" {{bind-attr href=registerUrl}} >Cadastre-se</a>
+          <a class="btn btn-default" {{bind-attr href=auth.loginUrl}} {{action 'logIn'}} >Faça o Login</a>
+          <a class="btn btn-primary" {{bind-attr href=auth.register}} {{action 'logRegister'}} >Cadastre-se</a>
         </div>
       </div>
 
