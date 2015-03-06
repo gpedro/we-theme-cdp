@@ -141,7 +141,7 @@ output {
   fieldset[disabled] & {
     cursor: not-allowed;
     background-color: $input-bg-disabled;
-    opacity: 1; // iOS fix for unreadable disabled content
+    opacity: 0.8; // iOS fix for unreadable disabled content
   }
 
   // [converter] extracted textarea& to textarea.form-control
