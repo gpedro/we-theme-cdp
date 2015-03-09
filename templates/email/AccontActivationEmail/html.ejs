@@ -4,10 +4,10 @@
     <table border="0" cellpadding="0" cellspacing="0" style="border: none; border-collapse: collapse; font-family: arial, tahoma, verdana">
       <tr>
         <!-- mensagem do topo -->
-        <td style="text-align: center; font-size: 11px; color: #868686; padding: 15px 0">
+<!--         <td style="text-align: center; font-size: 11px; color: #868686; padding: 15px 0">
           Caso nao esteja visualizando esta mensagem, <a href="#">Acesse este link</a>.<br>
           <a href="#">Descadastre-se</a> caso nao queira receber mais e-mails.
-        </td>
+        </td> -->
       </tr>
       <tr>
         <!-- Banner -->
@@ -19,18 +19,20 @@
         <!-- corpo do email -->
         <td style="background: #fff; padding: 65px 60px 50px 60px; color: #868686; font-size: 14px; line-height: 1.5em;">
           
-          <h1 style="color: #1b84bb; font-size: 32px;">Titulo da Notificaçao da CdP</h1>
+          <h1 style="color: #1b84bb; font-size: 32px;">Obrigado por participar da <%= site.name %>!</h1>
 
-          <p>Intrinsicly exploit transparent innovation via superior solutions. Assertively visualize premier e-tailers through client-centric experiences. Completely extend world-class e-commerce vis-a-vis competitive mindshare. Interactively empower multidisciplinary users via long-term high-impact architectures. Distinctively whiteboard effective platforms with excellent intellectual capital.</p>
+          <p>Oi <%= user.displayName %>,</p>
+          
+          <p>Para validar seu email <a text="link de confirmação" href="<%= confirmUrl %>">clique aqui</a> ou copie e cole o link abaixo no seu navegador para confirmar seu endereço de e-mail e faça o login na <%= site.name %></p>
 
-          <p>Competently utilize inexpensive meta-services after equity invested paradigms. Energistically maximize corporate technology before exceptional communities. Holisticly plagiarize customized leadership skills before flexible customer service. Rapidiously coordinate enabled e-commerce after leading-edge infomediaries. Dramatically pontificate holistic outsourcing with <a href="#">best-of-breed models</a>.</p>
+          <p><a href="<%= confirmUrl %>"><%= confirmUrl %></a></p>
 
         </td>
       </tr>
       <tr>
         <!-- botao "vamos comecar" -->
         <td style="text-align: center; padding-bottom: 50px; background: #fff;">
-          <a href="#"><img style="margin: 0; border: none" src="<%= sails.config.hostname %>/assets/img/email/btnVamosComecar.jpg" alt="Vamos Começar?"></a>
+          <a href="<%= confirmUrl %>"><img style="margin: 0; border: none" src="<%= sails.config.hostname %>/assets/img/email/btnVamosComecar.jpg" alt="Vamos Começar?"></a>
         </td>
       </tr>
       <tr>
