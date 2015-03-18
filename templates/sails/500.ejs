@@ -1,24 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Erro interno do servidor</title>
+  <title>Erro 500- Erro interno do servidor</title>
   <style type="text/css">
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .page-error-500 {
-      background: #fff;
-    }
+  body {
+    margin:0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: arial, tahoma, verdana;
+  }
+  .cdp_http_responses_error {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    background: #000;
+  }
+  .video {
+    width: 100%;
+  }
+  .mascara {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+  }
 
-    .cdp_http_responses_error-500 {
-      height: 433px;
-      background: url(/theme/assets/img/500.jpg) no-repeat center;
-      margin:100px 0;
-    }
+  .msg {
+    z-index: 3;
+    position: absolute;
+    background: rgba(255,255,255,0.8);
+    border-radius: 3px;
+    padding: 20px;
+    width: 300px;
+    height: 240px;
+    left: 50%;
+    top: 50%;
+    margin: -140px 0 0 -170px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5)
+  }
+
+  .msg h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 82px;
+    color: #237db9;
+    line-height: 1em;
+  }
+  .msg h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    color: #717173;
+  }
+  .msg p {
+    font-size: 14px;
+    color: #000;
+    line-height: 1.5em;
+    margin: 10px 0;
+  }
+
+  a.back {
+    color: #247DB5;
+    font-weight: bold;
+    font-size: 14px;
+  }
   </style>
 </head>
 <body class="page-error-500">
-  <div class="cdp_http_responses_error-500"></div>
+  <div class="cdp_http_responses_error">
+    <video class="video" autoplay loop>
+      <source src="/theme/assets/video/11.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="mascara"></div>
+    <div class="msg">
+      <h1>500</h1>
+      <h2>Erro interno do servidor</h2>
+      <p>Ocorreu um erro no servidor. Tente novamente mais tarde.</p>
+      <a href="javascript:history.go(-1)" class="back">Voltar</a>
+    </div>
+  </div>
 </body>
 </html>
