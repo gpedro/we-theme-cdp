@@ -7,7 +7,7 @@
             <tr>
               <!-- mensagem do topo -->
               <td style="text-align: center; font-size: 11px; color: #868686; padding: 15px 0">
-                <%= site.name %> | <a href="https://atencaobasica.org.br" style="color: #868686">Atençao Basica</a>
+                <%= site.name %> | <a href="<%= site.url %>" style="color: #868686">Atençao Basica</a>
               </td>
             </tr>
             <tr>
@@ -20,27 +20,28 @@
               <!-- corpo do email -->
               <td style="background: #fff; padding: 52px 60px 50px 60px; color: #595959; font-size: 14px; line-height: 1.5em;">
 
-                <h2 style="font-size: 26px; margin: 0">Oi <%= user.name %>,</h2>
+                <h2 style="font-size: 26px; margin: 0">Olá <%= user.displayName %>,!</h2>
 
-                  <!-- notificacao -->
+                            <!-- notificacao -->
 
-                    <div style="margin-top: 30px; overflow: hidden; clear: both;">
-                      <div style="margin: 16px 0 0 0; padding: 14px; border: 1px solid #f5f5f5; border-radius: 3px; color: #8a8a8a">
+                              <div style="margin-top: 30px; overflow: hidden; clear: both;">
+                                <div style="margin: 16px 0 0 0; padding: 14px; border: 1px solid #f5f5f5; border-radius: 3px; color: #8a8a8a">
 
-            <p>Você pediu uma redefinição de senha para sua conta na Comunidade de Práticas? Se sim, siga o link abaixo para definir uma nova senha:</p>
+                      <p>Sua senha foi alterada com sucesso.</p>
 
-            <p>Redefinir senha: <a href="<%= resetPasswordUrl %>"><%= resetPasswordUrl %></a><p>
+                      <p>Se você não foi o autor dessa ação, entre em contato com o nosso <a href="mailto:contato@atencaobasica.org.br">suporte</a>.</p>
 
-            <p>Se você não deseja redefinir sua senha, desconsidere este e-mail e nenhuma ação será tomada.</p>
+                                </div>
+                              </div>
 
-                      </div>
-                    </div>
+                            <!-- /notificacao -->
 
-                  <!-- /notificacao -->
+
               </td>
             </tr>
             <!--<tr>
               <td style="text-align: center; padding-bottom: 30px; background: #fff">
+                <a href="#"><img style="margin: 0; border: none" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/btnVerNotificacao.jpg" alt="Ver notificacoes"></a>
                 <div style="margin-top: 20px"><img style="margin: 0;" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/emailfooter2.gif"></div>
               </td>
             </tr>-->
@@ -52,7 +53,8 @@
             </tr>
             <tr>
               <!-- footer -->
-              <td style="text-align: center; padding: 30px 0"></td>
+              <td style="text-align: center; padding: 30px 0">
+              </td>
             </tr>
           </table>
         </div>
