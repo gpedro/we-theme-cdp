@@ -132,3 +132,7 @@ textarea{
 .dropdown-menu-user {
 	min-width: 220px !important;
 }
+
+div.growlUI h1, div.growlUI h2 {
+    color: white; padding: 5px 5px 5px 5px; text-align: center; font-size: 12pt;
+}
