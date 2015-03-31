@@ -131,6 +131,7 @@ textarea{
 
 .dropdown-menu-user {
 	min-width: 220px !important;
+	left: auto;
 }
 
 div.growlUI h1, div.growlUI h2 {
