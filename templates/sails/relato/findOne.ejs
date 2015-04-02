@@ -2,7 +2,7 @@
 
 <div><%- data.descricao %></div>
 
-<% if(data.imagemDestaque) { %>
+<% if(data.imagemDestaque && data.imagemDestaque.toJSON) { %>
   <% data.imagemDestaque = data.imagemDestaque.toJSON() %>
   <img alt="<%- data.titulo %>" src="<%= data.imagemDestaque.urls.large %>">
 <% } %>
