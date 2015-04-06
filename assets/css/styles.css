@@ -137,3 +137,158 @@ textarea{
 div.growlUI h1, div.growlUI h2 {
     color: white; padding: 5px 5px 5px 5px; text-align: center; font-size: 12pt;
 }
+
+
+/*
+** STAFF /equipe CSS CLASS
+*/
+.staff {}
+
+.staff .staff-section {
+  margin-bottom: 100px;
+}
+.staff .staff-section.staff-effect-initial {
+  opacity: 0;
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+.show {
+  opacity: 1 !important;
+}
+.staff .staff-section:last-child {
+  margin-bottom: 0;
+}
+
+.staff .staff-section h2.staff-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+}
+.staff .staff-section h2.staff-title:before {
+  content: 'a';
+  background: #ccc;
+  width: 32px;
+  height: 0;
+  padding-top: 32px;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 18px;
+}
+
+.staff .staff-section .staff-desc {
+  text-align: center;
+  color: #333;
+  max-width: 670px;
+  margin: 0 auto 32px auto;
+}
+
+.staff-list {
+  text-align: center;
+}
+
+.staff-list .staff-member {
+  display: inline-block;
+  width: 128px;
+  margin: 15px 25px 15px 25px;
+  -webkit-transition: transform .3s ease-in-out;
+  -moz-transition: transform .3s ease-in-out;
+  -o-transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+}
+.staff-list .staff-member:hover {
+  transform: scale(1.2);
+  text-decoration: none;
+}
+.staff-list .staff-member .staff-picture-wrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  margin-bottom: 15px;
+}
+.staff-list .staff-member .staff-picture-wrapper .staff-other-info {
+  width: 128px;
+  height: 128px;
+  background: #666;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: table;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+.staff-list .staff-member:hover .staff-picture-wrapper .staff-other-info {
+  opacity: 1;
+}
+.staff-list .staff-member .staff-picture-wrapper .staff-other-info .info-content {
+  display: table-cell;
+  width: 128px;
+  vertical-align: middle;
+  font-weight: bold;
+  color: #fff;
+  font-size: 14px;
+}
+
+.staff-list .staff-member .staff-name {
+  color: #75747a;
+  font-weight: bold;
+  font-size: 14px;
+  height: 60px;
+  overflow: hidden;
+}
+
+/* cores */
+
+/* color-warnning */
+.staff .staff-section.color-warning h2.staff-title {
+  color: #f9ae31;
+}
+.staff .staff-section.color-warning h2.staff-title:before,
+.staff-list.color-warning .staff-member .staff-picture-wrapper .staff-other-info{
+  background: #f9ae31;
+}
+
+/* color-success */
+.staff .staff-section.color-success h2.staff-title {
+  color: #00a182;
+}
+.staff .staff-section.color-success h2.staff-title:before,
+.staff-list.color-success .staff-member .staff-picture-wrapper .staff-other-info{
+  background: #00a182;
+}
+
+/* color-gray */
+.staff .staff-section.color-gray h2.staff-title {
+  color: #555;
+}
+.staff .staff-section.color-gray h2.staff-title:before,
+.staff-list.color-gray .staff-member .staff-picture-wrapper .staff-other-info{
+  background: #555;
+}
+
+/* color-red */
+.staff .staff-section.color-red h2.staff-title {
+  color: #f00;
+}
+.staff .staff-section.color-red h2.staff-title:before,
+.staff-list.color-red .staff-member .staff-picture-wrapper .staff-other-info{
+  background: #f00;
+}
+
+/* color-primary */
+.staff .staff-section.color-primary h2.staff-title {
+  color: #3483B7;
+}
+.staff .staff-section.color-primary h2.staff-title:before,
+.staff-list.color-primary .staff-member .staff-picture-wrapper .staff-other-info{
+  background: #3483B7;
+}
