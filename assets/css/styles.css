@@ -192,15 +192,17 @@ div.growlUI h1, div.growlUI h2 {
 
 .staff-list .staff-member {
   display: inline-block;
-  width: 128px;
-  margin: 15px 25px 15px 25px;
+  width: 238px;
+  margin: 15px 20px 15px 20px;
   -webkit-transition: transform .3s ease-in-out;
   -moz-transition: transform .3s ease-in-out;
   -o-transition: transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
+  position: relative;
+  padding-bottom: 60px;
+  vertical-align: top;
 }
 .staff-list .staff-member:hover {
-  transform: scale(1.2);
   text-decoration: none;
 }
 .staff-list .staff-member .staff-picture-wrapper {
@@ -209,6 +211,8 @@ div.growlUI h1, div.growlUI h2 {
   border-radius: 50%;
   width: 128px;
   height: 128px;
+  display: block;
+  margin: auto;
   margin-bottom: 15px;
 }
 .staff-list .staff-member .staff-picture-wrapper .staff-other-info {
@@ -218,7 +222,7 @@ div.growlUI h1, div.growlUI h2 {
   position: absolute;
   top: 0;
   left: 0;
-  display: table;
+  display: none;
   border-radius: 50%;
   opacity: 0;
   -webkit-transition: opacity .3s ease-in-out;
@@ -242,14 +246,46 @@ div.growlUI h1, div.growlUI h2 {
   color: #75747a;
   font-weight: bold;
   font-size: 14px;
-  height: 60px;
+  max-height: 60px;
   overflow: hidden;
+  margin-bottom: 13px;
+}
+.staff-list .staff-member .staff-name+div.staff-other-info {
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: #afafaf;
+  margin-bottom: 13px;
+}
+.staff-list .staff-member .staff-bio {
+  font-size: 11px;
+  color: #333;
+  text-align: left;
+}
+.staff-list .staff-member .btn-staff-profile {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
+@media (min-width: 992px) {
+  .staff-list .staff-member:hover {
+    transform: scale(1.1);
+  }
+  .staff-list .staff-member .staff-picture-wrapper .staff-other-info {
+    display: table;
+  }
+  .staff-list .staff-member .staff-name+div.staff-other-info {
+    display: none;
+  }
+
+}
 /* cores */
 
 /* color-warnning */
-.staff .staff-section.color-warning h2.staff-title {
+.staff .staff-section.color-warning h2.staff-title,
+.staff-list .staff-member .staff-name{
   color: #f9ae31;
 }
 .staff .staff-section.color-warning h2.staff-title:before,
@@ -258,7 +294,8 @@ div.growlUI h1, div.growlUI h2 {
 }
 
 /* color-success */
-.staff .staff-section.color-success h2.staff-title {
+.staff .staff-section.color-success h2.staff-title,
+.staff-list .staff-member .staff-name{
   color: #00a182;
 }
 .staff .staff-section.color-success h2.staff-title:before,
@@ -267,7 +304,8 @@ div.growlUI h1, div.growlUI h2 {
 }
 
 /* color-gray */
-.staff .staff-section.color-gray h2.staff-title {
+.staff .staff-section.color-gray h2.staff-title,
+.staff-list .staff-member .staff-name{
   color: #555;
 }
 .staff .staff-section.color-gray h2.staff-title:before,
@@ -276,7 +314,8 @@ div.growlUI h1, div.growlUI h2 {
 }
 
 /* color-red */
-.staff .staff-section.color-red h2.staff-title {
+.staff .staff-section.color-red h2.staff-title,
+.staff-list .staff-member .staff-name{
   color: #f00;
 }
 .staff .staff-section.color-red h2.staff-title:before,
@@ -285,7 +324,8 @@ div.growlUI h1, div.growlUI h2 {
 }
 
 /* color-primary */
-.staff .staff-section.color-primary h2.staff-title {
+.staff .staff-section.color-primary h2.staff-title,
+.staff-list .staff-member .staff-name{
   color: #3483B7;
 }
 .staff .staff-section.color-primary h2.staff-title:before,
