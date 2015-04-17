@@ -8,11 +8,12 @@
         {{else}}
           <span class="messenger-status"><img width='17px' src="/core/images/disconnected.png"></span>
         {{/if}}
-        <span class="contact-name">{{contactUser.displayName}}</span>
+        {{!-- <span class="contact-name">{{contactUser.displayName}}</span> --}}
+        <span class="contact-name">{{displayName}}</span>
       </div>
       <div class="actions">
         <button {{action 'closeList'}} type="button" class="remove btn btn-danger btn-xs pull-right">
-          <i class="icons-outline icons-outline-close"></i>
+          <span class="glyphicon glyphicon-remove"></span>
         </button>
       </div>
 
@@ -25,8 +26,9 @@
 
         {{#if isWriting}}
           <div class="contact is-writing">
-            {{we-avatar userId=contactUser.id width="20px"}}
-            <span class="small is-writing-text">digitando ...</span>
+            {{!-- {{we-avatar userId=contactUser.id width="20px"}} --}}
+            {{user-avatar user=this}}
+            <span class="small is-writing-text">{{t 'messenger.contact.writing'}}</span>
           </div>
         {{/if}}
         <div class="footer">
