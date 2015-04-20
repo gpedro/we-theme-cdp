@@ -11,6 +11,10 @@
         </button>
       </div>
 
+      {{#if isLoading}}
+        <span><img src="/core/images/loading.gif"></span>
+      {{/if}}
+
       {{#if isListOpen}}
         {{render 'messenger/messages-public-room' messages controller="MessengerMessages"}}
 
