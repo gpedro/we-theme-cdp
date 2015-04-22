@@ -194,12 +194,15 @@ div.growlUI h1, div.growlUI h2 {
   display: inline-block;
   width: 238px;
   margin: 15px 20px 15px 20px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 15px 20px;
   -webkit-transition: transform .3s ease-in-out;
   -moz-transition: transform .3s ease-in-out;
   -o-transition: transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 75px;
   vertical-align: top;
 }
 .staff-list .staff-member:hover {
@@ -258,7 +261,7 @@ div.growlUI h1, div.growlUI h2 {
   margin-bottom: 13px;
 }
 .staff-list .staff-member .staff-bio {
-  font-size: 11px;
+  font-size: 12px;
   color: #333;
   text-align: left;
 }
@@ -285,7 +288,7 @@ div.growlUI h1, div.growlUI h2 {
 
 /* color-warnning */
 .staff .staff-section.color-warning h2.staff-title,
-.staff-list .staff-member .staff-name{
+.staff-list.color-warning .staff-member .staff-name {
   color: #f9ae31;
 }
 .staff .staff-section.color-warning h2.staff-title:before,
@@ -295,7 +298,7 @@ div.growlUI h1, div.growlUI h2 {
 
 /* color-success */
 .staff .staff-section.color-success h2.staff-title,
-.staff-list .staff-member .staff-name{
+.staff-list.color-success .staff-member .staff-name{
   color: #00a182;
 }
 .staff .staff-section.color-success h2.staff-title:before,
@@ -305,7 +308,7 @@ div.growlUI h1, div.growlUI h2 {
 
 /* color-gray */
 .staff .staff-section.color-gray h2.staff-title,
-.staff-list .staff-member .staff-name{
+.staff-list.color-gray .staff-member .staff-name{
   color: #555;
 }
 .staff .staff-section.color-gray h2.staff-title:before,
@@ -315,7 +318,7 @@ div.growlUI h1, div.growlUI h2 {
 
 /* color-red */
 .staff .staff-section.color-red h2.staff-title,
-.staff-list .staff-member .staff-name{
+.staff-list.color-red .staff-member .staff-name{
   color: #f00;
 }
 .staff .staff-section.color-red h2.staff-title:before,
@@ -325,7 +328,7 @@ div.growlUI h1, div.growlUI h2 {
 
 /* color-primary */
 .staff .staff-section.color-primary h2.staff-title,
-.staff-list .staff-member .staff-name{
+.staff-list.color-primary .staff-member .staff-name{
   color: #3483B7;
 }
 .staff .staff-section.color-primary h2.staff-title:before,

@@ -6,10 +6,14 @@
         <span class="contact-name">{{t "Public"}}</span>
       </div>
       <div class="actions">
-        <button {{action 'closeList'}} type="button" class="btn-close remove btn btn-xs pull-right">
-          <i class="icons-outline icons-outline-circle-close"></i>
+        <button {{action 'closeList'}} type="button" class="remove btn btn-danger btn-xs pull-right">
+          <span class="glyphicon glyphicon-remove"></span>
         </button>
       </div>
+
+      {{#if isLoading}}
+        <span><img src="/core/images/loading.gif"></span>
+      {{/if}}
 
       {{#if isListOpen}}
         {{render 'messenger/messages-public-room' messages controller="MessengerMessages"}}
@@ -21,7 +25,7 @@
               {{input name="messageNew" value=messageNew type="text" placeholder=messagePlaceholder classNames="input-xs"}}
 
               <span class="input-group-btn">
-                <button  {{action "sendMessage"}} class="btn btn-xs btn-default" type="submit">{{t "Send"}}</button>
+                <button  {{action "sendMessage"}} class="btn btn-xs btn-primary" type="submit">{{t "Send"}}</button>
               </span>
             </div>
           </form>
