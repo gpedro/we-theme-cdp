@@ -3,111 +3,123 @@
 
     {{bread-crumbs}}
 
-    <div class="row">
-      <div class="col-md-3">
-        <div class="avatar-large">
-          {{user-avatar user=user size="large"}}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-2">{{user-avatar user=user.id classNames="user-picture img-circle"}}{{!-- <img src="http://lorempicsum.com/nemo/156/156/1" alt="" class="user-picture img-circle"> --}}</div>
+        <div class="col-xs-12 col-sm-8 col-md-6">
+          <h2 class="user-fullname">{{user.fullName}}</h2>
+          <div class="user-details">
+            <ul>
+              <li>@{{user.username}}</li>
+              <li><i class="IR sprt-profile-local"></i> {{user.city}} | {{user.locationState}}</li>
+              <li><i class="IR sprt-profile-profissao"></i> {{user.major}}</li>
+              <li><i class="IR sprt-profile-nascimento"></i> {{date user.birthDate format='DD/MM/YYYY'}} ({{format-date user.birthDate bool="true"}})</li>
+            </ul>
+          </div>
+          {{#if user.hasSocialNetworkLinks}}
+            <div class="user-sociallinks">
+              <ul>
+                {{#if user.fbprofile}}
+                <li><a {{bind-attr href=user.fbprofile}} target="_blank"><i class="IR sprt-profile-facebook"></i></a></li>
+                {{/if}}
+                {{#if user.twitprofile}}
+                <li><a {{bind-attr href=user.twitprofile}} target="_blank"><i class="IR sprt-profile-twitter"></i></a></li>
+                {{/if}}
+                {{!-- <li><a {{bind-attr href=user.fbprofile}}><i class="IR sprt-profile-gplus"></i></a></li> --}}
+                {{#if user.lkinprofile}}
+                <li><a {{bind-attr href=user.lkinprofile}} target="_blank"><i class="IR sprt-profile-linkedin"></i></a></li>
+                {{/if}}
+                {{#if user.instprofile}}
+                <li><a {{bind-attr href=user.instprofile}} target="_blank"><i class="IR sprt-profile-instagram"></i></a></li>
+                {{/if}}
+                {{#if user.youtbprofile}}
+                <li><a {{bind-attr href=user.youtbprofile}} target="_blank"><i class="IR sprt-profile-youtube"></i></a></li>
+                {{/if}}
+              </ul>
+            </div>
+          {{/if}}
+          {{#unless ownProfile}}
+          <div class="user-actions">
+            <a href="" class="btn btn-primary btn-xs">Adicionar aos Amigos</a>
+            <a href="" class="btn btn-primary btn-xs">Seguir</a>
+            <a href="" class="btn btn-primary btn-xs">Enviar Mensagem</a>
+          </div>
+          {{/unless}}
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <div id="carousel-conquistas"  class="carousel-conquistas carousel slide" data-ride="carousel">
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <div class="trofeu-ganho">
+                        <h2 class="conquistas-title">
+                          <img src="/theme/assets/img/trofeu-escudo.png" class="conquista-badge">
+                          <span class="small">
+                            Último troféu
+                          </span>
+                          Relato perfeito
+                        </h2>
+                        <div class="desc-trofeu">
+                          Completely e-enable magnetic methods of empowerment after 24/365 services. Holisticly whiteboard 2.0 outsourcing and mission-critical data.
+                        </div>
+                        <a class="btn btn-block btn-link more">Ver todos</a>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="trofeu-ganho">
+                        <h2 class="conquistas-title">
+                          <img src="/theme/assets/img/trofeu-escudo.png" class="conquista-badge">
+                          <span class="small">
+                            Último troféu
+                          </span>
+                          Relato perfeito
+                        </h2>
+                        <div class="desc-trofeu">
+                          Completely e-enable magnetic methods of empowerment after 24/365 services. Holisticly whiteboard 2.0 outsourcing and mission-critical data.
+                        </div>
+                        <a class="btn btn-block btn-link more">Ver todos</a>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="trofeu-ganho">
+                        <h2 class="conquistas-title">
+                          <img src="/theme/assets/img/trofeu-escudo.png" class="conquista-badge">
+                          <span class="small">
+                            Último troféu
+                          </span>
+                          Relato perfeito
+                        </h2>
+                        <div class="desc-trofeu">
+                          Completely e-enable magnetic methods of empowerment after 24/365 services. Holisticly whiteboard 2.0 outsourcing and mission-critical data.
+                        </div>
+                        <a class="btn btn-block btn-link more">Ver todos</a>
+                      </div>
+                    </div>
+                  </div>
 
-        {{#if user.canEdit}}
-          <button class="btn btn-primary btn-block btn-change-user-avatar" {{action "showAvatarChangeModal"}} >
-            Mudar imagem
-          </button>
-        {{/if}}
-
-        <div class="user-profile-edit">
-
-          <div class="user-admin-actions-area">
-            <div class="actions">
-            {{#if showSocialActions}}
-              {{view 'contact-buttom' contactStatus=contact.currentUserStatus}}
-              {{we-follow model='user' classNames="btn btn-warning" modelId=user.id flagText="Seguir" unFlagText="Seguindo"}}
-            {{/if}}
-
-            </div>
-          </div>
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-conquistas" role="button" data-slide="prev">
+                    <i class="IR sprt-chevron-mini-left"></i>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-conquistas" role="button" data-slide="next">
+                    <i class="IR sprt-chevron-mini-right"></i>
+                  </a>
+                </div>
         </div>
-
-        <aside id="feed-widget" class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-            {{#link-to 'user.index' user.id classNames="widget-trigger-collapse"}}
-                <span class="fa-stack">
-                  <i class="cdp cdp-time cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
-                </span>
-                <span class="icon-title">Atividades</span>
-            {{/link-to}}
-            </h3>
-          </div>
-        </aside>
-
-        {{!-- {{partial 'partials/group-sidebar-widget'}} --}}
-
-        {{!-- {{partial 'partials/course-sidebar-widget'}} --}}
-
-        {{we-user-relatos-favoritos userId=user.id relatos=null}}
-
-        <aside id="related-users" class="widget-user-list widget">
-          {{we-user-contacts-block userId=user.id}}
-        </aside>
-
       </div>
-
-      <div class="col-md-9">
-        <header id="user--header" class="section-header">
-          <div class="header-brand">
-            <div class="header-brand-icon">
-              <span class="fa-stack">
-                <i class="fa fa-user cdp-lg cdp-stack-1x cdp-inverse"></i>
-              </span>
-            </div>
-            <div class="header-brand-text">
-              <h3 class="header-brand-text--title">
-                {{#we-content-editable tagName="span" value=user.displayName attribute='displayName' onSave="saveAttribute" canEdit=user.canEdit}}
-                  {{focus-input value=user.displayName type="text"}}
-                {{/we-content-editable}}
-                <small class="username">@{{user.username}}</small>
-              </h3>
-              <small class="header-brand-text--small">
-                Membro ha {{format-date user.createdAt}}
-              </small>
-            </div>
-          </div>
-
-          <div class="header-info">
-            <div class="local">
-            {{#if user.canEdit}}
-              <b>Local</b>: {{we-state-city-selector-inline tagName="span" country="BR" selectedState=user.locationState selectedCity=user.city}}
-            {{else}}
-              {{#if user.locationState}}
-                <b>Local</b>: {{user.locationState}}, {{user.city}}
-              {{/if}}
-            {{/if}}
-
-            </div>
-            {{!--
-              <div class="area"><b>Área</b>: Enfermagem</div>
-             --}}
-            <div class="about">
-              <b>Sobre</b>:
-              <p>
-              {{#we-content-editable value=user.biography attribute='biography' onSave="saveAttribute" canEdit=user.canEdit}}
-                {{we-editor value=user.biography}}
-              {{/we-content-editable}}
-              </p>
-            </div>
-          </div>
-
- {{!--          <a href="#" class="about-group btn">Sobre <span class="caret"></span></a> --}}
-
-        </header>
-
-        {{outlet}}
-
+      <div class="row profile-menu">
+        <div class="col-xs-12">
+          <ul class="nav nav-pills">
+            <li class="active"><a href="">Perfil</a></li>
+            <li><a href="">Relatos <span class="badge">20</span></a></li>
+            <li><a href="">Comunidades  <span class="badge">30</span></a></li>
+            <li><a href="">Amigos <span class="badge">10</span></a></li>
+            <li><a href="">Cursos <span class="badge">5</span></a></li>
+            <li><a href="">Selos <span class="badge">7</span></a></li>
+          </ul>
+        </div>
       </div>
-
+      {{ outlet }}
     </div>
-
-
   </div><!-- /container -->
 </section><!-- end -->
