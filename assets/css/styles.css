@@ -687,7 +687,7 @@ estilos gerais de formatação
 .profile-timeline .timeline-section-about .content {
   color: #949494; }
 
-.relatos-list {
+.profile-timeline .relatos-list {
   margin: 0;
   padding: 0; }
   .relatos-list li {
