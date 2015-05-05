@@ -40,9 +40,9 @@
           {{/if}}
           {{#unless ownProfile}}
           <div class="user-actions">
-            <a href="" class="btn btn-primary btn-xs">Adicionar aos Amigos</a>
-            <a href="" class="btn btn-primary btn-xs">Seguir</a>
-            <a href="" class="btn btn-primary btn-xs">Enviar Mensagem</a>
+            <a href="" class="btn btn-primary btn-xs" {{action 'addContact'}}>Adicionar aos Amigos</a>
+            <a href="" class="btn btn-primary btn-xs" {{action 'follow'}}>Seguir</a>
+            <a href="" class="btn btn-primary btn-xs" {{action 'sendMessage'}}>Enviar Mensagem</a>
           </div>
           {{/unless}}
         </div>
@@ -110,12 +110,28 @@
       <div class="row profile-menu">
         <div class="col-xs-12">
           <ul class="nav nav-pills">
-            <li class="active"><a href="">Perfil</a></li>
-            <li><a href="">Relatos <span class="badge">20</span></a></li>
-            <li><a href="">Comunidades  <span class="badge">30</span></a></li>
-            <li><a href="">Amigos <span class="badge">10</span></a></li>
-            <li><a href="">Cursos <span class="badge">5</span></a></li>
-            <li><a href="">Selos <span class="badge">7</span></a></li>
+            <li>
+              {{#link-to 'user'}}
+                Perfil
+              {{/link-to}}
+            </li>
+            <li>
+              {{#link-to 'user.relatos'}}
+                Relatos<span class="badge">{{counts.relatos}}</span>
+              {{/link-to}}
+            </li>
+            <li>
+              {{#link-to 'user.comunidades'}}
+                Comunidades<span class="badge">{{counts.comunidades}}</span>
+              {{/link-to}}
+            </li>
+            <li>
+              {{#link-to 'user.cursos'}}
+                Cursos<span class="badge">{{counts.cursos}}</span>
+              {{/link-to}}
+            </li>
+            {{!-- <li><a href="">Amigos <span class="badge">10</span></a></li> --}}
+            {{!-- <li><a href="">Selos <span class="badge">7</span></a></li> --}}
           </ul>
         </div>
       </div>

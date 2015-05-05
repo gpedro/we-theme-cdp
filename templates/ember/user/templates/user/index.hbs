@@ -3,21 +3,19 @@
     <div class="timeline-section timeline-section-about">
       <h3 class="title">Sobre</h2>
       <div class="content">
-        <p>Enthusiastically monetize stand-alone data and cross-unit intellectual capital. Seamlessly underwhelm client-centric mindshare whereas worldwide e-commerce. Enthusiastically disseminate client-centered mindshare via transparent testing procedures. Progressively deliver web-enabled niches for high-quality materials. Authoritatively reintermediate long-term high-impact synergy before leveraged customer service.</p>
-
-<p>Interactively coordinate state of the art core competencies rather than orthogonal e-commerce. Continually reintermediate business quality vectors with vertical opportunities. Rapidiously empower real-time resources vis-a-vis backward-compatible communities. Monotonectally fabricate proactive meta-services vis-a-vis enabled sources. Interactively develop cross-unit collaboration and idea-sharing vis-a-vis emerging outsourcing.</p>
+      {{user.biography}}
       </div>
     </div>
     <div class="timeline-section timeline-section-relatos timeline-collapse blue">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Relatos</h2>
       <div class="content">
         <ul class="relatos-list">
-          <li><i class="IR sprt-relato-1"></i> <a href="#">Interactively coordinate state of the art core competencies rather than orthogonal e-commerce.</a></li>
-          <li><i class="IR sprt-relato-2"></i> <a href="#">Interactively coordinate state of the art core competencies rather than orthogonal e-commerce.</a></li>
-          <li><i class="IR sprt-relato-3"></i> <a href="#">Interactively coordinate state of the art core competencies rather than orthogonal e-commerce.</a></li>
+		      {{#each relato in relatosProxy}}
+		      	<li><i class="IR sprt-relato-1"></i>{{#link-to 'relato' relato.id}}{{relato.titulo}}{{/link-to}}</li>
+		      {{/each}}          
         </ul>
       </div>
-      <a href="#" class="btn btn-link link-more">Ver todos</a>
+      {{#link-to 'user.relatos' class="btn btn-link link-more"}}Ver todos{{/link-to}}
     </div>
     <div class="timeline-section timeline-section-comunidades blue timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Comunidades</h2>
@@ -67,13 +65,13 @@
       </div>
       <a href="#" class="btn btn-link link-more">Ver todos</a>
     </div>
-    <div class="timeline-section timeline-section-friends yellow timeline-collapse">
+{{!--     <div class="timeline-section timeline-section-friends yellow timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Amigos</h2>
       <div class="content">
         ...
       </div>
       <a href="#" class="btn btn-link link-more">Ver todos</a>
-    </div>
+    </div> --}}
     <div class="timeline-section timeline-section-cursos green timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Cursos</h2>
       <div class="content">
@@ -84,7 +82,7 @@
       <a href="#" class="btn btn-link link-more">Ver todos</a>
     </div>
   </div>
-  <div class="col-md-6">
+{{!--   <div class="col-md-6">
     <div class="activities-list">
       <h2 class="activities-title"><i class="IR sprt-activities"></i> Atividades</h2>
       <div class="list-content">
@@ -151,5 +149,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 </div>
