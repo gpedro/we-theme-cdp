@@ -1,0 +1,106 @@
+<div class="box relatos-list">
+  <div class="list-filter row">
+    <div class="col-sm-7">
+      <div class="btn-group filter" role="group">
+        <a class="btn btn-default">Autor <span class="badge">100</span></a>
+        <a class="btn btn-default">Ator <span class="badge">100</span></a>
+        {{!-- <a class="btn btn-default">Relacionados  <span class="badge">100</span></a> --}}
+      </div>
+    </div>
+    <div class="col-sm-5 list-show-more">
+      <a href="#" class="btn btn-primary">Mostrar Todos</a>
+    </div>
+  </div>
+  <div class="list-content">
+  {{#each relato in relatosProxy}}
+    {{#if relato.first}}
+      <div class="row">
+    {{/if}}
+      <div class="col-md-4">
+        <div class="relato">
+          {{#link-to 'relato' relato.id}}
+          <div class="relato-image">
+            <a href="#"><img src="http://lorempicsum.com/nemo/342/245/5"></a>
+          </div>
+          <div class="relato-type">
+            <i class="IR sprt-author"></i> {{relato.computedRelation}}
+          </div>
+          {{/link-to}}
+          <h3 class="relato-title">
+              {{!-- {{substr relato.titulo max="100"}} --}}
+              {{#link-to 'relato' relato.id}}
+                {{relato.titulo}}
+              {{/link-to}}
+          </h3>
+          <div class="relato-info">
+            <span class="relato-author">
+              de
+              {{#link-to 'user' relato.creator.id}}
+                {{!-- {{substr relato.creator.displayName max="40"}} --}}
+                {{relato.creator.displayName}}
+              {{/link-to}}...
+            </span>
+            <span class="relato-categoria"> em
+            {{#if relato.categorias.firstObject}}
+              {{!-- {{substr categorias.firstObject.text max="45"}} --}}
+              {{ relato.categorias.firstObject.text }}
+            {{/if}}
+            </span>
+          </div>
+        </div>
+      </div>
+    {{#if relato.lastOfRow}}
+      </div>
+      <div class="row">
+    {{/if}}
+    {{#if relato.last}}
+      </div>
+    {{/if}}
+  {{/each}}
+  </div>
+</div>
+{{!-- <div class="section-story--pagination">
+        <ul class="pagination pagination-lg">
+
+        <li class="arrow prev disabled">
+          <button class="btn btn-default disabled">«</button>
+        </li>
+        <li class="active page-number">
+          <button class="btn btn-primary active">1</button>
+        </li>
+        <li class="page-number">
+          <button data-ember-action="1841" class="btn btn-default">2</button>
+        </li>
+        <li class="page-number">
+          <button data-ember-action="1846" class="btn btn-default">3</button>
+        </li>
+        <li class="page-number">
+          <button data-ember-action="1851" class="btn btn-default">4</button>
+        </li>
+        <li class="page-number">
+          <button data-ember-action="1856" class="btn btn-default">5</button>
+        </li>
+        <li class="page-number">
+          <button data-ember-action="1861" class="btn btn-default">6</button>
+        </li>
+        <li class="page-number">
+          <button data-ember-action="1866" class="btn btn-default">7</button>
+        </li>
+        <li class="page-number">
+          <button data-ember-action="1871" class="btn btn-default">8</button>
+        </li>
+        <li class="page-number">
+          <button data-ember-action="1876" class="btn btn-default">9</button>
+        </li>
+        <li class="page-number">
+          <button disabled="disabled" type="button" class="btn btn-default disabled">...</button>
+        </li>
+        <li class="page-number">
+          <button data-ember-action="1883" class="btn btn-default">480</button>
+        </li>
+        <li class="arrow next enabled-arrow">
+          <button data-ember-action="1886" class="btn btn-default">»</button>
+        </li>
+      </ul>
+      </div>
+</div> --}}
