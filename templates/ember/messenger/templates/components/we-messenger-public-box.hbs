@@ -22,6 +22,8 @@
       {{#if isListOpen}}
         {{render 'messenger/messages-public-room' messages controller="MessengerMessages"}}
 
+        <div class="realtime-status"></div>
+
         <div class="footer">
           <form {{action "sendMessage" on="submit"}} >
             <i class="IR sprt-chat-lines"></i>
