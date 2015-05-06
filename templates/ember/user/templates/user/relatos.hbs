@@ -21,7 +21,7 @@
         <div class="relato">
           {{#link-to 'relato' relato.id}}
           <div class="relato-image">
-            <a href="#"><img src="http://lorempicsum.com/nemo/342/245/5"></a>
+            <a href="#"><img {{bind-attr src=relato.bgdImg}}></a>
           </div>
           <div class="relato-type">
             <i class="IR sprt-author"></i> {{relato.computedRelation}}
