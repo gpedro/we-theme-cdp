@@ -110,26 +110,26 @@
       <div class="row profile-menu">
         <div class="col-xs-12">
           <ul class="nav nav-pills">
-            <li>
-              {{#link-to 'user'}}
+            {{#link-li}}
+              {{#link-to 'user.index'}}
                 Perfil
               {{/link-to}}
-            </li>
-            <li>
+            {{/link-li}}
+            {{#link-li}}
               {{#link-to 'user.relatos'}}
-                Relatos<span class="badge">{{counts.relatos}}</span>
+                Relatos<span class="badge">{{totalRelatos}}</span>
               {{/link-to}}
-            </li>
-            <li>
+            {{/link-li}}
+            {{#link-li}}
               {{#link-to 'user.comunidades'}}
                 Comunidades<span class="badge">{{counts.comunidades}}</span>
               {{/link-to}}
-            </li>
-            <li>
+            {{/link-li}}
+            {{#link-li}}
               {{#link-to 'user.cursos'}}
                 Cursos<span class="badge">{{counts.cursos}}</span>
               {{/link-to}}
-            </li>
+            {{/link-li}}
             {{!-- <li><a href="">Amigos <span class="badge">10</span></a></li> --}}
             {{!-- <li><a href="">Selos <span class="badge">7</span></a></li> --}}
           </ul>
