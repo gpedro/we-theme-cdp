@@ -41,8 +41,8 @@
           {{#unless ownProfile}}
           <div class="user-actions">
             {{#if isAuthenticated}}
-              {{view "ContactButtom" contactStatus=contact.status}}
-              {{we-follow model='user' modelId=user.id flagText="Seguir" unFlagText="Seguindo"}}
+              {{view "ContactButtom" contactStatus=contact.status classNames="btn-primary"}}
+              {{we-follow model='user' modelId=user.id flagText="Seguir" unFlagText="Seguindo" classNames="btn-primary"}}
             {{else}}
               <a href="" class="btn btn-primary btn-xs" {{action 'showLoginModal'}}>Adicionar aos Amigos</a>
               <a href="" class="btn btn-primary btn-xs" {{action 'showLoginModal'}}>Seguir</a>
