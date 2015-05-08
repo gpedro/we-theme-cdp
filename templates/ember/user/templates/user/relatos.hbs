@@ -1,5 +1,5 @@
 <a id="anchor-user-relatos-list"></a>
-<div class="box relatos-list">  
+<div class="box relatos-list">
   <div class="list-filter row">
     <div class="col-sm-7">
       <div class="btn-group filter" role="group">
@@ -13,10 +13,9 @@
     </div>
   </div>
   <div class="list-content">
-  {{#each relato in filteredArray}}
-    {{#if relato.first}}
-      <div class="row">
-    {{/if}}
+  {{#each row in filteredArray}}
+    <div class="row">
+      {{#each relato in row}}
       <div class="col-md-4">
         <div class="relato">
           {{#link-to 'relato' relato.id}}
@@ -28,7 +27,6 @@
           </div>
           {{/link-to}}
           <h3 class="relato-title">
-              {{!-- {{substr relato.titulo max="100"}} --}}
               {{#link-to 'relato' relato.id}}
                 {{relato.titulo}}
               {{/link-to}}
@@ -37,26 +35,19 @@
             <span class="relato-author">
               de
               {{#link-to 'user' relato.creator.id}}
-                {{!-- {{substr relato.creator.displayName max="40"}} --}}
                 {{relato.creator.displayName}}
               {{/link-to}}...
             </span>
             <span class="relato-categoria"> em
             {{#if relato.categorias.firstObject}}
-              {{!-- {{substr categorias.firstObject.text max="45"}} --}}
               {{ relato.categorias.firstObject.text }}
             {{/if}}
             </span>
           </div>
         </div>
       </div>
-    {{#if relato.lastOfRow}}
-      </div>
-      <div class="row">
-    {{/if}}
-    {{#if relato.last}}
-      </div>
-    {{/if}}
+      {{/each}}
+    </div>
   {{/each}}
   </div>
 </div>
