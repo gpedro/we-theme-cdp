@@ -57,10 +57,10 @@
               <div class="formacao-list">
                 <h2 class="list-title"><i class="IR sprt-comunidades"></i>Formação</h2>
                 <div class="list-content box">
-{{!--                   <div class="formacao filtros">
+                  <div class="formacao filtros">
                     <h3 class="historico-formacao-title">Histórico de Cursos
-              <span class="small"><a href="#">Todos</a> <a href="#">Técnico</a>  <a href="#">Graduação</a>  <a href="#">Pós-graduação</a></span></h2>
-                  </div> --}}
+              {{!-- <span class="small"><a href="#">Todos</a> <a href="#">Técnico</a>  <a href="#">Graduação</a>  <a href="#">Pós-graduação</a></span></h2> --}}
+                  </div>
                   {{#each course in cursosProfileProxy}}
 	                  <div class="formacao">
 	                    <div class="formacao-tipo">Curso de {{course.type}}</div>
@@ -68,11 +68,11 @@
 	                    <div class="formacao-instituicao">{{course.school}}&nbsp;|&nbsp;{{course.endyear}}</div>
 	                  </div>
                   {{/each}}
-                  {{#if user.lattes}}
-	                  <div class="formacao lattes">
-	                    <a {{bind-attr href=user.lattes}} target="_blank"><i class="IR sprt-profile-link"></i>{{user.lattes}}</a>
-	                  </div>                  
-                  {{/if}}
+                  <div class="formacao lattes">
+                  	{{#if user.lattes}}
+                    <a {{bind-attr href=user.lattes}} target="_blank"><i class="IR sprt-profile-link"></i>{{user.lattes}}</a>
+                    {{/if}}
+                  </div>
                 </div>
               </div>
       </div>
