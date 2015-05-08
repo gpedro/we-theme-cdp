@@ -1107,3 +1107,92 @@ table.table tbody tr:last-child {
   background: #227ebd;
 }
 /****** BTN-GROUP.CSS ******/
+
+/****** PROFILE-COURSES.CSS ******/
+.courses-list .list-title, .courses-list .courses-title {
+  font-weight: bold;
+  font-size: 24px; }
+  .courses-list .list-title i.IR, .courses-list .courses-title i.IR {
+    margin-right: 10px; }
+.courses-list .courses-title .small {
+  margin-left: 41px; }
+  .courses-list .courses-title .small a {
+    text-decoration: underline; }
+  .courses-list .courses-title .small a:hover {
+    text-decoration: none; }
+.courses-list .list-content {
+  padding-top: 10px; }
+  .courses-list .list-content > .row > .col-md-6:last-child {
+    border-left: 2px solid #e4e5e9; }
+  .courses-list .list-content .course {
+    margin-bottom: 20px;
+    overflow: hidden; }
+    .courses-list .list-content .course .course-image {
+      float: left;
+      margin-bottom: 15px; }
+    .courses-list .list-content .course .course-info {
+      margin-left: 180px; }
+      .courses-list .list-content .course .course-info > .inner {
+        display: table;
+        width: 100%;
+        min-height: 160px; }
+      .courses-list .list-content .course .course-info .course-title {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 0 20px 0;
+        line-height: 1.3em;
+        display: table-cell;
+        vertical-align: middle; }
+    .courses-list .list-content .course .course-actions {
+      clear: both;
+      text-align: right; }
+      .courses-list .list-content .course .course-actions .btn {
+        font-size: 14px;
+        margin: 0 3px; }
+        .courses-list .list-content .course .course-actions .btn i.IR + span {
+          margin-left: 10px; }
+      .courses-list .list-content .course .course-actions .btn.action-like {
+        background: #f2f2f2; }
+
+.formacao-list .list-content {
+  overflow: visible; }
+  .formacao-list .list-content .historico-formacao-title {
+    font-weight: bold;
+    font-size: 20px; }
+    .formacao-list .list-content .historico-formacao-title .small a {
+      text-decoration: underline; }
+    .formacao-list .list-content .historico-formacao-title .small a:hover {
+      text-decoration: none; }
+  .formacao-list .list-content .formacao {
+    color: #747474;
+    font-size: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative; }
+    .formacao-list .list-content .formacao:before {
+      content: ' ';
+      background: #3d9980;
+      width: 13px;
+      height: 13px;
+      border: 2px solid #f2f9f2;
+      position: absolute;
+      left: -49px;
+      top: 20px;
+      border-radius: 50%; }
+    .formacao-list .list-content .formacao h4 {
+      font-weight: bold;
+      margin: 0 0 12px 0; }
+  .formacao-list .list-content .formacao:first-child:before {
+    background: #2479b0;
+    top: 45px; }
+  .formacao-list .list-content .formacao:last-child {
+    border-bottom: none;
+    padding-bottom: 0; }
+    .formacao-list .list-content .formacao:last-child:before {
+      display: none; }
+  .formacao-list .list-content .formacao.lattes {
+    font-weight: bold;
+    font-size: 14px; }
+    .formacao-list .list-content .formacao.lattes i.IR {
+      margin-right: 10px; }
+/****** PROFILE-COURSES.CSS ******/

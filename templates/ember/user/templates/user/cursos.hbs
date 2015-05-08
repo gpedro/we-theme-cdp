@@ -1,0 +1,83 @@
+<div class="courses-list">
+  <div class="list-content">
+    <div class="row">
+      <div class="col-md-6">
+              <h3 class="courses-title"><i class="IR sprt-cursos"></i>Cursos na CdP
+              <span class="small"><a href="#">Todos</a> <a href="#">Técnico</a>  <a href="#">Graduação</a>  <a href="#">Pós-graduação</a></span></h2>
+        <div class="box course">
+          <img src="http://lorempicsum.com/futurama/160/160/1" class="img-circle course-image">
+          <div class="course-info">
+                  <div class="inner">
+              <h4 class="course-title"><a href="#">Uso de Plantas Medicinais a Fitoterápicos para agentes Comunitários de Saúde</a></h4>
+            </div>
+          </div>
+          <div class="course-actions">
+            <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
+            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a>
+          </div>
+        </div>
+        <div class="box course">
+          <img src="http://lorempicsum.com/futurama/160/160/1" class="img-circle course-image">
+          <div class="course-info">
+                  <div class="inner">
+              <h4 class="course-title"><a href="#">Uso de Plantas Medicinais a Fitoterápicos para agentes Comunitários de Saúde</a></h4>
+            </div>
+          </div>
+          <div class="course-actions">
+            <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
+            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a>
+          </div>
+        </div>
+        <div class="box course">
+          <img src="http://lorempicsum.com/futurama/160/160/1" class="img-circle course-image">
+          <div class="course-info">
+                  <div class="inner">
+              <h4 class="course-title"><a href="#">Uso de Plantas Medicinais a Fitoterápicos para agentes Comunitários de Saúde</a></h4>
+            </div>
+          </div>
+          <div class="course-actions">
+            <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
+            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a>
+          </div>
+        </div>
+        <div class="box course">
+          <img src="http://lorempicsum.com/futurama/160/160/1" class="img-circle course-image">
+          <div class="course-info">
+                  <div class="inner">
+              <h4 class="course-title"><a href="#">Uso de Plantas Medicinais a Fitoterápicos para agentes Comunitários de Saúde</a></h4>
+            </div>
+          </div>
+          <div class="course-actions">
+            <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
+            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+              <div class="formacao-list">
+                <h2 class="list-title"><i class="IR sprt-comunidades"></i>Formação</h2>
+                <div class="list-content box">
+{{!--                   <div class="formacao filtros">
+                    <h3 class="historico-formacao-title">Histórico de Cursos
+              <span class="small"><a href="#">Todos</a> <a href="#">Técnico</a>  <a href="#">Graduação</a>  <a href="#">Pós-graduação</a></span></h2>
+                  </div> --}}
+                  {{#if user.course}}
+	                  {{#each course in user.course}}
+		                  <div class="formacao">
+		                    <div class="formacao-tipo">Curso de {{course.type}}</div>
+		                    <h4>{{course.name}}</h4>
+		                    <div class="formacao-instituicao">{{course.school}}&nbsp;|&nbsp;{{course.endyear}}</div>
+		                  </div>
+	                  {{/each}}
+                  {{/if}}
+                  {{#if user.lattes}}
+	                  <div class="formacao lattes">
+	                    <a {{bind-attr href=user.lattes}}><i class="IR sprt-profile-link"></i>{{user.lattes}}</a>
+	                  </div>                  
+                  {{/if}}
+                </div>
+              </div>
+      </div>
+    </div>
+  </div>
+</div>
