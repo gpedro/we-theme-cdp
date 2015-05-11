@@ -779,6 +779,11 @@ table.table tbody tr:last-child {
 /******* VIEW-PROFILE.CSS ********/
 
 /******* ACTIVITIES.CSS ********/
+.we-iframe-activities{
+  border: none;
+  margin: 0;
+  /*overflow: hidden;*/
+}
 .activities-list .activities-title {
   font-weight: bold;
   font-size: 24px;
