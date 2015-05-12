@@ -4,6 +4,7 @@
       <div class="col-md-6">
         <h3 class="courses-title"><i class="IR sprt-cursos"></i>Cursos na CdP</h3>
         {{!-- <span class="small"><a href="#">Todos</a> <a href="#">Técnico</a>  <a href="#">Graduação</a>  <a href="#">Pós-graduação</a></span></h2> --}}
+        {{#if cursos}}
         {{#each curso in cursos}}
         <div class="box course">
           <img {{bind-attr src=curso.logo}} class="img-circle course-image">
@@ -18,6 +19,11 @@
           </div>
         </div>
         {{/each}}
+        {{else}}
+        <div class="empty-section">
+          {{user.displayName}} não participou de nenhum curso.
+        </div>
+        {{/if}}
       </div>
       <div class="col-md-6">
               <div class="formacao-list">

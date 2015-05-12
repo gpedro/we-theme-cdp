@@ -20,18 +20,24 @@
     <div class="timeline-section timeline-section-comunidades blue timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Comunidades</h2>
       <div class="content">
+      {{#if comunidades}}
         <div class="carousel slide carousel-multiple" id="carousel-comunidades"  data-ride="carousel">
-                <div class="carousel-inner">
-                {{#each comunidade in comunidades}}
-                  <div {{bind-attr class=":item comunidade.active:active"}}>
-                    <div class="col-sm-4">
-                    <a {{bind-attr href=comunidade.link}}><img {{bind-attr src=comunidade.logo}} class="img-responsive img-circle">{{comunidade.title}}</a></div>
-                  </div>
-                {{/each}}
-                </div>
-                <a class="left carousel-control" href="#carousel-comunidades" data-slide="prev"><i class="IR sprt-chevronbig-left"></i></a>
-                <a class="right carousel-control" href="#carousel-comunidades" data-slide="next"><i class="IR sprt-chevronbig-right"></i></a>
-              </div>
+          <div class="carousel-inner">
+          {{#each comunidade in comunidades}}
+            <div {{bind-attr class=":item comunidade.active:active"}}>
+              <div class="col-sm-4">
+              <a {{bind-attr href=comunidade.link}}><img {{bind-attr src=comunidade.logo}} class="img-responsive img-circle">{{comunidade.title}}</a></div>
+            </div>
+          {{/each}}
+          </div>
+          <a class="left carousel-control" href="#carousel-comunidades" data-slide="prev"><i class="IR sprt-chevronbig-left"></i></a>
+          <a class="right carousel-control" href="#carousel-comunidades" data-slide="next"><i class="IR sprt-chevronbig-right"></i></a>
+        </div>
+      {{else}}
+        <div class="empty-section">
+          {{user.displayName}} não está participando de nenhuma comunidade.
+        </div>
+      {{/if}}
       </div>
       {{#link-to 'user.comunidades' class="btn btn-link link-more"}}Ver todos{{/link-to}}
     </div>
@@ -46,9 +52,21 @@
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Cursos</h2>
       <div class="content">
         {{#if cursos}}
+          <div class="carousel slide carousel-multiple" id="carousel-cursos"  data-ride="carousel">
+            <div class="carousel-inner">
+            {{#each curso in cursos}}
+              <div {{bind-attr class=":item curso.active:active"}}>
+                <div class="col-sm-4">
+                <a {{bind-attr href=curso.link}}><img {{bind-attr src=curso.logo}} class="img-responsive img-circle">{{curso.title}}</a></div>
+              </div>
+            {{/each}}
+            </div>
+            <a class="left carousel-control" href="#carousel-cursos" data-slide="prev"><i class="IR sprt-chevronbig-left"></i></a>
+            <a class="right carousel-control" href="#carousel-cursos" data-slide="next"><i class="IR sprt-chevronbig-right"></i></a>
+          </div>
         {{else}}
         <div class="empty-section">
-          Almeida não está participando de nenhum curso.
+          {{user.displayName}} não participou de nenhum curso.
         </div>
         {{/if}}
       </div>
@@ -58,7 +76,7 @@
   <div class="col-md-6">
     <div class="activities-list">
       <h2 class="activities-title"><i class="IR sprt-activities"></i> Atividades</h2>
-      {{we-iframe-activites drupalId=currentUser.drupalId}}
+      {{we-iframe-activites drupalId=user.drupalId}}
     </div>
   </div>
 </div>

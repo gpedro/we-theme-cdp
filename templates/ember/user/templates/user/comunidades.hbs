@@ -14,16 +14,17 @@
     </div> --}}
   </div>
   <div class="list-content">
+  {{#if comunidadesArray}}
     {{#each row in comunidadesArray}}
     <div class="row">
-      {{#each comunidade in row}}
+      {{#each row}}
       <div class="col-md-6">
         <div class="box group">
-          <img {{bind-attr src=comunidade.logo}} class="img-circle group-image">
+          <img {{bind-attr src=this.logo}} class="img-circle group-image">
           <div class="group-info">
-            <h4 class="group-title"><a {{bind-attr href=comunidade.link}}>{{comunidade.title}}</a></h4>
+            <h4 class="group-title"><a {{bind-attr href=this.link}}>{{this.title}}</a></h4>
             <div class="group-desc">
-              {{comunidade.description}}
+              {{substr description max=200}}
             </div>
           </div>
           <div class="group-actions">
@@ -31,9 +32,57 @@
             <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a> --}}
           </div>
         </div>
-      </div>       
-      {{/each}}   
+      </div>
+      {{/each}}
     </div>
     {{/each}}
+  {{else}}
+    <div class="empty-section">
+      {{user.displayName}} não está participando de nenhuma comunidade.
+    </div>
+  {{/if}}
   </div>
+</div>
+<div class="section-story--pagination">
+  <ul class="pagination pagination-lg">
+{{!--     <li class="arrow prev disabled">
+      <button class="btn btn-default disabled">«</button>
+    </li>
+    <li class="active page-number">
+      <button class="btn btn-primary active">1</button>
+    </li>
+    <li class="page-number">
+      <button data-ember-action="1841" class="btn btn-default">2</button>
+    </li>
+    <li class="page-number">
+      <button data-ember-action="1846" class="btn btn-default">3</button>
+    </li>
+    <li class="page-number">
+      <button data-ember-action="1851" class="btn btn-default">4</button>
+    </li>
+    <li class="page-number">
+      <button data-ember-action="1856" class="btn btn-default">5</button>
+    </li>
+    <li class="page-number">
+      <button data-ember-action="1861" class="btn btn-default">6</button>
+    </li>
+    <li class="page-number">
+      <button data-ember-action="1866" class="btn btn-default">7</button>
+    </li>
+    <li class="page-number">
+      <button data-ember-action="1871" class="btn btn-default">8</button>
+    </li>
+    <li class="page-number">
+      <button data-ember-action="1876" class="btn btn-default">9</button>
+    </li>
+    <li class="page-number">
+      <button disabled="disabled" type="button" class="btn btn-default disabled">...</button>
+    </li>
+    <li class="page-number">
+      <button data-ember-action="1883" class="btn btn-default">480</button>
+    </li>
+    <li class="arrow next enabled-arrow">
+      <button data-ember-action="1886" class="btn btn-default">»</button>
+    </li> --}}
+  </ul>
 </div>

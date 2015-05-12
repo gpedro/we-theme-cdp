@@ -564,7 +564,7 @@ estilos gerais de formatação
     font-size: 12px;
     display: block;
     width: 100%;
-    margin: 10px 0; }  
+    margin: 10px 0; }
     @media (min-width: 768px) {
       .user-actions a.btn {
         display: inline-block;
@@ -1134,7 +1134,10 @@ table.table tbody tr:last-child {
     overflow: hidden; }
     .courses-list .list-content .course .course-image {
       float: left;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      width: 160px;
+      height: auto;
+    }
     .courses-list .list-content .course .course-info {
       margin-left: 180px; }
       .courses-list .list-content .course .course-info > .inner {
@@ -1214,10 +1217,17 @@ table.table tbody tr:last-child {
   .groups-list .list-content > .row:last-child {
     margin-bottom: 0; }
   .groups-list .list-content .group {
-    overflow: hidden; }
+    overflow: hidden; 
+    min-height: 220px; }
     .groups-list .list-content .group .group-image {
       float: left;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
     .groups-list .list-content .group .group-info {
       margin-left: 180px; }
       .groups-list .list-content .group .group-info .group-title {
