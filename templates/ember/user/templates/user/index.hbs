@@ -20,13 +20,17 @@
     <div class="timeline-section timeline-section-comunidades blue timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Comunidades</h2>
       <div class="content">
-      {{#if comunidades}}
+      {{#if comunidadesProxy}}
         <div class="carousel slide carousel-multiple" id="carousel-comunidades"  data-ride="carousel">
           <div class="carousel-inner">
-          {{#each comunidade in comunidades}}
+          {{#each comunidade in comunidadesProxy}}
             <div {{bind-attr class=":item comunidade.active:active"}}>
               <div class="col-sm-4">
-              <a {{bind-attr href=comunidade.link}}><img {{bind-attr src=comunidade.logo}} class="img-responsive img-circle">{{comunidade.title}}</a></div>
+                <a {{bind-attr href=comunidade.link}}>
+                  <div {{bind-attr style=comunidade.bgdImg}} class="carousel-img"></div>
+                  {{comunidade.title}}
+                </a>
+              </div>
             </div>
           {{/each}}
           </div>

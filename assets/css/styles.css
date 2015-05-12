@@ -441,9 +441,9 @@ i.IR.sprt-profile-profissao {
   background: url(../img/sprite-profile.png) no-repeat -20px -90px; }
 
 i.IR.sprt-profile-nascimento {
-  width: 18px;
+  width: 15px;
   height: 18px;
-  background: url(../img/sprite-profile.png) no-repeat -42px -90px; }
+  background: url(../img/sprite-profile.png) no-repeat -46px -90px; }
 
 i.IR.sprt-profile-facebook {
   width: 32px;
@@ -530,9 +530,9 @@ estilos gerais de formatação
       @media (min-width: 768px) {
         .user-details ul li {
           width: auto;
-          margin-left: 10px; }
-          .user-details ul li:first-child {
-            margin-left: 0; } }
+          margin-right: 10px; }
+          .user-details ul li:last-child {
+            margin-right: 0; } }
 
 .user-sociallinks {
   border-bottom: 1px solid #e0e0e0;
@@ -740,6 +740,15 @@ estilos gerais de formatação
 
 .carousel-multiple .item {
   text-align: center; }
+  .carousel-multiple .item .carousel-img {
+    width: 99px;
+    height: 99px;
+    border-radius: 50%;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 17px; }  
   .carousel-multiple .item img {
     display: block;
     margin: auto;
