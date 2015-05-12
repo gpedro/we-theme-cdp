@@ -1,0 +1,39 @@
+<div class="groups-list">
+  <div class="row">
+    <div class="col-sm-5">
+      <h2 class="list-title"><i class="IR sprt-comunidades"></i>Comunidades</h2>
+    </div>
+{{!--     <div class="col-sm-7">
+      <div class="list-filter pull-right">
+        <div class="btn-group filter" role="group">
+          <a class="btn btn-default active">Amigos em Comum <span class="badge">100</span></a>
+          <a class="btn btn-default">Seguidores <span class="badge">100</span></a>
+          <a class="btn btn-default">Relacionados  <span class="badge">100</span></a>
+        </div>
+      </div>
+    </div> --}}
+  </div>
+  <div class="list-content">
+    {{#each row in comunidadesArray}}
+    <div class="row">
+      {{#each comunidade in row}}
+      <div class="col-md-6">
+        <div class="box group">
+          <img {{bind-attr src=comunidade.logo}} class="img-circle group-image">
+          <div class="group-info">
+            <h4 class="group-title"><a {{bind-attr href=comunidade.link}}>{{comunidade.title}}</a></h4>
+            <div class="group-desc">
+              {{comunidade.description}}
+            </div>
+          </div>
+          <div class="group-actions">
+{{!--             <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
+            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a> --}}
+          </div>
+        </div>
+      </div>       
+      {{/each}}   
+    </div>
+    {{/each}}
+  </div>
+</div>

@@ -2,56 +2,22 @@
   <div class="list-content">
     <div class="row">
       <div class="col-md-6">
-              <h3 class="courses-title"><i class="IR sprt-cursos"></i>Cursos na CdP
-              <span class="small"><a href="#">Todos</a> <a href="#">Técnico</a>  <a href="#">Graduação</a>  <a href="#">Pós-graduação</a></span></h2>
+        <h3 class="courses-title"><i class="IR sprt-cursos"></i>Cursos na CdP</h3>
+        {{!-- <span class="small"><a href="#">Todos</a> <a href="#">Técnico</a>  <a href="#">Graduação</a>  <a href="#">Pós-graduação</a></span></h2> --}}
+        {{#each curso in cursos}}
         <div class="box course">
-          <img src="http://lorempicsum.com/futurama/160/160/1" class="img-circle course-image">
+          <img {{bind-attr src=curso.logo}} class="img-circle course-image">
           <div class="course-info">
-                  <div class="inner">
-              <h4 class="course-title"><a href="#">Uso de Plantas Medicinais a Fitoterápicos para agentes Comunitários de Saúde</a></h4>
+            <div class="inner">
+              <h4 class="course-title"><a {{bind-attr href=curso.link}}>{{curso.title}}</a></h4>
             </div>
           </div>
           <div class="course-actions">
-            <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
-            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a>
+{{!--             <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
+            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a> --}}
           </div>
         </div>
-        <div class="box course">
-          <img src="http://lorempicsum.com/futurama/160/160/1" class="img-circle course-image">
-          <div class="course-info">
-                  <div class="inner">
-              <h4 class="course-title"><a href="#">Uso de Plantas Medicinais a Fitoterápicos para agentes Comunitários de Saúde</a></h4>
-            </div>
-          </div>
-          <div class="course-actions">
-            <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
-            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a>
-          </div>
-        </div>
-        <div class="box course">
-          <img src="http://lorempicsum.com/futurama/160/160/1" class="img-circle course-image">
-          <div class="course-info">
-                  <div class="inner">
-              <h4 class="course-title"><a href="#">Uso de Plantas Medicinais a Fitoterápicos para agentes Comunitários de Saúde</a></h4>
-            </div>
-          </div>
-          <div class="course-actions">
-            <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
-            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a>
-          </div>
-        </div>
-        <div class="box course">
-          <img src="http://lorempicsum.com/futurama/160/160/1" class="img-circle course-image">
-          <div class="course-info">
-                  <div class="inner">
-              <h4 class="course-title"><a href="#">Uso de Plantas Medicinais a Fitoterápicos para agentes Comunitários de Saúde</a></h4>
-            </div>
-          </div>
-          <div class="course-actions">
-            <a href="#" class="btn btn-primary btn-sm action-users"><i class="IR sprt-author"></i><span>3232</span></a>
-            <a href="#" class="btn btn-default btn-sm action-like"><i class="IR sprt-hearton"></i></a>
-          </div>
-        </div>
+        {{/each}}
       </div>
       <div class="col-md-6">
               <div class="formacao-list">

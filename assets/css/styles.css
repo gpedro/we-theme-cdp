@@ -1201,3 +1201,42 @@ table.table tbody tr:last-child {
     .formacao-list .list-content .formacao.lattes i.IR {
       margin-right: 10px; }
 /****** PROFILE-COURSES.CSS ******/
+/****** PROFILE-COMUNIDADES.CSS ******/
+.groups-list .list-title {
+  font-weight: bold;
+  font-size: 24px; }
+  .groups-list .list-title i.IR {
+    margin-right: 10px; }
+.groups-list .list-content {
+  padding-top: 10px; }
+  .groups-list .list-content > .row {
+    margin-bottom: 20px; }
+  .groups-list .list-content > .row:last-child {
+    margin-bottom: 0; }
+  .groups-list .list-content .group {
+    overflow: hidden; }
+    .groups-list .list-content .group .group-image {
+      float: left;
+      margin-bottom: 15px; }
+    .groups-list .list-content .group .group-info {
+      margin-left: 180px; }
+      .groups-list .list-content .group .group-info .group-title {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 0 20px 0;
+        line-height: 1.3em; }
+      .groups-list .list-content .group .group-info .group-desc {
+        font-size: 12px;
+        color: #444;
+        margin-bottom: 15px; }
+    .groups-list .list-content .group .group-actions {
+      clear: both;
+      text-align: right; }
+      .groups-list .list-content .group .group-actions .btn {
+        font-size: 14px;
+        margin: 0 3px; }
+        .groups-list .list-content .group .group-actions .btn i.IR + span {
+          margin-left: 10px; }
+      .groups-list .list-content .group .group-actions .btn.action-like {
+        background: #f2f2f2; }
+/****** PROFILE-COMUNIDADES.CSS ******/

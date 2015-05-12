@@ -12,7 +12,7 @@
         <ul class="relatos-list">
 		      {{#each relato in relatosProxy}}
 		      	<li><i class="IR sprt-relato-1"></i>{{#link-to 'relato' relato.id}}{{relato.titulo}}{{/link-to}}</li>
-		      {{/each}}          
+		      {{/each}}
         </ul>
       </div>
       {{#link-to 'user.relatos' class="btn btn-link link-more"}}Ver todos{{/link-to}}
@@ -22,48 +22,18 @@
       <div class="content">
         <div class="carousel slide carousel-multiple" id="carousel-comunidades"  data-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="item active">
+                {{#each comunidade in comunidades}}
+                  <div {{bind-attr class=":item comunidade.active:active"}}>
                     <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/201420/sports" class="img-responsive img-circle">Boas Vindas!</a></div>
+                    <a {{bind-attr href=comunidade.link}}><img {{bind-attr src=comunidade.logo}} class="img-responsive img-circle">{{comunidade.title}}</a></div>
                   </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/" class="img-responsive img-circle">Histórias do Cotidiano na Atenção Básica</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/sports" class="img-responsive img-circle">Educação e Saúde Bucal</a></div>
-                  </div>
-                 <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/201420/sports" class="img-responsive img-circle">Boas Vindas! 2</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/" class="img-responsive img-circle">Histórias do Cotidiano na Atenção Básica 2</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/sports" class="img-responsive img-circle">Educação e Saúde Bucal 2</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/201420/sports" class="img-responsive img-circle">Boas Vindas! 3</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/" class="img-responsive img-circle">Histórias do Cotidiano na Atenção Básica  3</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/sports" class="img-responsive img-circle">Educação e Saúde Bucal 3</a></div>
-                  </div>
+                {{/each}}
                 </div>
                 <a class="left carousel-control" href="#carousel-comunidades" data-slide="prev"><i class="IR sprt-chevronbig-left"></i></a>
                 <a class="right carousel-control" href="#carousel-comunidades" data-slide="next"><i class="IR sprt-chevronbig-right"></i></a>
               </div>
       </div>
-      <a href="#" class="btn btn-link link-more">Ver todos</a>
+      {{#link-to 'user.comunidades' class="btn btn-link link-more"}}Ver todos{{/link-to}}
     </div>
 {{!--     <div class="timeline-section timeline-section-friends yellow timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Amigos</h2>
@@ -75,17 +45,20 @@
     <div class="timeline-section timeline-section-cursos green timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Cursos</h2>
       <div class="content">
+        {{#if cursos}}
+        {{else}}
         <div class="empty-section">
           Almeida não está participando de nenhum curso.
         </div>
+        {{/if}}
       </div>
-      <a href="#" class="btn btn-link link-more">Ver todos</a>
+      {{#link-to 'user.cursos' class="btn btn-link link-more"}}Ver todos{{/link-to}}
     </div>
   </div>
   <div class="col-md-6">
-  <div class="activities-list">
-  </div>
-  <h2 class="activities-title"><i class="IR sprt-activities"></i> Atividades</h2>
-  {{we-iframe-activites drupalId='12158'}}
+    <div class="activities-list">
+      <h2 class="activities-title"><i class="IR sprt-activities"></i> Atividades</h2>
+      {{we-iframe-activites drupalId=currentUser.drupalId}}
+    </div>
   </div>
 </div>
