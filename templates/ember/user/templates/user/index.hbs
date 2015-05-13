@@ -12,7 +12,7 @@
         <ul class="relatos-list">
 		      {{#each relato in relatosProxy}}
 		      	<li><i class="IR sprt-relato-1"></i>{{#link-to 'relato' relato.id}}{{relato.titulo}}{{/link-to}}</li>
-		      {{/each}}          
+		      {{/each}}
         </ul>
       </div>
       {{#link-to 'user.relatos' class="btn btn-link link-more"}}Ver todos{{/link-to}}
@@ -20,50 +20,30 @@
     <div class="timeline-section timeline-section-comunidades blue timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Comunidades</h2>
       <div class="content">
+      {{#if comunidadesProxy}}
         <div class="carousel slide carousel-multiple" id="carousel-comunidades"  data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/201420/sports" class="img-responsive img-circle">Boas Vindas!</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/" class="img-responsive img-circle">Histórias do Cotidiano na Atenção Básica</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/sports" class="img-responsive img-circle">Educação e Saúde Bucal</a></div>
-                  </div>
-                 <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/201420/sports" class="img-responsive img-circle">Boas Vindas! 2</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/" class="img-responsive img-circle">Histórias do Cotidiano na Atenção Básica 2</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/sports" class="img-responsive img-circle">Educação e Saúde Bucal 2</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/201420/sports" class="img-responsive img-circle">Boas Vindas! 3</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/" class="img-responsive img-circle">Histórias do Cotidiano na Atenção Básica  3</a></div>
-                  </div>
-                  <div class="item">
-                    <div class="col-sm-4">
-                    <a href="#"><img src="http://lorempixel.com/142/142/sports" class="img-responsive img-circle">Educação e Saúde Bucal 3</a></div>
-                  </div>
-                </div>
-                <a class="left carousel-control" href="#carousel-comunidades" data-slide="prev"><i class="IR sprt-chevronbig-left"></i></a>
-                <a class="right carousel-control" href="#carousel-comunidades" data-slide="next"><i class="IR sprt-chevronbig-right"></i></a>
+          <div class="carousel-inner">
+          {{#each comunidade in comunidadesProxy}}
+            <div {{bind-attr class=":item comunidade.active:active"}}>
+              <div class="col-sm-4">
+                <a {{bind-attr href=comunidade.link}}>
+                  <div {{bind-attr style=comunidade.bgdImg}} class="carousel-img"></div>
+                  {{comunidade.title}}
+                </a>
               </div>
+            </div>
+          {{/each}}
+          </div>
+          <a class="left carousel-control" href="#carousel-comunidades" data-slide="prev"><i class="IR sprt-chevronbig-left"></i></a>
+          <a class="right carousel-control" href="#carousel-comunidades" data-slide="next"><i class="IR sprt-chevronbig-right"></i></a>
+        </div>
+      {{else}}
+        <div class="empty-section">
+          {{user.displayName}} não está participando de nenhuma comunidade.
+        </div>
+      {{/if}}
       </div>
-      <a href="#" class="btn btn-link link-more">Ver todos</a>
+      {{#link-to 'user.comunidades' class="btn btn-link link-more"}}Ver todos{{/link-to}}
     </div>
 {{!--     <div class="timeline-section timeline-section-friends yellow timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Amigos</h2>
@@ -75,79 +55,32 @@
     <div class="timeline-section timeline-section-cursos green timeline-collapse">
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Cursos</h2>
       <div class="content">
+        {{#if cursos}}
+          <div class="carousel slide carousel-multiple" id="carousel-cursos"  data-ride="carousel">
+            <div class="carousel-inner">
+            {{#each curso in cursos}}
+              <div {{bind-attr class=":item curso.active:active"}}>
+                <div class="col-sm-4">
+                <a {{bind-attr href=curso.link}}><img {{bind-attr src=curso.logo}} class="img-responsive img-circle">{{curso.title}}</a></div>
+              </div>
+            {{/each}}
+            </div>
+            <a class="left carousel-control" href="#carousel-cursos" data-slide="prev"><i class="IR sprt-chevronbig-left"></i></a>
+            <a class="right carousel-control" href="#carousel-cursos" data-slide="next"><i class="IR sprt-chevronbig-right"></i></a>
+          </div>
+        {{else}}
         <div class="empty-section">
-          Almeida não está participando de nenhum curso.
+          {{user.displayName}} não participou de nenhum curso.
         </div>
+        {{/if}}
       </div>
-      <a href="#" class="btn btn-link link-more">Ver todos</a>
+      {{#link-to 'user.cursos' class="btn btn-link link-more"}}Ver todos{{/link-to}}
     </div>
   </div>
-{{!--   <div class="col-md-6">
+  <div class="col-md-6">
     <div class="activities-list">
       <h2 class="activities-title"><i class="IR sprt-activities"></i> Atividades</h2>
-      <div class="list-content">
-        <div class="box activity">
-          <div class="activity-info row">
-            <div class="activity-author col-md-6">
-              <img src="http://lorempicsum.com/nemo/26/26/1" class="autor-picture img-circle"> <span class="author-name">Otávio Azevedo Cavalcanti</span>
-            </div>
-            <div class="share-info col-md-6">
-              Compartilhado por <a href="#">Almeida Jr.</a> a 3 dias
-            </div>
-          </div>
-          <div class="activity-content">
-            <iframe src="https://www.youtube.com/embed/QfOZWGLT1JM" frameborder="0" allowfullscreen></iframe>
-            <h2>Ant-Man Official Trailer #1 (2015) - Paul Rudd, Evangeline Lilly Marvel Movie HD</h2>
-            <p>Ant-Man Official Trailer #1 (2015) - Paul Rudd, Evangeline Lilly Marvel Movie HD</p>
-
-                  <p>Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, con-man Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.</p>
-
-                  <p>...</p>
-                  <div class="source">
-                    fonte: <a href="#">youtube.com</a>
-                  </div>
-          </div>
-          <div class="activity-footer">
-            <div class="row activity-footer-info">
-              <div class="activity-tags col-md-6">
-                <i class="IR sprt-tags"></i> <a href="#">Saúde</a>, <a href="#">práticas integrativas</a>, ...
-              </div>
-              <div class="activity-showcomments col-md-6">
-                <a href="#">Exibir os 300 comentários <i class="IR sprt-chevronmini-down"></i></a>
-              </div>
-            </div>
-            <div class="activity-comment-list">
-              <div class="activity-comment">
-                <div class="comment-info">
-                  <img src="http://lorempicsum.com/nemo/32/32/1" class="author-picture img-circle"> <a class="author-name">Otávio Azevedo Cavalcanti</a> comentou à 10 minutos
-                </div>
-                <div class="comment-content">
-                  <p>Monotonectally reconceptualize wireless applications with timely ROI. Dynamically build strategic total linkage before backward-compatible solutions. Uniquely conceptualize efficient schemas through just in time methods of empowerment. Assertively architect principle-centered e-services vis-a-vis seamless models. Distinctively extend enterprise-wide users via transparent convergence.</p>
-                </div>
-              </div>
-              <div class="activity-comment">
-                <div class="comment-info">
-                  <img src="http://lorempicsum.com/nemo/32/32/1" class="author-picture img-circle"> <a class="author-name">Otávio Azevedo Cavalcanti</a> comentou à 10 minutos
-                </div>
-                <div class="comment-content">
-                  <p>Monotonectally reconceptualize wireless applications with timely ROI. Dynamically build strategic total linkage before backward-compatible solutions. Uniquely conceptualize efficient schemas through just in time methods of empowerment. Assertively architect principle-centered e-services vis-a-vis seamless models. Distinctively extend enterprise-wide users via transparent convergence.</p>
-                </div>
-              </div>
-              <div class="activity-comment">
-                <div class="comment-info">
-                  <img src="http://lorempicsum.com/nemo/32/32/1" class="author-picture img-circle"> <a class="author-name">Otávio Azevedo Cavalcanti</a> comentou à 10 minutos
-                </div>
-                <div class="comment-content">
-                  <p>Monotonectally reconceptualize wireless applications with timely ROI. Dynamically build strategic total linkage before backward-compatible solutions. Uniquely conceptualize efficient schemas through just in time methods of empowerment. Assertively architect principle-centered e-services vis-a-vis seamless models. Distinctively extend enterprise-wide users via transparent convergence.</p>
-                </div>
-              </div>
-            </div>
-            <div class="activity-make-comment">
-              <div class="make-comment">Faça seu comentário</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{we-iframe-activites drupalId=user.drupalId}}
     </div>
-  </div> --}}
+  </div>
 </div>
