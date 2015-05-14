@@ -80,7 +80,9 @@
   <div class="col-md-6">
     <div class="activities-list">
       <h2 class="activities-title"><i class="IR sprt-activities"></i> Atividades</h2>
-      {{we-iframe-activites drupalId=user.drupalId}}
+      {{#if user.drupalId}}
+        {{we-iframe-activites drupalId=user.drupalId}}
+      {{/if}}      
     </div>
   </div>
 </div>
