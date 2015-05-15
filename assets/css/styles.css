@@ -441,9 +441,9 @@ i.IR.sprt-profile-profissao {
   background: url(../img/sprite-profile.png) no-repeat -20px -90px; }
 
 i.IR.sprt-profile-nascimento {
-  width: 18px;
+  width: 15px;
   height: 18px;
-  background: url(../img/sprite-profile.png) no-repeat -42px -90px; }
+  background: url(../img/sprite-profile.png) no-repeat -46px -90px; }
 
 i.IR.sprt-profile-facebook {
   width: 32px;
@@ -530,9 +530,9 @@ estilos gerais de formatação
       @media (min-width: 768px) {
         .user-details ul li {
           width: auto;
-          margin-left: 10px; }
-          .user-details ul li:first-child {
-            margin-left: 0; } }
+          margin-right: 10px; }
+          .user-details ul li:last-child {
+            margin-right: 0; } }
 
 .user-sociallinks {
   border-bottom: 1px solid #e0e0e0;
@@ -559,11 +559,21 @@ estilos gerais de formatação
     display: block;
     width: 100%;
     margin: 10px 0; }
+    .user-actions button.btn {
+    padding: 7px 18px;
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    margin: 10px 0; }
     @media (min-width: 768px) {
       .user-actions a.btn {
         display: inline-block;
         width: auto;
-        padding: 3px 18px; } }
+        padding: 3px 18px; }
+      .user-actions button.btn {
+        display: inline-block;
+        width: auto;
+        padding: 3px 18px; }   }
 
 .carousel-conquistas {
   background: url(../img/louros.png) no-repeat center; }
@@ -730,6 +740,15 @@ estilos gerais de formatação
 
 .carousel-multiple .item {
   text-align: center; }
+  .carousel-multiple .item .carousel-img {
+    width: 99px;
+    height: 99px;
+    border-radius: 50%;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 17px; }  
   .carousel-multiple .item img {
     display: block;
     margin: auto;
@@ -769,6 +788,11 @@ table.table tbody tr:last-child {
 /******* VIEW-PROFILE.CSS ********/
 
 /******* ACTIVITIES.CSS ********/
+.we-iframe-activities{
+  border: none;
+  margin: 0;
+  /*overflow: hidden;*/
+}
 .activities-list .activities-title {
   font-weight: bold;
   font-size: 24px;
@@ -1097,3 +1121,141 @@ table.table tbody tr:last-child {
   background: #227ebd;
 }
 /****** BTN-GROUP.CSS ******/
+
+/****** PROFILE-COURSES.CSS ******/
+.courses-list .list-title, .courses-list .courses-title {
+  font-weight: bold;
+  font-size: 24px; }
+  .courses-list .list-title i.IR, .courses-list .courses-title i.IR {
+    margin-right: 10px; }
+.courses-list .courses-title .small {
+  margin-left: 41px; }
+  .courses-list .courses-title .small a {
+    text-decoration: underline; }
+  .courses-list .courses-title .small a:hover {
+    text-decoration: none; }
+.courses-list .list-content {
+  padding-top: 10px; }
+  .courses-list .list-content > .row > .col-md-6:last-child {
+    border-left: 2px solid #e4e5e9; }
+  .courses-list .list-content .course {
+    margin-bottom: 20px;
+    overflow: hidden; }
+    .courses-list .list-content .course .course-image {
+      float: left;
+      margin-bottom: 15px;
+      width: 160px;
+      height: auto;
+    }
+    .courses-list .list-content .course .course-info {
+      margin-left: 180px; }
+      .courses-list .list-content .course .course-info > .inner {
+        display: table;
+        width: 100%;
+        min-height: 160px; }
+      .courses-list .list-content .course .course-info .course-title {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 0 20px 0;
+        line-height: 1.3em;
+        display: table-cell;
+        vertical-align: middle; }
+    .courses-list .list-content .course .course-actions {
+      clear: both;
+      text-align: right; }
+      .courses-list .list-content .course .course-actions .btn {
+        font-size: 14px;
+        margin: 0 3px; }
+        .courses-list .list-content .course .course-actions .btn i.IR + span {
+          margin-left: 10px; }
+      .courses-list .list-content .course .course-actions .btn.action-like {
+        background: #f2f2f2; }
+
+.formacao-list .list-content {
+  overflow: visible; }
+  .formacao-list .list-content .historico-formacao-title {
+    font-weight: bold;
+    font-size: 20px; }
+    .formacao-list .list-content .historico-formacao-title .small a {
+      text-decoration: underline; }
+    .formacao-list .list-content .historico-formacao-title .small a:hover {
+      text-decoration: none; }
+  .formacao-list .list-content .formacao {
+    color: #747474;
+    font-size: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative; }
+    .formacao-list .list-content .formacao:before {
+      content: ' ';
+      background: #3d9980;
+      width: 13px;
+      height: 13px;
+      border: 2px solid #f2f9f2;
+      position: absolute;
+      left: -49px;
+      top: 20px;
+      border-radius: 50%; }
+    .formacao-list .list-content .formacao h4 {
+      font-weight: bold;
+      margin: 0 0 12px 0; }
+  .formacao-list .list-content .formacao:first-child:before {
+    background: #2479b0;
+    top: 45px; }
+  .formacao-list .list-content .formacao:last-child {
+    border-bottom: none;
+    padding-bottom: 0; }
+    .formacao-list .list-content .formacao:last-child:before {
+      display: none; }
+  .formacao-list .list-content .formacao.lattes {
+    font-weight: bold;
+    font-size: 14px; }
+    .formacao-list .list-content .formacao.lattes i.IR {
+      margin-right: 10px; }
+/****** PROFILE-COURSES.CSS ******/
+/****** PROFILE-COMUNIDADES.CSS ******/
+.groups-list .list-title {
+  font-weight: bold;
+  font-size: 24px; }
+  .groups-list .list-title i.IR {
+    margin-right: 10px; }
+.groups-list .list-content {
+  padding-top: 10px; }
+  .groups-list .list-content > .row {
+    margin-bottom: 20px; }
+  .groups-list .list-content > .row:last-child {
+    margin-bottom: 0; }
+  .groups-list .list-content .group {
+    overflow: hidden; 
+    min-height: 220px; }
+    .groups-list .list-content .group .group-image {
+      float: left;
+      margin-bottom: 15px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+    .groups-list .list-content .group .group-info {
+      margin-left: 180px; }
+      .groups-list .list-content .group .group-info .group-title {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 0 20px 0;
+        line-height: 1.3em; }
+      .groups-list .list-content .group .group-info .group-desc {
+        font-size: 12px;
+        color: #444;
+        margin-bottom: 15px; }
+    .groups-list .list-content .group .group-actions {
+      clear: both;
+      text-align: right; }
+      .groups-list .list-content .group .group-actions .btn {
+        font-size: 14px;
+        margin: 0 3px; }
+        .groups-list .list-content .group .group-actions .btn i.IR + span {
+          margin-left: 10px; }
+      .groups-list .list-content .group .group-actions .btn.action-like {
+        background: #f2f2f2; }
+/****** PROFILE-COMUNIDADES.CSS ******/

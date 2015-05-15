@@ -13,7 +13,9 @@
               <li>@{{user.username}}</li>
               <li><i class="IR sprt-profile-local"></i> {{user.city}} | {{user.locationState}}</li>
               <li><i class="IR sprt-profile-profissao"></i> {{user.major}}</li>
-              <li><i class="IR sprt-profile-nascimento"></i> {{date user.birthDate format='DD/MM/YYYY'}} ({{format-date user.birthDate bool="true"}})</li>
+              {{#if user.showBday}}
+                <li><i class="IR sprt-profile-nascimento"></i> {{date user.birthDate format='DD/MM/YYYY'}} ({{format-date user.birthDate bool="true"}})</li>
+              {{/if}}
             </ul>
           </div>
           {{#if user.hasSocialNetworkLinks}}
@@ -39,14 +41,19 @@
             </div>
           {{/if}}
           {{#unless ownProfile}}
-{{!--           <div class="user-actions">
-            <a href="" class="btn btn-primary btn-xs">Adicionar aos Amigos</a>
-            <a href="" class="btn btn-primary btn-xs">Seguir</a>
-            <a href="" class="btn btn-primary btn-xs">Enviar Mensagem</a>
-          </div> --}}
+          <div class="user-actions">
+            {{#if isAuthenticated}}
+              {{view "ContactButtom" contactStatus=contact.status classNames="btn-primary"}}
+              {{we-follow model='user' modelId=user.id flagText="Seguir" unFlagText="Seguindo" classNames="btn-primary"}}
+            {{else}}
+              <a href="" class="btn btn-primary btn-xs" {{action 'showLoginModal'}}>Adicionar aos Amigos</a>
+              <a href="" class="btn btn-primary btn-xs" {{action 'showLoginModal'}}>Seguir</a>
+              {{!-- <a href="" class="btn btn-primary btn-xs" {{action 'showLoginModal'}}>Enviar Mensagem</a> --}}
+            {{/if}}
+          </div>
           {{/unless}}
         </div>
-{{!--         <div class="col-xs-12 col-sm-12 col-md-4">
+ {{!--        <div class="col-xs-12 col-sm-12 col-md-4">
           <div id="carousel-conquistas"  class="carousel-conquistas carousel slide" data-ride="carousel">
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
@@ -105,21 +112,35 @@
                     <i class="IR sprt-chevron-mini-right"></i>
                   </a>
                 </div>
-        </div> --}}
-      </div>
-{{!--       <div class="row profile-menu">
+        </div>
+      </div> --}}
+      <div class="row profile-menu">
         <div class="col-xs-12">
           <ul class="nav nav-pills">
-            <li class="active"><a href="">Perfil</a></li>
-            <li><a href="">Relatos <span class="badge">20</span></a></li>
-            <li><a href="">Comunidades  <span class="badge">30</span></a></li>
-            <li><a href="">Amigos <span class="badge">10</span></a></li>
-            <li><a href="">Cursos <span class="badge">5</span></a></li>
-            <li><a href="">Selos <span class="badge">7</span></a></li>
+            {{#link-li}}
+              {{#link-to 'user.index'}}
+                Perfil
+              {{/link-to}}
+            {{/link-li}}
+            {{#link-li}}
+              {{#link-to 'user.relatos'}}
+                Relatos<span class="badge">{{totalRelatos}}</span>
+              {{/link-to}}
+            {{/link-li}}
+            {{#link-li}}
+              {{#link-to 'user.comunidades'}}
+                Comunidades<span class="badge">{{counts.comunidades}}</span>
+              {{/link-to}}
+            {{/link-li}}
+            {{#link-li}}
+              {{#link-to 'user.cursos'}}
+                Cursos<span class="badge">{{counts.cursos}}</span>
+              {{/link-to}}
+            {{/link-li}}
           </ul>
         </div>
       </div>
-      {{ outlet }} --}}
+      {{ outlet }}
     </div>
   </div><!-- /container -->
 </section><!-- end -->
