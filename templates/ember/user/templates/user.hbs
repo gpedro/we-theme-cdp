@@ -16,6 +16,9 @@
               {{#if user.showBday}}
                 <li><i class="IR sprt-profile-nascimento"></i> {{date user.birthDate format='DD/MM/YYYY'}} ({{format-date user.birthDate bool="true"}})</li>
               {{/if}}
+              {{#if ownProfile}}
+                <li><a class="btn btn-primary btn-sm" href="https://perfis.atencaobasica.org.br/account">Editar</a></li>
+              {{/if}}
             </ul>
           </div>
           {{#if user.hasSocialNetworkLinks}}
