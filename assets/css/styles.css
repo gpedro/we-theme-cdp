@@ -885,10 +885,16 @@ table.table tbody tr:last-child {
         position: relative;
         overflow: hidden;
         border-radius: 3px; }
-        .relatos-list .list-content .relato .relato-image img {
+        .relatos-list .list-content .relato .relato-image  a {
           border-radius: 3px;
           max-width: 100%;
-          height: auto; }
+          height: auto;
+          display: block;
+          height: 245px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
         .relatos-list .list-content .relato .relato-image:before {
           content: ' ';
           position: absolute;
