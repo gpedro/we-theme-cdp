@@ -3,7 +3,40 @@
     <div class="timeline-section timeline-section-about">
       <h3 class="title">Sobre</h2>
       <div class="content">
-      {{user.biography}}
+        <p>{{user.biography}}</p>
+        {{#unless ownProfile}}
+          <div class="compatibilidade-perfil">
+            <div class="aprender">
+              <h3>Aprender:</h3>
+              <div class="badge-list">
+                {{#each interest in user.interests}}
+                  <span class="badge">{{interest.text}}</span>
+                {{/each}}
+              </div>
+            </div>
+
+            <div class="cp-center">
+              <div {{bind-attr class=":c100 compatibilityClass"}}>
+              <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+              </div>
+            </div>
+            <div class="porcentagem">{{compatibility}}%</div>
+            <small>Compatibilidade de perfil</small>
+            <img src="/theme/assets/img/susana-perfil.png" class="susana">
+            </div>
+
+            <div class="ensinar">
+              <h3>Ensinar:</h3>
+              <div class="badge-list">
+                {{#each interest in user.interestsAjd}}
+                  <span class="badge">{{interest.text}}</span>
+                {{/each}}
+              </div>
+            </div>
+          </div>        
+        {{/unless}}
       </div>
     </div>
     <div class="timeline-section timeline-section-relatos timeline-collapse blue">
@@ -82,7 +115,7 @@
       <h2 class="activities-title"><i class="IR sprt-activities"></i> Atividades</h2>
       {{#if user.drupalId}}
         {{we-iframe-activites drupalId=user.drupalId}}
-      {{/if}}      
+      {{/if}}
     </div>
   </div>
 </div>
