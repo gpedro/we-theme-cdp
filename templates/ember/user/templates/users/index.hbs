@@ -1,32 +1,26 @@
 <section class="section">
   <div class="container">
+
+    {{bread-crumbs}}
+
     <div class="row">
 
-    <!-- breadcrumb -->
-    {{partial "partials/breadcrumb" }}
-    <!-- /breadcrumb -->
+      <div class="col-md-12">
+        <div class="people-list--header-brand">
+          <div class="people-list--header-brand-text">
+            <h3 class="people-list--header-brand-text--title">
+              Membros da comunidade
+            </h3>
+          </div>
+        </div>
+        <br><br>
+      </div>
 
-    <!-- user-list -->
-    <div id="people-list">
-      <!-- header-main -->
-      {{partial "partials/people-header-main" }}
-      <!-- /header-main -->
-
-      <!-- user-item-widget -->
       {{#each controller}}
-        {{render 'user/teaser' this}}
+        <div class="col-md-3">
+          {{render 'user/teaser' this}}
+        </div>
       {{/each}}
-      <!-- /user-item-widget -->
-    </div>
-    <!-- /user-list -->
-
-    <!-- sidebar-widgets -->
-    <div id="draggable-widgets">
-      {{partial 'partials/feed-sidebar-widget'}}       <!-- feed -->
-      {{partial 'partials/group-sidebar-widget'}}      <!-- group -->
-      {{partial 'partials/course-sidebar-widget'}}     <!-- course -->
-    </div>
-    <!-- /sidebar-widgets -->
 
     </div>
   </div><!-- /container -->
