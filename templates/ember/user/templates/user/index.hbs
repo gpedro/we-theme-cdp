@@ -90,9 +90,9 @@
           <ul class="carousel-multiple" id="carousel-cursos">
 
             {{#each curso in cursos}}
-              <div {{bind-attr class=":item curso.active:active"}}>
+              <li {{bind-attr class=":item curso.active:active"}}>
 
-                <a {{bind-attr href=curso.link}}><img {{bind-attr src=curso.logo}} class="img-responsive img-circle">{{curso.title}}</a></div>
+                <a {{bind-attr href=curso.link}}><img {{bind-attr src=curso.logo}} class="img-responsive img-circle">{{curso.title}}</a></li>
 
             {{/each}}
 
