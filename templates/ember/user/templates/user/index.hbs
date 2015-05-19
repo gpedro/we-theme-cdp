@@ -21,22 +21,20 @@
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Comunidades</h2>
       <div class="content">
       {{#if comunidadesProxy}}
-        <div class="carousel slide carousel-multiple" id="carousel-comunidades"  data-ride="carousel">
-          <div class="carousel-inner">
+        <ul class="carousel-multiple" id="carousel-comunidades">
+
           {{#each comunidade in comunidadesProxy}}
-            <div {{bind-attr class=":item comunidade.active:active"}}>
-              <div class="col-sm-4">
+            <li {{bind-attr class=":item comunidade.active:active"}}>
+
                 <a {{bind-attr href=comunidade.link}}>
                   <div {{bind-attr style=comunidade.bgdImg}} class="carousel-img"></div>
                   {{comunidade.title}}
                 </a>
-              </div>
-            </div>
+
+            </li>
           {{/each}}
-          </div>
-          <a class="left carousel-control" href="#carousel-comunidades" data-slide="prev"><i class="IR sprt-chevronbig-left"></i></a>
-          <a class="right carousel-control" href="#carousel-comunidades" data-slide="next"><i class="IR sprt-chevronbig-right"></i></a>
-        </div>
+
+        </ul>
       {{else}}
         <div class="empty-section">
           {{user.displayName}} não está participando de nenhuma comunidade.
@@ -56,18 +54,16 @@
       <h3 class="title"><i class="IR sprt-chevron-up"></i> Cursos</h2>
       <div class="content">
         {{#if cursos}}
-          <div class="carousel slide carousel-multiple" id="carousel-cursos"  data-ride="carousel">
-            <div class="carousel-inner">
+          <ul class="carousel-multiple" id="carousel-cursos">
+
             {{#each curso in cursos}}
               <div {{bind-attr class=":item curso.active:active"}}>
-                <div class="col-sm-4">
+
                 <a {{bind-attr href=curso.link}}><img {{bind-attr src=curso.logo}} class="img-responsive img-circle">{{curso.title}}</a></div>
-              </div>
+
             {{/each}}
-            </div>
-            <a class="left carousel-control" href="#carousel-cursos" data-slide="prev"><i class="IR sprt-chevronbig-left"></i></a>
-            <a class="right carousel-control" href="#carousel-cursos" data-slide="next"><i class="IR sprt-chevronbig-right"></i></a>
-          </div>
+
+          </ul>
         {{else}}
         <div class="empty-section">
           {{user.displayName}} não participou de nenhum curso.
