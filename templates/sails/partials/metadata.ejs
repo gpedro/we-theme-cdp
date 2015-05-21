@@ -1,6 +1,6 @@
 
 <% if (metadata.description) { %>
-  <meta property="description" content="<%- metadata.description %>">
+  <meta name="description" content="<%- metadata.description %>">
 <% } %>
 
 <% if (metadata.keywords) { %>
@@ -31,6 +31,8 @@
 
   <% if (metadata.og.description) { %>
     <meta property="og:description" content="<%- metadata.og.description %>">
+  <% } else if(metadata.description) { %>
+    <meta property="og:description" content="<%- metadata.description %>">
   <% } %>
 
   <% if (metadata.og.type) { %>
