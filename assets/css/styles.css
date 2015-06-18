@@ -1265,3 +1265,7 @@ table.table tbody tr:last-child {
       .groups-list .list-content .group .group-actions .btn.action-like {
         background: #f2f2f2; }
 /****** PROFILE-COMUNIDADES.CSS ******/
+
+.tooltip-inner {
+  white-space: pre-wrap;
+}
