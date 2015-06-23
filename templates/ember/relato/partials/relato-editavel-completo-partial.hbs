@@ -1,0 +1,412 @@
+<section class="section-story section-story-edit">
+
+  {{!-- Relato Header --}}
+  <header class="story-header topo-relato-padrao" {{bind-attr style=relatoHeaderImageSRC}}>
+
+    <div class="story-header--overlay">
+      <div class="container">
+
+        <!-- header -->
+        <div class="story-banner--header">
+          <!-- header-brand -->
+          {{partial 'partials/story-header-brand'}}
+          <!-- /header-brand -->
+        </div>
+        <!-- /header -->
+
+        <!-- header -->
+{{!--         <div class="story-banner--header">
+          <div class="story-banner--header-user">
+
+            <div class="story-banner--header-user-avatar">
+              <div class="row">
+              <img class="story-banner--header-user-avatar-img" src="http://goo.gl/Ku70ht">
+              </div>
+            </div>
+            <div class="story-banner--header-user-brand-text">
+              <h3 class="story-banner--header-user-brand-text--title">Oi Alberto Souza eu sou o Ajudante e tenho uma dica:</h3>
+              <small class="story-banner--header-user-brand-text--small">Selecione a localização do seu relato no mapa e ganhe o selo "Foi lá!"</small>
+            </div>
+          </div>
+
+          <div class="story-banner--header-progress">
+            <div class="story-banner--header-progress--label">Nível</div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-warning" role="progressbar" {{bind-attr aria-valuenow=progressoDePreenchimento}} aria-valuemin="0" aria-valuemax="100" {{bind-attr style=progressoDePreenchimentoStyle}}>
+                <span class="sr-only">{{progressoDePreenchimento}}%</span>
+              </div>
+            <div class="story-banner--header-progress--small">Envie mais informações sobre o seu relato e aumente o nível de amor</div>
+          </div>
+
+        </div> --}}
+        <!-- /header -->
+
+        <div class="story-banner--header-summary">
+          <h2 class="story-summary--title">
+          {{#we-content-editable value=relato.titulo attribute='titulo' onSave="salvarAtributo" }}
+            <span class="story-form-count">{{tituloCount}}</span>
+            {{focus-input value=relato.titulo classNames="form-control" type="text" limit="120" trackCount=tituloCount}}
+          {{/we-content-editable}}
+          </h2>
+
+          <small class="story-summary--small-date">
+            Publicado em {{format-date relato.updatedAt}} - Última atualização em {{format-date relato.updatedAt}}
+          </small>
+
+          <nav class="navbar-actions-fixed">
+            <a class="btn btn-success btn-xs" href="#anchor-relato-comment">Comentar</a>
+
+            <a class="btn btn-danger btn-xs" {{action 'deleteRelato'}}>
+              Deletar
+            </a>
+
+            <div class="fb-btn-share">
+              {{facebook-share}}
+            </div>
+
+            <div class="gplus-btn">
+              {{g-plus-button modelId=relato.id}}
+            </div>
+
+            {{we-follow model='relato' modelId=relato.id flagText="Seguir" unFlagText="Seguindo"
+            flagClass= 'btn btn-primary btn-xs'
+            unFlagClass= 'btn btn-primary btn-xs active'}}
+          </nav>
+
+          <!-- navbar-actions -->
+          {{partial "partials/story-social-actions" }}
+          <!-- /navbar-actions -->
+        </div>
+
+        <!-- footer -->
+        <footer class="story-banner--footer-actions">
+          <div class="story-edit-warning col-sm-6 col-md-7">
+            <div class="story-edit-warning--text">
+
+              <div class="pull-left">
+              {{#if isLoading}}
+                <i class="icons-outline icons-outline-loading icons-outline-2x"></i>
+              {{else}}
+                <i class="icons-outline icons-outline-circle-approved icons-outline-2x"></i>
+              {{/if}}
+              </div>
+
+              <div class="text">
+                {{#if allowPublish}}
+                  {{#if relato.published}}
+                    <h4 class="not_published">Oba! Seu relato foi publicado com sucesso.</h4>
+                  {{else}}
+                    <h4 class="not_published">
+                      O seu relato ainda não está publicado! Clique no botão "Publicar"
+                    </h4>
+                  {{/if}}
+                {{else}}
+                  <h4 class="not_published">
+                    Atenção, para publicar o seu relato responda uma das perguntas abaixo!
+                  </h4>
+                {{/if}}
+              </div>
+
+              <ul class="nav-edit-buttons">
+                <li>
+                  <a class="btn btn-xs btn-primary btn-inverse" {{action 'abrirModelaDeAdicionarAutor'}}>Convidar autores</a>
+                </li>
+                {{#if allowPublish}}
+                  {{#if relato.published}}
+                  <li>
+                    <a class="btn btn-xs btn-primary btn-inverse" {{action 'publish'}}>Despublicar</a>
+                  </li>
+                  {{else}}
+                  <li>
+                    <a class="btn btn-xs btn-primary btn-inverse" {{action 'publish'}}>Publicar</a>
+                  </li>
+                  {{/if}}
+                {{/if}}
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="story-banner--header-edit-cover col-sm-6 col-md-5">
+
+              <div class="pull-left">
+                <span class="fa-stack">
+                  <i class="fa fa-circle fa-stack-2x fa-4x"></i>
+                  <i class="icons-outline icons-outline-picture icons-outline-2x icons-outline-stack-1x icons-outline-inverse"></i>
+                </span>
+              </div>
+
+              <div class="edit-cover-btns">
+                {{#if novaImageDeDestaque}}
+                <button class="btn btn-success" {{action 'salvarImagemDestaque'}}>Salvar</button>
+                <button class="btn btn-danger" {{action 'cancelarSelecaoDeImagemDestaque'}}>Cancelar</button>
+                <small class="small-text-info">Salvar nova imagem de destaque do relato?</small>
+                {{else}}
+                <div class="file-input-wrapper">
+                  <button class="btn-file-input">Enviar capa</button>
+                  {{image-upload classNames="" files=selectedDestaqueImage}}
+                </div>
+                {{/if}}
+                {{#if relato.imagemDestaque}}
+                  <button class="btn btn-danger" {{action 'removerImagemDestaque'}}>Remover</button>
+                {{/if}}
+                <small class="small-text-info">Imagem com no máximo 5mb ou 2000px de largura.</small>
+              </div>
+
+          </div>
+        </div>
+      </footer>
+      <!-- /footer -->
+
+      </div>
+    </div>
+    <!-- background -->
+
+    <!-- background -->
+  </header>
+
+  {{!-- /Relato Header --}}
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8">
+      <aside class="story-main-content">
+        <div class="story-main-content--text">
+
+          <div class="story-main-content--text-wrapper">
+            {{#we-content-editable value=relato.descricao attribute='descricao' onSave="salvarAtributo"}}
+            {{we-editor value=relato.descricao limit="300" trackCount=descricaoCount}}
+            <span class="story-form-count">{{descricaoCount}}</span>
+            {{/we-content-editable}}
+            <hr>
+          </div>
+        </div>
+
+        {{!-- termos --}}
+        <div class="relato-termos">
+          <div class="categorias col-lg-12">
+            <label for="add-relato-tags">Categorias:</label>
+            {{#we-term-editable value=relato.categorias onSave="salvarRelatoCategorias"}}
+              <div class="form-group">
+                {{we-category-field value=relato.categorias
+                newTagMark=' (nova)' vocabulary=vocabularyId maximumSelectionSize='2'}}
+            {{/we-term-editable}}
+            <hr>
+          </div>
+
+          <div class="tags col-lg-12">
+            <label for="add-relato-tags">Tags:</label>
+            {{#we-term-editable value=relato.tags onSave="salvarDadosBasicos"}}
+              <div class="form-group">
+                {{we-tag-field value=relato.tags
+                newTagMark=' (nova)' maximumSelectionSize='5'}}
+              </div>
+            {{/we-term-editable}}
+            <hr>
+          </div>
+        </div>
+        {{!-- /termos --}}
+        <hr>
+        {{!-- Relato Perguntas --}}
+        <div class="alert-wrapper" role="alert">
+          <div class="alert alert-custom-relato">
+            <div class="answers-hint">
+              <h4 class="answers-hint--title">Vamos nos amostrar?</h4>
+              <p class="answers-hint--text">
+                Criamos um roteiro de perguntas que pode te auxiliar no preenchimento do relato. Você não precisa responder a todas, basta escolher aquelas que irão ajudar na construção e compreensão do relato.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="story-main-content--answers">
+
+          <div class="answaers-add-question">
+            <div class="answers-selector">
+              <h4 class="answers-selector--title">Pergunta</h4>
+              {{view 'select' content=perguntas
+                classNames="form-control"
+                prompt="Clique aqui para selecionar uma pergunta"
+                selection=perguntaSelecionada
+                optionValuePath="content.id"
+                optionLabelPath="content.body"}}
+            </div>
+            <div class="form-resposta-area">
+              {{#if perguntaSelecionada}}
+                {{render 'relato/responder-pergunta' perguntaSelecionada}}
+              {{/if}}
+            </div>
+          </div>
+
+            <hr>
+          <div class="answers-saved">
+            <h4>Perguntas respondidas</h4>
+
+            {{render 'relato/respostas' respostas}}
+          </div>
+        </div>
+          {{!-- /Relato Perguntas --}}
+
+        <div class="story-main-content--media">
+          {{render 'relato/images-editavel' relato.images}}
+
+          {{!-- img-full / tabs
+          <nav class="story-main-content--media-tabs nav nav-tabs" role="tablist" id="story-main-content--tabs">
+            <li role="presentation" class="active">
+              <a class="btn-image" href="#image" role="tab" data-toggle="tab">
+                <i class="icons-outline icons-outline-photographic-camera"></i>
+                <div class="btn-text">Imagem</div>
+              </a>
+            </li>
+            <li role="presentation">
+              <a class="btn-audio" href="#audio" role="tab" data-toggle="tab">
+                <i class="icons-outline icons-outline-sound-on"></i>
+                <div class="btn-text">Áudio</div>
+              </a>
+            </li>
+            <li role="presentation">
+              <a class="btn-video" href="#video" role="tab" data-toggle="tab">
+                <i class="icons-outline icons-outline-videomaker"></i>
+                <div class="btn-text">Vídeo</div>
+              </a>
+            </li>
+            <li role="presentation">
+              <a class="btn-docs" href="#docs" role="tab" data-toggle="tab">
+                <i class="icons-outline icons-outline-paper-plus"></i>
+                <div class="btn-text">Docs</div>
+              </a>
+            </li>
+            <li role="presentation">
+              <a class="btn-map" href="#map" role="tab" data-toggle="tab">
+                <i class="icons-outline icons-outline-map"></i>
+                <div class="btn-text">Mapa</div>
+              </a>
+            </li>
+            <div class="btn-comment-wrapper">
+              <a class="btn-comment">
+                <i class="icons-outline icons-outline-comment"></i>
+              </a>
+            </div>
+          </nav>
+
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="image">
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="audio">Áudio</div>
+            <div role="tabpanel" class="tab-pane" id="video">Vídeo</div>
+            <div role="tabpanel" class="tab-pane" id="docs">Docs</div>
+            <div role="tabpanel" class="tab-pane" id="map">Mapa</div>
+          </div>
+          --}}
+          <hr>
+        </div>
+
+        {{partial 'partials/relato-comment-area-partial'}}
+      </aside>
+      </div>
+
+      <div class="col-lg-4">
+      <aside class="story-featured-list">
+        {{!-- Título da barra lateral --}}
+        <div class="header-brand--story">
+          <div class="row">
+          <div class="header-brand-icon">
+            <i class="cdp cdp-report cdp-stack-1x"></i>
+          </div>
+          <div class="header-brand-text">
+            <h3 class="header-brand-text--title">Sobre o Relato</h3>
+            <small class="header-brand-text--small">Veja os participantes do relato</small>
+          </div>
+          </div>
+        </div>
+        {{!-- /Título da barra lateral --}}
+
+        {{!-- bloco de autores --}}
+        <div class="story-featured-list--author-block">
+          <div class="row">
+          <h3 class="author-block--title">Autores
+            <i id="tooltip" data-toggle="tooltip" data-placement="top" title="" class="fa fa-question-circle clickable-tip" data-original-title="Escreva o nome das pessoas que são os autores deste relato. <a target='_blank' href='https://ajuda.atencaobasica.org.br/central-de-ajuda/como-ser-autor-de-um-relato'>Veja aqui como incluir</a>."></i>
+          </h3>
+          <ul class="author-block--list">
+            <li class="author-block--list-item">
+              <span class="author-block--list-item--img">{{user-avatar user=relato.creator size="thumbnail"}}</span>
+              <div class="author-block--list-item--info">
+                <h4 class="author-block--list-item--info-name">{{#link-to 'user' relato.creator.id}}{{relato.creator.displayName}}{{/link-to}}</h4>
+                {{!-- <small class="author-block--list-item--info-other">{{autor.email}}</small> --}}
+              </div>
+            </li>
+            {{#each autor in relato.autores}}
+            <li class="author-block--list-item">
+              <span class="author-block--list-item--img">{{user-avatar user=autor size="thumbnail"}}</span>
+              <div class="author-block--list-item--info">
+                <h4 class="author-block--list-item--info-name">{{#link-to 'user' autor.id}}{{autor.displayName}}{{/link-to}}</h4>
+                {{!-- <small class="author-block--list-item--info-other">{{autor.email}}</small> --}}
+              </div>
+            </li>
+            {{/each}}
+            {{#each autor in relato.autoresExt}}
+            <li class="author-block--list-item">
+              <span class="author-block--list-item--img">{{user-avatar size="thumbnail"}}</span>
+              <div class="author-block--list-item--info">
+                <h4 class="author-block--list-item--info-name">{{autor}}</h4>
+              </div>
+            </li>
+            {{/each}}
+          </ul>
+          <div class="btn-featured-list">
+            <button {{action 'abrirModelaDeAdicionarAutor'}} class="btn btn-warning">Adicionar autor</button>
+          </div>
+          </div>
+          {{we-relato-autor-modal relato=relato}}
+        </div>
+        {{!-- /bloco de autores --}}
+
+        {{!-- bloco de atores --}}
+        {{!-- {{#if hasAtor}} --}}
+        <div class="story-featured-list--author-block">
+          <div class="row">
+          <h3 class="author-block--title">Atores
+            <i id="tooltip" data-toggle="tooltip" data-placement="top" title="" class="fa fa-question-circle" data-original-title="Escreva o nome das pessoas que participaram como personagens deste relato."></i>
+          </h3>
+          <ul class="author-block--list">
+            {{#each ator in relato.atores}}
+            <li class="actor-block--list-item">
+              <span class="author-block--list-item--img">{{user-avatar user=ator size="thumbnail" dataToggle="tooltip" dataPlacement="bottom" title=ator.displayName onClick="avatarClicked" clickClass="user-avatar-link"}}</span>
+            </li>
+            {{/each}}
+            {{#each ator in relato.atoresExt}}
+            <li class="actor-block--list-item">
+              <span class="author-block--list-item--img">{{user-avatar size="thumbnail" dataToggle="tooltip" dataPlacement="bottom" title=ator}}</span>
+            </li>
+            {{/each}}
+          </ul>
+          <div class="btn-featured-list">
+            <button {{action 'abrirModelaDeAdicionarAtor'}} class="btn btn-warning">Adicionar ator</button>
+          </div>
+          </div>
+          {{we-relato-ator-modal relato=relato}}
+        </div>
+        {{!-- {{/if}} --}}
+        {{!-- /bloco de atores --}}
+
+        <div class="story-featured-list--map-block">
+          <div class="row">
+            <h4>Onde ocorreu o relato?
+              <i id="tooltip" data-toggle="tooltip" data-placement="top" title="" class="fa fa-question-circle" data-original-title="Escolha a localidade onde se passou a experiência que você está descrevendo."></i>
+            </h4>
+            {{we-state-city-selector onSave="salvarLocalizacao" country="BR" selectedState=relato.estado selectedCity=relato.cidade }}
+          </div>
+        </div>
+      </aside>
+
+      <aside class="story-featured-list">
+        {{#if relatosRelacionados}}
+          {{render 'relato/relatos-relacionados' relatosRelacionados}}
+        {{/if}}
+      </aside>
+</div>
+
+    </div>
+  </div>
+</section>
