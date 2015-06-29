@@ -224,7 +224,7 @@
           <div class="answaers-add-question">
             <div class="answers-selector">
               <h4 class="answers-selector--title">Pergunta</h4>
-              {{view 'select' content=perguntas
+              {{view 'select' content=perguntasOptions
                 classNames="form-control"
                 prompt="Clique aqui para selecionar uma pergunta"
                 selection=perguntaSelecionada
@@ -248,57 +248,59 @@
           {{!-- /Relato Perguntas --}}
 
         <div class="story-main-content--media">
-          {{render 'relato/images-editavel' relato.images}}
+          {{!-- {{render 'relato/images-editavel' relato.images}} --}}
 
-          {{!-- img-full / tabs
-          <nav class="story-main-content--media-tabs nav nav-tabs" role="tablist" id="story-main-content--tabs">
+          {{!-- img-full / tabs --}}
+          <ul class="story-main-content--media-tabs nav nav-tabs" role="tablist" id="story-main-content--tabs">
             <li role="presentation" class="active">
-              <a class="btn-image" href="#image" role="tab" data-toggle="tab">
+              <a class="btn-image" href="#image" aria-controls="image" role="tab" data-toggle="tab">
                 <i class="icons-outline icons-outline-photographic-camera"></i>
-                <div class="btn-text">Imagem</div>
+                {{!-- <div class="btn-text">Imagem</div> --}}
               </a>
             </li>
-            <li role="presentation">
+{{!--             <li role="presentation">
               <a class="btn-audio" href="#audio" role="tab" data-toggle="tab">
                 <i class="icons-outline icons-outline-sound-on"></i>
                 <div class="btn-text">Áudio</div>
               </a>
-            </li>
-            <li role="presentation">
-              <a class="btn-video" href="#video" role="tab" data-toggle="tab">
+            </li> --}}
+{{!--             <li role="presentation">
+              <a class="btn-video" href="#video" aria-controls="video" role="tab" data-toggle="tab">
                 <i class="icons-outline icons-outline-videomaker"></i>
                 <div class="btn-text">Vídeo</div>
               </a>
-            </li>
+            </li> --}}
             <li role="presentation">
-              <a class="btn-docs" href="#docs" role="tab" data-toggle="tab">
+              <a class="btn-docs" href="#docs" aria-controls="docs" role="tab" data-toggle="tab">
                 <i class="icons-outline icons-outline-paper-plus"></i>
-                <div class="btn-text">Docs</div>
+                {{!-- <div class="btn-text">Docs</div> --}}
               </a>
             </li>
-            <li role="presentation">
+{{!--             <li role="presentation">
               <a class="btn-map" href="#map" role="tab" data-toggle="tab">
                 <i class="icons-outline icons-outline-map"></i>
                 <div class="btn-text">Mapa</div>
               </a>
-            </li>
-            <div class="btn-comment-wrapper">
+            </li> --}}
+{{!--             <div class="btn-comment-wrapper">
               <a class="btn-comment">
                 <i class="icons-outline icons-outline-comment"></i>
               </a>
-            </div>
-          </nav>
+            </div> --}}
+          </ul>
 
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="image">
-
+              {{render 'relato/images-editavel' relato.images}}
             </div>
-            <div role="tabpanel" class="tab-pane" id="audio">Áudio</div>
-            <div role="tabpanel" class="tab-pane" id="video">Vídeo</div>
-            <div role="tabpanel" class="tab-pane" id="docs">Docs</div>
-            <div role="tabpanel" class="tab-pane" id="map">Mapa</div>
+            {{!-- <div role="tabpanel" class="tab-pane" id="audio">Áudio</div> --}}
+            {{!-- <div role="tabpanel" class="tab-pane" id="video">Vídeo</div> --}}
+            <div role="tabpanel" class="tab-pane" id="docs">
+              {{render 'relato/files-editavel' relato.files}}
+            </div>
+            {{!-- <div role="tabpanel" class="tab-pane" id="map">Mapa</div> --}}
           </div>
-          --}}
+         
           <hr>
         </div>
 
