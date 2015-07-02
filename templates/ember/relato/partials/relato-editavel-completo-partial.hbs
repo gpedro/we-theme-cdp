@@ -264,12 +264,12 @@
                 <div class="btn-text">Áudio</div>
               </a>
             </li> --}}
-{{!--             <li role="presentation">
+            <li role="presentation">
               <a class="btn-video" href="#video" aria-controls="video" role="tab" data-toggle="tab">
                 <i class="icons-outline icons-outline-videomaker"></i>
                 <div class="btn-text">Vídeo</div>
               </a>
-            </li> --}}
+            </li>
             <li role="presentation">
               <a class="btn-docs" href="#docs" aria-controls="docs" role="tab" data-toggle="tab">
                 <i class="icons-outline icons-outline-paper-plus"></i>
@@ -294,7 +294,10 @@
               {{render 'relato/images-editavel' relato.images}}
             </div>
             {{!-- <div role="tabpanel" class="tab-pane" id="audio">Áudio</div> --}}
-            {{!-- <div role="tabpanel" class="tab-pane" id="video">Vídeo</div> --}}
+            <div role="tabpanel" class="tab-pane" id="video">
+              <h4>Videos do Relato</h4>            
+              {{video-to-edit model=relato}}
+            </div>
             <div role="tabpanel" class="tab-pane" id="docs">
               {{render 'relato/files-editavel' relato.files}}
             </div>
