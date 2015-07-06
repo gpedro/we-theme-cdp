@@ -220,17 +220,22 @@
         {{!-- /termos --}}
 
         {{!-- ambito --}}
-        <div class="relato-ambito">
-          <h4 class="answers-selector--title">Âmbito</h4>
-          {{view "select" classNames="form-control"
+        <div class="relato-ambito form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Âmbito: </label>
+            <div class="col-sm-10">
+              {{view "select" classNames="form-control"
                           content=model.ambitos
                           optionLabelPath="content.text"
                           optionValuePath="content.id"
                           prompt="Defina um âmbito de atuação para o seu relato"
                           selection=selectedAmbito}}        
+            </div>
+          </div>
+          <hr>
         </div>
+
         {{!-- /ambito --}}        
-        <hr>
         {{!-- Relato Perguntas --}}
         <div class="alert-wrapper" role="alert">
           <div class="alert alert-custom-relato">
