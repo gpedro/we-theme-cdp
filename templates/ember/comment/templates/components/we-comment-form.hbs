@@ -14,9 +14,8 @@
             onPasteText="onPasteBodyText" focus='true'}}
         </div>
         <div class="actions">
-
+            <button type="button" {{action 'closeComentTextarea'}} class="btn btn-default">{{t 'Cancel'}}</button>
             <button type="button" {{action 'sendComment'}} class="btn btn-primary">{{t 'Send'}}</button>
-
         </div>
       {{else}}
         <div {{action "openComentTextarea"}} class="comment-placeholder">{{t 'Add comment'}}</div>
