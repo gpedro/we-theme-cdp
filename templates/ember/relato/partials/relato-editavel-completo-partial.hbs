@@ -304,18 +304,18 @@
                 <div class="btn-text">Imagem</div>
               </a>
             </li>
-            <li role="presentation">
+{{!--             <li role="presentation">
               <a class="btn-video" href="#video" aria-controls="video" role="tab" data-toggle="tab">
                 <i class="icons-outline icons-outline-videomaker"></i>
                 <div class="btn-text">Vídeo</div>
               </a>
-            </li>
-            <li role="presentation">
+            </li> --}}
+{{!--             <li role="presentation">
               <a class="btn-docs" href="#docs" aria-controls="docs" role="tab" data-toggle="tab">
                 <i class="icons-outline icons-outline-paper-plus"></i>
                 <div class="btn-text">Docs</div>
               </a>
-            </li>
+            </li> --}}
           </ul>
 
           <div class="tab-content">
@@ -324,13 +324,13 @@
               {{images-to-edit model=relato via='inRelato'}}
             </div>
             {{!-- <div role="tabpanel" class="tab-pane" id="audio">Áudio</div> --}}
-            <div role="tabpanel" class="tab-pane" id="video">
-              {{video-to-edit model=relato}}
-            </div>
-            <div role="tabpanel" class="tab-pane" id="docs">
+            {{!-- <div role="tabpanel" class="tab-pane" id="video"> --}}
+              {{!-- {{video-to-edit model=relato}} --}}
+            {{!-- </div> --}}
+            {{!-- <div role="tabpanel" class="tab-pane" id="docs"> --}}
               {{!-- {{render 'relato/files-editavel' relato.files}} --}}
-              {{files-to-edit model=relato via='inRelato'}}
-            </div>
+              {{!-- {{files-to-edit model=relato via='inRelato'}} --}}
+            {{!-- </div> --}}
             {{!-- <div role="tabpanel" class="tab-pane" id="map">Mapa</div> --}}
           </div>
 
