@@ -223,16 +223,6 @@
             <hr>
           </div>
 
-          <div class="tags col-lg-12">
-            <label for="add-relato-tags">Áreas:</label>
-            {{#we-term-editable value=relato.areas onSave="salvarDadosBasicos"}}
-              <div class="form-group">
-                {{we-category-field value=relato.areas
-                newTagMark=' (nova)' vocabulary=areasVocabulary}}
-              </div>
-            {{/we-term-editable}}
-            <hr>
-          </div>
         </div>
         {{!-- /termos --}}
 
