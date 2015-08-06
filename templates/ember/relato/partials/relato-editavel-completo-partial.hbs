@@ -14,33 +14,6 @@
         </div>
         <!-- /header -->
 
-        <!-- header -->
-{{!--         <div class="story-banner--header">
-          <div class="story-banner--header-user">
-
-            <div class="story-banner--header-user-avatar">
-              <div class="row">
-              <img class="story-banner--header-user-avatar-img" src="http://goo.gl/Ku70ht">
-              </div>
-            </div>
-            <div class="story-banner--header-user-brand-text">
-              <h3 class="story-banner--header-user-brand-text--title">Oi Alberto Souza eu sou o Ajudante e tenho uma dica:</h3>
-              <small class="story-banner--header-user-brand-text--small">Selecione a localização do seu relato no mapa e ganhe o selo "Foi lá!"</small>
-            </div>
-          </div>
-
-          <div class="story-banner--header-progress">
-            <div class="story-banner--header-progress--label">Nível</div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-warning" role="progressbar" {{bind-attr aria-valuenow=progressoDePreenchimento}} aria-valuemin="0" aria-valuemax="100" {{bind-attr style=progressoDePreenchimentoStyle}}>
-                <span class="sr-only">{{progressoDePreenchimento}}%</span>
-              </div>
-            <div class="story-banner--header-progress--small">Envie mais informações sobre o seu relato e aumente o nível de amor</div>
-          </div>
-
-        </div> --}}
-        <!-- /header -->
-
         <div class="story-banner--header-summary">
           <h2 class="story-summary--title">
           {{#we-content-editable value=relato.titulo attribute='titulo' onSave="salvarAtributo" }}
@@ -50,15 +23,17 @@
           </h2>
 
           <small class="story-summary--small-date">
-            Publicado em {{format-date relato.updatedAt}} - Última atualização em {{format-date relato.updatedAt}}
+            Publicado em {{format-date relato.publishedAt}} - Última atualização em {{format-date relato.updatedAt}}
           </small>
 
           <nav class="navbar-actions-fixed">
             <a class="btn btn-success btn-xs" href="#anchor-relato-comment">Comentar</a>
 
-            <a class="btn btn-danger btn-xs" {{action 'deleteRelato'}}>
-              Deletar
-            </a>
+            {{#if isOwner}}
+              <a class="btn btn-danger btn-xs" {{action 'deleteRelato'}}>
+                Deletar
+              </a>
+            {{/if}}
 
             <div class="fb-btn-share">
               {{facebook-share}}
@@ -92,18 +67,18 @@
               </div>
 
               <div class="text">
-                {{#if allowPublish}}
-                  {{#if relato.published}}
-                    <h4 class="not_published">Oba! Seu relato foi publicado com sucesso.</h4>
+                {{#if relato.published}}
+                  <h4 class="not_published">Oba! Seu relato foi publicado com sucesso.</h4>
+                {{else}}
+                  {{#if relato.solicitacaoAt}}
+                    <h4 class="not_published">
+                      A publicação do seu relato foi solicitada e o processo de curadoria já está em andamento.
+                    </h4>
                   {{else}}
                     <h4 class="not_published">
-                      O seu relato ainda não está publicado! Clique no botão "Publicar"
-                    </h4>
+                      Você ainda precisa solicitar a publicação do seu relato!
+                    </h4>                  
                   {{/if}}
-                {{else}}
-                  <h4 class="not_published">
-                    Atenção, para publicar o seu relato responda uma das perguntas abaixo!
-                  </h4>
                 {{/if}}
               </div>
 
@@ -111,17 +86,11 @@
                 <li>
                   <a class="btn btn-xs btn-primary btn-inverse" {{action 'abrirModelaDeAdicionarAutor'}}>Convidar autores</a>
                 </li>
-                {{#if allowPublish}}
-                  {{#if relato.published}}
-                  <li>
-                    <a class="btn btn-xs btn-primary btn-inverse" {{action 'publish'}}>Despublicar</a>
-                  </li>
-                  {{else}}
-                  <li>
-                    <a class="btn btn-xs btn-primary btn-inverse" {{action 'publish'}}>Publicar</a>
-                  </li>
-                  {{/if}}
-                {{/if}}
+                {{#unless relato.solicitacaoAt}}
+                <li>
+                  <a class="btn btn-xs btn-primary btn-inverse" {{action 'requestPublication'}}>Solicitar Publicação</a>
+                </li>
+                {{/unless}}
               </ul>
 
             </div>
