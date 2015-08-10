@@ -1816,3 +1816,11 @@ form div.form-group.has-error .error-message:before {
     color: white;
 }
 /******** EVENTOS ********/
+
+.story-main-content--comment-wrapper .comment-list li {
+    padding-top: 10px;
+}
+
+.story-main-content--comment .story-main-content--comment-wrapper .comments-wrapper{
+    padding: 20px 0 20px 0;
+}

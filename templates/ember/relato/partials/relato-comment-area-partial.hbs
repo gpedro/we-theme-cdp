@@ -5,14 +5,40 @@
         <a id="ancurmess"></a>
         {{we-sys-messages messages=messages}}
         <a id="anchor-relato-comment"></a>
-        <h3 class="comment-title">Comentários</h3>
+        <ul class="nav nav-tabs comment-list" role="tablist">
+          {{#if allowComment}}
+          <li role="presentation" class="comments-comment">
+            <a class="btn-image" href="#comments-comment" aria-controls="image" role="tab" data-toggle="tab">
+              {{!-- <i class="icons-outline icons-outline-photographic-camera"></i> --}}
+              <div class="btn-text">Comentários</div>
+            </a>
+          </li>
+          {{/if}}
+          {{#if canEdit}}
+          <li role="presentation" class="comments-curadoria">
+            <a class="btn-image" href="#comments-curadoria" aria-controls="image" role="tab" data-toggle="tab">
+              {{!-- <i class="icons-outline icons-outline-photographic-camera"></i> --}}
+              <div class="btn-text">Curadoria</div>
+            </a>
+          </li>
+          {{/if}}
+        </ul>
       </div>
-      <hr style="clear: both; margin-bottom: 0;">
       <div class="col-lg-12 comments-wrapper">
-        {{we-comments commentedModelName="relato" commentedModelId=relato.id}}
-        <hr>
+        <div class="tab-content">
+          {{#if allowComment}}
+          <div role="tabpanel" class="tab-pane" id="comments-comment">
+            {{we-relato-comment commentedModelName="relato" commentedModelId=relato.id commentType='comment'}}
+          </div>
+          {{/if}}
+          {{#if canEdit}}
+          <div role="tabpanel" class="tab-pane" id="comments-curadoria">
+            {{we-relato-comment commentedModelName="relato" commentedModelId=relato.id commentType='curadoria'}}
+          </div>
+          {{/if}}
+        </div>
       </div>
-      {{we-comment-form commentedModelName="relato" commentedModelId=relato.id userId=App.currentUser.id}}
+      {{we-relato-comment-form relato=relato allowComment=allowComment commentType=commentType curadoria=canEdit}}
     </div>
   </div>
 </div>
