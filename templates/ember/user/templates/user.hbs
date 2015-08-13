@@ -7,7 +7,13 @@
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-2">{{user-avatar user=user classNames="user-picture img-circle"}}{{!-- <img src="http://lorempicsum.com/nemo/156/156/1" alt="" class="user-picture img-circle"> --}}</div>
         <div class="col-xs-12 col-sm-8 col-md-6">
-          <h2 class="user-fullname">{{user.fullName}}</h2>
+          <h2 class="user-fullname">
+            {{#if user.displayName}}
+              {{user.displayName}}
+            {{else}}
+              {{user.username}}
+            {{/if}}
+          </h2>
           <div class="user-details">
             <ul>
               <li>@{{user.username}}</li>
