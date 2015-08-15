@@ -1825,3 +1825,12 @@ form div.form-group.has-error .error-message:before {
     font-weight: 400;
 }
 /******** SUBTEXT-RELATO ********/
+
+/******** CUSTOM SPINNER ********/
+#nprogress .spinner-icon {
+    border: none;
+    background: url('https://static.atencaobasica.org.br/img/spinning.png');
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+}
