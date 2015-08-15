@@ -1816,3 +1816,12 @@ form div.form-group.has-error .error-message:before {
     color: white;
 }
 /******** EVENTOS ********/
+
+/******** SUBTEXT-RELATO ********/
+.subtext-relato {
+    font-size: 16px;
+    color: white; 
+    display: block;
+    font-weight: 400;
+}
+/******** SUBTEXT-RELATO ********/
