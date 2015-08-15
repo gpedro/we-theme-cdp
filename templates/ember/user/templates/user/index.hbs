@@ -10,7 +10,9 @@
               <h3>Aprender:</h3>
               <div class="badge-list">
                 {{#each interest in user.interests}}
-                  <span class="badge">{{interest.text}}</span>
+                  <a data-toggle="tooltip" data-placement="top" title="{{interest.text}}">
+                    <span class="badge">{{substr interest.text max=22}}</span>
+                  </a>
                 {{/each}}
               </div>
             </div>
@@ -35,7 +37,7 @@
                 {{/each}}
               </div>
             </div>
-          </div>        
+          </div>
         {{/unless}}
       </div>
     </div>
